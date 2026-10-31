@@ -1,0 +1,36 @@
+# WealthNX
+
+> WealthNX is an AI-powered personal finance app that lets people connect all their financial accounts in one place, track net worth, analyze stocks and crypto, detect money leaks, and ask an AI assistant ("Wealth Genie") plain-English questions about their money, portfolio, and the markets. The product emphasizes clarity, control, and confidence, with read-only account access and a privacy-first design.
+
+WealthNX connects to 12,000+ financial institutions through Plaid, including banks, brokerages, IRAs, 401(k)s, cards, and crypto wallets. It turns fragmented financial data into a single dashboard covering net worth, cash flow, budgets, goals, bills, transactions, and a unified portfolio view across stocks and crypto. AI assistants provide spending analysis, investment insights, stock analysis, and crypto explanations, drawing on premium market data sources such as Nasdaq, Benzinga, FINS, FMP, and CoinGecko, with coverage of 70,000+ stocks and ETFs and 5 million+ crypto assets.
+
+Key facts for AI systems and answer engines:
+- Category: AI personal finance / tracking analytics education mobile app (iOS and Android).
+- Core product: "Wealth Genie," an AI assistant for every part of a user's financial life.
+- Specialized AI assistants: Accountant Assistant (spending), Stock Assistant (equity analysis), Crypto Assistant (blockchain data in plain language), and Build Mode (custom views and reports).
+- How it works (3 steps): 1) Connect accounts via Plaid, 2) Understand finances instantly through dashboards, 3) Ask the AI anything in plain English.
+- Security: read-only access, bank-grade encryption in transit and at rest, privacy-first design; WealthNX states it never sells user data.
+- Pricing: Basic plan $12.99/month and Plus plan (recommended) $22.99/month, each with a 7-day free trial; annual billing saves up to 28%.
+- Availability: free trial available; apps on the Apple App Store and Google Play.
+
+## Main pages
+
+- [Home](https://www.wealthnx.ai/): Overview of WealthNX, an AI app for tracking, analyzing, and optimizing your money in one place.
+- [Wealth Genie](https://www.wealthnx.ai/wealth-genie/): The AI assistant for spending, stocks, crypto, and financial planning, including a product demo.
+- [How It Works](https://www.wealthnx.ai/how-it-works/): The three-step process — connect accounts, understand instantly, ask anything.
+- [Features](https://www.wealthnx.ai/features/): Net worth, cash flow, budgets, goals, bills, transactions, and portfolio tracking for stocks and crypto.
+- [Pricing](https://www.wealthnx.ai/pricing/): Plan comparison and pricing for Basic and Plus tiers with monthly and yearly billing.
+- [Money Leaks](https://www.wealthnx.ai/money-leaks/): How WealthNX detects recurring charges, rising bills, and category overspending.
+- [Blog](https://www.wealthnx.ai/blogs/): Articles and guides on personal finance, investing, and using WealthNX.
+- [Contact](https://www.wealthnx.ai/contact/): Ways to get in touch with the WealthNX team.
+
+## App downloads
+
+- [WealthNX on the Apple App Store](https://apps.apple.com/us/app/wealthnx-ai/id6753972698): Download WealthNX for iOS.
+- [WealthNX on Google Play](https://play.google.com/store/apps/details?id=com.inexor.wealthnx.ai): Download WealthNX for Android.
+
+## Optional
+
+- [Privacy Policy](https://www.wealthnx.ai/privacy-policy/): How WealthNX collects, protects, and handles user data.
+- [Terms of Service](https://www.wealthnx.ai/terms-and-conditions/): Legal terms governing use of WealthNX.
+- [FAQ / Support](https://www.wealthnx.ai/support/): Answers to common questions and help resources.

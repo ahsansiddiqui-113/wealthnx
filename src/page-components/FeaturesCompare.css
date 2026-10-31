@@ -1,0 +1,27 @@
+/* Main /features/ page: "Fewer Apps to Check" comparison (dark variant of .fp-compare) */
+.feature-detail-template.fdt-features .fdt-cmp { background: var(--partner-strip-bg, #0a0a0a); padding: 90px 24px 110px; font-family: var(--font-inter), system-ui, sans-serif; }
+.fdt-cmp__inner { max-width: 1000px; margin: 0 auto; }
+.fdt-cmp__title { margin: 0; text-align: center; color: #fff; font-size: clamp(30px, 4.2vw, 52px); line-height: 1.12; font-weight: 700; letter-spacing: -.03em; }
+.fdt-cmp__title span { display: block; color: #1bc8bb; }
+.fdt-cmp__lead { max-width: 560px; margin: 24px auto 0; text-align: center; color: #9aa3a2; font-size: 17px; line-height: 1.45; }
+.fdt-cmp__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 64px auto 0; }
+.fdt-cmp__col { display: flex; flex-direction: column; }
+.fdt-cmp__col h3 { margin: 0 0 22px; text-align: center; font-size: 22px; font-weight: 400; letter-spacing: -.02em; color: #fff; }
+.fdt-cmp__col ul { list-style: none; margin: 0; padding: 12px 22px; border-radius: 14px; background: #e9e9e9; color: #7a8080; flex: 1; display: flex; flex-direction: column; }
+.fdt-cmp__col.is-with ul { background: #1bc8bb; color: #fff; }
+.fdt-cmp__col li { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 18px 8px; font-size: 15px; line-height: 1.4; border-bottom: 1px solid rgba(0, 0, 0, .08); }
+.fdt-cmp__col.is-with li { border-bottom-color: rgba(255, 255, 255, .28); position: relative; }
+.fdt-cmp__col li:last-child { border-bottom: 0; }
+/* frosted pills straddling the gap, one per aligned row (rows 1-6; the 7th has no partner) */
+.fdt-cmp__col.is-with li:nth-child(-n+6)::before {
+  content: ''; position: absolute; z-index: 2; top: 50%; left: -56px; width: 56px; height: 14px; margin-top: -7px; border-radius: 99px;
+  background: linear-gradient(90deg, rgba(240, 240, 240, .85), rgba(240, 240, 240, .35));
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, .55), 0 1px 3px rgba(0, 0, 0, .3); pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  .feature-detail-template.fdt-features .fdt-cmp { padding: 56px 16px 64px; }
+  .fdt-cmp__grid { grid-template-columns: 1fr; margin-top: 40px; }
+  .fdt-cmp__col ul { flex: none; }
+  .fdt-cmp__col.is-with li::before { display: none; }
+}

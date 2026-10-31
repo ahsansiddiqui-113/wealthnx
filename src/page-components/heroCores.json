@@ -1,0 +1,258 @@
+{
+ "/assets/feature-bills-phone.webp": {
+  "w": 763,
+  "h": 711,
+  "cx": 377,
+  "cy": 11,
+  "ch": 591,
+  "vw": 635
+ },
+ "/assets/feature-budgeting-phone.webp": {
+  "w": 743,
+  "h": 692,
+  "cx": 374,
+  "cy": 11,
+  "ch": 591,
+  "vw": 650
+ },
+ "/assets/feature-business-expense-tracking-phone.webp": {
+  "w": 743,
+  "h": 711,
+  "cx": 366,
+  "cy": 11,
+  "ch": 591,
+  "vw": 648
+ },
+ "/assets/feature-cash-flow-phone.webp": {
+  "w": 744,
+  "h": 711,
+  "cx": 384,
+  "cy": 11,
+  "ch": 591,
+  "vw": 684
+ },
+ "/assets/feature-celebrity-portfolio-tracking-phone.webp": {
+  "w": 743,
+  "h": 711,
+  "cx": 371,
+  "cy": 11,
+  "ch": 591,
+  "vw": 564
+ },
+ "/assets/feature-compare-spending-phone.webp": {
+  "w": 743,
+  "h": 711,
+  "cx": 371,
+  "cy": 11,
+  "ch": 591,
+  "vw": 564
+ },
+ "/assets/feature-dividend-tracker-phone.webp": {
+  "w": 743,
+  "h": 711,
+  "cx": 371,
+  "cy": 11,
+  "ch": 591,
+  "vw": 564
+ },
+ "/assets/feature-earnings-calendar-phone.webp": {
+  "w": 773,
+  "h": 711,
+  "cx": 461,
+  "cy": 11,
+  "ch": 591,
+  "vw": 658
+ },
+ "/assets/feature-financial-calendar-hero.webp": {
+  "w": 648,
+  "h": 965,
+  "cx": 276,
+  "cy": 134,
+  "ch": 628,
+  "vw": 552
+ },
+ "/assets/feature-financial-forecasting-phone.webp": {
+  "w": 743,
+  "h": 711,
+  "cx": 371,
+  "cy": 11,
+  "ch": 591,
+  "vw": 564
+ },
+ "/assets/feature-financial-health-score-phone.webp": {
+  "w": 743,
+  "h": 711,
+  "cx": 440,
+  "cy": 11,
+  "ch": 591,
+  "vw": 618
+ },
+ "/assets/feature-goals-phone.webp": {
+  "w": 783,
+  "h": 711,
+  "cx": 381,
+  "cy": 11,
+  "ch": 591,
+  "vw": 727
+ },
+ "/assets/feature-insider-trading-data-phone.webp": {
+  "w": 743,
+  "h": 711,
+  "cx": 371,
+  "cy": 11,
+  "ch": 591,
+  "vw": 564
+ },
+ "/assets/feature-investment-decision-analysis-phone.webp": {
+  "w": 743,
+  "h": 711,
+  "cx": 371,
+  "cy": 11,
+  "ch": 591,
+  "vw": 564
+ },
+ "/assets/feature-members-phone.webp": {
+  "w": 743,
+  "h": 692,
+  "cx": 371,
+  "cy": 11,
+  "ch": 591,
+  "vw": 564
+ },
+ "/assets/feature-multi-assets-phone.webp": {
+  "w": 743,
+  "h": 711,
+  "cx": 364,
+  "cy": 11,
+  "ch": 591,
+  "vw": 643
+ },
+ "/assets/feature-net-worth-phone.webp": {
+  "w": 743,
+  "h": 711,
+  "cx": 364,
+  "cy": 11,
+  "ch": 591,
+  "vw": 608
+ },
+ "/assets/feature-portfolio-benchmark-comparison-phone.webp": {
+  "w": 743,
+  "h": 711,
+  "cx": 371,
+  "cy": 11,
+  "ch": 591,
+  "vw": 564
+ },
+ "/assets/feature-portfolio-exposure-analysis-phone.webp": {
+  "w": 743,
+  "h": 711,
+  "cx": 371,
+  "cy": 11,
+  "ch": 591,
+  "vw": 564
+ },
+ "/assets/feature-portfolio-performance-tracker-phone.webp": {
+  "w": 743,
+  "h": 711,
+  "cx": 371,
+  "cy": 11,
+  "ch": 591,
+  "vw": 564
+ },
+ "/assets/feature-proactive-ai-hero.webp": {
+  "w": 856,
+  "h": 629,
+  "cx": 403,
+  "cy": 0,
+  "ch": 628,
+  "vw": 796
+ },
+ "/assets/feature-savings-rate-calculator-phone.webp": {
+  "w": 743,
+  "h": 711,
+  "cx": 371,
+  "cy": 11,
+  "ch": 591,
+  "vw": 564
+ },
+ "/assets/feature-spending-by-merchant-phone.webp": {
+  "w": 743,
+  "h": 711,
+  "cx": 371,
+  "cy": 11,
+  "ch": 591,
+  "vw": 564
+ },
+ "/assets/feature-stock-news-sentiment-phone.webp": {
+  "w": 743,
+  "h": 711,
+  "cx": 371,
+  "cy": 11,
+  "ch": 591,
+  "vw": 564
+ },
+ "/assets/feature-stock-watchlist-phone.webp": {
+  "w": 743,
+  "h": 711,
+  "cx": 371,
+  "cy": 11,
+  "ch": 591,
+  "vw": 564
+ },
+ "/assets/feature-subscription-tracker-phone.webp": {
+  "w": 743,
+  "h": 711,
+  "cx": 371,
+  "cy": 11,
+  "ch": 591,
+  "vw": 564
+ },
+ "/assets/feature-transactions-phone.webp": {
+  "w": 762,
+  "h": 711,
+  "cx": 455,
+  "cy": 11,
+  "ch": 591,
+  "vw": 647
+ },
+ "/assets/feature-voice-and-action-hero.webp": {
+  "w": 817,
+  "h": 629,
+  "cx": 425,
+  "cy": 0,
+  "ch": 628,
+  "vw": 798
+ },
+ "/assets/feature-voice-to-voice-hero.webp": {
+  "w": 833,
+  "h": 965,
+  "cx": 336,
+  "cy": 134,
+  "ch": 628,
+  "vw": 613
+ },
+ "/assets/feature-wealth-genie-hero.webp": {
+  "w": 884,
+  "h": 965,
+  "cx": 397,
+  "cy": 134,
+  "ch": 628,
+  "vw": 617
+ },
+ "/assets/features-hero.webp": {
+  "w": 843,
+  "h": 965,
+  "cx": 373,
+  "cy": 134,
+  "ch": 628,
+  "vw": 597
+ },
+ "/assets/home-hero-phone.webp": {
+  "w": 900,
+  "h": 1031,
+  "cx": 398,
+  "cy": 143,
+  "ch": 672,
+  "vw": 635
+ }
+}

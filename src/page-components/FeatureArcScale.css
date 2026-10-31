@@ -1,0 +1,32 @@
+/* Larger orbit with four unmistakable concentric arc paths. */
+.feature-detail-template .fdt-product { min-height: 1120px; }
+.feature-detail-template .fdt-orbit { width: min(1240px, 96vw); height: 740px; }
+.feature-detail-template .fdt-orbit__rings { height: 620px; }
+.feature-detail-template .fdt-orbit__rings i:nth-child(1) { inset: 7% auto auto 7%; width: 86%; }
+.feature-detail-template .fdt-orbit__rings i:nth-child(2) { inset: 15% auto auto 15%; width: 70%; }
+.feature-detail-template .fdt-orbit__rings i:nth-child(3) { inset: 23% auto auto 23%; width: 54%; }
+.feature-detail-template .fdt-orbit__rings i:nth-child(4) { inset: 31% auto auto 31%; width: 38%; }
+.feature-detail-template .fdt-orbit > img { top: 220px; width: 540px; height: 360px; }
+.feature-detail-template .fdt-orbit > a { top: 550px; }
+.feature-detail-template .fdt-orbit__dots { top: 625px; }
+.feature-detail-template .fdt-orbit__badge--slot-0 { top: 400px; }
+.feature-detail-template .fdt-orbit__badge--slot-1 { top: 225px; }
+.feature-detail-template .fdt-orbit__badge--slot-2 { top: 74px; }
+.feature-detail-template .fdt-orbit__badge--slot-4 { top: 74px; }
+.feature-detail-template .fdt-orbit__badge--slot-5 { top: 225px; }
+.feature-detail-template .fdt-orbit__badge--slot-6 { top: 400px; }
+
+@media(max-width:700px) {
+  .feature-detail-template .fdt-product { min-height: 735px; }
+  .feature-detail-template .fdt-orbit { height: 555px; }
+  .feature-detail-template .fdt-orbit__rings { height: 440px; }
+  .feature-detail-template .fdt-orbit > img { top: 150px; width: 350px; height: 270px; }
+  .feature-detail-template .fdt-orbit > a { top: 408px; }
+  .feature-detail-template .fdt-orbit__dots { top: 472px; }
+  .feature-detail-template .fdt-orbit__badge--slot-0 { top: 288px; }
+  .feature-detail-template .fdt-orbit__badge--slot-1 { top: 160px; }
+  .feature-detail-template .fdt-orbit__badge--slot-2 { top: 48px; }
+  .feature-detail-template .fdt-orbit__badge--slot-4 { top: 48px; }
+  .feature-detail-template .fdt-orbit__badge--slot-5 { top: 160px; }
+  .feature-detail-template .fdt-orbit__badge--slot-6 { top: 288px; }
+}

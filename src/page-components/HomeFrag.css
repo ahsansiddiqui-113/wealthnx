@@ -1,0 +1,212 @@
+/* Home: "Your Money is Fragmented" section (hf- prefix).
+   Desktop sizes are expressed in cqw of .hf-inner (design content width = 897px), so the
+   whole composition scales as one unit; <=900px switches to a stacked, px-based layout. */
+.home-redesign .hf-section {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  padding: clamp(56px, 8.7vw, 180px) clamp(16px, 2.4vw, 40px) clamp(56px, 8.4vw, 170px);
+  color: #fff;
+  font-family: var(--font-inter), 'Inter', Arial, sans-serif;
+  background: #0c0c0c;
+}
+
+/* Fine film grain, CSS only. */
+.hf-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: .22;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+}
+
+.hf-inner {
+  position: relative;
+  z-index: 1;
+  container-type: inline-size;
+  width: min(74vw, 1500px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 550fr 347fr;
+  align-items: start;
+}
+
+/* ---- Left column ---- */
+.hf-left { min-width: 0; padding-top: 1.2cqw; }
+.home-redesign .hf-lead {
+  margin: 0;
+  font-size: 2.45cqw !important; /* beats the global mobile h2/h3 !important */
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: -.035em;
+  color: #fff;
+}
+.home-redesign .hf-sub {
+  margin: 1.15cqw 0 0;
+  max-width: 37cqw;
+  font-size: 1.28cqw;
+  line-height: 1.42;
+  font-weight: 400;
+  color: #8d8d8d;
+}
+.hf-sub b { font-weight: 700; color: #fff; }
+
+.hf-visual {
+  position: relative;
+  margin: 3cqw 0 0 -20cqw;
+  width: 80cqw;
+  aspect-ratio: 1200 / 870;
+}
+/* One picture per card, stacked; the active card's is shown (no flash, no layout shift). */
+.hf-visual img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.hf-visual img.is-shown { opacity: 1; }
+
+/* ---- Right column ---- */
+.hf-right { min-width: 0; position: relative; z-index: 1; }
+.home-redesign .hf-title {
+  margin: 0;
+  font-size: 4.15cqw !important; /* narrower than the Inter design in Arial: keeps "Fragmented across" on one line */
+  line-height: 1.03;
+  font-weight: 400;
+  letter-spacing: -.035em;
+  color: #fff;
+}
+.hf-title em { font-style: normal; color: #3fb5a3; }
+
+.hf-cards {
+  list-style: none;
+  margin: 5.2cqw 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2cqw;
+  width: 33.4cqw;
+}
+.hf-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1cqw;
+  box-sizing: border-box;
+  height: 7.25cqw;
+  padding: 0 1.8cqw 0 1.55cqw;
+  border: 1px solid rgba(255, 255, 255, .09);
+  border-radius: 2.2cqw;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .05) 0%, rgba(255, 255, 255, .012) 100%),
+    #151515;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .07), 0 .6cqw 1.6cqw rgba(0, 0, 0, .35);
+  isolation: isolate;
+  overflow: hidden;
+  transition: border-color .3s ease;
+}
+/* Teal highlight layer, cross-faded in so hover is smooth. */
+.hf-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity .3s ease;
+  background:
+    radial-gradient(ellipse 70% 130% at 8% 40%, rgba(46, 150, 134, .36) 0%, rgba(24, 84, 78, .2) 55%, rgba(12, 40, 38, 0) 100%),
+    linear-gradient(90deg, #12332f 0%, #0f2623 55%, #0d1c1b 100%);
+}
+.hf-card.is-active::before { opacity: 1; }
+.hf-card.is-active { border-color: rgba(120, 220, 205, .16); }
+
+/* Hover / keyboard focus moves the highlight; Net Worth drops it while another card is active. */
+.hf-cards:hover .hf-card.is-active:not(:hover)::before,
+.hf-cards:focus-within .hf-card.is-active:not(:focus-within)::before { opacity: 0; }
+.hf-cards:hover .hf-card.is-active:not(:hover),
+.hf-cards:focus-within .hf-card.is-active:not(:focus-within) { border-color: rgba(255, 255, 255, .09); }
+.hf-card:hover::before,
+.hf-card:focus-within::before { opacity: 1; }
+.hf-card:hover,
+.hf-card:focus-within { border-color: rgba(120, 220, 205, .16); }
+
+.hf-card__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 4.7cqw;
+  height: 4.03cqw;
+}
+.hf-card__icon img,
+.hf-card__icon svg { display: block; width: 100%; height: auto; }
+.hf-card__icon svg { color: #fff; width: 3.1cqw; }
+.hf-card__text { min-width: 0; }
+.home-redesign .hf-card h3 {
+  margin: 0;
+  font-size: 1.78cqw !important;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  color: #fff;
+}
+.home-redesign .hf-card p {
+  margin: .2cqw 0 0;
+  font-size: 1.2cqw;
+  line-height: 1.18;
+  font-weight: 400;
+  color: #8a8a8a;
+}
+
+/* ---- Tablet / mobile: single column, DOM order = left content, then H2 and cards ---- */
+@media (max-width: 900px) {
+  .home-redesign .hf-section { padding: 56px 16px 64px; }
+  .hf-inner { width: 100%; max-width: 560px; grid-template-columns: minmax(0, 1fr); }
+  .hf-left { padding-top: 0; }
+  .home-redesign .hf-lead { font-size: 22px !important; }
+  .home-redesign .hf-sub { margin-top: 12px; max-width: 360px; font-size: 13px; }
+  .hf-visual { margin: 28px auto 0; width: 100%; }
+  .home-redesign .hf-title { margin-top: 36px; font-size: clamp(32px, 9vw, 46px) !important; }
+  .hf-cards { width: 100%; margin-top: 28px; gap: 10px; }
+  .hf-card { height: auto; min-height: 66px; padding: 12px 16px 12px 12px; gap: 8px; border-radius: 18px; }
+  .hf-card__icon { width: 46px; height: 40px; }
+  .hf-card__icon svg { width: 30px; }
+  .home-redesign .hf-card h3 { font-size: 16px !important; }
+  .home-redesign .hf-card p { margin-top: 3px; font-size: 12px; line-height: 1.3; }
+}
+
+/* ---- Mobile (<= 700px): reference order = H2, lead, sub, Net Worth, phone visual, remaining cards.
+   The wrappers dissolve (display: contents) so the visual can sit between the first and second card. ---- */
+@media (max-width: 700px) {
+  .home-redesign .hf-section { padding: 72px 16px 88px; }
+  .hf-inner { max-width: none; display: flex; flex-direction: column; }
+  .hf-left, .hf-right, .hf-cards { display: contents; }
+  .home-redesign .hf-title { order: 1; margin: 0; font-size: clamp(26px, 7.6vw, 32px) !important; line-height: 1.12; text-align: left; }
+  .home-redesign .hf-lead { order: 2; margin-top: 24px; font-size: 19px !important; line-height: 1.3; font-weight: 600; letter-spacing: -.02em; }
+  .home-redesign .hf-sub { order: 3; margin-top: 8px; max-width: 310px; font-size: 15px; line-height: 1.45; }
+  .hf-card { order: 6; margin-top: 8px; min-height: 62px; padding: 10px 14px 10px 10px; gap: 6px; border-radius: 14px; }
+  .hf-card--first { order: 4; margin-top: 26px; }
+  .hf-visual { display: none; } /* phones: the picture opens above the card you tap instead (.hf-pic) */
+  .hf-pic { display: block; order: 6; margin: 14px 0 4px; list-style: none; }
+  .hf-pic img { display: block; width: 100%; max-width: 360px; height: auto; margin: 0 auto; animation: hf-pic-in .35s ease both; }
+  .hf-pic--first { order: 4; margin-top: 26px; }
+  .hf-pic + .hf-card--first { margin-top: 8px; }
+  .hf-card { cursor: pointer; }
+  .hf-card__icon { width: 38px; height: 34px; }
+  .hf-card__icon svg { width: 24px; }
+  .home-redesign .hf-card h3 { font-size: 18px !important; }
+  .home-redesign .hf-card p { margin-top: 2px; font-size: 14.5px; line-height: 1.25; }
+}
+
+/* the per-card picture is for phones only */
+.hf-pic { display: none; }
+@media (max-width: 700px) { .hf-pic { display: block; } }
+@keyframes hf-pic-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .hf-pic img { animation: none; } }

@@ -1,0 +1,27 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "79376P68H5.com.inexor.wealthnx.aiapp",
+        "paths": [
+          "/connect-account",
+          "/manage-subscription",
+          "/billing",
+          "/dashboard",
+          "/billing/checkout/success",
+          "/billing/checkout/success?*",
+          "/billing/checkout/cancel",
+          "/billing/purchase/success",
+          "/billing/purchase/success?*",
+          "/billing/purchase/cancel"
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": [
+      "79376P68H5.com.inexor.wealthnx.aiapp"
+    ]
+  }
+}

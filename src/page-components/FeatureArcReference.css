@@ -1,0 +1,32 @@
+/* Reference geometry: a circle clipped at precisely its midpoint creates the intended compact semicircle. */
+.feature-detail-template .fdt-product { min-height: 900px; }
+.feature-detail-template .fdt-orbit { width: min(1200px, 100%); height: clamp(525px, 56vw, 650px); background: radial-gradient(ellipse 42% 41% at 50% 43%, rgba(18, 152, 134, .22), transparent); } /* sized to fit inside the box so it fades out before any edge */
+.feature-detail-template .fdt-orbit__rings { height: auto; aspect-ratio: 2 / 1; }
+.feature-detail-template .fdt-orbit__rings i:nth-child(1) { inset: 8% auto auto 8%; width: 84%; }
+.feature-detail-template .fdt-orbit__rings i:nth-child(2) { inset: 16% auto auto 16%; width: 68%; }
+.feature-detail-template .fdt-orbit__rings i:nth-child(3) { inset: 24% auto auto 24%; width: 52%; }
+.feature-detail-template .fdt-orbit__heading { padding-top: 76px; }
+.feature-detail-template .fdt-orbit > img { top: 175px; width: 420px; height: 265px; max-width: 60%; }
+.feature-detail-template .fdt-orbit > a { top: 430px; }
+.feature-detail-template .fdt-orbit__dots { top: 490px; }
+.feature-detail-template .fdt-orbit__badge--slot-0 { top: 275px; left: -55px; }
+.feature-detail-template .fdt-orbit__badge--slot-1 { top: 145px; left: 8%; }
+.feature-detail-template .fdt-orbit__badge--slot-2 { top: 38px; left: 23%; }
+.feature-detail-template .fdt-orbit__badge--slot-3 { top: -14px; }
+.feature-detail-template .fdt-orbit__badge--slot-4 { top: 38px; right: 23%; }
+.feature-detail-template .fdt-orbit__badge--slot-5 { top: 145px; right: 8%; }
+.feature-detail-template .fdt-orbit__badge--slot-6 { top: 275px; right: -55px; }
+@media (max-width: 700px) {
+  .feature-detail-template .fdt-product { min-height: 690px; }
+  .feature-detail-template .fdt-orbit { height: 505px; }
+  .feature-detail-template .fdt-orbit__heading { padding-top: 60px; }
+  .feature-detail-template .fdt-orbit > img { top: 140px; width: 330px; height: 235px; max-width: 78%; }
+  .feature-detail-template .fdt-orbit > a { top: 375px; }
+  .feature-detail-template .fdt-orbit__dots { top: 440px; }
+  .feature-detail-template .fdt-orbit__badge--slot-0 { top: 248px; }
+  .feature-detail-template .fdt-orbit__badge--slot-1 { top: 132px; }
+  .feature-detail-template .fdt-orbit__badge--slot-2 { top: 32px; left: 20%; }
+  .feature-detail-template .fdt-orbit__badge--slot-4 { top: 32px; right: 20%; }
+  .feature-detail-template .fdt-orbit__badge--slot-5 { top: 132px; }
+  .feature-detail-template .fdt-orbit__badge--slot-6 { top: 248px; }
+}

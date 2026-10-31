@@ -1,0 +1,67 @@
+/* The ring is a full circle clipped at its midpoint: a mathematically clean upper semicircle with no vertical sides. */
+.feature-detail-template .fdt-product { min-height: 890px; }
+.feature-detail-template .fdt-orbit {
+  width: min(930px, 94vw);
+  height: 565px;
+  margin-top: 34px;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.feature-detail-template .fdt-orbit::before,
+.feature-detail-template .fdt-orbit::after { display: none; }
+
+.feature-detail-template .fdt-orbit__rings {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 465px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.feature-detail-template .fdt-orbit__rings::before,
+.feature-detail-template .fdt-orbit__rings i {
+  content: '';
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1;
+  left: 0;
+  top: 0;
+  border: 1px solid rgba(173, 223, 214, .28);
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, rgba(20, 157, 141, .14), transparent 56%);
+}
+
+.feature-detail-template .fdt-orbit__rings i { background: none; border-color: rgba(173, 223, 214, .14); }
+.feature-detail-template .fdt-orbit__rings i:nth-child(1) { inset: 8% auto auto 8%; width: 84%; }
+.feature-detail-template .fdt-orbit__rings i:nth-child(2) { inset: 16% auto auto 16%; width: 68%; }
+.feature-detail-template .fdt-orbit__rings i:nth-child(3) { inset: 24% auto auto 24%; width: 52%; }
+
+.feature-detail-template .fdt-orbit__heading { width: 385px; margin-top: 62px; }
+.feature-detail-template .fdt-orbit > img { width: 470px; height: 330px; max-width: 64%; top: 145px; bottom: auto; }
+.feature-detail-template .fdt-orbit > a { top: 430px; bottom: auto; }
+.feature-detail-template .fdt-orbit__dots { top: 493px; bottom: auto; z-index: 5; }
+.feature-detail-template .fdt-orbit__badge { z-index: 6; pointer-events: auto; }
+.feature-detail-template .fdt-orbit__badge--1 { top: -15px; left: calc(50% - 15px); }
+.feature-detail-template .fdt-orbit__badge--2 { top: 26px; left: 24%; }
+.feature-detail-template .fdt-orbit__badge--3 { top: 26px; right: 24%; }
+.feature-detail-template .fdt-orbit__badge--4 { top: 128px; left: 7%; }
+.feature-detail-template .fdt-orbit__badge--5 { top: 128px; right: 7%; }
+
+@media (max-width: 700px) {
+  .feature-detail-template .fdt-product { min-height: 700px; }
+  .feature-detail-template .fdt-orbit { width: 100%; height: 510px; }
+  .feature-detail-template .fdt-orbit__rings { height: 390px; }
+  .feature-detail-template .fdt-orbit__heading { width: 300px; margin-top: 48px; }
+  .feature-detail-template .fdt-orbit > img { width: 330px; max-width: 80%; height: 255px; top: 125px; }
+  .feature-detail-template .fdt-orbit > a { top: 363px; }
+  .feature-detail-template .fdt-orbit__dots { top: 430px; }
+  .feature-detail-template .fdt-orbit__badge--1 { top: -12px; left: calc(50% - 15px); }
+  .feature-detail-template .fdt-orbit__badge--2 { top: 28px; left: 14%; }
+  .feature-detail-template .fdt-orbit__badge--3 { top: 28px; right: 14%; }
+  .feature-detail-template .fdt-orbit__badge--4 { top: 100px; left: 0; }
+  .feature-detail-template .fdt-orbit__badge--5 { top: 100px; right: 0; }
+}

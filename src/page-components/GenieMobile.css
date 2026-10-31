@@ -1,0 +1,167 @@
+/* Mobile (<=700px) layout for /wealth-genie, matched to the mobile reference. Scoped under .genie-mobile (root of GenieLanding).
+   Hero, logo strip and final CTA reuse the .fdt-mobile rules in FeatureMobile.css (same classes). Everything here is inside a
+   media query except the two "hide on desktop" rules below, so desktop is unchanged. */
+
+/* mobile-only blocks (partner strip, shared download CTA) stay hidden above 700px */
+.genie-mobile .gl-mobile-only { display: none; }
+/* the "why" row now always renders its description + progress track (so the phone layout works before hydration);
+   on desktop only the active row shows them, exactly as before */
+.gl-side li:not(.is-active) .gl-side__desc,
+.gl-side li:not(.is-active) .gl-side__track { display: none; }
+
+@keyframes gl-m-fade { from { opacity: 0; } to { opacity: 1; } }
+
+@media (max-width: 700px) {
+  .genie-mobile { font-family: var(--font-inter, Arial, sans-serif); }
+  .genie-mobile section.gl-mobile-only { display: flex; }
+
+  /* ── Hero extras: play button size ── */
+  .genie-mobile .fdt-hero__actions a.gl-play { flex: 0 0 52px; width: 52px; height: 52px; }
+
+  /* ── Team section: centred heading, scrolling tab row ── */
+  .genie-mobile .gl-team { padding: 64px 0 48px; }
+  .genie-mobile .gl-team__title { padding: 0 24px; font-size: clamp(28px, 8vw, 34px); line-height: 1.15; font-weight: 500; letter-spacing: -.045em; }
+  .genie-mobile .gl-team__title em { font-weight: 700; }
+  .genie-mobile .gl-compliance { display: none; }
+
+  /* one pill-shaped track that starts at the gutter and runs off the right edge; scrolls horizontally */
+  .genie-mobile .gl-tabs {
+    width: calc(100% - 24px); max-width: none; margin: 36px 0 0 24px; padding: 6px; gap: 4px;
+    justify-content: flex-start; border: 1px solid rgba(255, 255, 255, .1); border-right: 0; border-radius: 999px 0 0 999px;
+    background: rgba(255, 255, 255, .05);
+    overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -ms-overflow-style: none;
+    scroll-snap-type: x proximity; scroll-padding-inline: 6px; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch;
+    touch-action: pan-x; text-align: left;
+  }
+  .genie-mobile .gl-tabs::-webkit-scrollbar { display: none; }
+  .genie-mobile .gl-tab {
+    flex: 0 0 auto; padding: 13px 22px; border: 0; border-radius: 999px; scroll-snap-align: start; white-space: nowrap;
+    font: 600 14px var(--font-inter, Arial, sans-serif); letter-spacing: -.01em; color: #8f9b99; -webkit-tap-highlight-color: transparent;
+    transition: background-color .2s ease, color .2s ease;
+  }
+  .genie-mobile .gl-tab.is-active { background: #1bc8bb; color: #04201d; border: 0; }
+
+  /* ── Stacked accordion list: nav rows and panels become siblings, ordered with `order` ── */
+  .genie-mobile .gl-body { display: flex; flex-direction: column; width: calc(100% - 48px); margin: 44px auto 0; gap: 0; text-align: left; }
+  .genie-mobile .gl-side,
+  .genie-mobile .gl-side ul,
+  .genie-mobile .gl-panels { display: contents; }
+
+  .genie-mobile .gl-side li,
+  .genie-mobile .gl-side li.is-active { display: block; flex: none; border: 0; border-bottom: 1px solid rgba(255, 255, 255, .14); }
+  .genie-mobile .gl-side li.gl-item--about { order: 10; }
+  .genie-mobile .gl-side li.gl-item--why { order: 20; border-bottom-color: transparent; }
+  .genie-mobile .gl-side li.gl-item--how { order: 40; }
+  .genie-mobile .gl-side li.gl-item--faq { order: 50; }
+  .genie-mobile .gl-side li.gl-item--cases { order: 60; }
+  .genie-mobile .gl-side li.gl-item--feedback { order: 70; }
+
+  /* muted rows (About, How it works, FAQ, Case Studies, Feedback) */
+  .genie-mobile .gl-side button,
+  .genie-mobile .gl-side li.is-active button {
+    display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 56px; padding: 18px 0;
+    border: 0; border-radius: 0; background: none; color: #5f6a67;
+    font: 400 20px/1.25 var(--font-inter, Arial, sans-serif); letter-spacing: -.02em; text-align: left; white-space: normal;
+    -webkit-tap-highlight-color: transparent; transition: color .6s ease;
+  }
+  .genie-mobile .gl-side li.gl-item--about button { cursor: default; }
+  /* chevron on the accordion rows; rotates when open (transform only) */
+  .genie-mobile .gl-side li.gl-item--how button::after,
+  .genie-mobile .gl-side li.gl-item--faq button::after,
+  .genie-mobile .gl-side li.gl-item--cases button::after,
+  .genie-mobile .gl-side li.gl-item--feedback button::after {
+    content: ''; flex: none; width: 9px; height: 9px; margin: 0 6px 3px 12px;
+    border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(45deg); transition: transform .2s ease;
+  }
+  .genie-mobile .gl-side li.is-m-open button { color: #fff; }
+  .genie-mobile .gl-side li.is-m-open button::after { transform: rotate(225deg); }
+
+  /* active "Why use ..." row: white, bold, short paragraph, progress rule */
+  .genie-mobile .gl-side li.gl-item--why button { flex-direction: column; align-items: flex-start; justify-content: flex-start; min-height: 0; padding: 22px 0 0; color: #fff; font-size: 19px; font-weight: 700; letter-spacing: -.025em; cursor: default; }
+  .genie-mobile .gl-side li.gl-item--why .gl-side__label { display: block; }
+  .genie-mobile .gl-side li.gl-item--why.is-m-active .gl-side__desc { display: block; margin-top: 14px; padding-bottom: 22px; color: #8b9694; font-size: 15px; font-weight: 400; line-height: 1.55; letter-spacing: 0; }
+  .genie-mobile .gl-side li.gl-item--why.is-m-active .gl-side__track { display: block; height: 2px; background: rgba(255, 255, 255, .12); }
+  .genie-mobile .gl-side li.gl-item--why .gl-side__bar { width: 0; background: linear-gradient(90deg, #2fd17a, #4f8ff0); box-shadow: none; }
+  .genie-mobile .gl-side li:not(.gl-item--why) .gl-side__desc,
+  .genie-mobile .gl-side li:not(.gl-item--why) .gl-side__track { display: none; }
+
+  /* ── Panels ── */
+  .genie-mobile .gl-panel { min-height: 0; margin: 0; scroll-margin-top: 80px; }
+  /* the large image card sits right under the "Why use" row; its bullets + the second image are not shown */
+  .genie-mobile .gl-panel--about { order: 25; display: grid; place-items: center; margin: 26px 0 8px; padding: 22px 18px; border-radius: 28px;
+    background:
+      radial-gradient(ellipse 70% 60% at 0 100%, rgba(47, 209, 122, .28), transparent 70%),
+      radial-gradient(ellipse 70% 50% at 100% 20%, rgba(60, 120, 210, .16), transparent 70%),
+      #0a0e0e;
+    box-shadow: 0 0 60px rgba(27, 200, 187, .12); }
+  .genie-mobile .gl-panel--about img { width: 100%; height: auto; max-height: 340px; object-fit: contain; }
+  .genie-mobile .gl-panel--why { display: none; }
+
+  /* collapsed accordion panels: hidden until their row is opened; fade in (opacity only) */
+  .genie-mobile .gl-panel--video,
+  .genie-mobile .gl-panel--faq,
+  .genie-mobile .gl-panel--cases,
+  .genie-mobile .gl-panel--feedback { display: none; margin: 4px 0 22px; }
+  .genie-mobile .gl-panel--video.is-m-open,
+  .genie-mobile .gl-panel--faq.is-m-open,
+  .genie-mobile .gl-panel--cases.is-m-open,
+  .genie-mobile .gl-panel--feedback.is-m-open { animation: gl-m-fade .9s cubic-bezier(.25,.1,.25,1) .15s both; }
+  .genie-mobile .gl-panel--video.is-m-open { display: grid; order: 41; padding: 16px; }
+  .genie-mobile .gl-panel--faq.is-m-open { display: grid; order: 51; padding: 20px 16px; }
+  .genie-mobile .gl-panel--cases.is-m-open { display: flex; order: 61; padding: 20px 16px; }
+  .genie-mobile .gl-panel--feedback.is-m-open { display: grid; order: 71; grid-template-columns: minmax(0, 1fr); gap: 22px; padding: 24px 18px; }
+
+  .genie-mobile .gl-faq__q { padding: 15px 16px; font: 500 15px/1.4 var(--font-inter, Arial, sans-serif); }
+  .genie-mobile .gl-faq__a { font-size: 15px; line-height: 1.55; }
+  .genie-mobile .gl-case h3 { font-size: 15px; }
+  .genie-mobile .gl-case p { font-size: 14px; line-height: 1.5; }
+  .genie-mobile .gl-disclaimer { font-size: 12px; }
+  .genie-mobile .gl-fb__left h3 { font-size: 22px; }
+  .genie-mobile .gl-fb__left > p { max-width: none; font-size: 14px; }
+  .genie-mobile .gl-fb__label { font-size: 14px; }
+  .genie-mobile .gl-chip { padding: 8px 13px; font: 600 12px var(--font-inter, Arial, sans-serif); }
+  .genie-mobile .gl-star { font-size: 24px; padding: 0 3px; }
+  .genie-mobile .gl-stars__label { font-size: 13px; }
+  .genie-mobile .gl-fb__textarea { font: 400 16px/1.5 var(--font-inter, Arial, sans-serif); }
+  .genie-mobile .gl-fb__submit { padding: 13px 22px; font: 700 14px var(--font-inter, Arial, sans-serif); }
+  .genie-mobile .gl-fb__msg { font-size: 13px; }
+}
+
+@media (max-width: 380px) {
+  .genie-mobile .gl-tab { padding: 12px 18px; font-size: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .genie-mobile .gl-panel--video.is-m-open,
+  .genie-mobile .gl-panel--faq.is-m-open,
+  .genie-mobile .gl-panel--cases.is-m-open,
+  .genie-mobile .gl-panel--feedback.is-m-open { animation: none; }
+  .genie-mobile .gl-tab, .genie-mobile .gl-side button::after { transition: none; }
+}
+
+/* mobile: fix rows/panels shrinking to their content (uneven dividers, tiny video) */
+@media (max-width: 700px) {
+  .genie-mobile .gl-body { align-items: stretch; justify-items: stretch; }
+  .genie-mobile .gl-side li,
+  .genie-mobile .gl-side li.is-active { width: 100%; align-self: stretch; margin: 0; padding: 0; box-sizing: border-box; }
+  .genie-mobile .gl-side button,
+  .genie-mobile .gl-side li.is-active button { padding-left: 0; padding-right: 0; }
+  .genie-mobile .gl-panel { width: 100%; align-self: stretch; box-sizing: border-box; }
+  .genie-mobile .gl-panel--video.is-m-open { grid-template-columns: minmax(0, 1fr); padding: 6px 0 22px; }
+  .genie-mobile .gl-panel--video .gl-video { width: 100%; max-width: none; border-radius: 18px; }
+  .genie-mobile .gl-panel--video .gl-video__play { width: 64px; height: 64px; }
+  .genie-mobile .gl-panel--faq.is-m-open,
+  .genie-mobile .gl-panel--cases.is-m-open,
+  .genie-mobile .gl-panel--feedback.is-m-open { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* mobile: scroll-following rows — collapsed "Why" row keeps its spacing; its description fades in when it becomes active */
+@keyframes gl-m-desc-in { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 700px) {
+  .genie-mobile .gl-side li.gl-item--why:not(.is-m-active) button { padding-bottom: 18px; }
+  .genie-mobile .gl-side li.gl-item--why.is-m-active .gl-side__desc { animation: gl-m-desc-in .9s cubic-bezier(.25,.1,.25,1) .15s both; }
+  .genie-mobile .gl-side__bar { transition: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .genie-mobile .gl-side li.gl-item--why.is-m-active .gl-side__desc { animation: none; }
+}

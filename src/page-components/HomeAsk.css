@@ -1,0 +1,200 @@
+/* Home: "Ask About Your Money, Portfolio Or Markets" section (ha- prefix). */
+.home-redesign .ha-section {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background: #000;
+  color: #fff;
+  font-family: var(--font-inter), 'Inter', Arial, sans-serif;
+  padding: clamp(84px, 11vw, 150px) 24px 120px;
+}
+
+/* Glows: teal behind the heading, faint teal in the bottom-right corner. */
+.ha-glow { position: absolute; pointer-events: none; z-index: -1; }
+.ha-glow--top {
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 640px;
+  background:
+    radial-gradient(ellipse 34% 36% at 50% 36%, rgba(18, 92, 84, .8) 0%, rgba(10, 58, 54, .46) 48%, rgba(0, 0, 0, 0) 100%),
+    radial-gradient(ellipse 48% 48% at 50% 30%, rgba(8, 48, 45, .5) 0%, rgba(0, 0, 0, 0) 100%);
+}
+.ha-glow--corner {
+  right: -12%;
+  bottom: -18%;
+  width: 60%;
+  height: 52%;
+  background: radial-gradient(ellipse at 70% 70%, rgba(10, 70, 60, .42) 0%, rgba(6, 40, 36, .2) 45%, rgba(0, 0, 0, 0) 72%);
+}
+
+.ha-inner { width: 100%; max-width: 1100px; margin: 0 auto; }
+
+.home-redesign .ha-title {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(30px, 3.4vw, 50px);
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: -.025em;
+  color: #fff;
+}
+.ha-title b { font-weight: 700; }
+
+/* ---- Ask bar (static visual) ---- */
+.ha-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: clamp(54px, 5.6vw, 64px);
+  margin: clamp(34px, 5vw, 74px) 0 clamp(18px, 2.2vw, 28px);
+  padding: 0 clamp(14px, 1.5vw, 20px);
+  border: 1px solid rgba(255, 255, 255, .06);
+  border-radius: clamp(14px, 1.6vw, 20px);
+  background:
+    radial-gradient(ellipse 60% 140% at 100% 50%, rgba(20, 70, 64, .22), transparent 70%),
+    linear-gradient(90deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .035));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .04);
+  user-select: none;
+}
+.ha-bar svg { display: block; flex: none; }
+.ha-bar__genie { width: 26px; height: 26px; color: #3ab8a8; }
+.ha-bar__placeholder {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: clamp(13px, 1.15vw, 16px);
+  font-weight: 400;
+  color: rgba(255, 255, 255, .34);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ha-bar__plus,
+.ha-bar__send,
+.ha-bar__mic {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: clamp(30px, 2.9vw, 38px);
+  height: clamp(30px, 2.9vw, 38px);
+  border-radius: 50%;
+}
+.ha-bar__plus { background: #3cb4a4; color: #fff; }
+.ha-bar__plus svg { width: 55%; height: 55%; }
+.ha-bar__send { background: #3cb4a4; color: #fff; }
+.ha-bar__send svg { width: 50%; height: 50%; margin-left: -1px; }
+.ha-bar__mic { border: 1px solid rgba(255, 255, 255, .16); color: #d7e6e3; margin-left: 4px; }
+.ha-bar__mic svg { width: 52%; height: 52%; }
+.ha-bar__chips { display: flex; align-items: center; gap: clamp(8px, 1vw, 14px); margin: 0 clamp(0px, 1.2vw, 18px) 0 4px; }
+.ha-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  height: clamp(30px, 2.9vw, 38px);
+  padding: 0 clamp(10px, 1.2vw, 16px);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, .06);
+  font-size: clamp(11px, .95vw, 14px);
+  font-weight: 500;
+  color: rgba(255, 255, 255, .86);
+  white-space: nowrap;
+}
+.ha-chip svg { width: 17px; height: 17px; color: rgba(255, 255, 255, .6); }
+
+/* ---- Cards ---- */
+.ha-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(10px, 1.4vw, 20px); }
+
+.ha-card {
+  position: relative;
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 172 / 133;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .07);
+  border-radius: clamp(14px, 1.6vw, 22px);
+  background-color: #0e0e0e;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .05);
+}
+.ha-card__head { flex: none; padding: clamp(14px, 1.6vw, 22px) clamp(14px, 4.8cqw, 28px) clamp(10px, 1.1vw, 15px); border-bottom: 1px solid rgba(255, 255, 255, .06); position: relative; z-index: 1; }
+.home-redesign .ha-card__head h3 { margin: 0; font-size: clamp(14px, 4.7cqw, 20px); line-height: 1.25; font-weight: 700; letter-spacing: -.01em; color: #fff; }
+.home-redesign .ha-card__head p { margin: 5px 0 0; font-size: clamp(9.5px, 2.75cqw, 12px); line-height: 1.35; font-weight: 400; color: rgba(255, 255, 255, .34); }
+
+.ha-card__visual { position: relative; flex: 1 1 0; min-height: 0; overflow: hidden; }
+.ha-card__visual img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+/* Video-frame stills have a near-black backdrop: let the card glow show through. */
+.ha-card--accountant .ha-card__visual img,
+.ha-card--stock .ha-card__visual img,
+.ha-card--crypto .ha-card__visual img,
+.ha-card--build .ha-card__visual img {
+  mix-blend-mode: lighten;
+  padding: 3% 5% 0;
+  object-fit: contain;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 12%, #000 86%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 12%, #000 86%, transparent 100%);
+}
+
+/* Individual tints (sampled from the design). */
+.ha-card--proactive { background-color: #0e0e0e; background-image: radial-gradient(ellipse 60% 55% at 55% 80%, rgba(30, 110, 96, .14), transparent 70%); }
+.ha-card--voice { background-color: #0a1615; background-image: radial-gradient(ellipse 80% 60% at 20% 0%, rgba(20, 70, 62, .35), transparent 70%), radial-gradient(ellipse 80% 60% at 60% 100%, rgba(30, 130, 115, .3), transparent 70%); }
+.ha-card--accountant { background-color: #09130f; background-image: radial-gradient(ellipse 70% 60% at 25% 65%, rgba(28, 92, 62, .26), transparent 70%), radial-gradient(ellipse 60% 50% at 100% 0%, rgba(255, 255, 255, .04), transparent 70%); }
+.ha-card--stock { background-color: #0f0f0f; background-image: radial-gradient(ellipse 36% 38% at 56% 0%, rgba(44, 110, 52, .55), transparent 75%), radial-gradient(ellipse 55% 40% at 0% 100%, rgba(58, 178, 160, .5), transparent 75%), radial-gradient(ellipse 45% 40% at 100% 100%, rgba(200, 78, 86, .5), transparent 75%); }
+.ha-card--crypto { background-color: #0d0d0d; background-image: radial-gradient(ellipse 45% 40% at 100% 30%, rgba(40, 100, 52, .38), transparent 72%), radial-gradient(ellipse 50% 35% at 100% 100%, rgba(30, 90, 50, .22), transparent 72%); }
+.ha-card--build { background-color: #100f0d; background-image: radial-gradient(ellipse 40% 45% at 100% 0%, rgba(110, 100, 70, .42), transparent 72%), radial-gradient(ellipse 40% 45% at 0% 70%, rgba(110, 70, 40, .24), transparent 72%), radial-gradient(ellipse 45% 40% at 60% 100%, rgba(50, 90, 60, .2), transparent 72%); }
+
+/* ---- Responsive ---- */
+@media (max-width: 1000px) {
+  .ha-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ha-card { aspect-ratio: auto; min-height: 0; }
+  .ha-card__visual { flex: none; aspect-ratio: 5 / 3; }
+}
+@media (max-width: 860px) {
+  .ha-chip span { display: none; }
+  .ha-chip { padding: 0 10px; }
+}
+@media (max-width: 640px) {
+  .home-redesign .ha-section { padding: 84px 16px 100px; }
+  .ha-grid { grid-template-columns: minmax(0, 1fr); }
+  .ha-bar { gap: 8px; padding: 0 12px; }
+  .ha-bar__chips { display: none; }
+  .ha-bar__mic { margin-left: 0; }
+}
+@media (max-width: 380px) {
+  .ha-bar__mic { display: none; }
+}
+
+/* mobile: Ask section matched to the reference (<= 640px). */
+@media (max-width: 640px) {
+  .home-redesign .ha-section { padding: 24px 24px 150px; }
+  .home-redesign .ha-title { font-size: 41.5px; line-height: 1.22; }
+  /* Two-row ask bar: prompt on top; plus + tool icons left, mic + send right. */
+  .ha-bar { height: auto; flex-wrap: wrap; gap: 10px 8px; margin: 44px 0 18px; padding: 12px; border-radius: 16px; }
+  .ha-bar__genie { order: 0; }
+  .ha-bar__placeholder { order: 0; flex: 1 1 calc(100% - 40px); font-size: 17px; }
+  .ha-bar__plus { order: 1; width: 40px; height: 40px; }
+  .ha-bar__chips { display: flex; order: 2; gap: 6px; margin: 0 0 0 2px; }
+  .ha-chip { height: 40px; padding: 0 10px; }
+  .ha-chip span { display: none; }
+  .ha-chip svg { width: 19px; height: 19px; }
+  .ha-bar__mic { order: 3; width: 40px; height: 40px; margin-left: auto; }
+  .ha-bar__send { order: 4; width: 40px; height: 40px; }
+  /* Swipe row: one card per view with the next one peeking in (overrides MobileSwipe.css). */
+  body .ha-grid { padding: 4px 24px 18px; scroll-padding-inline: 24px; gap: 14px; }
+  body .ha-grid > * { flex: 0 0 calc(100vw - 48px); }
+}
+
+/* Whole-card exports (title + visual baked in): the picture is the card; the live title/text stay for screen readers only. */
+.ha-card.ha-card--full { aspect-ratio: var(--ar); align-self: start; border: 0; background: none; box-shadow: none; overflow: visible; }
+.ha-card--full .ha-card__head { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); padding: 0; border: 0; white-space: nowrap; }
+.ha-card--full .ha-card__visual { flex: 1 1 auto; overflow: visible; }
+.ha-card--full .ha-card__visual img { object-fit: contain; mix-blend-mode: normal; padding: 0; -webkit-mask-image: none; mask-image: none; }
+@media (max-width: 1000px) { .ha-card.ha-card--full .ha-card__visual { aspect-ratio: auto; } }

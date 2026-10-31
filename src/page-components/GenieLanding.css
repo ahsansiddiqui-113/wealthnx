@@ -1,0 +1,405 @@
+/* Wealth Genie landing page. Hero + footer reuse the .fdt-* classes from FeatureDetailTemplate.css. */
+
+/* overflow:clip (not hidden) so the sticky sidebar still sticks to the viewport */
+.feature-detail-template.gl-page { overflow: clip; background: #060a0a; }
+.gl-main { display: block; }
+
+/* ── Hero additions ── */
+.gl-page .fdt-hero h1 { max-width: 7.3em; }
+.gl-page .fdt-hero h1 em { display: block; }
+.fdt-hero__actions a.gl-play {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  padding: 0 !important;
+  border: 1px solid #d5dbd9;
+  border-radius: 50% !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+.gl-page .fdt-hero__visual { overflow: visible; }
+
+
+/* ── Dark team section ── */
+.gl-team {
+  position: relative;
+  padding: 104px 0 120px;
+  text-align: center;
+  background:
+    radial-gradient(ellipse 60% 360px at 50% 0, rgba(18, 90, 80, 0.2), transparent 70%),
+    radial-gradient(ellipse 50% 520px at 80% 55%, rgba(18, 90, 80, 0.12), transparent 70%),
+    #060a0a;
+}
+.gl-team__title {
+  margin: 0 auto;
+  padding: 0 24px;
+  font-size: clamp(30px, 3.4vw, 50px);
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+  font-weight: 500;
+}
+.gl-team__title em { color: #1bc8bb; font-style: normal; font-weight: 700; }
+
+.gl-tabs {
+  display: flex;
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  margin: 48px auto 0;
+  padding: 5px;
+  gap: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+}
+.gl-tab {
+  flex: 0 0 auto;
+  padding: 11px 24px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #8f9b99;
+  font: 600 12px var(--font-montserrat, Arial, sans-serif);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.gl-tab:hover { color: #fff; }
+.gl-tab.is-active { background: #1bc8bb; color: #04201d; }
+.gl-tab:focus-visible, .gl-side button:focus-visible, .gl-faq__q:focus-visible, .gl-chip:focus-visible,
+.gl-star:focus-visible, .gl-fb__submit:focus-visible, .gl-fb__textarea:focus-visible, .gl-video:focus-visible {
+  outline: 2px solid #1bc8bb;
+  outline-offset: 2px;
+}
+
+.gl-compliance {
+  max-width: 560px;
+  margin: 18px auto 0;
+  padding: 0 24px;
+  color: #6c7977;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* ── Sidebar + panels ── */
+.gl-body {
+  display: grid;
+  grid-template-columns: 316px minmax(0, 1fr);
+  gap: 74px;
+  width: min(1090px, calc(100% - 2 * clamp(24px, 7.1vw, 138px)));
+  margin: 96px auto 0;
+  text-align: left;
+  align-items: start;
+}
+
+.gl-side { position: sticky; top: 120px; }
+.gl-side ul { list-style: none; margin: 0; padding: 0; }
+.gl-side li { border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.gl-side li:first-child { border-top: 0; }
+.gl-side button {
+  display: block;
+  width: 100%;
+  padding: 16px 0;
+  border: 0;
+  background: none;
+  color: #59635f;
+  font: 500 17px/1.2 var(--font-montserrat, Arial, sans-serif);
+  letter-spacing: -0.02em;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.gl-side button:hover { color: #aab5b2; }
+.gl-side li.is-active { position: relative; border-bottom-color: transparent; }
+.gl-side li.is-active button { padding-bottom: 14px; color: #fff; font-weight: 700; font-size: 16px; }
+.gl-side__desc {
+  display: block;
+  margin-top: 10px;
+  color: #7f8b89;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.gl-side__track { display: block; height: 2px; margin-bottom: 0; background: rgba(255, 255, 255, 0.1); }
+.gl-side__bar { display: block; height: 100%; width: 0; background: #1bc8bb; box-shadow: 0 0 10px rgba(27, 200, 187, 0.6); }
+
+.gl-panels { display: grid; gap: 20px; min-width: 0; }
+
+.gl-panel {
+  position: relative;
+  min-height: 330px;
+  scroll-margin-top: 110px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 22px;
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 0, rgba(27, 200, 187, 0.1), transparent 70%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.008)),
+    #0a0e0e;
+  box-shadow: 0 0 70px rgba(27, 200, 187, 0.06);
+  overflow: hidden;
+}
+
+/* 1 · About */
+.gl-panel--about { display: grid; place-items: center; padding: 24px; }
+.gl-panel--about img { width: auto; max-width: 100%; height: 282px; object-fit: contain; filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.5)); }
+
+/* 2 · Why */
+.gl-panel--why { display: grid; grid-template-columns: minmax(150px, 0.42fr) minmax(0, 1fr); align-items: center; gap: 12px; padding: 24px 28px; }
+.gl-bullets { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; }
+.gl-bullets li { position: relative; padding-left: 26px; color: #e6eceb; font-size: 12px; font-weight: 500; line-height: 1.3; }
+.gl-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 11px;
+  height: 11px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #1bc8bb;
+  box-shadow: 0 0 0 4px rgba(27, 200, 187, 0.2);
+}
+.gl-panel--why img { width: 100%; height: 282px; object-fit: contain; filter: brightness(0.82) contrast(1.05); }
+
+/* 3 · Video */
+.gl-panel--video { padding: 36px; display: grid; }
+.gl-video {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: min(100%, 520px);
+  aspect-ratio: 16 / 9;
+  margin: auto;
+  border-radius: 12px;
+  background: #050808 center / cover no-repeat;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+.gl-video__play {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(20, 28, 28, 0.82);
+  color: #fff;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15), 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.gl-video:hover .gl-video__play { transform: scale(1.08); background: #1bc8bb; color: #04201d; }
+
+/* 4 · FAQ */
+.gl-panel--faq {
+  display: grid;
+  align-content: center;
+  padding: 40px clamp(20px, 5.4%, 40px);
+  background:
+    radial-gradient(ellipse 90% 80% at 50% 0, rgba(27, 200, 187, 0.16), transparent 70%),
+    linear-gradient(180deg, #0b1a19, #060b0b);
+}
+.gl-faq { display: grid; gap: 10px; }
+.gl-faq__item { border-radius: 8px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.05); }
+.gl-faq__item.is-open { background: rgba(27, 200, 187, 0.08); border-color: rgba(27, 200, 187, 0.25); }
+.gl-faq__q {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 16px;
+  border: 0;
+  background: none;
+  color: #dbe3e2;
+  font: 500 12px/1.35 var(--font-montserrat, Arial, sans-serif);
+  text-align: left;
+  cursor: pointer;
+}
+.gl-faq__icon { flex: none; color: #a7b4b1; font-size: 16px; line-height: 1; }
+.gl-faq__a { margin: 0; padding: 0 16px 14px; color: #8f9b99; font-size: 12px; line-height: 1.55; }
+
+/* 5 · Case studies */
+.gl-panel--cases { display: flex; flex-direction: column; justify-content: center; gap: 22px; padding: 38px clamp(18px, 5%, 34px) 28px; }
+.gl-cases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.gl-case {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 118px;
+  padding: 14px 14px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.045);
+}
+.gl-case__icon { display: inline-flex; margin-bottom: 4px; color: #aab5b2; }
+.gl-case__icon svg { width: 18px; height: 18px; }
+.gl-case h3 { margin: 0; color: #e6eceb; font-size: 11px; font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; }
+.gl-case p { margin: 0; color: #707c7a; font-size: 10px; line-height: 1.4; }
+.gl-disclaimer { display: flex; align-items: flex-start; gap: 14px; margin: 0; color: #5f6b69; font-size: 9px; line-height: 1.5; }
+.gl-disclaimer b { flex: none; position: relative; padding-left: 14px; color: #c9d3d1; font-weight: 600; }
+.gl-disclaimer b::before { content: ''; position: absolute; left: 0; top: 50%; width: 7px; height: 7px; transform: translateY(-50%); border-radius: 50%; background: #e0414f; }
+
+/* 6 · Feedback */
+.gl-panel--feedback {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  gap: 34px;
+  padding: 40px 36px;
+  border-color: rgba(27, 200, 187, 0.18);
+  background: linear-gradient(135deg, #0a5a52 0%, #07463f 55%, #06342f 100%);
+  box-shadow: 0 0 80px rgba(27, 200, 187, 0.12);
+}
+.gl-fb__left h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; letter-spacing: -0.03em; }
+.gl-fb__left > p { margin: 0 0 20px; max-width: 300px; color: #a9cdc8; font-size: 10px; line-height: 1.5; }
+.gl-fb__field { margin-top: 16px; }
+.gl-fb__label { display: block; margin-bottom: 9px; color: #fff; font-size: 11px; font-weight: 700; }
+.gl-fb__chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.gl-chip {
+  padding: 6px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.25);
+  color: #c4dcd8;
+  font: 600 9px var(--font-montserrat, Arial, sans-serif);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.gl-chip.is-active { background: #1bc8bb; border-color: #1bc8bb; color: #04201d; }
+.gl-stars { display: flex; align-items: center; gap: 2px; }
+.gl-star { padding: 0 1px; border: 0; background: none; color: rgba(255, 255, 255, 0.22); font-size: 15px; line-height: 1; cursor: pointer; }
+.gl-star.is-active { color: #f5b942; }
+.gl-stars__label { margin-left: 8px; color: #a9cdc8; font-size: 10px; }
+.gl-fb__right { display: flex; flex-direction: column; }
+.gl-fb__textarea {
+  width: 100%;
+  min-height: 130px;
+  resize: vertical;
+  padding: 12px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font: 400 11px/1.5 var(--font-montserrat, Arial, sans-serif);
+}
+.gl-fb__textarea::placeholder { color: #7ea39e; }
+.gl-fb__msg { margin: 10px 0 0; color: #d8fffa; font-size: 11px; font-weight: 600; }
+.gl-fb__submit {
+  align-self: flex-start;
+  margin-top: 14px;
+  padding: 9px 18px;
+  border: 0;
+  border-radius: 7px;
+  background: #fff;
+  color: #07110f;
+  font: 700 10px var(--font-montserrat, Arial, sans-serif);
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+.gl-fb__submit:hover { transform: translateY(-1px); }
+
+/* ── Footer extras ── */
+.gl-social { display: flex; justify-content: flex-end; gap: 10px; margin: -14px 0 18px; }
+.gl-social a {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid #0c1010;
+  border-radius: 50%;
+  color: #0c1010;
+}
+.gl-social a svg { width: 12px; height: 12px; }
+.gl-social a:hover { background: #0c1010; color: #fff; }
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .gl-body { grid-template-columns: 250px minmax(0, 1fr); gap: 40px; }
+}
+
+@media (max-width: 900px) {
+  .gl-team { padding: 80px 0 90px; }
+  .gl-body { grid-template-columns: minmax(0, 1fr); gap: 28px; margin-top: 56px; width: calc(100% - 48px); }
+  .gl-side { position: static; }
+  .gl-side ul { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 6px; scrollbar-width: none; }
+  .gl-side li, .gl-side li.is-active { flex: 0 0 auto; border: 0; }
+  .gl-side button, .gl-side li.is-active button {
+    width: auto;
+    padding: 9px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .gl-side li.is-active button { border-color: #1bc8bb; color: #fff; }
+  .gl-side__desc, .gl-side__track { display: none; }
+  .gl-panel { scroll-margin-top: 80px; }
+  .gl-panel--cases .gl-cases { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 700px) {
+  .gl-team__title { font-size: 28px; }
+  .gl-tabs { margin-top: 32px; max-width: 100%; width: 100%; border-radius: 0; border-left: 0; border-right: 0; background: none; overflow-x: auto; scrollbar-width: none; padding: 5px 16px; }
+  .gl-tab { padding: 10px 16px; border: 1px solid rgba(255, 255, 255, 0.1); }
+  .gl-tab.is-active { border-color: #1bc8bb; }
+  .gl-body { width: calc(100% - 32px); }
+  .gl-panel { min-height: 0; }
+  .gl-panel--about, .gl-panel--video { padding: 18px; }
+  .gl-panel--about img, .gl-panel--why img { height: auto; max-height: 260px; }
+  .gl-panel--why { grid-template-columns: 1fr; padding: 22px 18px; }
+  .gl-panel--cases .gl-cases { grid-template-columns: 1fr; }
+  .gl-panel--cases { padding: 22px 16px; }
+  .gl-panel--feedback { grid-template-columns: 1fr; gap: 22px; padding: 26px 20px; }
+  .gl-disclaimer { flex-direction: column; gap: 6px; }
+  .gl-social { justify-content: center; margin: -18px 0 18px; }
+}
+
+/* Hero picture: the export has a lot of transparent padding around the phone, so it is drawn larger than its box
+   (flex centres it on both sides; the hero clips the overflow). */
+.gl-page .fdt-hero__visual { display: flex; justify-content: center; align-items: center; }
+.gl-page .fdt-hero-phone { width: auto; max-width: none; max-height: none; height: 680px; flex: none; }
+@media (max-width: 1000px) {
+  .gl-page .fdt-hero__visual { height: 440px; }
+  .gl-page .fdt-hero-phone { height: 540px; }
+}
+
+/* ── Larger type and pictures (readability) ── */
+.gl-tab { font-size: 14px; padding: 13px 26px; }
+.gl-compliance { max-width: 680px; font-size: 14px; }
+.gl-side button { font-size: 20px; }
+.gl-side li.is-active button { font-size: 20px; }
+.gl-side__desc { font-size: 15px; line-height: 1.55; margin-top: 12px; }
+.gl-panel { min-height: 400px; }
+.gl-panel--about img { height: 420px; }
+.gl-video { width: min(100%, 640px); }
+.gl-faq { gap: 12px; }
+.gl-faq__q { padding: 16px 20px; font-size: 16px; }
+.gl-faq__icon { font-size: 20px; }
+.gl-faq__a { padding: 0 20px 18px; font-size: 15px; line-height: 1.6; }
+.gl-cases { gap: 14px; }
+.gl-case { min-height: 150px; padding: 18px 18px 16px; gap: 8px; }
+.gl-case__icon svg { width: 24px; height: 24px; }
+.gl-case h3 { font-size: 16px; }
+.gl-case p { font-size: 14px; line-height: 1.45; color: #8d9a98; }
+.gl-disclaimer { font-size: 12px; }
+.gl-fb__left h3 { font-size: 26px; }
+.gl-fb__left > p { max-width: 380px; font-size: 14px; }
+.gl-fb__label { font-size: 14px; }
+.gl-chip { font-size: 12px; padding: 8px 14px; }
+.gl-star { font-size: 22px; }
+.gl-stars__label { font-size: 13px; }
+.gl-fb__textarea { min-height: 160px; font-size: 14px; }
+.gl-fb__msg { font-size: 13px; }
+.gl-fb__submit { font-size: 13px; padding: 12px 22px; }
+@media (min-width: 901px) {
+  .gl-body { grid-template-columns: 360px minmax(0, 1fr); gap: 56px; width: min(1280px, calc(100% - 2 * clamp(24px, 5vw, 96px))); }
+}
+@media (max-width: 900px) {
+  .gl-side button { font-size: 15px; }
+  .gl-panel--about img { height: 320px; }
+}
+@media (max-width: 700px) {
+  .gl-faq__q { font-size: 15px; }
+  .gl-case h3 { font-size: 15px; }
+  .gl-panel--about img { height: auto; max-height: 300px; }
+}

@@ -1,0 +1,17 @@
+@media (max-width: 700px) {
+  .feature-detail-template .fdt-hero { padding-top: 92px; }
+  .feature-detail-template .fdt-hero h1 { max-width: 340px; font-size: 36px; line-height: 1.04; letter-spacing: -.055em; }
+  .feature-detail-template .fdt-hero__visual { height: 325px; }
+  .feature-detail-template .fdt-product { padding-left: 12px; padding-right: 12px; }
+  .feature-detail-template .fdt-tabs { width: 100%; gap: 6px; padding: 0; overflow: visible; }
+  .feature-detail-template .fdt-tabs button { flex: 1 1 0; min-width: 0; padding: 10px 5px; font-size: 9px; white-space: nowrap; }
+  .feature-detail-template .fdt-download { min-height: 720px; }
+  .feature-detail-template .fdt-download h2 { font-size: 40px; line-height: .98; }
+  .feature-detail-template .fdt-download p { font-size: 15px; line-height: 1.45; }
+}
+
+@media (max-width: 380px) {
+  .feature-detail-template .fdt-hero h1 { font-size: 34px; }
+  .feature-detail-template .fdt-tabs button { font-size: 8px; }
+  .feature-detail-template .fdt-download h2 { font-size: 36px; }
+}

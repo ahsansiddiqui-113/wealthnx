@@ -1,0 +1,37 @@
+/* Why page middle panels (wp-mid-). 1u = 1px of a 1440px design frame. */
+.why-page .wp-mid { container-type: inline-size; --u: calc(100cqw / 1440); background: #0b0b0b; font-family: Arial, Helvetica, sans-serif; overflow: clip; }
+.why-page .wp-mid-sec { position: relative; }
+.why-page .wp-mid-white { height: calc(611 * var(--u)); border-radius: calc(40 * var(--u)); color: #000; background: linear-gradient(#fff 55%, #f4f4f4); position: relative; z-index: 1; }
+.why-page .wp-mid-dark { height: calc(892 * var(--u)); color: #fff; }
+.why-page .wp-mid-art { position: absolute; display: block; }
+.why-page .wp-mid-white .wp-mid-art { mix-blend-mode: multiply; }
+.why-page .wp-mid-a .wp-mid-art { left: calc(103 * var(--u)); top: calc(60 * var(--u)); width: calc(668 * var(--u)); }
+.why-page .wp-mid-b .wp-mid-art { left: calc(637 * var(--u)); top: calc(172 * var(--u)); width: calc(741 * var(--u)); }
+.why-page .wp-mid-c .wp-mid-art { left: calc(103 * var(--u)); top: calc(120 * var(--u)); width: calc(668 * var(--u)); }
+.why-page .wp-mid-txt { position: absolute; width: calc(480 * var(--u)); }
+.why-page .wp-mid-a .wp-mid-txt, .why-page .wp-mid-c .wp-mid-txt { left: calc(833 * var(--u)); }
+.why-page .wp-mid-b .wp-mid-txt { left: calc(77 * var(--u)); top: calc(341 * var(--u)); }
+.why-page .wp-mid-a .wp-mid-txt { top: calc(196 * var(--u)); }
+.why-page .wp-mid-c .wp-mid-txt { top: calc(205 * var(--u)); }
+.why-page .wp-mid-txt h2 { margin: 0; font-weight: 400; font-size: calc(48 * var(--u)); line-height: calc(52 * var(--u)); letter-spacing: -.02em; color: inherit; }
+.why-page .wp-mid-a h2 { width: calc(520 * var(--u)); }
+.why-page .wp-mid-b h2 { width: calc(480 * var(--u)); }
+.why-page .wp-mid-c h2 { width: calc(430 * var(--u)); }
+.why-page .wp-mid-txt h2 .wp-mid-teal { color: #1fbfae; font-weight: 700; }
+.why-page .wp-mid-txt p { margin: calc(40 * var(--u)) 0 0; font-size: calc(16 * var(--u)); line-height: calc(24 * var(--u)); color: inherit; }
+.why-page .wp-mid-b p { margin-top: calc(40 * var(--u)); }
+
+@media (max-width: 1000px) {
+  .why-page .wp-mid { --u: 1px; }
+  .why-page .wp-mid-sec { height: auto; display: flex; flex-direction: column; padding: 40px 20px; }
+  .why-page .wp-mid-b { margin-top: -30px; padding-top: 70px; }
+  .why-page .wp-mid-c { margin-top: -30px; }
+  .why-page .wp-mid-art, .why-page .wp-mid-a .wp-mid-art, .why-page .wp-mid-b .wp-mid-art, .why-page .wp-mid-c .wp-mid-art { position: static; width: 100%; }
+  .why-page .wp-mid-b .wp-mid-art { order: 2; margin-top: 24px; }
+  .why-page .wp-mid-txt, .why-page .wp-mid-a .wp-mid-txt, .why-page .wp-mid-b .wp-mid-txt, .why-page .wp-mid-c .wp-mid-txt { position: static; width: auto; }
+  .why-page .wp-mid-txt h2, .why-page .wp-mid-a h2, .why-page .wp-mid-b h2, .why-page .wp-mid-c h2 { width: auto; font-size: 32px !important; line-height: 38px !important; }
+  .why-page .wp-mid-txt p { font-size: 16px; line-height: 24px; margin-top: 20px; }
+}
+.why-page .wp-mid-art { -webkit-mask-image: radial-gradient(closest-side, #000 90%, transparent 100%); mask-image: radial-gradient(closest-side, #000 90%, transparent 100%); }
+.why-page .wp-mid-txt p { letter-spacing: -.01em; }
+.why-page .wp-mid-txt { width: calc(490 * var(--u)); }

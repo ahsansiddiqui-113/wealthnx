@@ -1,0 +1,31 @@
+# WealthNX uploads - user-uploaded images only. NEVER execute anything in here.
+Options -Indexes -ExecCGI
+
+# Turn off PHP completely for this folder (mod_php variants)
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php5.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+    php_flag engine off
+</IfModule>
+
+# CGI / FastCGI / suPHP: remove script handlers and serve scripts as plain text
+RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .php8 .phps .pht .phar .cgi .pl .py .sh
+AddType text/plain .php .phtml .php3 .php4 .php5 .php7 .php8 .phps .pht .phar .cgi .pl .py .sh
+
+# Belt and braces: refuse to serve script-like files at all
+<FilesMatch "\.(php[0-9]?|phtml|phps|pht|phar|cgi|pl|py|sh)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+</FilesMatch>
+
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>

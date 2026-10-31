@@ -1,0 +1,125 @@
+/* Mobile only (<= 700px): groups of sibling cards that used to stack vertically become horizontal swipe rows
+   (overflow-x scroll, scroll-snap, next card peeks, hidden scrollbar). Desktop is untouched: everything is inside the
+   media query, except the .hw3-ma-pills wrapper, which is `display: contents` (no box) above 700px.
+   Selectors start with `body` so they beat the per-page rules regardless of stylesheet order. */
+
+.hw3-ma-pills { display: contents; }
+@media (min-width: 901px) {
+  .hw3-ma > .hw3-ma-pills > .hw3-ma-pill { position: absolute; z-index: 1; }
+}
+
+@media (max-width: 700px) {
+  /* ---- shared row behaviour ---- */
+  body .ha-grid, body .hp-grid, body .hc-grid, body .fp-features__grid,
+  body .pr-tiles, body .gl-panel--cases .gl-cases, body .cp-stand__list, body .cp-topics__cluster,
+  body .generic-page .feature-grid, body .seo-landing-grid, body .seo-download-grid, body .hw3-ma-pills {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    grid-template-columns: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    box-sizing: border-box;
+  }
+  body .ha-grid::-webkit-scrollbar, body .hp-grid::-webkit-scrollbar, body .hc-grid::-webkit-scrollbar,
+  body .fp-features__grid::-webkit-scrollbar, body .pr-tiles::-webkit-scrollbar,
+  body .gl-panel--cases .gl-cases::-webkit-scrollbar, body .cp-stand__list::-webkit-scrollbar,
+  body .cp-topics__cluster::-webkit-scrollbar, body .seo-landing-grid::-webkit-scrollbar,
+  body .seo-download-grid::-webkit-scrollbar, body .hw3-ma-pills::-webkit-scrollbar { display: none; }
+
+  /* ---- groups that sit on the page gutter: bleed to the screen edges, first card aligns with the gutter ---- */
+  body .ha-grid, body .hp-grid, body .hc-grid, body .fp-features__grid {
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 8px 16px 18px;
+    scroll-padding-inline: 16px;
+    gap: 14px;
+  }
+  body .ha-grid > *, body .hp-grid > *, body .hc-grid > *, body .fp-features__grid > * {
+    flex: 0 0 min(82vw, 340px);
+    width: auto;
+    max-width: none;
+    margin-inline: 0;
+    scroll-snap-align: start;
+  }
+
+  /* ---- groups inside a panel / padded container: swipe inside the container ---- */
+  body .pr-tiles, body .gl-panel--cases .gl-cases, body .cp-stand__list, body .cp-topics__cluster,
+  body .hw3-ma-pills {
+    width: 100%;
+    padding: 6px 0 14px;
+    gap: 12px;
+  }
+  body .pr-tiles > *, body .gl-panel--cases .gl-cases > *, body .cp-stand__list > *, body .cp-topics__cluster > *,
+  body .hw3-ma-pills > * {
+    flex: 0 0 82%;
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+  body .cp-topics__cluster { margin: 0; }
+  body .cp-topics__cluster > .cp-tcard { width: auto; }
+  body .hw3-ma-pills > .hw3-ma-pill { flex: 0 0 auto; position: relative; z-index: 1; }
+
+  /* ---- legacy generic pages ---- */
+  body .seo-landing-grid > *, body .seo-download-grid > * { flex: 0 0 82%; scroll-snap-align: start; }
+  body .seo-landing-grid, body .seo-download-grid { gap: 14px; padding: 20px 20px 24px; scroll-padding-inline: 20px; }
+}
+
+@media (max-width: 700px) {
+  body .generic-page .feature-grid::-webkit-scrollbar { display: none; }
+  body .generic-page .feature-grid { width: 100%; padding: 6px 0 14px; gap: 12px; }
+  body .generic-page .feature-grid > * { flex: 0 0 82%; min-width: 0; scroll-snap-align: start; }
+}
+
+/* Compare "How WealthNX stand up" rows: a 3-column row is too wide for a slide, so lay each one out as a small card. */
+@media (max-width: 700px) {
+  body .cp-stand__list > li { display: flex; }
+  body .cp-stand__list .cp-row {
+    flex: 1;
+    min-height: 0;
+    grid-template-columns: minmax(0, 1fr) 40px;
+    grid-template-areas: 'logos go' 'title title' 'desc desc';
+    row-gap: 12px;
+    align-content: start;
+    padding: 22px 18px;
+  }
+  body .cp-stand__list .cp-row__title { align-self: start; }
+}
+
+
+/* Pager dots (SwipeDots.jsx) under a swipe row: mobile only, follow the row's scroll position. */
+.swipe-dots { display: none; }
+@media (max-width: 700px) {
+  .swipe-dots { display: flex; justify-content: center; align-items: center; gap: 6px; margin: 14px 0 0; }
+  .swipe-dots button {
+    width: 6px; height: 6px; padding: 0; border: 0; border-radius: 50%;
+    background: rgba(255, 255, 255, .28); cursor: pointer;
+    transition: background-color .2s ease, width .2s ease;
+  }
+  .swipe-dots button.is-active { width: 18px; border-radius: 3px; background: rgba(255, 255, 255, .9); }
+  .swipe-dots--light { margin: 4px 0 18px; }
+  .swipe-dots--light button { background: #cfd8d6; }
+  .swipe-dots--light button.is-active { background: #39b4a6; }
+}
+
+/* 44px hit area for the 6px pager dots (visual size unchanged) */
+@media (max-width: 700px) { .swipe-dots button { position: relative; } .swipe-dots button::before { content: ''; position: absolute; inset: -19px -6px; } }
+
+/* Touch (<=1000): invisible 44px hit areas for small controls; visual size unchanged. Only elements that are already positioned. */
+@media (max-width: 1000px) {
+  .pr-card__select, .hw2-tab, .hv-nav__btn, .bl-fchip, .gl-tab, .gl-chip, .gl-item { position: relative; }
+  .pr-card__select::after, .hw2-tab::after, .hv-nav__btn::after, .bl-fchip::after, .gl-tab::after, .gl-chip::after, .gl-item::after { content: ''; position: absolute; inset: -11px -7px; }
+  .hw-btn { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  .hr-hero-play { min-width: 44px; min-height: 44px; }
+}
+/* Readable floors for live copy on tablet/phone (desktop untouched) */
+@media (max-width: 1000px) {
+  .home-redesign .ha-card__head p { font-size: 12px; }
+  .pr-kicker { font-size: 11px; }
+}

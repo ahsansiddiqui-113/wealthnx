@@ -1,0 +1,182 @@
+/* Home: "We Protect What Matters To You" section (hp- prefix). */
+.home-redesign .hp-section {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  overflow: clip;
+  /* Inset white block: a few px of dark page shows on every edge. The negative top
+     margin trims the black section above (it ends with 120px of bottom padding). */
+  margin: -102px clamp(4px, .4vw, 8px) clamp(10px, 1.1vw, 18px);
+  padding: clamp(64px, 8.2vw, 132px) clamp(16px, 2.4vw, 40px) clamp(40px, 3.6vw, 56px);
+  border-radius: clamp(28px, 2.9vw, 46px);
+  color: #111;
+  font-family: var(--font-inter), 'Inter', Arial, sans-serif;
+  background:
+    radial-gradient(ellipse 23% 34% at 100% 30%,
+      rgba(116, 217, 198, .98) 0%, rgba(122, 219, 201, .78) 24%, rgba(136, 223, 207, .42) 55%, rgba(150, 228, 214, .14) 82%, rgba(160, 232, 220, 0) 100%),
+    radial-gradient(ellipse 13% 27% at 0% 66%,
+      rgba(190, 238, 196, .95) 0%, rgba(196, 240, 202, .62) 45%, rgba(205, 243, 210, .2) 80%, rgba(210, 245, 214, 0) 100%),
+    linear-gradient(180deg, #fff 0%, #fff 62%, #f4f4f4 100%);
+}
+
+.hp-inner { width: 100%; max-width: max(1000px, min(80vw, 1290px)); margin: 0 auto; }
+
+.home-redesign .hp-title {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(30px, 3.45vw, 56px);
+  line-height: 1.15;
+  font-weight: 400;
+  letter-spacing: -.035em;
+  color: #111;
+}
+.home-redesign .hp-title b { font-weight: 700; color: #39b4a6; }
+
+/* ---- Cards ---- */
+.hp-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.25vw, 20px);
+  margin-top: clamp(40px, 6.1vw, 98px);
+}
+
+.hp-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 10px 24px 20px 28px;
+  border: 1px solid rgba(24, 70, 60, .08);
+  border-radius: 152px 152px 22px 22px;
+  background: rgba(255, 255, 255, .5);
+  transition: background-color .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.hp-card::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  width: 46%;
+  height: 4px;
+  border-radius: 4px;
+  background: #39b4a6;
+  transform: translateX(-50%) scaleX(.4);
+  opacity: 0;
+  transition: opacity .25s ease, transform .25s ease;
+}
+.hp-card:hover,
+.hp-card:focus-within {
+  background: #fff;
+  border-color: transparent;
+  box-shadow: 0 14px 36px rgba(26, 52, 50, .13), 0 2px 8px rgba(26, 52, 50, .05);
+}
+.hp-card:hover::after,
+.hp-card:focus-within::after { opacity: 1; transform: translateX(-50%) scaleX(1); }
+
+.hp-card__visual {
+  margin: 0 -18px;
+  aspect-ratio: 562 / 438;
+  overflow: hidden;
+  border-radius: 999px 999px 0 0;
+}
+.hp-card__visual img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* bare illustrations: show whole, don't crop */
+  mix-blend-mode: multiply;
+}
+
+/* Row beneath the illustration: reserved on every card so titles align. */
+.hp-card__badges {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 24px;
+  margin: 3px 0 9px;
+}
+.hp-card__badges img { display: block; width: auto; height: 20px; filter: invert(1); }
+.hp-card__badges svg { display: block; width: 24px; height: 24px; color: #111; }
+
+.home-redesign .hp-card h3 {
+  margin: 0;
+  font-size: clamp(16px, 1.3vw, 21px);
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: -.03em;
+  color: #111;
+}
+.home-redesign .hp-card p {
+  margin: 8px 0 0;
+  font-size: clamp(12px, .8vw, 13px);
+  line-height: 1.34;
+  letter-spacing: -.01em;
+  color: #8c8c8c;
+}
+.hp-card--iso { padding-left: 33px; }
+.hp-card--iso p { margin-top: 12px; }
+
+/* ---- Stats line ---- */
+.home-redesign .hp-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px clamp(18px, 2.4vw, 38px);
+  margin-top: clamp(44px, 6.4vw, 104px);
+  font-size: clamp(14px, 1.2vw, 19px);
+  line-height: 1.3;
+  letter-spacing: -.02em;
+  color: #8a8a8a;
+}
+.hp-stats__lead { font-style: italic; font-weight: 500; color: #333; }
+.hp-stats__dot { flex: none; width: 5px; height: 5px; border-radius: 50%; background: #111; }
+.hp-stats__rating,
+.hp-stats__downloads { display: inline-flex; align-items: baseline; gap: .45em; white-space: nowrap; }
+.hp-stats__rating { align-items: center; }
+.hp-stats__stars { display: inline-flex; gap: 2px; align-self: center; }
+.hp-stats__stars svg { display: block; width: 15px; height: 15px; fill: #f6c832; }
+.hp-stats strong { font-weight: 600; color: #111; }
+.hp-stats__score { font-weight: 500; color: #222; }
+.hp-stats__rating span:last-child,
+.hp-stats__downloads span { font-size: .86em; font-weight: 400; }
+
+@media (max-width: 1000px) {
+  .hp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .hp-card { padding-left: 32px; padding-right: 28px; }
+  .hp-card__visual { margin: 0 -22px; }
+  .hp-card h3 { font-size: 19px; }
+  .hp-card p { font-size: 13px; }
+}
+
+@media (max-width: 700px) {
+  .hp-stats { flex-direction: column; gap: 14px; }
+  .hp-stats__dot { display: none; }
+}
+
+@media (max-width: 600px) {
+  .home-redesign .hp-section { margin-top: -96px; padding-left: 14px; padding-right: 14px; }
+  .hp-grid { grid-template-columns: minmax(0, 1fr); max-width: 340px; margin-left: auto; margin-right: auto; gap: 18px; }
+  .hp-stats__rating { flex-wrap: wrap; justify-content: center; white-space: normal; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hp-card, .hp-card::after { transition: none; }
+}
+
+/* mobile: Protect section matched to the reference (<= 600px). */
+@media (max-width: 600px) {
+  .home-redesign .hp-section { padding: 60px 14px 64px; }
+  .home-redesign .hp-title { font-size: 41.5px; line-height: 1.2; }
+  /* Centered swipe row: ~280px card, neighbours peek on both sides (overrides MobileSwipe.css). */
+  body .home-redesign .hp-grid {
+    margin-top: 40px;
+    padding: 8px calc(50vw - 154px) 26px;
+    scroll-padding-inline: calc(50vw - 154px);
+    gap: 14px;
+  }
+  body .home-redesign .hp-grid > * { flex: 0 0 280px; scroll-snap-align: center; background: #fff; box-shadow: 0 14px 36px rgba(26, 52, 50, .13), 0 2px 8px rgba(26, 52, 50, .05); }
+  body .home-redesign .hp-grid > *::after { opacity: 1; transform: translateX(-50%) scaleX(1); }
+  .home-redesign .hp-stats { margin-top: 14px; gap: 14px; text-align: center; }
+  .home-redesign .hp-stats__lead { font-size: 21px; }
+}

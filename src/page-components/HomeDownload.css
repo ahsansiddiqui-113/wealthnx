@@ -1,0 +1,211 @@
+/* Home: "Your Financial clarity starts here" download section (hd- prefix).
+   Sizes are N * var(--u): 1u = 1px of the Figma frame, which is 1059px wide (--u = section width / 1059).
+   The phones box (520 x 344 design px) is its own scale (--pu, 1pu = 1px of that box) so the five pills,
+   positioned in % of the box, stay glued to the phones when the box is enlarged on mobile. */
+.home-redesign .hd {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background: #0b0b0b;
+  color: #fff;
+  font-family: var(--font-inter), 'Inter', Arial, Helvetica, sans-serif;
+}
+/* teal glow behind the phones + fine speckle/grain */
+.hd::before,
+.hd::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.hd::before {
+  background:
+    radial-gradient(ellipse 34% 75% at 66% 6%, rgba(22, 92, 84, .62) 0%, rgba(14, 54, 50, .3) 50%, rgba(11, 11, 11, 0) 100%);
+}
+.hd::after {
+  opacity: .34;
+  mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 .5  0 0 0 0 .62  0 0 0 0 .6  0 0 0 .16 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+.hd-inner {
+  container-type: inline-size;
+  width: 100%;
+  --u: calc(100cqw / 1059);
+}
+.hd-stage {
+  position: relative;
+  height: calc(392 * var(--u));
+}
+
+/* ---- Copy (left) ---- */
+.hd-copy {
+  position: absolute;
+  left: calc(137 * var(--u));
+  top: calc(100 * var(--u));
+  width: calc(260 * var(--u));
+}
+.home-redesign .hd-title {
+  margin: 0;
+  font-size: calc(28 * var(--u)) !important; /* beats the global mobile h2 !important */
+  line-height: calc(28 / 28);
+  font-weight: 500;
+  letter-spacing: -.013em;
+  color: #fff;
+}
+.hd-title span,
+.hd-text span { display: block; white-space: nowrap; }
+.home-redesign .hd-text {
+  margin: calc(24 * var(--u)) 0 0;
+  font-size: calc(10.4 * var(--u));
+  line-height: calc(12.3 / 10.4);
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #9d9d9d;
+}
+.hd-actions {
+  margin-top: calc(33 * var(--u));
+  display: flex;
+  flex-direction: column;
+  gap: calc(10 * var(--u));
+  align-items: flex-start;
+}
+.home-redesign .hd-btn {
+  display: flex;
+  align-items: center;
+  gap: calc(9 * var(--u));
+  width: calc(145 * var(--u));
+  height: calc(31 * var(--u));
+  padding: 0 0 0 calc(14 * var(--u));
+  border-radius: calc(8 * var(--u));
+  font-size: calc(10.4 * var(--u));
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform .18s ease, filter .18s ease;
+}
+.home-redesign .hd-btn:hover { transform: translateY(-2px); filter: brightness(1.06); }
+.home-redesign .hd-btn svg {
+  flex: 0 0 auto;
+  width: calc(13 * var(--u));
+  height: calc(13 * var(--u));
+  fill: currentColor;
+}
+.home-redesign .hd-btn--ios { background: #fff; color: #000; }
+.home-redesign .hd-btn--android {
+  color: #f1f1f1;
+  border: 1px solid rgba(255, 255, 255, .13);
+  background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+}
+
+/* ---- Phones (right) ---- */
+.hd-phones {
+  position: absolute;
+  left: calc(440 * var(--u));
+  top: calc(48 * var(--u));
+  width: calc(520 * var(--u));
+  height: calc(344 * var(--u));
+  container-type: inline-size;
+  --pu: calc(100cqw / 520);
+}
+.hd-phones__art {
+  position: absolute;
+  inset: 0;
+  /* fade out at the bottom as in the design */
+  -webkit-mask-image: linear-gradient(180deg, #000 0, #000 55%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0, #000 55%, transparent 100%);
+}
+.hd-ph { position: absolute; display: block; height: auto; }
+.hd-ph--glow   { left: calc(50 * var(--pu)); top: calc(-200 * var(--pu)); width: calc(520 * var(--pu)); opacity: 1; 
+  /* sits outside the masked art box (its mask clipped the glow to a hard-edged rectangle) and fades out radially */
+  -webkit-mask-image: radial-gradient(closest-side, #000 30%, transparent 100%); mask-image: radial-gradient(closest-side, #000 30%, transparent 100%); }
+.hd-ph--left   { left: calc(56.2 * var(--pu)); top: calc(73.5 * var(--pu)); width: calc(249 * var(--pu)); }
+.hd-ph--right  { left: calc(290.4 * var(--pu)); top: calc(75.3 * var(--pu)); width: calc(245 * var(--pu)); }
+.hd-ph--centre { left: calc(197.6 * var(--pu)); top: calc(30.2 * var(--pu)); width: calc(187.5 * var(--pu)); }
+.hd-ph--card   { left: calc(175 * var(--pu)); top: calc(78 * var(--pu)); width: calc(227 * var(--pu)); }
+
+.hd-pill {
+  position: absolute;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(5 * var(--pu));
+  height: calc(24.3 * var(--pu));
+  border-radius: 999px;
+  font-size: calc(9.2 * var(--pu));
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  line-height: 1;
+  white-space: nowrap;
+  color: #fff;
+  background: linear-gradient(180deg, #2fbdac 0%, #1e9d90 100%);
+  box-shadow:
+    0 0 calc(14 * var(--pu)) rgba(32, 207, 186, .5),
+    inset 0 calc(1 * var(--pu)) 0 rgba(255, 255, 255, .2);
+}
+.hd-pill b { font-weight: inherit; }
+.hd-pill svg {
+  flex: 0 0 auto;
+  width: calc(8 * var(--pu));
+  height: calc(8 * var(--pu));
+  color: #7ff0dd;
+}
+.hd-pill--top      { left: calc(239.4 / 520 * 100%); top: calc(-10.6 / 344 * 100%); width: calc(102 * var(--pu)); }
+.hd-pill--crypto   { left: calc(63.2 / 520 * 100%); top: calc(76.1 / 344 * 100%); width: calc(93.7 * var(--pu)); }
+.hd-pill--net      { left: calc(414.4 / 520 * 100%); top: calc(76.1 / 344 * 100%); width: calc(98.9 * var(--pu)); }
+.hd-pill--stocks   { left: calc(21.6 / 520 * 100%); top: calc(186 / 344 * 100%); width: calc(94.5 * var(--pu)); }
+.hd-pill--accounts { left: calc(451 / 520 * 100%); top: calc(186 / 344 * 100%); width: calc(105 * var(--pu)); }
+
+/* ---- Tablet / mobile: copy on top, phones below ---- */
+@media (max-width: 760px) {
+  .hd-inner { --u: 1px; }
+  .hd-stage {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 60px 22px 8px;
+  }
+  .hd-copy { position: static; width: auto; }
+  .home-redesign .hd-title { font-size: 32px !important; line-height: 1.2; letter-spacing: -.03em; }
+  .home-redesign .hd-text { margin-top: 16px; font-size: 14px; line-height: 1.35; color: #8f8f8f; }
+  .hd-title span, .hd-text span { white-space: normal; display: inline; }
+  .hd-title span:first-child::after { content: ' '; }
+  .hd-actions { margin-top: 24px; gap: 10px; }
+  .home-redesign .hd-btn { width: 192px; height: 44px; gap: 12px; padding-left: 18px; border-radius: 11px; font-size: 14px; }
+  .home-redesign .hd-btn svg { width: 18px; height: 18px; }
+  .hd-phones {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 520 / 344;
+    margin-top: 26px;
+    --pu: calc(100cqw / 520 * 1.5);
+  }
+  .hd-phones__art { --pu: calc(100cqw / 520); }
+  .hd-pill--top { left: 50%; transform: translateX(-50%); }
+  .hd-pill--net { left: auto; right: 0; }
+  .hd-pill--accounts { left: auto; right: -3%; }
+}
+
+/* Home variant: one composite picture (dark phones, glow and pills baked in), centred on the phones box, fading out at the bottom. */
+.hd-bottom { position: absolute; left: -9%; top: -6%; width: 118%; height: auto; -webkit-mask-image: linear-gradient(180deg, #000 0, #000 60%, transparent 100%); mask-image: linear-gradient(180deg, #000 0, #000 60%, transparent 100%); }
+@media (max-width: 760px) { .hd-bottom { left: -2%; top: -4%; width: 104%; } }
+
+.home-redesign .hd-btn--trial { background: #1bc8bb; color: #04100f; padding: 0 22px; width: auto; justify-content: center; }
+
+/* Long headline / blurb (feature pages, home): let the copy wrap inside the left column so it never runs under the phones. */
+@media (min-width: 761px) {
+  .home-redesign .hd--wrap .hd-copy { left: calc(100 * var(--u)); top: calc(46 * var(--u)); width: calc(270 * var(--u)); }
+  .home-redesign .hd--wrap .hd-title { font-size: calc(24 * var(--u)) !important; line-height: 1.15; }
+  .hd--wrap .hd-title span, .hd--wrap .hd-text span { display: inline; white-space: normal; }
+  .home-redesign .hd--wrap .hd-text { margin-top: calc(16 * var(--u)); font-size: calc(10 * var(--u)); line-height: 1.4; }
+  .hd--wrap .hd-actions { margin-top: calc(22 * var(--u)); }
+}

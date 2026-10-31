@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.inexor.wealthnx.ai",
+      "sha256_cert_fingerprints": [
+        "93:2e:96:79:75:91:0f:3d:53:b7:b0:59:c7:75:bc:41:10:da:02:33:2e:64:a0:6a:62:74:e6:e0:24:17:b6:75"
+      ]
+    }
+  }
+]

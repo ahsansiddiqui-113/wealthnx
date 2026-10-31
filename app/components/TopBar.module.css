@@ -1,0 +1,555 @@
+.header {
+    position: relative;
+    z-index: 1000;
+    /* tuck the next section 1px under the header: at fractional zoom/DPR a sub-pixel gap showed the dark page colour as a grey hairline */
+    margin-bottom: -1px;
+    width: 100%;
+    min-width: 0;
+    background: #fff;
+    color: #151515;
+    font-family: var(--font-inter), Montserrat, Arial, sans-serif;
+}
+
+.headerInner {
+    width: min(1710px, calc(100% - 72px));
+    min-height: 118px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 190px minmax(0, 1fr) 310px;
+    align-items: center;
+    gap: 30px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    width: max-content;
+}
+
+.brand img {
+    display: block;
+    width: 138px;
+    height: auto;
+    object-fit: contain;
+    /* The supplied brand mark is a white SVG; invert only in this white header. */
+    filter: invert(1);
+}
+
+.desktopNav {
+    justify-self: center;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(22px, 2vw, 44px);
+    white-space: nowrap;
+}
+
+.navLink,
+.featuresTrigger {
+    border: 0;
+    background: transparent;
+    padding: 13px 0;
+    color: #404040;
+    font: 500 clamp(16px, 1.12vw, 20px)/1.2 var(--font-inter), Montserrat, Arial, sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navLink:hover,
+.featuresTrigger:hover,
+.navLink:focus-visible,
+.featuresTrigger:focus-visible,
+.navLink.active,
+.featuresTrigger.active {
+    color: #090909;
+}
+
+.navLink:focus-visible,
+.featuresTrigger:focus-visible,
+.login:focus-visible,
+.getStarted:focus-visible,
+.mobileToggle:focus-visible,
+.mobileLink:focus-visible,
+.mobileFeatureButton:focus-visible {
+    outline: 3px solid #15c7b8;
+    outline-offset: 4px;
+}
+
+.featuresWrap {
+    position: relative;
+}
+
+.featuresTrigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.chevron {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-top: -4px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    font-size: 0;
+    line-height: 1;
+    transform: rotate(45deg);
+    transition: transform .18s ease;
+}
+
+.open .chevron {
+    margin-top: 3px;
+    transform: rotate(225deg);
+}
+
+.actions {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.login,
+.getStarted {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    padding: 0 27px;
+    border-radius: 12px;
+    font: 600 18px/1 var(--font-inter), Montserrat, Arial, sans-serif;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.login {
+    border: 2px solid #1c1c1c;
+    color: #252525;
+    background: #fff;
+}
+
+.getStarted {
+    color: #fff;
+    background: #111;
+    box-shadow: 0 12px 18px rgba(0, 0, 0, .18);
+}
+
+.login:hover,
+.getStarted:hover {
+    transform: translateY(-2px);
+}
+
+.getStarted:hover {
+    background: #252525;
+    box-shadow: 0 14px 22px rgba(0, 0, 0, .24);
+}
+
+.megaMenu {
+    position: fixed;
+    top: 108px;
+    left: 50%;
+    width: min(1100px, 92vw);
+    transform: translateX(-50%);
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 32px;
+    box-shadow: 0 28px 65px rgba(0, 0, 0, .15);
+    padding: 26px 36px 30px;
+    white-space: normal;
+    max-height: calc(100vh - 124px);
+    max-height: calc(100dvh - 124px);
+    overflow-y: auto;
+    animation: menuIn .18s ease-out both;
+}
+
+@keyframes menuIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.megaMenuContent {
+    display: grid;
+    gap: 22px;
+}
+
+.megaGroup {
+    min-width: 0;
+}
+
+.megaSectionHeading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 14px;
+    color: #0b5f56;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.megaSectionHeading::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #ececec;
+}
+
+.megaSectionHeading span {
+    padding: 4px 10px;
+    line-height: 16px;
+    border-radius: 8px;
+    background: #bfeee6;
+}
+
+.megaItems {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    column-gap: 12px;
+    row-gap: 14px;
+}
+
+.megaItem {
+    min-width: 0;
+    min-height: 44px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #1a1a1a;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: color .16s ease;
+}
+
+.megaItem:hover .megaIcon,
+.megaItem:focus-visible .megaIcon {
+    border-color: #15c7b8;
+}
+
+.megaItem:hover {
+    color: #0b5f56;
+}
+
+.megaItem:focus-visible {
+    outline: 3px solid #15c7b8;
+    outline-offset: 3px;
+}
+
+.megaIcon {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    border: 1px solid #e3e8ee;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: #fff;
+    transition: border-color .16s ease;
+}
+
+.megaIcon img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.megaItemCopy {
+    min-width: 0;
+    font: 500 15px/18px var(--font-inter), Inter, Arial, sans-serif;
+}
+
+.mobileToggle,
+.mobileMenu {
+    display: none;
+}
+
+@media (max-width: 1250px) {
+    .headerInner {
+        width: min(1140px, calc(100% - 48px));
+        grid-template-columns: 145px minmax(0, 1fr) 245px;
+        gap: 22px;
+    }
+
+    .brand img {
+        width: 104px;
+    }
+
+    .desktopNav {
+        gap: 20px;
+    }
+
+    .navLink,
+    .featuresTrigger {
+        font-size: 14px;
+    }
+
+    .login,
+    .getStarted {
+        min-height: 46px;
+        padding: 0 18px;
+        font-size: 15px;
+    }
+
+    .actions {
+        gap: 10px;
+    }
+}
+
+/* The full navigation needs more than a tablet viewport.  Switching here
+   prevents the desktop links from widening the document and hiding the logo. */
+@media (max-width: 1280px) {
+    .headerInner {
+        min-height: 82px;
+        width: calc(100% - 40px);
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 16px;
+    }
+
+    .desktopNav,
+    .actions {
+        display: none;
+    }
+
+    .mobileToggle {
+        width: 48px;
+        height: 48px;
+        display: grid;
+        place-content: center;
+        gap: 5px;
+        border: 1px solid #dedede;
+        border-radius: 10px;
+        background: #fff;
+        cursor: pointer;
+    }
+
+    .mobileToggle span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: #151515;
+    }
+
+    .mobileMenu {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 0;
+        left: 0;
+        display: grid;
+        padding: 20px;
+        max-height: calc(100vh - 83px);
+        max-height: calc(100dvh - 83px);
+        overflow-y: auto;
+        background: #fff;
+        border-top: 1px solid #eee;
+        box-shadow: 0 18px 32px rgba(0, 0, 0, .12);
+    }
+
+    .mobileLink,
+    .mobileFeatureButton,
+    .backButton {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border: 0;
+        border-bottom: 1px solid #eee;
+        padding: 10px 4px;
+        color: #252525;
+        background: #fff;
+        font: 600 16px/1.2 var(--font-inter), Montserrat, Arial, sans-serif;
+        text-align: left;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .mobileActions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding-top: 20px;
+    }
+
+    .mobileActions .login,
+    .mobileActions .getStarted {
+        min-height: 48px;
+        padding: 0 12px;
+        font-size: 15px;
+    }
+
+    .mobileMenu .megaMenuContent {
+        display: grid;
+        gap: 26px;
+        padding: 10px 0 20px;
+    }
+
+    .mobileMenu .megaSectionHeading {
+        margin-bottom: 12px;
+    }
+
+    .mobileMenu .megaItems {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        column-gap: 8px;
+        row-gap: 4px;
+    }
+
+    .mobileMenu .megaItem {
+        min-height: 54px;
+        padding: 6px 4px;
+        gap: 8px;
+    }
+
+    .mobileMenu .megaIcon {
+        width: 38px;
+        height: 38px;
+        flex-basis: 38px;
+    }
+
+    .mobileMenu .megaIcon img {
+        width: 22px;
+        height: 22px;
+    }
+
+    .mobileMenu .megaItemCopy {
+        font-size: 12px;
+    }
+
+}
+
+@media (max-width: 520px) {
+    .headerInner {
+        width: calc(100% - 32px);
+        min-height: 72px;
+    }
+
+    .brand img {
+        width: 96px;
+    }
+
+    .mobileToggle {
+        width: 44px;
+        height: 44px;
+    }
+
+    .mobileMenu {
+        padding: 16px;
+        max-height: calc(100vh - 73px);
+        max-height: calc(100dvh - 73px);
+    }
+
+    .mobileMenu .megaItems {
+        grid-template-columns: 1fr;
+    }
+
+    .mobileActions {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .megaMenu {
+        animation: none;
+    }
+
+    .login,
+    .getStarted,
+    .megaItem {
+        transition: none;
+    }
+}
+
+/* ------------------------------------------------------------------
+   Dark / transparent variant (tone="dark"): header floats over a dark hero.
+   The mega menu and the mobile dropdown panel intentionally stay white.
+   ------------------------------------------------------------------ */
+.dark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: transparent;
+    color: #fff;
+}
+
+.dark .brand img {
+    /* The logo SVG is natively white: no invert on dark backgrounds. */
+    filter: none;
+}
+
+.dark .navLink,
+.dark .featuresTrigger {
+    color: rgba(255, 255, 255, .92);
+}
+
+.dark .navLink:hover,
+.dark .featuresTrigger:hover,
+.dark .navLink:focus-visible,
+.dark .featuresTrigger:focus-visible {
+    color: #fff;
+}
+
+.dark .navLink.active,
+.dark .featuresTrigger.active {
+    color: #1bc8bb;
+}
+
+.dark .actions .login {
+    border: 1.5px solid rgba(255, 255, 255, .72);
+    color: #fff;
+    background: transparent;
+}
+
+.dark .actions .login:hover {
+    background: rgba(255, 255, 255, .1);
+}
+
+.dark .actions .getStarted {
+    color: #111;
+    background: #fff;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, .35);
+}
+
+.dark .actions .getStarted:hover {
+    background: #f1f1f1;
+    box-shadow: 0 14px 26px rgba(0, 0, 0, .42);
+}
+
+.dark .megaMenu,
+.dark .mobileMenu {
+    color: #151515;
+}
+
+@media (max-width: 1280px) {
+    .dark .mobileToggle {
+        border-color: rgba(255, 255, 255, .4);
+        background: rgba(255, 255, 255, .1);
+    }
+
+    .dark .mobileToggle span {
+        background: #fff;
+    }
+}
+
+/* Mobile menu: "Features" is a real link to /features/; the chevron opens the feature list. */
+@media (max-width: 1280px) {
+    .mobileFeatureRow { display: flex; align-items: stretch; border-bottom: 1px solid #eee; }
+    .mobileFeatureRow .mobileLink { flex: 1; border-bottom: 0; }
+    .mobileFeatureExpand {
+        width: 56px; min-height: 48px; border: 0; border-left: 1px solid #eee; background: #fff;
+        color: #252525; font-size: 22px; line-height: 1; cursor: pointer;
+    }
+    .dark .mobileFeatureExpand { background: transparent; color: inherit; border-left-color: rgba(255,255,255,.14); }
+}
+
+/* viewport-fit=cover: keep header/menu clear of notch and home bar */
+.header { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); box-sizing: border-box; }
+@media (max-width: 1250px) { .mobileMenu { padding-bottom: calc(16px + env(safe-area-inset-bottom)); } }

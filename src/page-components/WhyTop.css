@@ -1,0 +1,33 @@
+/* /why-wealthnx/ hero + "One Place" (wp-top-). 1u = 1px of a 1440px design frame. */
+.wp-top-hero, .wp-top-one { container-type: inline-size; --u: calc(100cqw / 1440); }
+
+.wp-top-hero { background: linear-gradient(180deg, #fff 0, #fff 40%, #f3f3f3 100%); color: #090c0c; border-radius: 0 0 calc(27 * var(--u)) calc(27 * var(--u)); overflow: hidden; position: relative; z-index: 1; }
+.wp-top-hero__in { position: relative; height: calc(712 * var(--u)); }
+.wp-top-hero__copy { position: absolute; left: calc(103 * var(--u)); top: calc(255 * var(--u)); width: calc(560 * var(--u)); }
+.wp-top-hero h1 { margin: 0; font-size: calc(48 * var(--u)); line-height: calc(60 * var(--u)); font-weight: 400; letter-spacing: -.035em; color: #0b0b0b; }
+.wp-top-hero h1 em { display: block; font-style: normal; font-weight: 700; color: #1bbcaf; }
+.wp-top-hero p { margin: calc(34 * var(--u)) 0 0; max-width: calc(440 * var(--u)); font-size: calc(17 * var(--u)); line-height: calc(21 * var(--u)); color: #333; letter-spacing: -.01em; }
+.wp-top-hero__img { position: absolute; left: calc(652 * var(--u)); top: calc(180 * var(--u)); width: calc(682 * var(--u)); height: auto; mix-blend-mode: multiply; -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent), linear-gradient(180deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent), linear-gradient(180deg, transparent, #000 6%, #000 94%, transparent); -webkit-mask-composite: source-in; mask-composite: intersect; }
+
+.wp-top-one { position: relative; background: #0b0b0b; margin-top: calc(-27 * var(--u)); padding-top: calc(27 * var(--u)); overflow: hidden; color: #fff; }
+.wp-top-one::before { content: ''; position: absolute; left: 0; bottom: 0; width: calc(560 * var(--u)); height: calc(300 * var(--u)); background: radial-gradient(ellipse at 30% 100%, rgba(27, 188, 175, .18), transparent 65%); pointer-events: none; }
+.wp-top-one__in { position: relative; height: calc(548 * var(--u)); }
+.wp-top-one__swirl { position: absolute; left: calc(430 * var(--u)); top: calc(139 * var(--u)); width: calc(568 * var(--u)); height: auto; pointer-events: none; }
+.wp-top-one h2 { position: absolute; left: 0; right: 0; top: calc(155 * var(--u)); margin: 0 auto; width: calc(520 * var(--u)); text-align: center; font-size: calc(47 * var(--u)) !important; line-height: calc(58 * var(--u)) !important; font-weight: 300; letter-spacing: -.035em; color: #fff; }
+.wp-top-one p { position: absolute; left: 0; right: 0; top: calc(291 * var(--u)); margin: 0 auto; width: calc(540 * var(--u)); text-align: center; font-size: calc(15 * var(--u)); line-height: calc(24 * var(--u)); color: #c4c4c4; letter-spacing: -.01em; }
+
+@media (max-width: 1000px) {
+  .wp-top-hero, .wp-top-one { --u: 1px; }
+  .wp-top-hero__in { height: auto; padding: 120px 24px 32px; }
+  .wp-top-hero__copy, .wp-top-hero__img { position: static; width: auto; }
+  .wp-top-hero h1 { font-size: 34px !important; line-height: 1.2 !important; }
+  .wp-top-hero p { margin-top: 18px; max-width: none; font-size: 15px; line-height: 1.45; }
+  .wp-top-hero__img { display: block; width: 100%; margin-top: 24px; }
+  .wp-top-one { margin-top: -24px; padding-top: 24px; }
+  .wp-top-one__in { height: auto; padding: 56px 24px 72px; display: flex; flex-direction: column; align-items: center; }
+  .wp-top-one__swirl { display: none; }
+  .wp-top-one h2, .wp-top-one p { position: static; width: auto; max-width: 520px; }
+  .wp-top-one h2 { font-size: 32px !important; line-height: 1.2 !important; }
+  .wp-top-one p { margin-top: 20px; font-size: 15px; line-height: 1.5; }
+}
+

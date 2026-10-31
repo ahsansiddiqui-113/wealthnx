@@ -1,0 +1,54 @@
+/* Motion system. See docs/MOTION.md. transform/opacity only (via the individual `translate`/`scale` properties so
+   they never fight a component's own `transform`). Hidden states exist only while <html> has .js-motion, which
+   MotionRoot adds, so no-JS / pre-hydration / reduced-motion visitors always see the content. */
+:root {
+  --dur-micro: 120ms;
+  --dur-fast: 200ms;
+  --dur-base: 350ms;
+  --dur-reveal: 600ms;
+  --dur-slow: 900ms;
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --ease-in-out: cubic-bezier(.65, 0, .35, 1);
+  --rv-y: 24px;
+  --rv-stagger: 70ms;
+}
+@media (max-width: 700px) {
+  :root { --rv-y: 12px; --rv-stagger: 35ms; --dur-reveal: 450ms; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* transition lives on the revealed state only, so the initial hide is instant (no running animations at load) */
+  .js-motion [data-reveal].is-in {
+    transition:
+      opacity var(--dur-reveal) var(--ease-out) calc(min(var(--i, 0), 6) * var(--rv-stagger)),
+      translate var(--dur-reveal) var(--ease-out) calc(min(var(--i, 0), 6) * var(--rv-stagger)),
+      scale var(--dur-reveal) var(--ease-out) calc(min(var(--i, 0), 6) * var(--rv-stagger));
+  }
+  .js-motion [data-reveal]:not(.is-in) { opacity: 0; translate: 0 var(--rv-y); transition: none; }
+  .js-motion [data-reveal="fade"]:not(.is-in) { translate: none; }
+  .js-motion [data-reveal="scale"]:not(.is-in) { translate: none; scale: .96; }
+}
+
+/* Hover micro-interactions: pointer devices only (no sticky hover on touch). */
+@media (hover: hover) and (pointer: fine) {
+  .home-redesign .ha-card,
+  .home-redesign .hc-card,
+  .home-redesign .hv-vc,
+  .home-redesign .hv-ac { transition: translate var(--dur-fast) var(--ease-out); }
+  .home-redesign .hp-card { transition: translate var(--dur-fast) var(--ease-out), background-color .25s ease, box-shadow .25s ease, border-color .25s ease; }
+  .home-redesign .hpf-card { transition: translate var(--dur-fast) var(--ease-out), background .3s ease, box-shadow .3s ease, color .3s ease; }
+  .home-redesign .ha-card:hover,
+  .home-redesign .hc-card:hover,
+  .home-redesign .hp-card:hover,
+  .home-redesign .hpf-card:hover,
+  .home-redesign .hv-vc:hover,
+  .home-redesign .hv-ac:hover { translate: 0 -4px; }
+  .home-redesign .hp-card__visual img { transition: scale var(--dur-base) var(--ease-out); }
+  .home-redesign .hp-card:hover .hp-card__visual img { scale: 1.05; }
+  button:active, a[class*="btn"]:active { scale: .97; }
+}
+
+/* Tilt (data-tilt): MotionRoot writes inline transform on pointer move; this only adds the spring back. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  [data-tilt] { transition: transform var(--dur-base) var(--ease-out); will-change: transform; }
+}

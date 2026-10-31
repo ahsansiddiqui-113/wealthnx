@@ -1,0 +1,52 @@
+/* Hero phone at the Figma size, on every page that shows one (/features/, /features/<slug>/, home, Wealth Genie).
+   The picture is placed so its measured "core" (the phone, see heroCore.js) sits in a box that is
+     desktop: 629px tall in the 1593px frame (scales with the screen, capped at 1.2x)
+     mobile:  404px tall in the 390px frame (326 x 404 phone group, centred)
+   Pictures with wide floating cards are scaled down just enough to stay inside the box (+5% desktop, screen width on mobile)
+   so the cards never sit on top of the headline or the buttons.
+   The old per-page sizing rules are overridden with !important on purpose (they differ per page and per breakpoint). */
+
+.fdt-hero__visual:has(> .fdt-hero-phone[data-core]) {
+  /* width-based Figma scale, but never taller than the screen: nav bar (~117px) + 160px top padding + phone + 58px bottom padding must fit in the window height (min 0.6) */
+  --fk: max(0.6px, min(calc(100vw / 1593), calc((100svh - 340px) / 629), 1.2px));
+  --mk: min(calc(100vw / 390), 1.4px);
+  --boxh: calc(629 * var(--fk));
+  container-type: inline-size;
+  position: relative !important;
+  display: grid !important;
+  place-items: center;
+  height: var(--boxh) !important;
+  overflow: visible;
+}
+.fdt-hero__visual:has(> .fdt-hero-phone[data-core]) .fdt-hero__glow {
+  width: calc(800 * var(--fk)) !important;
+  height: calc(600 * var(--fk)) !important;
+}
+.fdt-hero-phone[data-core] {
+  /* effective px per source px (defined here because --s, --vw come from the picture itself) */
+  --se: min(calc(var(--s) * var(--fk)), calc(1.05 * 100cqw / var(--vw)));
+  position: absolute !important;
+  width: calc(var(--iw) * var(--se)) !important;
+  height: auto !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  left: calc(50% - var(--cx) * var(--se)) !important;
+  top: calc((var(--boxh) - var(--ch) * var(--se)) / 2 - var(--cy) * var(--se)) !important;
+  flex: none;
+}
+
+@media (max-width: 700px) {
+  .fdt-hero__visual:has(> .fdt-hero-phone[data-core]) {
+    --boxh: calc(404 * var(--mk));
+    width: 100%;
+    margin: 26px 0 8px !important;
+  }
+  .fdt-hero__visual:has(> .fdt-hero-phone[data-core]) .fdt-hero__glow {
+    width: 100% !important;
+    height: calc(360 * var(--mk)) !important;
+  }
+  .fdt-hero-phone[data-core] {
+    --se: min(calc(var(--sm) * var(--mk)), calc(1.147 * 100cqw / var(--vw)));
+  }
+}

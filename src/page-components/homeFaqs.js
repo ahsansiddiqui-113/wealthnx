@@ -1,0 +1,7 @@
+export const homeFaqs = [
+  ['Is it safe to link my bank accounts to WealthNX?', 'WealthNX connects through Plaid with read-only access. The app can see balances and transactions, but it can’t move money. WealthNX does not store your connected-account login credentials on its servers. Your data is encrypted in transit and at rest, and WealthNX is ISO 27001 certified.'],
+  ['Can I connect multiple bank accounts in one app?', 'Yes. You can link checking, savings, credit card, brokerage, retirement and crypto accounts through Plaid, which supports 12,000+ financial institutions. You can also add accounts by hand or import your transaction and balance history.'],
+  ['Can I track stocks and crypto in the same app?', 'Yes. WealthNX market data covers 70,000+ stocks and ETFs and 5M+ crypto assets, from FMP and CoinGecko. You see both in one portfolio.'],
+  ['What is Wealth Genie?', 'WealthNX is a personal finance app with Wealth Genie, its AI assistant, built in. It answers questions about your money using your connected accounts and market data. You can type or talk to it. It’s available on Plus and during the free trial.'],
+  ['Does WealthNX give financial advice?', 'No. WealthNX provides financial information, analysis and educational insights only. It does not provide personalized investment, legal, tax or financial advice, or recommend buying, selling or holding investments. Financial projections are estimates, not guarantees.'],
+];

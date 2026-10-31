@@ -1,0 +1,55 @@
+/* Compact proportions measured against the supplied reference crop. */
+.feature-detail-template .fdt-product { min-height: 0; padding-bottom: 28px; }
+.feature-detail-template .fdt-orbit { width: min(1040px, 100%); height: 525px; }
+.feature-detail-template .fdt-orbit > img { top: 175px; width: 420px; height: 265px; max-width: 60%; }
+.feature-detail-template .fdt-orbit > a { top: 430px; }
+.feature-detail-template .fdt-orbit__dots { top: 490px; }
+.feature-detail-template .fdt-orbit__rings i:nth-child(2),
+.feature-detail-template .fdt-orbit__rings i:nth-child(3) { border-color: rgba(173, 223, 214, .09); }
+@media(max-width:700px) {
+  .feature-detail-template .fdt-product { min-height: 0; padding-bottom: 20px; }
+  .feature-detail-template .fdt-orbit { height: 505px; }
+  .feature-detail-template .fdt-orbit > img { top: 140px; width: 330px; height: 235px; max-width: 78%; }
+  .feature-detail-template .fdt-orbit > a { top: 375px; }
+  .feature-detail-template .fdt-orbit__dots { top: 440px; }
+}
+
+/* Colour pass (owner's reference): neutral near-black section with a soft green/blue glow behind the phone, instead of the teal-tinted wash. */
+.feature-detail-template .fdt-product {
+  background:
+    radial-gradient(ellipse 26% 32% at 50% 62%, rgba(46, 170, 70, .30), transparent 72%),
+    radial-gradient(ellipse 38% 44% at 50% 54%, rgba(40, 110, 200, .20), transparent 76%),
+    #0a0a0a;
+}
+.feature-detail-template .fdt-orbit { background: none; border-color: rgba(255, 255, 255, .14); }
+.feature-detail-template .fdt-orbit:before,
+.feature-detail-template .fdt-orbit:after { border-color: rgba(255, 255, 255, .07); }
+.feature-detail-template .fdt-tabs button { border-color: #3a3a3a; background: linear-gradient(180deg, #262626, #141414); }
+.feature-detail-template .fdt-tabs .is-active { border-color: #1b6f66; background: linear-gradient(115deg, #0f4a44, #123a36); }
+
+/* Seam fix: arcs/halo fade out instead of being cut by the rings box; download section shares the carousel's near-black (no teal top band). */
+.feature-detail-template .fdt-orbit__rings { -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent); mask-image: linear-gradient(to bottom, #000 55%, transparent); }
+.feature-detail-template .fdt-hd,
+.feature-detail-template .fdt-hd .hd { background-color: #0a0a0a; }
+.feature-detail-template .fdt-hd.home-redesign .hd { background-image: none; }
+
+/* Owner wants just two arcs (outer + one inner): hide the two faintest inner rings. */
+.feature-detail-template .fdt-orbit__rings i:nth-child(2),
+.feature-detail-template .fdt-orbit__rings i:nth-child(3) { display: none; }
+
+/* Icons ride the outer arc: circle centre (50cqw, 50cqw), radius 50cqw (rings box = orbit width, 2:1). Slots step 27deg from the top; offscreen/extra slots rest invisible at the arc ends. */
+@media (min-width: 701px) {
+  .feature-detail-template .fdt-orbit { container-type: inline-size; }
+  .feature-detail-template .fdt-orbit .fdt-orbit__badge {
+    --s: .6; left: 99.39cqw; top: 42.18cqw; right: auto; opacity: 0; pointer-events: none;
+    transform: translate(-50%, -50%) scale(var(--s));
+    transition: left .48s cubic-bezier(.22,.8,.24,1), top .48s cubic-bezier(.22,.8,.24,1), opacity .28s ease, transform .4s ease;
+  }
+  .feature-detail-template .fdt-orbit .fdt-orbit__badge--slot-0 { left: .61cqw; top: 42.18cqw; }
+  .feature-detail-template .fdt-orbit .fdt-orbit__badge--slot-1 { left: 9.55cqw; top: 20.61cqw; --s: .92; opacity: 1; pointer-events: auto; }
+  .feature-detail-template .fdt-orbit .fdt-orbit__badge--slot-2 { left: 27.3cqw; top: 5.45cqw; --s: 1; opacity: 1; pointer-events: auto; }
+  .feature-detail-template .fdt-orbit .fdt-orbit__badge--slot-3 { left: 50cqw; top: 0; --s: 1.15; opacity: 1; pointer-events: auto; }
+  .feature-detail-template .fdt-orbit .fdt-orbit__badge--slot-4 { left: 72.7cqw; top: 5.45cqw; --s: 1; opacity: 1; pointer-events: auto; }
+  .feature-detail-template .fdt-orbit .fdt-orbit__badge--slot-5 { left: 90.45cqw; top: 20.61cqw; --s: .92; opacity: 1; pointer-events: auto; }
+  .feature-detail-template .fdt-orbit .fdt-orbit__badge--slot-6 { left: 99.39cqw; top: 42.18cqw; }
+}

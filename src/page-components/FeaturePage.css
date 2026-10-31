@@ -1,0 +1,55 @@
+.feature-page .fp-play {
+  flex: 0 0 42px;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid #d5dbd9;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* Hero phone: large, and swipes up + spins 360deg on load (transform/opacity only). Index page is untouched. */
+@media (min-width: 701px) {
+  .feature-page .fdt-hero { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); min-height: 720px; }
+  .feature-page .fdt-hero__copy { grid-column: 1; grid-row: 1; }
+  .feature-page .fdt-hero__aside { grid-column: 1; grid-row: 2; }
+  .feature-page .fdt-hero__visual { grid-column: 2; grid-row: 1 / 3; height: 560px; perspective: 1400px; }
+  .feature-page .fdt-hero__glow { width: 640px; height: 480px; }
+  .feature-page .fdt-hero-phone { width: 88%; max-width: 790px; height: auto; max-height: 580px; object-fit: contain; }
+}
+/* Desktop: three columns like the home hero (heading left, phone centre, text + Download Now on the right). */
+@media (min-width: 1001px) {
+  .feature-page .fdt-hero { grid-template-columns: minmax(0, .9fr) minmax(0, 1.5fr) minmax(0, .75fr); }
+  .feature-page .fdt-hero__copy { grid-column: 1; grid-row: 1 / 3; }
+  .feature-page .fdt-hero__visual { grid-column: 2; grid-row: 1 / 3; }
+  .feature-page .fdt-hero__aside { grid-column: 3; grid-row: 1 / 3; }
+}
+.feature-page .fdt-hero-phone { animation: fp-phone-in 1.6s cubic-bezier(.22, 1, .36, 1) backwards; }
+/* Phone crops end flat: fade the cut (not the *-hero.webp files: full phone on a glow, already faded). */
+.feature-page .fdt-hero-phone:not([src*="-hero.webp"]) { -webkit-mask-image: linear-gradient(#000 80%, transparent); mask-image: linear-gradient(#000 80%, transparent); }
+/* *-hero.webp: full phone on transparent glow, drawn by height (width auto), never stretched. Default = landscape 743x692-ish; 648/833x965 portrait; 312x629 low-res (<=1x); 817x629 voice-and-action. */
+.feature-page .fdt-hero__visual:has(.fdt-hero-phone[src*="-hero.webp"]) { display: flex; justify-content: center; align-items: center; }
+.feature-page .fdt-hero-phone[src*="-hero.webp"] { width: auto; max-width: none; max-height: none; height: 380px; flex: none; object-fit: contain; }
+.feature-page .fdt-hero-phone[src*="-hero.webp"][height="965"] { height: 520px; }
+.feature-page .fdt-hero-phone[src*="-hero.webp"][height="629"] { height: 440px; }
+.feature-page .fdt-hero-phone[src*="-hero.webp"][width="817"], .feature-page .fdt-hero-phone[src*="-hero.webp"][width="856"] { height: 320px; }
+@media (min-width: 1001px) {
+  .feature-page .fdt-hero-phone[src*="-hero.webp"] { height: 460px; }
+  .feature-page .fdt-hero-phone[src*="-hero.webp"][height="965"] { height: 620px; }
+  .feature-page .fdt-hero-phone[src*="-hero.webp"][height="629"] { height: 560px; }
+  .feature-page .fdt-hero-phone[src*="-hero.webp"][width="817"], .feature-page .fdt-hero-phone[src*="-hero.webp"][width="856"] { height: 400px; }
+}
+@media (min-width: 1281px) {
+  .feature-page .fdt-hero-phone[src*="-hero.webp"] { height: 600px; }
+  .feature-page .fdt-hero-phone[src*="-hero.webp"][height="965"] { height: 680px; }
+  .feature-page .fdt-hero-phone[src*="-hero.webp"][height="629"] { height: 629px; }
+  .feature-page .fdt-hero-phone[src*="-hero.webp"][width="817"], .feature-page .fdt-hero-phone[src*="-hero.webp"][width="856"] { height: 520px; }
+}
+@keyframes fp-phone-in {
+  from { opacity: 0; transform: translateY(60vh) rotateY(0deg); }
+  35% { opacity: 1; }
+  to { opacity: 1; transform: translateY(0) rotateY(360deg); }
+}
+@media (prefers-reduced-motion: reduce) { .feature-page .fdt-hero-phone { animation: none; } }
+.feature-page .fdt-hero h1 em { display: inline; }

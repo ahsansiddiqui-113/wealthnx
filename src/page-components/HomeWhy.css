@@ -1,0 +1,113 @@
+/* Home: "One App to Track and Understand Your Money" tabbed section (hw2- prefix).
+   Each tab shows one exported panel picture (public/assets/home-why-*.webp). */
+
+.home-redesign .hw2-section {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  overflow: clip;
+  /* Inset white block: a few px of dark page show on every edge. The negative top margin trims the
+     bottom padding of the black Connectivity section above (72px on mobile). */
+  margin: calc(12px - 72px) clamp(4px, .4vw, 8px) clamp(10px, 1.1vw, 18px);
+  border-radius: clamp(28px, 2.9vw, 46px);
+  color: #111;
+  font-family: var(--font-inter), 'Inter', Arial, sans-serif;
+  background: linear-gradient(180deg, #fff 0%, #fff 66%, #f4f4f4 100%);
+}
+
+.hw2-container {
+  --hw2-teal: #39b4a6;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 56px 16px 48px;
+}
+
+.hw2-head { text-align: center; }
+
+.home-redesign .hw2-title {
+  margin: 0 auto;
+  max-width: 900px;
+  font-size: clamp(30px, 3.4vw, 54px);
+  line-height: 1.1;
+  font-weight: 400;
+  letter-spacing: -.035em;
+  color: #111;
+}
+.home-redesign .hw2-title b { font-weight: 700; color: var(--hw2-teal); }
+.home-redesign .hw2-lede {
+  margin: 14px auto 0;
+  max-width: 640px;
+  font-size: clamp(14px, 1.1vw, 17px);
+  line-height: 1.5;
+  color: #7d8a8c;
+}
+
+/* ---- Tab bar (pill) ---- */
+.hw2-tabs-wrap { margin-top: 28px; }
+.hw2-tabs {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 3px;
+  border-radius: 999px;
+  background: #f0f0f0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.hw2-tabs::-webkit-scrollbar { display: none; }
+.hw2-tab {
+  flex: none;
+  height: 36px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  font: 500 13px/1 var(--font-inter), 'Inter', Arial, sans-serif;
+  letter-spacing: -.01em;
+  color: #9a9a9a;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color .2s ease, color .2s ease;
+}
+.hw2-tab:hover { color: #555; }
+.hw2-tab[aria-selected='true'] { background: #000; color: #fff; }
+.hw2-tab:focus-visible { outline: 2px solid #39b4a6; outline-offset: 2px; }
+@media (min-width: 901px) {
+  .hw2-tabs { padding: 4px; }
+  .hw2-tab { height: 44px; padding: 0 28px; font-size: 15px; }
+}
+
+/* ---- Stage: all panel pictures share one grid cell so the height never jumps between tabs ---- */
+.hw2-stage { display: grid; margin: 40px auto 0; max-width: 1240px; }
+.hw2-stage:focus { outline: none; }
+.hw2-stage:focus-visible { outline: 2px solid rgba(57, 180, 166, .5); outline-offset: 6px; border-radius: 24px; }
+.hw2-stage img {
+  grid-area: 1 / 1;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .35s ease, visibility 0s linear .35s;
+}
+.hw2-stage img.is-shown { opacity: 1; visibility: visible; transition-delay: 0s; }
+@media (max-width: 700px) {
+  .hw2-stage { margin-top: 20px; }
+  .hw2-stage img { max-height: none; }
+}
+
+.hw2-dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
+.hw2-dots button { width: 8px; height: 8px; min-width: 0; padding: 0; border: 0; border-radius: 50%; background: #cfcfcf; cursor: pointer; transition: background .3s; }
+.hw2-dots button[aria-current='true'] { background: #2a2a2a; }
+
+.home-redesign .hw2-viewall {
+  display: flex; align-items: center; justify-content: center; text-decoration: none; width: 180px; height: 48px; margin: 28px auto 0; padding: 0;
+  border: 0; border-radius: 14px; background: #0b0b0b; color: #fff; cursor: pointer;
+  font: 500 16px/1 var(--font-inter), 'Inter', Arial, sans-serif;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .25);
+}
+.home-redesign .hw2-viewall:focus-visible { outline: 2px solid #39b4a6; outline-offset: 3px; }

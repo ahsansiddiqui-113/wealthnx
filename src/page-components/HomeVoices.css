@@ -1,0 +1,308 @@
+/* Home: "What Early Users Are Saying" + "Who This Platform Is Built For" (hv- prefix).
+   Sizes are written as N * var(--u): 1u = 1px of the Figma frame, which is 893px wide (--u = panel width / 893).
+   Both card rows bleed off the left/right panel edges; the stage is centred and clipped by the section, so on
+   narrow screens it stays at (at least) .88px per unit instead of shrinking the tiny text further. */
+.home-redesign .hv {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background: #071011; /* page night colour behind the rounded white panel */
+  color: #000;
+  font-family: var(--font-inter), 'Inter', Arial, Helvetica, sans-serif;
+}
+.hv-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: clamp(20px, 3.3vw, 56px);
+  background: linear-gradient(180deg, #fff 0%, #fff 84%, #f5f5f5 100%);
+}
+.hv-inner {
+  container-type: inline-size;
+  width: 100%;
+  --u: max(calc(100cqw / 893), .88px);
+}
+.hv-stage {
+  position: relative;
+  width: calc(893 * var(--u));
+  height: calc(782 * var(--u));
+  left: 50%;
+  margin-left: calc(-446.5 * var(--u));
+  overflow-x: clip;
+}
+.hv-sec { position: absolute; inset: 0; pointer-events: none; }
+
+/* Scrollable card rows (HvScroller). Padding leaves room for the card shadows inside the clipped scroll box. */
+.hv-scroll {
+  position: absolute;
+  left: 50%;
+  width: min(calc(893 * var(--u)), 100cqw);
+  transform: translateX(-50%);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  pointer-events: auto;
+  cursor: grab;
+  user-select: none;
+  outline-offset: -2px;
+}
+.hv-scroll::-webkit-scrollbar { display: none; }
+.hv-scroll.is-dragging { cursor: grabbing; }
+.hv-scroll img { -webkit-user-drag: none; user-drag: none; }
+.hv-scroll--voices { top: calc(135 * var(--u)); height: calc(237 * var(--u)); }
+.hv-scroll--aud { top: calc(481 * var(--u)); height: calc(258 * var(--u)); }
+.hv-track { display: flex; align-items: flex-start; width: max-content; padding: calc(40 * var(--u)) 0; }
+.hv-scroll--voices .hv-track { gap: calc(39 * var(--u)); }
+.hv-scroll--aud .hv-track { gap: calc(9 * var(--u)); }
+
+/* ---- Headings ---- */
+.home-redesign .hv-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;
+  font-size: calc(32 * var(--u)) !important; /* beats the global mobile h2 !important */
+  line-height: calc(40 * var(--u));
+  font-weight: 500;
+  letter-spacing: -.045em;
+  color: #000;
+}
+.hv-title--say { top: calc(73 * var(--u)); }
+.hv-title--aud { top: calc(437 * var(--u)); }
+.home-redesign .hv-lead {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(113.5 * var(--u));
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;
+  font-size: calc(10.4 * var(--u));
+  line-height: calc(13 * var(--u));
+  font-weight: 400;
+  color: #c4c4c4;
+}
+.hv-ln { display: block; white-space: nowrap; }
+
+/* ---- Testimonial cards ---- */
+.hv-vc {
+  position: relative;
+  flex: none;
+  height: calc(170 * var(--u));
+  margin: 0;
+  border-radius: calc(46 * var(--u));
+  background: #fff;
+  box-shadow: 0 calc(10 * var(--u)) calc(22 * var(--u)) rgba(0, 0, 0, .06), 0 0 calc(5 * var(--u)) rgba(0, 0, 0, .025);
+}
+.hv-vc--luis { width: calc(378 * var(--u)); }
+.hv-vc--maurit { width: calc(346 * var(--u)); }
+.hv-vc--omertar { width: calc(346 * var(--u)); }
+
+.hv-vc__tile {
+  position: absolute;
+  left: calc(6 * var(--u));
+  top: calc(6 * var(--u));
+  width: calc(136 * var(--u));
+  height: calc(158 * var(--u));
+  border-radius: calc(32 * var(--u));
+  overflow: hidden;
+}
+.hv-vc__tile--green { background: linear-gradient(180deg, #a3fcb9 0%, #cbffdd 45%, #f6fff8 100%); }
+.hv-vc__tile--pink { background: linear-gradient(180deg, #f6c3ff 0%, #fbe2ff 48%, #fef8fe 100%); }
+.hv-vc__tile--yellow { background: linear-gradient(180deg, #fcd57a 0%, #feeab6 48%, #fff6e0 100%); }
+/* The portrait files are the complete tiles (gradient + dotted portrait + rounded corners). */
+.hv-vc__tile img, .hv-vc__tile video { position: absolute; display: block; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+.hv-vc__body {
+  position: absolute;
+  left: calc(156 * var(--u));
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.hv-vc__stars { display: flex; gap: calc(2.2 * var(--u)); height: calc(9.5 * var(--u)); color: #ffd60a; }
+.hv-vc__stars svg { width: calc(8.6 * var(--u)); height: calc(9.5 * var(--u)); display: block; }
+.home-redesign .hv-vc__title {
+  margin: calc(3.3 * var(--u)) 0 0;
+  font-size: calc(9 * var(--u)) !important; /* beats app.css small-screen h3 rule */
+  line-height: calc(13 * var(--u));
+  font-weight: 700;
+  letter-spacing: -.01em;
+  color: #2d2d2d;
+}
+.home-redesign .hv-vc__quote {
+  margin: calc(3.4 * var(--u)) 0 0;
+  font-size: calc(7.4 * var(--u));
+  line-height: calc(8.85 * var(--u));
+  font-style: italic;
+  font-weight: 400;
+  color: #9b9b9b;
+}
+.hv-vc__who {
+  display: flex;
+  align-items: center;
+  height: calc(21 * var(--u));
+  margin-top: calc(5.6 * var(--u));
+  padding: 0 calc(11 * var(--u)) 0 calc(2.5 * var(--u));
+  border-radius: calc(11 * var(--u));
+  background: #efefef;
+}
+.hv-vc__avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: calc(16 * var(--u));
+  height: calc(16 * var(--u));
+  margin-right: calc(5 * var(--u));
+  border-radius: 50%;
+  background: #8fdcee;
+  box-shadow: 0 0 calc(3 * var(--u)) rgba(143, 220, 238, .55);
+  color: #000;
+}
+.hv-vc__avatar svg { width: calc(7.4 * var(--u)); height: calc(7.4 * var(--u)); display: block; }
+.hv-vc__name { font-size: calc(6.9 * var(--u)); line-height: 1; font-weight: 700; color: #1b1b1b; white-space: nowrap; }
+
+/* ---- Audience cards ---- */
+.hv-ac {
+  position: relative;
+  flex: none;
+  width: calc(160.4 * var(--u));
+  height: calc(178 * var(--u));
+  margin: 0;
+  border-radius: calc(14 * var(--u));
+  overflow: hidden;
+  color: #000;
+}
+
+.hv-ac--photo { background: #f2f2f2; }
+.hv-ac--photo img { position: absolute; display: block; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+.hv-ac--sky {
+  background: linear-gradient(180deg, #e6eefe 0%, #f6f8fe 15%, #f9fafe 42%, #f1f5fb 53%, #d9dbdc 58%, #a5a79c 63%, #6c6a46 69%, #5f5d2a 76%, #6b7044 84%, #72795c 92%, #8a9b94 100%);
+}
+.hv-ac--sky::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 14% at 20% 99%, rgba(196, 212, 218, .95), rgba(196, 212, 218, 0));
+}
+.hv-ac--green {
+  background:
+    radial-gradient(38% 30% at 38% 56%, rgba(232, 232, 190, .55), rgba(232, 232, 190, 0)),
+    radial-gradient(30% 22% at 22% 36%, rgba(228, 236, 196, .45), rgba(228, 236, 196, 0)),
+    linear-gradient(90deg, rgba(122, 160, 96, 0) 70%, rgba(110, 150, 86, .55) 100%),
+    linear-gradient(180deg, #b5cd9c 0%, #bed599 15%, #cadaa7 35%, #bacb8f 50%, #b7ce90 70%, #9cbe7c 85%, #78a463 100%);
+}
+.hv-ac--field {
+  background: linear-gradient(180deg, #deeefd 0%, #ebf5fd 15%, #eff7fe 29%, #f6fbfd 42%, #edf0eb 49%, #b7c492 56%, #8d9f4c 63%, #82953a 70%, #859a3c 85%, #809437 100%);
+}
+.hv-ac--blue {
+  background: linear-gradient(180deg, #dbe9f7 0%, #b9d3ec 30%, #7fb0d4 52%, #5b9bb8 62%, #b58f55 82%, #6d7a3c 100%);
+}
+.hv-ac--amber {
+  background: linear-gradient(180deg, #dfe9f1 0%, #c7d7e3 30%, #a9bfcc 52%, #b9a276 70%, #c28a4a 85%, #8f5f2c 100%);
+}
+.hv-ac--pink {
+  background: linear-gradient(180deg, #f1d5ea 0%, #ec9fcf 40%, #e56db5 58%, #9d6f78 76%, #51703f 100%);
+}
+.hv-ac--text > * { position: absolute; left: calc(19 * var(--u)); margin: 0; white-space: nowrap; }
+.home-redesign .hv-ac__title {
+  top: calc(18.5 * var(--u));
+  font-size: calc(11 * var(--u)) !important;
+  line-height: calc(15 * var(--u));
+  font-weight: 600;
+  letter-spacing: -.01em;
+  color: #000;
+}
+.home-redesign .hv-ac__copy {
+  top: calc(36.6 * var(--u));
+  font-size: calc(7.2 * var(--u));
+  line-height: calc(8.7 * var(--u));
+  font-weight: 400;
+  color: #3b3b3b;
+}
+.home-redesign .hv-ac__stat {
+  top: calc(138 * var(--u));
+  font-size: calc(11.5 * var(--u));
+  line-height: calc(15 * var(--u));
+  font-style: italic;
+  font-weight: 400;
+  color: #000;
+}
+.home-redesign .hv-ac__label {
+  top: calc(156 * var(--u));
+  font-size: calc(6.65 * var(--u));
+  line-height: calc(9 * var(--u));
+  font-weight: 500;
+  color: #1a1a1a;
+}
+.hv-ac--field .hv-ac__stat { top: calc(129 * var(--u)); }
+.hv-ac--field .hv-ac__label { top: calc(147.5 * var(--u)); }
+
+/* Narrow screens: the stage stays at its minimum scale (wider than the viewport, clipped like the card rows),
+   so the one-line sub-heading wraps inside the viewport instead of being cut off on both sides. */
+@media (max-width: 560px) {
+  .home-redesign .hv-lead {
+    left: 50%;
+    right: auto;
+    width: min(calc(458 * var(--u)), calc(100cqw - 48px));
+    transform: translateX(-50%);
+    white-space: normal;
+  }
+}
+
+
+.hv-nav { display: none; }
+
+/* ---- Mobile (<= 560px): normal-flow layout instead of the scaled Figma stage ----
+   Reviews: tall cards (portrait tile on top, text below) in a centred snap carousel.
+   Audience: swipe row starting at the page gutter + prev/next buttons. */
+@media (max-width: 560px) {
+  .hv-inner { --u: 1px; }
+  .hv-stage { width: 100%; height: auto; left: 0; margin-left: 0; padding: 0; overflow-x: clip; }
+  .hv-sec { position: relative; inset: auto; pointer-events: auto; }
+  .hv-sec:first-child { padding: 70px 0 54px; }
+  .hv-sec:last-child { padding: 6px 0 44px; }
+
+  .home-redesign .hv-title { position: static; white-space: normal; padding: 0 28px; font-size: 41.5px !important; line-height: 39px; letter-spacing: -.04em; }
+  .home-redesign .hv-lead { position: static; transform: none; width: auto; max-width: 300px; margin: 14px auto 0; padding: 0; white-space: normal; font-size: 17px; line-height: 17px; }
+
+  .hv-scroll { position: static; transform: none; width: 100%; height: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+  .hv-track { padding: 28px 22px 32px; }
+  .hv-scroll--voices .hv-track { gap: 22px; padding: 28px calc(50vw - 113px) 32px; }
+  .hv-scroll--aud .hv-track { gap: 10px; padding: 24px 22px 12px; }
+  .hv-scroll--voices .hv-vc, .hv-scroll--aud .hv-ac { scroll-snap-align: center; }
+  .hv-scroll--aud .hv-ac { scroll-snap-align: start; scroll-margin-left: 22px; }
+  .hv-sec:first-child { margin-top: 0; }
+  .hv-title--aud { margin-top: 0; }
+
+  /* review card */
+  .hv-vc, .hv-vc--luis, .hv-vc--maurit, .hv-vc--omertar { width: 226px; height: auto; padding: 8px 8px 16px; border-radius: 30px; box-shadow: 0 10px 24px rgba(0, 0, 0, .07), 0 0 6px rgba(0, 0, 0, .03); }
+  .hv-vc__tile { position: relative; left: auto; top: auto; width: 100%; height: 214px; border-radius: 24px; }
+  .hv-vc__body { position: static; display: block; padding: 14px 8px 0; }
+  .hv-vc__stars { height: 12px; gap: 3px; }
+  .hv-vc__stars svg { width: 11px; height: 12px; }
+  .home-redesign .hv-vc__title { margin-top: 6px; font-size: 18px !important; line-height: 18px; }
+  .home-redesign .hv-vc__quote { margin-top: 6px; font-size: 13.5px; line-height: 14px; overflow: hidden; }
+  .hv-vc__quote .hv-ln { display: inline; white-space: normal; }
+  .hv-vc__quote .hv-ln::after { content: ' '; }
+  .hv-vc--omertar .hv-vc__quote .hv-ln { display: block; white-space: nowrap; }
+  .hv-vc--omertar .hv-vc__quote .hv-ln::after { content: none; }
+  .hv-vc__who { display: inline-flex; height: 26px; margin-top: 12px; padding: 0 12px 0 3px; border-radius: 13px; }
+  .hv-vc__avatar { width: 20px; height: 20px; margin-right: 6px; }
+  .hv-vc__avatar svg { width: 9px; height: 9px; }
+  .hv-vc__name { font-size: 11.5px; }
+
+  /* audience cards keep their designed internals (1u = 1px) */
+  .hv-ac { width: 168px; height: 187px; }
+
+  .hv-nav { display: flex; gap: 8px; padding: 6px 22px 0; }
+  .hv-nav__btn { width: 30px; height: 30px; padding: 0; border: 0; border-radius: 8px; background: #ececec; color: #9a9a9a; font-size: 23.5px; line-height: 1; cursor: pointer; }
+  .hv-nav__btn.is-next { background: #000; color: #fff; }
+}

@@ -1,0 +1,12 @@
+/* Four tightly grouped arc strokes, matching the reference instead of four separate domes. */
+.feature-detail-template .fdt-orbit__rings i:nth-child(1) { inset: 1.6% auto auto 1.6%; width: 96.8%; }
+.feature-detail-template .fdt-orbit__rings i:nth-child(2) { inset: 3.2% auto auto 3.2%; width: 93.6%; }
+.feature-detail-template .fdt-orbit__rings i:nth-child(3) { inset: 4.8% auto auto 4.8%; width: 90.4%; }
+.feature-detail-template .fdt-orbit > img { width: 620px; height: 330px; max-width: 66%; }
+.feature-detail-template .fdt-orbit__heading p { max-width: 470px; margin-left: auto; margin-right: auto; }
+.feature-detail-template .fdt-orbit__rings::before,
+.feature-detail-template .fdt-orbit__rings i { border-color: rgba(173, 223, 214, .20); }
+.feature-detail-template .fdt-orbit__rings::before { border-color: rgba(194, 231, 224, .34); }
+@media(max-width:700px) {
+  .feature-detail-template .fdt-orbit > img { width: 390px; height: 245px; max-width: 84%; }
+}
