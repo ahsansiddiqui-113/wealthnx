@@ -5,6 +5,33 @@ import { useEffect } from 'react';
 /* Mounted once in layout.jsx. Drives [data-reveal] (scroll reveal), [data-count] (count-up) and [data-tilt]
    (pointer tilt) for the whole site; pages only add attributes. See docs/MOTION.md. */
 export default function MotionRoot() {
+  /* Loading: below-the-fold images are loading="lazy", which only starts a download when they are about to scroll in
+     (late pop-in on slower connections). Start them ~2 screens ahead instead, and play the muted review videos only
+     while they are near the viewport (they no longer compete with the hero images for bandwidth on load). */
+  useEffect(() => {
+    const ahead = new IntersectionObserver((entries) => {
+      entries.forEach(({ target, isIntersecting }) => {
+        if (!isIntersecting) return;
+        ahead.unobserve(target);
+        if (target.tagName === 'IMG') target.loading = 'eager';
+      });
+    }, { rootMargin: '2200px 0px' });
+    const videos = new IntersectionObserver((entries) => {
+      entries.forEach(({ target, isIntersecting }) => {
+        if (isIntersecting) { if (target.preload !== 'auto') target.preload = 'auto'; const p = target.play(); if (p && p.catch) p.catch(() => {}); } else target.pause();
+      });
+    }, { rootMargin: '300px 0px' });
+    const seenMedia = new WeakSet();
+    const scanMedia = () => {
+      document.querySelectorAll('img[loading="lazy"]').forEach((img) => { if (!seenMedia.has(img)) { seenMedia.add(img); ahead.observe(img); } });
+      document.querySelectorAll('video[data-lazy-video]').forEach((v) => { if (!seenMedia.has(v)) { seenMedia.add(v); videos.observe(v); } });
+    };
+    scanMedia();
+    const mediaMo = new MutationObserver(scanMedia);
+    mediaMo.observe(document.body, { childList: true, subtree: true });
+    return () => { ahead.disconnect(); videos.disconnect(); mediaMo.disconnect(); };
+  }, []);
+
   useEffect(() => {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
     if (reduce.matches) return undefined; // no .js-motion => everything stays visible and static

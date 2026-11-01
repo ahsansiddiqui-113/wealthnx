@@ -94,7 +94,7 @@ export default function HomeVoices() {
               {voices.map((v) => (
                 <figure key={v.key} className={`hv-vc hv-vc--${v.key}`}>
                   <div className={`hv-vc__tile hv-vc__tile--${v.tone}`}>
-                    <video autoPlay loop muted playsInline preload="auto" disablePictureInPicture aria-hidden="true" poster={`/assets/${v.portrait}`}><source src={`/assets/${v.video}`} type="video/webm" /></video>
+                    <video data-lazy-video loop muted playsInline preload="none" disablePictureInPicture aria-hidden="true" poster={`/assets/${v.portrait}`}><source src={`/assets/${v.video}`} type="video/webm" /></video>
                   </div>
                   <div className="hv-vc__body">
                     <div className="hv-vc__stars" aria-label="5 out of 5 stars">
