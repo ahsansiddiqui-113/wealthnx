@@ -54,8 +54,7 @@ export default function FeaturePage({ content }) {
       <main>
         <section className="fdt-hero" aria-labelledby="feature-page-title">
           <div className="fdt-hero__copy">
-            <span className="fdt-offer"><i /> Get 50% Off - Limited Time Offer</span>
-            <h1 id="feature-page-title">{hero.headline} <em>{hero.accent}</em></h1>
+            <h1 id="feature-page-title">{hero.headline.replace(/:\s*$/, "")} <em>{hero.accent}</em></h1>
           </div>
           <div className="fdt-hero__visual" data-tilt aria-hidden="true">
             <div className="fdt-hero__glow" />

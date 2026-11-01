@@ -25,8 +25,8 @@ export default function GenieLanding({ agent, hero }) {
       <div className="gl-main">
         <section className="fdt-hero" aria-labelledby="genie-hero-title">
           <div className="fdt-hero__copy">
-            <span className="fdt-offer"><i /> Get 50% Off - Limited Time Offer</span>
-            <h1 id="genie-hero-title">{hero ? <>{hero.headline} <em>{hero.accent}</em></> : <>One AI wealth assistant for <em>spending, stocks and crypto.</em></>}</h1>
+            {!hero && <span className="fdt-offer"><i /> Get 50% Off - Limited Time Offer</span>}
+            <h1 id="genie-hero-title">{hero ? <>{hero.headline.replace(/:\s*$/, "")} <em>{hero.accent}</em></> : <>One AI wealth assistant for <em>spending, stocks and crypto.</em></>}</h1>
           </div>
           <div className="fdt-hero__visual" aria-hidden="true">
             <div className="fdt-hero__glow" />
