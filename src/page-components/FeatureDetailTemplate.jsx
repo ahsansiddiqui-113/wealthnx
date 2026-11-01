@@ -116,7 +116,7 @@ export default function FeatureDetailTemplate() {
         <section className="fdt-hero" aria-labelledby="feature-page-title">
           <div className="fdt-hero__copy"><span className="fdt-offer"><i /> Get 50% Off - Limited Time Offer</span><h1 id="feature-page-title">Powerful Features for a <em>Brighter Financial you</em></h1></div>
           <div className="fdt-hero__visual" data-tilt aria-hidden="true"><div className="fdt-hero__glow" /><img src="/assets/features-hero.webp" alt="" width={843} height={965} decoding="async" fetchPriority="high" className="fdt-hero-phone" {...heroCoreProps("/assets/features-hero.webp")} /></div>
-          <div className="fdt-hero__aside"><p>Everything you need to understand, manage and improve your financial life all in one place.</p><div className="fdt-hero__actions"><a href={APPLE_STORE_URL} target="_blank" rel="noreferrer">Download Now</a><button type="button" aria-label="Play WealthNX introduction"><PlayIcon /></button></div></div>
+          <div className="fdt-hero__aside"><p>Everything you need to understand, manage and improve your financial life all in one place.</p><div className="fdt-hero__actions"><a href={APPLE_STORE_URL} target="_blank" rel="noreferrer">Download Now</a><a className="fdt-play" href="https://www.youtube.com/watch?v=npaG1AtRbNw" target="_blank" rel="noreferrer" aria-label="Watch the WealthNX introduction"><PlayIcon /></a></div></div>
         </section>
         <PartnerStrip />
         <section className="fdt-product" aria-labelledby="net-worth-title">

@@ -180,3 +180,10 @@
   .home-redesign .hp-stats { margin-top: 14px; gap: 14px; text-align: center; }
   .home-redesign .hp-stats__lead { font-size: 21px; }
 }
+
+/* Review fixes: two-line sub-heading, smaller illustrations without the grey backdrop. */
+.home-redesign .hp-lede { max-width: min(960px, 100%); text-wrap: balance; }
+.hp-card__visual { background: none; }
+.hp-card__visual img { width: 84%; height: 84%; margin: 6% auto 0; }
+.hp-card { background: transparent; }
+@media (max-width: 700px) { .home-redesign .hp-lede { max-width: 340px; } }

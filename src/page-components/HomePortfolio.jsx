@@ -96,9 +96,12 @@ const PICS = {
   multi: ['/assets/home-portfolio-multi.webp', 940, 959],
 };
 
+/* Cards without their own picture show the closest one, so every card swaps the image on hover. */
+const PIC_FOR = { realestate: 'multi', analysis: 'forecasting' };
+
 function PortfolioList({ onSelect }) {
   const [active, setActive] = useState('stocks');
-  const select = (key) => { setActive(key); if (PICS[key]) onSelect(key); };
+  const select = (key) => { setActive(key); onSelect(PIC_FOR[key] || key); };
   return (
     <ul className="hpf-list">
       {cards.map(({ key, title, body, tx }) => (

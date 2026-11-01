@@ -88,7 +88,7 @@
   border: 0;
   border-radius: calc(12 * var(--u));
   background: #f6f6f6;
-  box-shadow: 0 calc(6 * var(--u)) calc(14 * var(--u)) rgba(0, 0, 0, .035);
+  box-shadow: none;
   color: #828282;
   font: inherit;
   text-align: left;

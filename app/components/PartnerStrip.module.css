@@ -1,30 +1,33 @@
 .strip {
   display: flex;
   align-items: center;
+  justify-content: center;
   min-height: 80px;
   overflow: hidden;
   background: var(--partner-strip-bg, #000); /* pages set it to the colour of the section below so the two read as one */
 }
 
-.strip.strip { padding: 20px; margin: 0; } /* doubled class beats page-level `section` padding */
+.strip.strip { padding: 24px 20px; margin: 0; } /* doubled class beats page-level `section` padding */
 
-.track {
+.line {
   display: flex;
-  flex: none;
-  width: max-content;
-  animation: slide 10s linear infinite;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px 22px;
+  margin: 0;
+  font-family: var(--font-inter), 'Inter', Arial, sans-serif;
+  color: #8f9a98;
+  font-size: 15px;
+  line-height: 1.4;
+  text-align: center;
 }
 
-.track img {
-  display: block;
-  flex: none;
-  height: 100px;
-  width: auto;
-}
+.names { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 22px; }
+.names b { font-size: 20px; font-weight: 600; letter-spacing: -.01em; color: #e7eeec; }
 
-@keyframes slide {
-  to { transform: translateX(calc(-100% / 6)); } /* one of the 6 copies */}
-
-@media (prefers-reduced-motion: reduce) {
-  .track { animation: none; }
+@media (max-width: 700px) {
+  .line { flex-direction: column; align-items: center; gap: 10px; font-size: 14px; }
+  .names { gap: 6px 18px; }
+  .names b { font-size: 18px; }
 }

@@ -202,14 +202,23 @@
 .hv-ac--field {
   background: linear-gradient(180deg, #deeefd 0%, #ebf5fd 15%, #eff7fe 29%, #f6fbfd 42%, #edf0eb 49%, #b7c492 56%, #8d9f4c 63%, #82953a 70%, #859a3c 85%, #809437 100%);
 }
-.hv-ac--blue {
-  background: linear-gradient(180deg, #dbe9f7 0%, #b9d3ec 30%, #7fb0d4 52%, #5b9bb8 62%, #b58f55 82%, #6d7a3c 100%);
+.hv-ac--active {
+  background: linear-gradient(180deg, #dce3d2 3%, #c7d5b3 15%, #abc097 30%, #89aa70 45%, #99ad73 55%, #8fa56b 70%, #789b5d 80%, #7fa069 97%);
 }
-.hv-ac--amber {
-  background: linear-gradient(180deg, #dfe9f1 0%, #c7d7e3 30%, #a9bfcc 52%, #b9a276 70%, #c28a4a 85%, #8f5f2c 100%);
+.hv-ac--couples {
+  background: linear-gradient(180deg, #dfeefd 3%, #c1cbd6 15%, #f3f8fe 30%, #f8fdfe 45%, #d7dcc2 55%, #a0ad69 62%, #8b9d3d 70%, #8da03e 80%, #6a8132 90%, #4f6b2c 97%);
 }
-.hv-ac--pink {
-  background: linear-gradient(180deg, #f1d5ea 0%, #ec9fcf 40%, #e56db5 58%, #9d6f78 76%, #51703f 100%);
+.hv-ac--crypto {
+  background: linear-gradient(180deg, #6dace0 3%, #9bc4e8 15%, #ced8df 30%, #ddae75 45%, #dbb173 55%, #c8bca1 62%, #adc0d1 70%, #77a1c1 80%, #5a8fb6 90%, #4e8ab4 97%);
+}
+.hv-ac--first {
+  background: linear-gradient(180deg, #a4c2c8 3%, #8d949e 15%, #787a85 30%, #75695e 45%, #886f4f 55%, #806a44 62%, #6d5c3d 70%, #4f4a36 80%, #434232 90%, #33392e 97%);
+}
+.hv-ac--founders {
+  background: linear-gradient(180deg, #cacfee 3%, #dbddf1 15%, #5e9baf 30%, #4889a9 45%, #6097b7 55%, #4e8eac 62%, #81a9c3 70%, #98b6d8 80%, #438fbb 90%, #1d7ca9 97%);
+}
+.hv-ac--solo {
+  background: linear-gradient(180deg, #e766a2 3%, #f76fa6 15%, #fd79a9 30%, #fd92b2 45%, #e695a5 55%, #987671 62%, #4b4f3e 70%, #3f4c30 80%, #4b4f2e 90%, #494b2a 97%);
 }
 .hv-ac--text > * { position: absolute; left: calc(19 * var(--u)); margin: 0; white-space: nowrap; }
 .home-redesign .hv-ac__title {
@@ -306,3 +315,13 @@
   .hv-nav__btn { width: 30px; height: 30px; padding: 0; border: 0; border-radius: 8px; background: #ececec; color: #9a9a9a; font-size: 23.5px; line-height: 1; cursor: pointer; }
   .hv-nav__btn.is-next { background: #000; color: #fff; }
 }
+
+/* Review fixes: more air between heading and sub-heading, sub-heading readable and sized like the other home sections. */
+.home-redesign .hv-lead { top: calc(124 * var(--u)); font-size: calc(12.4 * var(--u)); line-height: calc(16 * var(--u)); color: #6b6f72; }
+.hv-scroll--voices { top: calc(150 * var(--u)); }
+@media (max-width: 560px) {
+  .home-redesign .hv-lead { margin-top: 20px; font-size: 15px; line-height: 21px; max-width: 320px; }
+}
+.hv-ac--first .hv-ac__title, .hv-ac--first .hv-ac__copy, .hv-ac--first .hv-ac__more { color: #fff; }
+.home-redesign .hv-ac--first .hv-ac__title, .home-redesign .hv-ac--first .hv-ac__copy { color: #fff; }
+.home-redesign .hv-ac--first .hv-ac__more, .home-redesign .hv-ac--solo .hv-ac__more, .home-redesign .hv-ac--founders .hv-ac__more { color: #fff; }
