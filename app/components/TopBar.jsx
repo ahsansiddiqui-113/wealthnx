@@ -49,6 +49,7 @@ export default function TopBar({ tone = 'light' }) {
       <nav className={styles.desktopNav} aria-label="Primary navigation">
         <div className={styles.featuresWrap} onMouseEnter={openFeatures} onMouseLeave={closeFeaturesSoon}>
           <Link ref={triggerRef} href="/features/" className={`${styles.featuresTrigger} ${featuresOpen ? styles.open : ""} ${active("/features") ? styles.active : ""}`} aria-haspopup="true" aria-expanded={featuresOpen} aria-controls={dropdownId} onClick={closeFeatures} onKeyDown={(event) => { if (event.key === "ArrowDown") { event.preventDefault(); openFeatures(); } }}>Features <span className={styles.chevron} aria-hidden="true">⌄</span></Link>
+          {featuresOpen && <div className={styles.megaBackdrop} aria-hidden="true" onClick={closeFeatures} />}
           {featuresOpen && <div id={dropdownId} className={styles.megaMenu} onMouseEnter={openFeatures} onMouseLeave={closeFeaturesSoon} role="region" aria-label="Features menu"><FeaturesDropdownContent onClose={closeFeatures} /></div>}
         </div>
         {desktopLinks.map(({ href, label, external }) => external ? <a href={href} key={href} className={styles.navLink}>{label}</a> : <Link href={href} key={href} className={`${styles.navLink} ${active(href) ? styles.active : ''}`}>{label}</Link>)}

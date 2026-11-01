@@ -3,7 +3,7 @@
 export const ai = [
   {
     slug: 'accountant',
-    label: 'Accountant',
+    label: 'Accountant Assistant',
     menu: { group: 'Wealth Genie AI', order: 10, icon: '/assets/menu-icons/accountant.webp' },
     carousel: {
       order: 210,
@@ -78,7 +78,7 @@ export const ai = [
 
   {
     slug: 'stocks',
-    label: 'Stocks',
+    label: 'Stock Assistant',
     menu: { group: 'Wealth Genie AI', order: 20, icon: '/assets/menu-icons/stocks.webp' },
     carousel: {
       order: 220,
@@ -153,7 +153,7 @@ export const ai = [
 
   {
     slug: 'crypto',
-    label: 'Crypto',
+    label: 'Crypto Assistant',
     menu: { group: 'Wealth Genie AI', order: 30, icon: '/assets/menu-icons/crypto.webp' },
     carousel: {
       order: 230,

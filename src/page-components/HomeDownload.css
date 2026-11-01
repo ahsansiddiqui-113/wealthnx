@@ -210,3 +210,8 @@
   .home-redesign .hd--wrap .hd-text { margin-top: calc(16 * var(--u)); font-size: calc(10 * var(--u)); line-height: 1.4; }
   .hd--wrap .hd-actions { margin-top: calc(22 * var(--u)); }
 }
+
+/* Board review: store logos were clipped, buttons sat too close to the sides. */
+.home-redesign .hd-btn svg, .hd-btn svg { overflow: visible; flex: none; }
+.home-redesign .hd-btn { padding-left: calc(18 * var(--u)); padding-right: calc(10 * var(--u)); }
+@media (max-width: 760px) { .home-redesign .hd-btn { padding-left: 20px; padding-right: 12px; } }

@@ -115,7 +115,7 @@ export default function FeatureDetailTemplate() {
       <main>
         <section className="fdt-hero" aria-labelledby="feature-page-title">
           <div className="fdt-hero__copy"><span className="fdt-offer"><i /> Get 50% Off - Limited Time Offer</span><h1 id="feature-page-title">Powerful Features for a <em>Brighter Financial you</em></h1></div>
-          <div className="fdt-hero__visual" data-tilt aria-hidden="true"><div className="fdt-hero__glow" /><img src="/assets/features-hero.webp" alt="" width={843} height={965} decoding="async" fetchPriority="high" className="fdt-hero-phone" {...heroCoreProps("/assets/features-hero.webp")} /></div>
+          <div className="fdt-hero__visual" data-tilt aria-hidden="true"><div className="fdt-hero__glow" /><img src="/assets/home-hero-phone.webp" alt="" width={900} height={1031} decoding="async" fetchPriority="high" className="fdt-hero-phone" {...heroCoreProps("/assets/home-hero-phone.webp")} /></div>
           <div className="fdt-hero__aside"><p>Everything you need to understand, manage and improve your financial life all in one place.</p><div className="fdt-hero__actions"><a href={APPLE_STORE_URL} target="_blank" rel="noreferrer">Download Now</a><a className="fdt-play" href="https://www.youtube.com/watch?v=npaG1AtRbNw" target="_blank" rel="noreferrer" aria-label="Watch the WealthNX introduction"><PlayIcon /></a></div></div>
         </section>
         <PartnerStrip />
@@ -132,7 +132,7 @@ export default function FeatureDetailTemplate() {
             })}
             <div className="fdt-orbit__heading" key={currentFeature.name} aria-live="polite"><h2 id="net-worth-title">{currentFeature.name}</h2><p>{currentFeature.description}</p></div>
             <img key={currentFeature.image} src={currentFeature.image} alt={`WealthNX ${currentFeature.name} feature preview`} />
-            <Link href={currentFeature.href}>Learn more</Link>
+            <Link href={currentFeature.href}>{currentFeature.cta || 'Learn more'}</Link>
             <div className="fdt-orbit__dots" aria-label="Choose a feature">{featureSlides.map((feature, index) => <button key={feature.name} type="button" className={index === activeFeature ? 'is-active' : ''} aria-label={`Show ${feature.name}`} aria-pressed={index === activeFeature} onClick={(event) => activateFeature(event, index)} />)}</div>
             <div className="fdt-orbit__pager"><span aria-live="polite">{pad2(activeFeature + 1)}/{pad2(featureSlides.length)}</span><div><button type="button" aria-label="Previous feature" onClick={(event) => activateFeature(event, activeFeature - 1)}><ChevronIcon dir="left" /></button><button type="button" aria-label="Next feature" onClick={(event) => activateFeature(event, activeFeature + 1)}><ChevronIcon dir="right" /></button></div></div>
           </div>

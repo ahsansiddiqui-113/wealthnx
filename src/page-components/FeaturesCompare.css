@@ -9,7 +9,7 @@
 .fdt-cmp__col h3 { margin: 0 0 22px; text-align: center; font-size: 22px; font-weight: 400; letter-spacing: -.02em; color: #fff; }
 .fdt-cmp__col ul { list-style: none; margin: 0; padding: 12px 22px; border-radius: 14px; background: #e9e9e9; color: #7a8080; flex: 1; display: flex; flex-direction: column; }
 .fdt-cmp__col.is-with ul { background: #1bc8bb; color: #fff; }
-.fdt-cmp__col li { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; padding: 18px 8px; font-size: 15px; line-height: 1.4; border-bottom: 1px solid rgba(0, 0, 0, .08); }
+.fdt-cmp__col li { flex: 1; display: flex; align-items: center; justify-content: flex-start; text-align: left; font-weight: 400; padding: 18px 8px; font-size: 15px; line-height: 1.4; border-bottom: 1px solid rgba(0, 0, 0, .08); }
 .fdt-cmp__col.is-with li { border-bottom-color: rgba(255, 255, 255, .28); position: relative; }
 .fdt-cmp__col li:last-child { border-bottom: 0; }
 /* frosted pills straddling the gap, one per aligned row (rows 1-6; the 7th has no partner) */
@@ -25,3 +25,7 @@
   .fdt-cmp__col ul { flex: none; }
   .fdt-cmp__col.is-with li::before { display: none; }
 }
+
+/* Board review: regular weight, left-aligned, softer middle pills. */
+.fdt-cmp__col.is-with li { color: #fff; font-weight: 400; }
+.fdt-cmp__col.is-with li:nth-child(-n+6)::before { opacity: .45; }

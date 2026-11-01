@@ -553,3 +553,20 @@
 /* viewport-fit=cover: keep header/menu clear of notch and home bar */
 .header { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); box-sizing: border-box; }
 @media (max-width: 1250px) { .mobileMenu { padding-bottom: calc(16px + env(safe-area-inset-bottom)); } }
+
+/* Board review (desktop): smaller logo, nav and buttons; roomier mega menu that dims the page behind it. */
+@media (min-width: 1281px) {
+    .headerInner { min-height: 92px; grid-template-columns: 160px minmax(0, 1fr) 260px; gap: 24px; }
+    .brand img { width: 104px; }
+    .navLink, .featuresTrigger { font-size: clamp(15px, 1vw, 17px); }
+    .actions { gap: 14px; }
+    .login, .getStarted { min-height: 44px; padding: 0 20px; font-size: 15px; border-radius: 10px; }
+    .megaMenu { top: 84px; max-height: calc(100vh - 100px); max-height: calc(100dvh - 100px); }
+    .megaItems { row-gap: 26px; }
+    .megaGroup { gap: 6px; }
+}
+.megaBackdrop { display: none; }
+@media (min-width: 1281px) {
+    .megaBackdrop { display: block; position: fixed; inset: 0; z-index: 0; background: rgba(8, 12, 12, .5); animation: backdropIn .18s ease-out both; }
+}
+@keyframes backdropIn { from { opacity: 0; } to { opacity: 1; } }

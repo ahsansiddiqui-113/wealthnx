@@ -22,6 +22,7 @@
  * Keep this file and ./registry/* free of JSX and the `@` alias so plain Node can import them.
  */
 import { featureEntries } from './registry/index.js';
+import { CAROUSEL_COPY, HIDDEN_SLIDES } from './carouselCopy.js';
 
 export const MENU_GROUPS = ['Money', 'Portfolio', 'Markets', 'Wealth Genie AI'];
 
@@ -91,7 +92,13 @@ export const featureTabs = TABS.map(({ id, label, group, color }) => {
   });
   const inGroup = featureEntries.filter((entry) => entry.menu && entry.menu.group === group).sort((a, b) => byOrder(a.menu, b.menu));
   const legacy = featureEntries.filter((entry) => !entry.menu && entry.carousel && entry.slug === group.toLowerCase());
-  return { id, label, slides: [...inGroup, ...legacy].map(toSlide) };
+  const copyOrder = Object.keys(CAROUSEL_COPY);
+  const rank = (slug) => { const i = copyOrder.indexOf(slug); return i < 0 ? copyOrder.length : i; };
+  const slides = [...inGroup, ...legacy]
+    .filter((entry) => !HIDDEN_SLIDES.includes(entry.slug))
+    .map((entry) => ({ ...toSlide(entry), ...(CAROUSEL_COPY[entry.slug] || {}) }))
+    .sort((a, b) => rank(a.slug) - rank(b.slug));
+  return { id, label, slides };
 });
 
 /** Every carousel slide, all tabs (kept for callers that want one flat list). */
