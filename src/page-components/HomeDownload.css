@@ -215,3 +215,13 @@
 .home-redesign .hd-btn svg, .hd-btn svg { overflow: visible; flex: none; }
 .home-redesign .hd-btn { padding-left: calc(18 * var(--u)); padding-right: calc(10 * var(--u)); }
 @media (max-width: 760px) { .home-redesign .hd-btn { padding-left: 20px; padding-right: 12px; } }
+
+/* New composite (phones + glow, transparent PNG-derived): feather all four edges so the glow has no visible box. */
+.hd-bottom {
+  left: -6%; top: -9%; width: 112%;
+  -webkit-mask-image: radial-gradient(ellipse 50% 52% at 50% 46%, #000 62%, transparent 100%), linear-gradient(180deg, #000 0, #000 70%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: radial-gradient(ellipse 50% 52% at 50% 46%, #000 62%, transparent 100%), linear-gradient(180deg, #000 0, #000 70%, transparent 100%);
+  mask-composite: intersect;
+}
+@media (max-width: 760px) { .hd-bottom { left: -4%; top: -6%; width: 108%; } }

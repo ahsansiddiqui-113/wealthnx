@@ -50,7 +50,7 @@ export default function HomeDownload({ light = false, titleLines = ['Your Financ
 
           <div className="hd-phones" data-reveal="fade" data-tilt>
             {light ? (
-              <img className="hd-bottom" src="/assets/home-download-bottom.webp" alt="WealthNX app screens: Clear AI Answers, Crypto Insights, Track Net Worth, Analyze Stocks, Connect Accounts" width="1440" height="788" loading="lazy" decoding="async" />
+              <img className="hd-bottom" src="/assets/home-download-bottom.webp" alt="WealthNX app screens: Clear AI Answers, Crypto Insights, Track Net Worth, Analyze Stocks, Connect Accounts" width="1600" height="1038" loading="lazy" decoding="async" />
             ) : (
               <>
               <img className="hd-ph hd-ph--glow" src="/assets/hd-glow-2.webp" alt="" width="512" height="512" loading="lazy" />
