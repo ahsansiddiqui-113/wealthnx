@@ -45,7 +45,7 @@
 
 .sf-footer__columns {
   display: grid;
-  grid-template-columns: repeat(5, max-content);
+  grid-template-columns: repeat(4, max-content);
   justify-content: center;
   gap: 48px clamp(28px, 4vw, 64px);
   margin: 56px auto 34px;
@@ -116,9 +116,9 @@
 }
 .sf-footer__bottom a:hover { color: #0a9c92; }
 
-/* Five columns no longer fit beside the 11vw side padding: wrap to 3 + 2 */
+/* Four columns: tighter gaps on mid-size screens */
 @media (max-width: 1200px) {
-  .sf-footer__columns { grid-template-columns: repeat(3, max-content); gap: 40px 48px; }
+  .sf-footer__columns { gap: 40px 40px; }
 }
 
 @media (max-width: 900px) {
