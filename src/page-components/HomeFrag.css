@@ -188,7 +188,7 @@
   .home-redesign .hf-section { padding: 72px 16px 88px; }
   .hf-inner { max-width: none; display: flex; flex-direction: column; }
   .hf-left, .hf-right, .hf-cards { display: contents; }
-  .home-redesign .hf-title { order: 1; margin: 0; font-size: clamp(26px, 7.6vw, 32px) !important; line-height: 1.12; text-align: left; }
+  .home-redesign .hf-title { order: 1; margin: 0; font-size: clamp(24px, 6.6vw, 32px) !important; line-height: 1.12; text-align: left; }
   .home-redesign .hf-lead { order: 2; margin-top: 24px; font-size: 19px !important; line-height: 1.3; font-weight: 600; letter-spacing: -.02em; }
   .home-redesign .hf-sub { order: 3; margin-top: 8px; max-width: 310px; font-size: 15px; line-height: 1.45; }
   .hf-card { order: 6; margin-top: 8px; min-height: 62px; padding: 10px 14px 10px 10px; gap: 6px; border-radius: 14px; }
@@ -210,3 +210,28 @@
 @media (max-width: 700px) { .hf-pic { display: block; } }
 @keyframes hf-pic-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .hf-pic img { animation: none; } }
+
+/* Sub-heading: a bit larger and a narrower measure (there was empty space on the right). */
+.home-redesign .hf-sub { font-size: 1.5cqw; max-width: 33cqw; line-height: 1.45; }
+@media (max-width: 900px) { .home-redesign .hf-sub { font-size: 16px; max-width: 400px; } }
+@media (max-width: 700px) { .home-redesign .hf-sub { font-size: 17px; max-width: 400px; } }
+
+/* Heading is two lines at every width: "Your Money is Fragmented" / "across too many platforms". */
+.hf-br-m { display: inline; }
+.hf-br-d { display: none; }
+
+/* Lead + sub-heading use the same type scale as the "Your Entire Portfolio" section (1u = 100cqw / 934). */
+.home-redesign .hf-section .hf-lead { font-size: calc(25 * 100cqw / 934) !important; line-height: 1.2; font-weight: 500; letter-spacing: -.045em; }
+.home-redesign .hf-section .hf-sub { margin-top: calc(6 * 100cqw / 934); max-width: calc(376 * 100cqw / 934); font-size: calc(15.4 * 100cqw / 934) !important; line-height: 1.25; letter-spacing: 0; }
+@media (max-width: 900px) {
+  .home-redesign .hf-section .hf-lead { font-size: 22px !important; }
+  .home-redesign .hf-section .hf-sub { margin-top: 10px; max-width: 360px; font-size: 14px; line-height: 1.3; }
+}
+@media (max-width: 700px) {
+  .home-redesign .hf-section .hf-lead { font-size: 19.5px !important; font-weight: 700; letter-spacing: -.01em; line-height: 1.25; }
+  .home-redesign .hf-section .hf-sub { max-width: 290px; font-size: 15.5px; line-height: 1.3; }
+}
+
+/* Tablet/phone: the list starts 2px under the heading text. */
+@media (max-width: 900px) { .hf-cards { margin-top: 2px; } }
+@media (max-width: 700px) { .hf-card--first, .hf-pic--first { margin-top: 2px; } }

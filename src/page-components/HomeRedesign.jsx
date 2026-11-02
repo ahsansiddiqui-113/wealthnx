@@ -240,7 +240,7 @@ export default function HomeRedesign() {
             </div>
           </div>
           <div className="hf-right">
-            <h2 id="fragmented-title" className="hf-title" data-reveal>Your Money is <em>Fragmented</em> across<br />too many platforms</h2>
+            <h2 id="fragmented-title" className="hf-title" data-reveal>Your Money is <em>Fragmented</em> <br className="hf-br-m" />across<br className="hf-br-d" /> too many platforms</h2>
             <ul className="hf-cards">
               {fragCards.map(({ key, title, body, icon, img, size }, index) => (
                 <React.Fragment key={key}>

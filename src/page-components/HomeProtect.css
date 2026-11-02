@@ -191,7 +191,7 @@
 .hp-card__visual::before {
   left: 50%; top: 4%; bottom: auto; width: 96%; height: 70%; aspect-ratio: auto; transform: translateX(-50%);
   border: 0; border-radius: 999px 999px 12px 12px;
-  background: linear-gradient(180deg, #e6efec 0%, #edf3f1 100%);
+  background: linear-gradient(180deg, #f1f6f4 0%, #f6faf8 100%);
   -webkit-mask-image: none; mask-image: none;
 }
 .hp-card__visual img {
