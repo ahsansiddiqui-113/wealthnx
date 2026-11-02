@@ -204,11 +204,16 @@
 @media (max-width: 600px) {
   .home-redesign .hr-insights__copy h2 { font-size: 30px !important; line-height: 1.15; }
   .home-redesign .hr-insights__visual { overflow: visible; margin-top: -70px; }
-  .home-redesign .hr-insights__visual img { width: 150%; max-width: none; margin-left: -25%; }
+  .home-redesign .hr-insights__visual img { width: 125%; max-width: none; margin-left: -12.5%; }
 }
 
 /* Phones: the insights picture has empty space below the cards; close it up so the section joins the next one. */
 @media (max-width: 600px) {
   .home-redesign .hr-insights { padding-bottom: 0; }
   .home-redesign .hr-insights__visual { margin-bottom: -170px; }
+}
+
+/* Phones: the rotating audience always sits on its own line, so short words do not pull up onto "Assistant for" and the hero height never changes while it types (that jumped the whole page). */
+@media (max-width: 700px) {
+  .home-redesign .fdt-hero h1 em.hr-audience { display: block; min-height: 1.3em; }
 }

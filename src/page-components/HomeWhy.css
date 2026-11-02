@@ -95,10 +95,6 @@
   transition: opacity .35s ease, visibility 0s linear .35s;
 }
 .hw2-stage img.is-shown { opacity: 1; visibility: visible; transition-delay: 0s; }
-@media (max-width: 700px) {
-  .hw2-stage { margin-top: 20px; }
-  .hw2-stage img { max-height: none; }
-}
 
 .hw2-dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
 .hw2-dots button { width: 8px; height: 8px; min-width: 0; padding: 0; border: 0; border-radius: 50%; background: #cfcfcf; cursor: pointer; transition: background .3s; }
@@ -124,25 +120,108 @@
 /* Phones get their own portrait pictures (<picture> in HomeWhy.jsx); the wrapper must not disturb the stacked grid. */
 .hw2-stage picture { display: contents; }
 
-/* Phones: the pictures were too small; let them run a little wider than the panel (their empty margin absorbs it). */
-@media (max-width: 700px) {
-  .hw2-stage img { width: 120%; max-width: none; }
-}
+.hw2-section, .hw2-tabs, .hw2-stage { overflow-anchor: none; }
 
-/* Phones: bigger heading and tabs, narrower side padding so the pictures can be larger. */
+/* ======================================================================================================
+   Phones (<=700px): self-contained layout. Desktop rules above are untouched; everything here only
+   overrides them below 701px.
+   - Tabs: a horizontally scrollable row of separate pills (scroll-snap, hidden scrollbar, edge fades).
+   - Stage: a swipeable scroll-snap carousel; each <picture> is one slide at 100% of the stage width,
+     natural height. HomeWhy.jsx sets the stage height to the visible slide (interpolated while sliding).
+   - Pictures (public/assets/home-why-mob-*.webp) carry ~3.7% transparent margin on every side; the
+     mask fades only inside that margin (3cqi), so the soft glow blends into the panel and no text is cut.
+   ====================================================================================================== */
 @media (max-width: 700px) {
-  .hw2-container { padding: 44px 6px 40px; }
+  .hw2-container { padding: 44px 16px 40px; }
   .home-redesign .hw2-title { font-size: 38px !important; line-height: 1.12; }
-  .hw2-tab { height: 40px; padding: 0 18px; font-size: 14.5px; }
-  .hw2-stage img { width: 116%; }
-}
 
-/* Phones: the portrait pictures are trimmed tight, so they fill the panel width with no cropping and only a light edge fade. */
-@media (max-width: 700px) {
-  .hw2-container { padding-left: 4px; padding-right: 4px; }
-  .hw2-stage img {
-    width: 100%; max-width: 100%;
-    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 2%, #000 98%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 3%, #000 97%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0, #000 2%, #000 98%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 3%, #000 97%, transparent 100%);
+  /* Tabs: full panel width row, 16px edge padding, active pill centred by JS (row.scrollTo). */
+  .hw2-tabs-wrap { position: relative; margin: 26px -16px 0; }
+  .hw2-tabs {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    max-width: none;
+    padding: 2px 16px;
+    border-radius: 0;
+    background: transparent;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: 16px;
   }
+  .hw2-tab {
+    position: relative;
+    height: 42px;
+    padding: 0 18px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+    background: #f1f1f1;
+    scroll-snap-align: center;
+  }
+  .hw2-tab[aria-selected='true'] { background: #000; color: #fff; }
+  .hw2-tab:focus-visible { outline-offset: -2px; }
+  .hw2-tabs-wrap::before,
+  .hw2-tabs-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 32px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .2s ease;
+  }
+  .hw2-tabs-wrap::before { left: 0; background: linear-gradient(to right, #fff 20%, rgba(255, 255, 255, 0)); }
+  .hw2-tabs-wrap::after { right: 0; background: linear-gradient(to left, #fff 20%, rgba(255, 255, 255, 0)); }
+  .hw2-tabs-wrap[data-fade-start]::before,
+  .hw2-tabs-wrap[data-fade-end]::after { opacity: 1; }
+
+  /* Stage: horizontal scroll-snap carousel, nearly full panel width. HomeWhy.jsx sets its height (no aspect-ratio here:
+     with an explicit height it would derive the width from it). */
+  .hw2-stage {
+    display: flex;
+    align-items: flex-start;
+    width: auto;
+    max-width: none;
+    margin: 22px -12px 0;
+    aspect-ratio: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
+  }
+  .hw2-stage::-webkit-scrollbar { display: none; }
+  .hw2-stage:focus-visible { outline-offset: -2px; border-radius: 20px; }
+  .hw2-stage picture {
+    display: block;
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 0;
+    container-type: inline-size;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+  .hw2-stage img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    opacity: 1;
+    visibility: visible;
+    transition: none;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 3cqi, #000 calc(100% - 3cqi), transparent 100%), linear-gradient(to bottom, transparent 0, #000 3cqi, #000 calc(100% - 3cqi), transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to right, transparent 0, #000 3cqi, #000 calc(100% - 3cqi), transparent 100%), linear-gradient(to bottom, transparent 0, #000 3cqi, #000 calc(100% - 3cqi), transparent 100%);
+    mask-composite: intersect;
+  }
+
+  .hw2-dots { margin-top: 18px; }
+  .home-redesign .hw2-viewall { margin-top: 26px; }
 }

@@ -5,20 +5,28 @@ import Link from 'next/link';
 import './HomeWhy.css';
 
 const tabs = [
-  { id: 'proactive', label: 'AI Insights', img: '/assets/home-why-proactive.webp', w: 1500, h: 768, mob: '/assets/home-why-mob-proactive.webp', mw: 900, mh: 1174, alt: 'Proactive AI: a heads-up on upcoming bills, spending and budgets before you need it' },
-  { id: 'all-in-one', label: 'All-in-one', img: '/assets/home-why-all-in-one.webp', w: 1500, h: 802, mob: '/assets/home-why-mob-all-in-one.webp', mw: 900, mh: 1365, alt: 'All-in-one: your bank accounts, budgets, investments and crypto in one app' },
-  { id: 'voice-to-voice', label: 'Voice-to-Voice', img: '/assets/home-why-voice-to-voice.webp', w: 1500, h: 674, mob: '/assets/home-why-mob-voice-to-voice.webp', mw: 900, mh: 1720, alt: 'Voice-to-Voice: ask Wealth Genie out loud and hear the answer' },
-  { id: 'voice-to-action', label: 'Voice-to-Action', img: '/assets/home-why-voice-to-action.webp', w: 1500, h: 610, mob: '/assets/home-why-mob-voice-to-action.webp', mw: 900, mh: 1515, alt: 'Voice-to-Action: ask Wealth Genie about a savings goal and explore the numbers' },
-  { id: 'multi-assistants', label: 'Multi Assistants', img: '/assets/home-why-multi-assistants.webp', w: 1400, h: 837, mob: '/assets/home-why-mob-multi-assistants.webp', mw: 900, mh: 1545, alt: 'Multi Assistants: separate assistants for spending, stocks, crypto and custom views' },
+  { id: 'proactive', label: 'AI Insights', img: '/assets/home-why-proactive.webp', w: 1500, h: 768, mob: '/assets/home-why-mob-proactive.webp', mw: 900, mh: 1154, alt: 'Proactive AI: a heads-up on upcoming bills, spending and budgets before you need it' },
+  { id: 'all-in-one', label: 'All-in-one', img: '/assets/home-why-all-in-one.webp', w: 1500, h: 802, mob: '/assets/home-why-mob-all-in-one.webp', mw: 900, mh: 1330, alt: 'All-in-one: your bank accounts, budgets, investments and crypto in one app' },
+  { id: 'voice-to-voice', label: 'Voice-to-Voice', img: '/assets/home-why-voice-to-voice.webp', w: 1500, h: 674, mob: '/assets/home-why-mob-voice-to-voice.webp', mw: 900, mh: 1659, alt: 'Voice-to-Voice: ask Wealth Genie out loud and hear the answer' },
+  { id: 'voice-to-action', label: 'Voice-to-Action', img: '/assets/home-why-voice-to-action.webp', w: 1500, h: 610, mob: '/assets/home-why-mob-voice-to-action.webp', mw: 900, mh: 1471, alt: 'Voice-to-Action: ask Wealth Genie about a savings goal and explore the numbers' },
+  { id: 'multi-assistants', label: 'Multi Assistants', img: '/assets/home-why-multi-assistants.webp', w: 1400, h: 837, mob: '/assets/home-why-mob-multi-assistants.webp', mw: 900, mh: 1498, alt: 'Multi Assistants: separate assistants for spending, stocks, crypto and custom views' },
 ];
 
 const AUTO_MS = 6000;
+const MOBILE_MQ = '(max-width: 700px)';
+const isMobile = () => typeof window !== 'undefined' && window.matchMedia(MOBILE_MQ).matches;
+const reducedMotion = () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 export default function HomeWhy() {
   const [activeId, setActiveId] = useState(tabs[0].id);
   const baseId = useId();
   const tabRefs = useRef([]);
   const sectionRef = useRef(null);
+  const tabRowRef = useRef(null);
+  const stageRef = useRef(null);
+  const activeIndexRef = useRef(0);
+  const sizeToRef = useRef(null);
+  const tabFadeRef = useRef(null);
   const [paused, setPaused] = useState(false);
   const [visible, setVisible] = useState(false);
   const active = tabs.find((tab) => tab.id === activeId) || tabs[0];
@@ -37,6 +45,94 @@ export default function HomeWhy() {
     return () => clearTimeout(timer);
   }, [paused, visible, activeIndex]);
 
+  // Keep the active tab centred by scrolling only the tab row sideways (never the page, so nothing jumps vertically).
+  useEffect(() => {
+    const btn = tabRefs.current[activeIndex];
+    const row = tabRowRef.current;
+    if (!btn || !row || row.scrollWidth <= row.clientWidth) return;
+    const b = btn.getBoundingClientRect();
+    const r = row.getBoundingClientRect();
+    const max = row.scrollWidth - row.clientWidth;
+    const left = row.scrollLeft + (b.left - r.left) - (row.clientWidth - b.width) / 2;
+    row.scrollTo({ left: Math.min(max, Math.max(0, left)), behavior: reducedMotion() ? 'auto' : 'smooth' });
+    const t = setTimeout(() => tabFadeRef.current?.(), 700);
+    return () => clearTimeout(t);
+  }, [activeIndex]);
+
+  // Tab row: show the soft edge fades only on the sides that have more tabs to scroll to.
+  useEffect(() => {
+    const row = tabRowRef.current;
+    const wrap = row?.parentElement;
+    if (!row || !wrap) return undefined;
+    const update = () => {
+      const max = row.scrollWidth - row.clientWidth;
+      wrap.toggleAttribute('data-fade-start', row.scrollLeft > 2);
+      wrap.toggleAttribute('data-fade-end', max > 2 && row.scrollLeft < max - 2);
+    };
+    update();
+    tabFadeRef.current = update;
+    row.addEventListener('scroll', update, { passive: true });
+    const ro = new ResizeObserver(update);
+    ro.observe(row);
+    return () => { row.removeEventListener('scroll', update); ro.disconnect(); };
+  }, []);
+
+  // Phones: the stage is a swipeable scroll-snap carousel (one picture per slide, all at the stage width).
+  // Its height follows the visible picture's natural height, interpolated while sliding so it never jumps.
+  // Changing height only moves content below the stage, so window.scrollY and the section top never change.
+  useEffect(() => {
+    const stage = stageRef.current;
+    if (!stage) return undefined;
+    let settleTimer;
+    const sizeTo = () => {
+      if (!isMobile()) { stage.style.height = ''; return; }
+      const w = stage.clientWidth;
+      if (!w) return;
+      const pos = Math.min(tabs.length - 1, Math.max(0, stage.scrollLeft / w));
+      const i = Math.floor(pos);
+      const j = Math.min(tabs.length - 1, i + 1);
+      const t = pos - i;
+      const h = (tabs[i].mh / tabs[i].mw) * (1 - t) + (tabs[j].mh / tabs[j].mw) * t;
+      stage.style.height = `${Math.round(w * h)}px`;
+    };
+    const settle = () => {
+      if (!isMobile()) return;
+      const w = stage.clientWidth;
+      if (!w) return;
+      const index = Math.round(stage.scrollLeft / w);
+      if (tabs[index]) setActiveId(tabs[index].id);
+    };
+    const onScroll = () => {
+      sizeTo();
+      clearTimeout(settleTimer);
+      settleTimer = setTimeout(settle, 140);
+    };
+    sizeTo();
+    sizeToRef.current = sizeTo;
+    stage.addEventListener('scroll', onScroll, { passive: true });
+    const ro = new ResizeObserver(() => {
+      // Width changed (rotation / resize): keep the current slide aligned and re-size the stage.
+      if (isMobile()) stage.scrollLeft = activeIndexRef.current * stage.clientWidth;
+      sizeTo();
+    });
+    ro.observe(stage);
+    return () => { stage.removeEventListener('scroll', onScroll); ro.disconnect(); clearTimeout(settleTimer); };
+  }, []);
+
+  // Phones: tab clicks, dots and auto-advance slide the carousel sideways to the active picture.
+  useEffect(() => {
+    activeIndexRef.current = activeIndex;
+    const stage = stageRef.current;
+    if (!stage || !isMobile()) return undefined;
+    const w = stage.clientWidth;
+    if (w && Math.round(stage.scrollLeft / w) !== activeIndex) {
+      stage.scrollTo({ left: activeIndex * w, behavior: reducedMotion() ? 'auto' : 'smooth' });
+    }
+    // Safety net: if no scroll events arrive (background tab, interrupted animation), still settle the height.
+    const t = setTimeout(() => sizeToRef.current?.(), 700);
+    return () => clearTimeout(t);
+  }, [activeIndex]);
+
   const onKeyDown = (event, index) => {
     const keys = ['ArrowLeft', 'ArrowRight', 'Home', 'End'];
     if (!keys.includes(event.key)) return;
@@ -45,7 +141,7 @@ export default function HomeWhy() {
       : event.key === 'End' ? tabs.length - 1
         : (index + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
     setActiveId(tabs[next].id);
-    tabRefs.current[next]?.focus();
+    tabRefs.current[next]?.focus({ preventScroll: true });
   };
 
   return (
@@ -54,7 +150,7 @@ export default function HomeWhy() {
         <div className="hw2-head">
           <h2 className="hw2-title" id="why-title" data-reveal>Why <b>WealthNX</b></h2>
           <div className="hw2-tabs-wrap">
-            <div className="hw2-tabs" role="tablist" aria-label="Why WealthNX">
+            <div ref={tabRowRef} className="hw2-tabs" role="tablist" aria-label="Why WealthNX">
               {tabs.map((tab, index) => (
                 <button
                   key={tab.id}
@@ -66,7 +162,7 @@ export default function HomeWhy() {
                   aria-selected={tab.id === active.id}
                   aria-controls={`${baseId}-panel-${tab.id}`}
                   tabIndex={tab.id === active.id ? 0 : -1}
-                  onClick={(event) => { setActiveId(tab.id); event.currentTarget.scrollIntoView({ block: 'nearest', inline: 'nearest' }); }}
+                  onClick={() => setActiveId(tab.id)}
                   onKeyDown={(event) => onKeyDown(event, index)}
                 >
                   {tab.label}
@@ -76,7 +172,10 @@ export default function HomeWhy() {
           </div>
         </div>
         <div
+          ref={stageRef}
           className="hw2-stage" data-reveal="fade"
+          onTouchStart={() => setPaused(true)}
+          onTouchEnd={() => setPaused(false)}
           id={`${baseId}-panel-${active.id}`}
           role="tabpanel"
           aria-labelledby={`${baseId}-tab-${active.id}`}

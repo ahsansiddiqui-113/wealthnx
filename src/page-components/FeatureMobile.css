@@ -184,3 +184,15 @@
   .feature-detail-template.fdt-features .fdt-orbit__arrow--prev { left: calc(50% - 150px); }
   .feature-detail-template.fdt-features .fdt-orbit__arrow--next { right: calc(50% - 150px); left: auto; }
 }
+
+/* /features/ phones: match the reference slide: roomy pill tabs, larger icon, 30px title and larger grey description. */
+@media (max-width: 700px) {
+  body .feature-detail-template.fdt-features .fdt-tabs { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; gap: 10px; padding: 4px 2px; scroll-snap-type: x proximity; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  body .feature-detail-template.fdt-features .fdt-tabs::-webkit-scrollbar { display: none; }
+  body .feature-detail-template.fdt-features .fdt-tabs button { flex: 0 0 auto; min-width: 0; padding: 14px 22px; font-size: 15px; font-weight: 600; white-space: nowrap; line-height: 1.1; scroll-snap-align: center; }
+  body .feature-detail-template.fdt-features .fdt-tabs .is-active { flex: 0 0 auto; padding: 18px 28px; font-size: 16px; }
+  body .feature-detail-template.fdt-features .fdt-orbit .fdt-orbit__badge.is-active { width: 56px; height: 56px; }
+  body .feature-detail-template.fdt-features .fdt-orbit .fdt-orbit__heading h2 { font-size: 30px !important; line-height: 1.15; }
+  body .feature-detail-template.fdt-features .fdt-orbit .fdt-orbit__heading p { font-size: 17px; line-height: 1.5; color: #8fa39f; max-width: 340px; margin-top: 14px; }
+  body .feature-detail-template.fdt-features .fdt-orbit > img { max-width: 100%; max-height: none; }
+}
