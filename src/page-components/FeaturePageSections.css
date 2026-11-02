@@ -156,3 +156,39 @@
 .feature-page.fp-compact .fp-features__grid { margin-top: 0; }
 .feature-page.fp-compact .fp-faq { padding-top: 70px; padding-bottom: 110px; }
 .feature-page.fp-compact .fp-faq__list { margin-top: 48px; }
+
+/* Design review (1 Nov) */
+/* "Who is X for?" cards: one even grid gap, equal-height rows, never overlapping (no staggered offset). */
+.feature-page .fp-covers__grid { gap: 16px; align-items: stretch; }
+.feature-page .fp-covers__grid li:nth-child(even) { transform: none; }
+.feature-page .fp-covers__grid li { margin: 0; }
+
+/* Ask section: copy under the picture is left aligned, with one CTA button below it. */
+.feature-page .fp-ask__visual { text-align: left; }
+.feature-page .fp-ask__note { text-align: left; padding-bottom: 14px; }
+.feature-page .fp-ask__cta {
+  position: relative; z-index: 1; display: inline-flex; align-items: center; justify-content: center; margin: 0 0 28px; padding: 13px 26px;
+  border-radius: 999px; background: #14a99d; color: #fff; font-size: 14px; font-weight: 600; line-height: 1.2; text-align: center; text-decoration: none;
+  box-shadow: 0 10px 24px rgba(20, 169, 157, .28); transition: background .2s, transform .2s;
+}
+.feature-page .fp-ask__cta:hover, .feature-page .fp-ask__cta:focus-visible { background: #0f9288; transform: translateY(-1px); }
+.feature-page .fp-ask__note + .fp-ask__cta { margin-top: 0; }
+.feature-page .fp-ask__visual > img.fp-ask__genie + .fp-ask__cta { margin-top: 14px; }
+
+/* Intro image + text: vertically centred, equal columns (merchants, forecasting, period comparison, gains and losses). */
+@media (min-width: 1001px) {
+  .feature-page .fp-intro:has(img[src*="feature-spending-by-merchant-card"], img[src*="feature-financial-forecasting-card"], img[src*="feature-compare-spending-card"], img[src*="feature-portfolio-performance-tracker-card"]) { grid-template-columns: 1fr 1fr; align-items: center; gap: 64px; }
+  .feature-page .fp-intro:has(img[src*="feature-spending-by-merchant-card"], img[src*="feature-financial-forecasting-card"], img[src*="feature-compare-spending-card"], img[src*="feature-portfolio-performance-tracker-card"]) .fp-intro__visual img { width: 100%; margin-left: 0; }
+  /* per-page picture sizes */
+  .feature-page .fp-intro__visual img[src*="feature-bills-card"] { width: 90%; margin: 0 auto 0 4%; }
+  .feature-page .fp-intro:has(img[src*="feature-bills-card"]) { gap: 96px; }
+  .feature-page .fp-intro__visual img[src*="feature-dividend-tracker-card"] { width: 82%; margin-left: 0; }
+  .feature-page .fp-intro__visual img[src*="feature-investment-decision-analysis-card"] { width: 92%; margin-left: 0; }
+  .feature-page .fp-intro__visual img[src*="feature-stock-news-sentiment-card"] { width: 128%; margin-left: -10%; }
+}
+@media (max-width: 1000px) {
+  .feature-page .fp-intro__visual img[src*="feature-stock-news-sentiment-card"] { width: 100%; }
+  .feature-page .fp-intro__visual img[src*="feature-bills-card"],
+  .feature-page .fp-intro__visual img[src*="feature-dividend-tracker-card"],
+  .feature-page .fp-intro__visual img[src*="feature-investment-decision-analysis-card"] { width: 88%; margin: 0 auto; }
+}

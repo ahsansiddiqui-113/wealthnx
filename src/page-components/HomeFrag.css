@@ -122,11 +122,11 @@
   opacity: 0;
   transition: opacity .3s ease;
   background:
-    radial-gradient(ellipse 70% 130% at 8% 40%, rgba(46, 150, 134, .36) 0%, rgba(24, 84, 78, .2) 55%, rgba(12, 40, 38, 0) 100%),
-    linear-gradient(90deg, #12332f 0%, #0f2623 55%, #0d1c1b 100%);
+    radial-gradient(ellipse 80% 140% at 8% 40%, rgba(63, 199, 178, .5) 0%, rgba(30, 120, 110, .3) 55%, rgba(12, 60, 56, 0) 100%),
+    linear-gradient(90deg, #17504a 0%, #12403b 55%, #0e2c29 100%);
 }
 .hf-card.is-active::before { opacity: 1; }
-.hf-card.is-active { border-color: rgba(120, 220, 205, .16); }
+.hf-card.is-active { border-color: rgba(120, 220, 205, .45); }
 
 /* Hover / keyboard focus moves the highlight; Net Worth drops it while another card is active. */
 .hf-cards:hover .hf-card.is-active:not(:hover)::before,
@@ -136,7 +136,7 @@
 .hf-card:hover::before,
 .hf-card:focus-within::before { opacity: 1; }
 .hf-card:hover,
-.hf-card:focus-within { border-color: rgba(120, 220, 205, .16); }
+.hf-card:focus-within { border-color: rgba(120, 220, 205, .45); }
 
 .hf-card__icon {
   flex: none;

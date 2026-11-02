@@ -46,6 +46,8 @@ export default function FeaturePage({ content }) {
   const why = compact ? null : content.why;
   const covers = compact ? null : content.covers;
   const ask = compact ? null : content.ask;
+  /* long headlines get a smaller size so they wrap in 3-4 lines (see FeaturePage.css) */
+  const hlLen = `${hero.headline.replace(/:\s*$/, "")} ${hero.accent}`.length;
   const exploreAccent = explore?.accent || `${content.label} Tracker?`;
 
   return (
@@ -54,7 +56,7 @@ export default function FeaturePage({ content }) {
       <main>
         <section className="fdt-hero" aria-labelledby="feature-page-title">
           <div className="fdt-hero__copy">
-            <h1 id="feature-page-title">{hero.headline.replace(/:\s*$/, "")} <em>{hero.accent}</em></h1>
+            <h1 id="feature-page-title" data-hl={hlLen >= 65 ? "xl" : hlLen >= 52 ? "lg" : undefined}>{hero.headline.replace(/:\s*$/, "")} <em>{hero.accent}</em></h1>
           </div>
           <div className="fdt-hero__visual" data-tilt aria-hidden="true">
             <div className="fdt-hero__glow" />
@@ -145,7 +147,8 @@ export default function FeaturePage({ content }) {
               </div>
               <div className="fp-ask__visual">
                 <img className="fp-ask__genie" src="/assets/feature-genie-phone.webp" alt="" width={483} height={564} loading="lazy" />
-                {(ask.note || ask.link) && <p className="fp-ask__note">{ask.note}{ask.link && <>{ask.note && ' '}<Link href={ask.link.href}>{ask.link.label}</Link></>}</p>}
+                {ask.note && <p className="fp-ask__note">{ask.note}</p>}
+                <Link className="fp-ask__cta" href={ask.link?.href || '/wealth-genie/'}>{ask.link?.label || 'Try Wealth Genie'}</Link>
               </div>
             </div>
           </section>

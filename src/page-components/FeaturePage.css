@@ -53,3 +53,12 @@
 }
 @media (prefers-reduced-motion: reduce) { .feature-page .fdt-hero-phone { animation: none; } }
 .feature-page .fdt-hero h1 em { display: inline; }
+
+/* Design review (1 Nov) */
+.feature-page .fdt-hero__aside p { color: #7d8685; }
+/* Long headlines: smaller type so they wrap over 3-4 lines (length class set in FeaturePage.jsx). */
+.feature-page .fdt-hero h1[data-hl="lg"] { font-size: clamp(32px, 2.7vw, 46px); line-height: 1.08; }
+.feature-page .fdt-hero h1[data-hl="xl"] { font-size: clamp(30px, 2.35vw, 40px); line-height: 1.1; }
+/* Multi-assets hero picture is oversized: scale it down (HeroCore.css sizes it through --se, so shrink that). */
+.feature-page .fdt-hero-phone[data-core][src*="feature-multi-assets-phone"] { --se: calc(min(calc(var(--s) * var(--fk)), calc(1.05 * 100cqw / var(--vw))) * .78); }
+@media (max-width: 700px) { .feature-page .fdt-hero-phone[data-core][src*="feature-multi-assets-phone"] { --se: calc(min(calc(var(--sm) * var(--mk)), calc(1.147 * 100cqw / var(--vw))) * .8); } }

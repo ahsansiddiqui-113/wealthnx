@@ -225,3 +225,12 @@
   mask-composite: intersect;
 }
 @media (max-width: 760px) { .hd-bottom { left: -4%; top: -6%; width: 108%; } }
+
+/* Board review: all three CTAs share one width and centre their icon + label the same way. */
+.home-redesign .hd-btn { justify-content: center; gap: calc(7 * var(--u)); padding-left: calc(8 * var(--u)); padding-right: calc(8 * var(--u)); text-align: center; box-sizing: border-box; }
+.home-redesign .hd-btn--trial { padding-left: calc(8 * var(--u)); padding-right: calc(8 * var(--u)); font-size: calc(9.6 * var(--u)); }
+.home-redesign .hd-actions { align-items: flex-start; }
+@media (max-width: 760px) {
+  .home-redesign .hd-btn { gap: 10px; padding-left: 12px; padding-right: 12px; }
+  .home-redesign .hd-btn--trial { padding-left: 12px; padding-right: 12px; font-size: 13.5px; }
+}

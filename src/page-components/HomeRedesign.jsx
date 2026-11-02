@@ -82,7 +82,6 @@ const fragCards = [
   { key: 'forecasting', title: 'Forecasting', body: 'Explore how your net worth could change over time.', img: 'forecasting', icon: 'forecasting', size: [1200, 797] },
 ];
 
-const STAR_PATH = 'M12 2.2l2.9 6.2 6.8.8-5 4.7 1.3 6.7L12 17.1l-6 3.5 1.3-6.7-5-4.7 6.8-.8Z';
 
 const audience = [
   ['Individual investors', 'Bring your whole financial picture into focus.', 'aboutstock.png'],
@@ -178,17 +177,6 @@ export default function HomeRedesign() {
           </div>
           <SwipeDots light />
           <p className="hp-more"><Link href="/how-it-works/">See How we keep your data safe <Arrow /></Link></p>
-          <p className="hp-stats">
-            <span className="hp-stats__lead">Built for real financial clarity</span>
-            <i className="hp-stats__dot" aria-hidden="true" />
-            <span className="hp-stats__rating">
-              <span className="hp-stats__stars" aria-hidden="true">{[0, 1, 2, 3, 4].map((n) => <svg viewBox="0 0 24 24" key={n}><path d={STAR_PATH} /></svg>)}</span>
-              <span className="hp-stats__score">(5.0)</span>
-              <span>On App store</span>
-            </span>
-            <i className="hp-stats__dot" aria-hidden="true" />
-            <span className="hp-stats__downloads"><strong data-count>3000+</strong> <span>Downloads</span></span>
-          </p>
         </div>
       </section>
 

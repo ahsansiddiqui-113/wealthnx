@@ -155,3 +155,10 @@
   .feature-detail-template .fdt-orbit__dots button { position: relative; }
   .feature-detail-template .fdt-orbit__dots button::before { content: ''; position: absolute; inset: -20px -5px; }
 }
+
+/* feature pages: softer grey hero blurb, and smaller long headlines on phones */
+@media (max-width: 700px) {
+  .feature-detail-template.fdt-mobile.feature-page .fdt-hero__aside p { color: #7d8685; }
+  .feature-detail-template.fdt-mobile.feature-page .fdt-hero h1[data-hl="lg"] { font-size: clamp(30px, 8.6vw, 36px); }
+  .feature-detail-template.fdt-mobile.feature-page .fdt-hero h1[data-hl="xl"] { font-size: clamp(28px, 7.8vw, 33px); }
+}

@@ -3,8 +3,8 @@
 .feature-detail-template.ct-page {
   --ct-ink: #070707;
   --ct-mint: #1bc8bb;
-  /* Hero background photo. Replace this single value with the final mountain/cloud photo. */
-  --ct-hero-image: url('/assets/Background%20%E2%86%92%20Background.svg');
+  /* Hero background. The old Background.svg was a flat grey texture (read as missing); GenieBg.png is the brand teal aurora. Swap this value for the final photo. */
+  --ct-hero-image: url('/assets/GenieBg.png');
   position: relative;
   overflow: clip;
   background: var(--ct-ink);
@@ -55,9 +55,7 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 24%, rgba(0, 0, 0, 0.3) 62%, rgba(7, 7, 7, 0.92) 100%),
-    radial-gradient(ellipse 85% 85% at 50% 48%, rgba(0, 0, 0, 0.15) 40%, rgba(0, 0, 0, 0.6) 100%),
-    rgba(6, 8, 8, 0.28);
+    linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 26%, rgba(0, 0, 0, 0.05) 62%, rgba(7, 7, 7, 0.9) 100%);
 }
 
 .ct-hero__copy {

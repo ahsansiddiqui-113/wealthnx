@@ -403,3 +403,24 @@
   .gl-case h3 { font-size: 15px; }
   .gl-panel--about img { height: auto; max-height: 300px; }
 }
+
+/* Crypto and Build Mode assistant pages: hero phone about 15% smaller (HeroCore.css sizes everything from --fk / --mk). */
+.gl-page.gl-hero-sm .fdt-hero__visual:has(> .fdt-hero-phone[data-core]) {
+  --fk: max(0.5px, min(calc(100vw / 1875), calc((100svh - 340px) / 740), 1.02px));
+  --mk: min(calc(100vw / 459), 1.19px);
+}
+
+/* AI Insights intro picture (also loaded by /wealth-genie/ai-insights/): the export's glow runs right to its left/right edges,
+   so it is drawn a bit smaller, inside its column, with the edges faded out instead of cut. */
+@media (min-width: 1001px) {
+  .feature-page .fp-intro__visual img[src*="feature-ai-insights-intro"] { width: 90%; max-width: 100%; margin: 0 auto; }
+}
+.feature-page .fp-intro__visual img[src*="feature-ai-insights-intro"] {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent), linear-gradient(transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent), linear-gradient(transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-composite: source-in; mask-composite: intersect;
+}
+.gl-page.gl-hero-sm .fdt-hero-phone[data-core] { --se: min(calc(var(--s) * var(--fk)), calc(0.9 * 100cqw / var(--vw))); }
+@media (max-width: 700px) {
+  .gl-page.gl-hero-sm .fdt-hero-phone[data-core] { --se: min(calc(var(--sm) * var(--mk)), calc(0.97 * 100cqw / var(--vw))); }
+}

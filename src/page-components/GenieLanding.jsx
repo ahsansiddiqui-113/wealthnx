@@ -20,7 +20,7 @@ const DEMO_VIDEO_URL = 'https://www.youtube.com/watch?v=npaG1AtRbNw';
  *  The /features/<assistant>/ pages reuse it: `agent` opens that assistant, `hero` swaps the headline and blurb. */
 export default function GenieLanding({ agent, hero }) {
   return (
-    <div className="feature-detail-template fdt-mobile genie-mobile gl-page">
+    <div className={`feature-detail-template fdt-mobile genie-mobile gl-page${agent === "crypto" || agent === "build-mode" ? " gl-hero-sm" : ""}`}>
       <TopBar />
       <div className="gl-main">
         <section className="fdt-hero" aria-labelledby="genie-hero-title">

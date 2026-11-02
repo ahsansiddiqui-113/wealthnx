@@ -1,5 +1,6 @@
 import FeaturePage from '@/src/page-components/FeaturePage.jsx';
 import { featureContent } from '../../features/featureRegistry';
+import '@/src/page-components/GenieLanding.css';
 
 const content = featureContent['ai-insights'];
 
