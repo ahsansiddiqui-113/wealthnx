@@ -99,7 +99,6 @@ export default function HomeRedesign() {
       <div className="feature-detail-template hr-hero-host">
         <section className="fdt-hero" aria-labelledby="hr-hero-title">
           <div className="fdt-hero__copy">
-            <span className="fdt-offer"><i /> 50% Off: Limited Time Offer</span>
             <h1 id="hr-hero-title">All-in-One AI Powered Wealth Assistant for <HeroAudience /></h1>
           </div>
           <div className="fdt-hero__visual" data-tilt aria-hidden="true">

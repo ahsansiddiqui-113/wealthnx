@@ -63,7 +63,6 @@ export default function PricingPage() {
       <TopBar />
       <main className="pr-main">
         <section className="pr-hero" aria-labelledby="pr-title">
-          <span className="fdt-offer"><i /> Get 50% Off - Limited Time Offer</span>
           <h1 className="pr-hero__title" id="pr-title">Plans and Pricing</h1>
           <p className="pr-hero__sub">Understand your money better with WealthNX AI</p>
 

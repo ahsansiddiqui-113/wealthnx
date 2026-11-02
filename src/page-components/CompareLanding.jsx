@@ -42,7 +42,6 @@ export default function CompareLanding() {
       <section className="cp-hero" aria-labelledby="cp-title">
         <div className="cp-hero__glow" aria-hidden="true" />
         <div className="cp-hero__copy">
-          <span className="fdt-offer"><i /> Get 50% Off - Limited Time Offer</span>
           <h1 id="cp-title"><em>Compare finance apps</em> by what you need.</h1>
           <p>No single finance app fits everyone. WealthNX brings everyday money, investments, crypto, market insights, and AI together in one smarter financial platform.</p>
           <a className="cp-btn" href="#cp-quick">Compare Your Options</a>

@@ -424,3 +424,9 @@
 @media (max-width: 700px) {
   .gl-page.gl-hero-sm .fdt-hero-phone[data-core] { --se: min(calc(var(--sm) * var(--mk)), calc(0.97 * 100cqw / var(--vw))); }
 }
+
+/* Hero phone swipes up and spins 360deg on load, like the home and feature pages. */
+.gl-page .fdt-hero__visual { perspective: 1400px; }
+.gl-page .fdt-hero-phone { animation: gl-phone-in 1.6s cubic-bezier(.22, 1, .36, 1) backwards; }
+@keyframes gl-phone-in { from { opacity: 0; transform: translateY(60vh) rotateY(0deg); } 35% { opacity: 1; } to { opacity: 1; transform: translateY(0) rotateY(360deg); } }
+@media (prefers-reduced-motion: reduce) { .gl-page .fdt-hero-phone { animation: none; } }

@@ -94,7 +94,6 @@ export default function CompareDetail({ slug, name }) {
       {/* 1. Hero (reuses the shared .fdt-hero shell) */}
       <section className="fdt-hero mc-hero" aria-labelledby="mc-title">
         <div className="fdt-hero__copy">
-          <span className="fdt-offer"><i /> {hero.offer}</span>
           <h1 id="mc-title"><em>{hero.titleTeal}</em>{hero.titleBlack}</h1>
           <p className="mc-hero__text">{hero.text}</p>
           <div className="fdt-hero__actions"><a href={hero.cta.href}>{hero.cta.label}</a></div>

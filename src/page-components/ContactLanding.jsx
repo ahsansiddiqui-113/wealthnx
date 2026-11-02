@@ -53,7 +53,6 @@ export default function ContactLanding() {
           </div>
 
           <div className="ct-hero__copy">
-            <span className="fdt-offer"><i /> Get 50% Off - Limited Time Offer</span>
             <h1 id="contact-hero-title">Contact WealthNX Support and Team</h1>
             <p>Contact WealthNX support about your account, an account connection or a plan. Send a message and we&rsquo;ll help you sort it out.</p>
           </div>
