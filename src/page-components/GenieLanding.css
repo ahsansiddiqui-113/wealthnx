@@ -430,3 +430,10 @@
 .gl-page .fdt-hero-phone { animation: gl-phone-in 1.6s cubic-bezier(.22, 1, .36, 1) backwards; }
 @keyframes gl-phone-in { from { opacity: .02; transform: translateY(8vh) rotateY(0deg); } 25% { opacity: 1; } to { opacity: 1; transform: translateY(0) rotateY(360deg); } }
 @media (prefers-reduced-motion: reduce) { .gl-page .fdt-hero-phone { animation: none; } }
+
+/* Selected assistant tab and chip: white text on the teal. */
+.gl-tab.is-active, .gl-chip.is-active { color: #fff !important; }
+/* Phones: "Meet Wealth Genie, Your AI Personal Finance Assistant" heading 30px. */
+@media (max-width: 700px) {
+  body .gl-page .gl-team__title { font-size: 30px !important; line-height: 1.15; }
+}
