@@ -550,7 +550,7 @@ export const ai = [
       headline: 'The important changes,',
       accent: 'easier to spot.',
       blurb: 'AI financial insights about patterns and changes in your money, with the figures behind each insight shown alongside it.',
-      image: '/assets/feature-proactive-ai-hero.webp', width: 856, height: 629,
+      image: '/assets/feature-proactive-ai-hero.webp', width: 1200, height: 1277,
     },
     intro: {
       image: { src: '/assets/feature-ai-insights-intro.webp', width: 1000, height: 690 },

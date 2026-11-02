@@ -1,27 +1,27 @@
 {
  "/assets/feature-bills-phone.webp": {
-  "w": 763,
-  "h": 711,
-  "cx": 377,
-  "cy": 11,
-  "ch": 591,
-  "vw": 635
+  "w": 1400,
+  "h": 1340,
+  "cx": 711,
+  "cy": 21,
+  "ch": 1115,
+  "vw": 1198
  },
  "/assets/feature-budgeting-phone.webp": {
-  "w": 743,
-  "h": 692,
-  "cx": 374,
-  "cy": 11,
-  "ch": 591,
-  "vw": 650
+  "w": 1400,
+  "h": 1304,
+  "cx": 684,
+  "cy": 21,
+  "ch": 1114,
+  "vw": 1203
  },
  "/assets/feature-business-expense-tracking-phone.webp": {
-  "w": 743,
-  "h": 711,
-  "cx": 366,
-  "cy": 11,
-  "ch": 591,
-  "vw": 648
+  "w": 1400,
+  "h": 1340,
+  "cx": 699,
+  "cy": 21,
+  "ch": 1115,
+  "vw": 1064
  },
  "/assets/feature-cash-flow-phone.webp": {
   "w": 744,
@@ -32,36 +32,36 @@
   "vw": 684
  },
  "/assets/feature-celebrity-portfolio-tracking-phone.webp": {
-  "w": 743,
-  "h": 711,
-  "cx": 371,
-  "cy": 11,
-  "ch": 591,
-  "vw": 564
+  "w": 1400,
+  "h": 1340,
+  "cx": 699,
+  "cy": 21,
+  "ch": 1115,
+  "vw": 1064
  },
  "/assets/feature-compare-spending-phone.webp": {
-  "w": 743,
-  "h": 711,
-  "cx": 371,
-  "cy": 11,
-  "ch": 591,
-  "vw": 564
+  "w": 1400,
+  "h": 1340,
+  "cx": 699,
+  "cy": 21,
+  "ch": 1115,
+  "vw": 1064
  },
  "/assets/feature-dividend-tracker-phone.webp": {
-  "w": 743,
-  "h": 711,
-  "cx": 371,
-  "cy": 11,
-  "ch": 591,
-  "vw": 564
+  "w": 1400,
+  "h": 1545,
+  "cx": 681,
+  "cy": 25,
+  "ch": 1333,
+  "vw": 1042
  },
  "/assets/feature-earnings-calendar-phone.webp": {
-  "w": 773,
-  "h": 711,
-  "cx": 461,
-  "cy": 11,
-  "ch": 591,
-  "vw": 658
+  "w": 1400,
+  "h": 1288,
+  "cx": 836,
+  "cy": 20,
+  "ch": 1071,
+  "vw": 1192
  },
  "/assets/feature-financial-calendar-hero.webp": {
   "w": 648,
@@ -72,36 +72,36 @@
   "vw": 552
  },
  "/assets/feature-financial-forecasting-phone.webp": {
-  "w": 743,
-  "h": 711,
-  "cx": 371,
-  "cy": 11,
-  "ch": 591,
-  "vw": 564
+  "w": 1400,
+  "h": 1340,
+  "cx": 699,
+  "cy": 21,
+  "ch": 1115,
+  "vw": 1064
  },
  "/assets/feature-financial-health-score-phone.webp": {
-  "w": 743,
-  "h": 711,
-  "cx": 440,
-  "cy": 11,
-  "ch": 591,
-  "vw": 618
+  "w": 1400,
+  "h": 1340,
+  "cx": 830,
+  "cy": 21,
+  "ch": 1115,
+  "vw": 1166
  },
  "/assets/feature-goals-phone.webp": {
-  "w": 783,
-  "h": 711,
-  "cx": 381,
-  "cy": 11,
-  "ch": 591,
-  "vw": 727
+  "w": 1400,
+  "h": 1271,
+  "cx": 681,
+  "cy": 20,
+  "ch": 1057,
+  "vw": 1302
  },
  "/assets/feature-insider-trading-data-phone.webp": {
-  "w": 743,
-  "h": 711,
-  "cx": 371,
-  "cy": 11,
-  "ch": 591,
-  "vw": 564
+  "w": 1400,
+  "h": 1340,
+  "cx": 699,
+  "cy": 21,
+  "ch": 1115,
+  "vw": 1064
  },
  "/assets/feature-investment-decision-analysis-phone.webp": {
   "w": 743,
@@ -112,12 +112,12 @@
   "vw": 564
  },
  "/assets/feature-members-phone.webp": {
-  "w": 743,
-  "h": 692,
-  "cx": 371,
-  "cy": 11,
-  "ch": 591,
-  "vw": 564
+  "w": 1400,
+  "h": 1304,
+  "cx": 699,
+  "cy": 21,
+  "ch": 1114,
+  "vw": 1063
  },
  "/assets/feature-multi-assets-phone.webp": {
   "w": 743,
@@ -128,92 +128,92 @@
   "vw": 643
  },
  "/assets/feature-net-worth-phone.webp": {
-  "w": 743,
-  "h": 711,
-  "cx": 364,
-  "cy": 11,
-  "ch": 591,
-  "vw": 608
+  "w": 1400,
+  "h": 1340,
+  "cx": 686,
+  "cy": 21,
+  "ch": 1115,
+  "vw": 1147
  },
  "/assets/feature-portfolio-benchmark-comparison-phone.webp": {
-  "w": 743,
-  "h": 711,
-  "cx": 371,
-  "cy": 11,
-  "ch": 591,
-  "vw": 564
+  "w": 1400,
+  "h": 1340,
+  "cx": 699,
+  "cy": 21,
+  "ch": 1115,
+  "vw": 1064
  },
  "/assets/feature-portfolio-exposure-analysis-phone.webp": {
-  "w": 743,
-  "h": 711,
-  "cx": 371,
-  "cy": 11,
-  "ch": 591,
-  "vw": 564
+  "w": 1400,
+  "h": 1340,
+  "cx": 699,
+  "cy": 21,
+  "ch": 1115,
+  "vw": 1064
  },
  "/assets/feature-portfolio-performance-tracker-phone.webp": {
-  "w": 743,
-  "h": 711,
-  "cx": 371,
-  "cy": 11,
-  "ch": 591,
-  "vw": 564
+  "w": 1400,
+  "h": 1340,
+  "cx": 699,
+  "cy": 21,
+  "ch": 1115,
+  "vw": 1064
  },
  "/assets/feature-proactive-ai-hero.webp": {
-  "w": 856,
-  "h": 629,
-  "cx": 403,
-  "cy": 0,
-  "ch": 628,
-  "vw": 796
+  "w": 1200,
+  "h": 1277,
+  "cx": 555,
+  "cy": 154,
+  "ch": 874,
+  "vw": 1113
  },
  "/assets/feature-savings-rate-calculator-phone.webp": {
-  "w": 743,
-  "h": 711,
-  "cx": 371,
-  "cy": 11,
-  "ch": 591,
-  "vw": 564
+  "w": 1400,
+  "h": 1340,
+  "cx": 699,
+  "cy": 21,
+  "ch": 1115,
+  "vw": 1064
  },
  "/assets/feature-spending-by-merchant-phone.webp": {
-  "w": 743,
-  "h": 711,
-  "cx": 371,
-  "cy": 11,
-  "ch": 591,
-  "vw": 564
+  "w": 1400,
+  "h": 1340,
+  "cx": 699,
+  "cy": 21,
+  "ch": 1115,
+  "vw": 1064
  },
  "/assets/feature-stock-news-sentiment-phone.webp": {
-  "w": 743,
-  "h": 711,
-  "cx": 371,
-  "cy": 11,
-  "ch": 591,
-  "vw": 564
+  "w": 1400,
+  "h": 1340,
+  "cx": 699,
+  "cy": 21,
+  "ch": 1115,
+  "vw": 1064
  },
  "/assets/feature-stock-watchlist-phone.webp": {
-  "w": 743,
-  "h": 711,
-  "cx": 371,
-  "cy": 11,
-  "ch": 591,
-  "vw": 564
+  "w": 1400,
+  "h": 1340,
+  "cx": 699,
+  "cy": 21,
+  "ch": 1115,
+  "vw": 1064
  },
  "/assets/feature-subscription-tracker-phone.webp": {
-  "w": 743,
-  "h": 711,
-  "cx": 371,
-  "cy": 11,
-  "ch": 591,
-  "vw": 564
+  "w": 1400,
+  "h": 1340,
+  "cx": 699,
+  "cy": 21,
+  "ch": 1115,
+  "vw": 1064
  },
  "/assets/feature-transactions-phone.webp": {
-  "w": 762,
-  "h": 711,
-  "cx": 455,
-  "cy": 11,
-  "ch": 591,
-  "vw": 647
+  "w": 1400,
+  "h": 1307,
+  "cx": 837,
+  "cy": 20,
+  "ch": 1087,
+  "vw": 1189
  },
  "/assets/feature-voice-and-action-hero.webp": {
   "w": 817,

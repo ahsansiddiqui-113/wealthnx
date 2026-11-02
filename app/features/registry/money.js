@@ -17,7 +17,7 @@ export const money = [
       headline: 'Net Worth:',
       accent: 'See What You Own and What You Owe',
       blurb: 'Your net worth is bigger than a bank balance. Track your net worth by seeing supported accounts, investments, assets and liabilities together, and follow how the difference changes over time.',
-      image: '/assets/feature-net-worth-phone.webp', width: 743, height: 711,
+      image: '/assets/feature-net-worth-phone.webp', width: 1400, height: 1340,
     },
     cards: [
       { icon: 'wallet', title: 'The full picture beyond one balance', text: 'Bring supported accounts, investments, assets and liabilities together to see how they add up.' },
@@ -223,7 +223,7 @@ export const money = [
       headline: 'Plan Your Monthly Spending',
       accent: 'With a Budget App',
       blurb: 'An automatic budgeting app that links to bank and card accounts through Plaid. Purchases count against your category limits as they arrive.',
-      image: '/assets/feature-budgeting-phone.webp', width: 743, height: 692,
+      image: '/assets/feature-budgeting-phone.webp', width: 1400, height: 1304,
     },
     cards: [
       { icon: 'wallet', title: 'Start with your own numbers', text: 'Budgets use the categories and amounts you choose.' },
@@ -233,7 +233,7 @@ export const money = [
       { icon: 'trend-up', title: 'Follow the month as it unfolds', text: 'The current view shows progress during the month, before any month-end surprise.' },
       { icon: 'sparkles', title: 'Your plan, still your call', text: 'WealthNX helps you understand spending; it does not block purchases or control your accounts.' },
     ],
-    intro: { image: { src: '/assets/feature-budgeting-card.webp', width: 900, height: 662 }, title: 'A Budget Is Easy to Set and Hard to Keep Up', text: 'WealthNX is an AI budgeting app built for budgets that last past the first few weeks. WealthNX helps set up the budget, then tracks spending against the categories and limits you choose as new transactions come in.' },
+    intro: { image: { src: '/assets/feature-budgeting-card.webp', width: 1100, height: 492 }, title: 'A Budget Is Easy to Set and Hard to Keep Up', text: 'WealthNX is an AI budgeting app built for budgets that last past the first few weeks. WealthNX helps set up the budget, then tracks spending against the categories and limits you choose as new transactions come in.' },
     explore: { title: 'What the', accent: 'WealthNX Budget View Shows' },
     why: {
       title: 'Why Budgets Get Dropped and', accent: 'How WealthNX Keeps Yours Going',
@@ -289,7 +289,7 @@ export const money = [
       headline: 'Organize Your Transactions',
       accent: 'and Understand Your Spending',
       blurb: 'A spending tracker app that links to bank and card accounts through Plaid, with automatic transaction categorization and search.',
-      image: '/assets/feature-transactions-phone.webp', width: 762, height: 711,
+      image: '/assets/feature-transactions-phone.webp', width: 1400, height: 1307,
     },
     cards: [
       { icon: 'link', title: 'Find the purchase, fast', text: 'Search available transactions when you need to revisit a payment, transfer or everyday purchase.' },
@@ -357,7 +357,7 @@ export const money = [
       headline: 'See All Your Bills and Due Dates',
       accent: 'in One Place',
       blurb: 'A bill reminder app and upcoming bills calendar for the accounts you link through Plaid. Recurring bills, due dates and past payments appear side by side.',
-      image: '/assets/feature-bills-phone.webp', width: 763, height: 711,
+      image: '/assets/feature-bills-phone.webp', width: 1400, height: 1340,
     },
     cards: [
       { icon: 'clock', title: 'Dates worth keeping in sight', text: 'Upcoming bills and due dates appear together in one view.' },
@@ -423,7 +423,7 @@ export const money = [
       headline: 'Set Financial Goals',
       accent: 'and Track Your Progress',
       blurb: 'A financial goal tracker app built on the accounts you link through Plaid. Progress is based on your linked balances and moves as new balance data comes in.',
-      image: '/assets/feature-goals-phone.webp', width: 783, height: 711,
+      image: '/assets/feature-goals-phone.webp', width: 1400, height: 1271,
     },
     cards: [
       { icon: 'wallet', title: 'Give the goal a number', text: 'Each goal gets a target amount you can follow.' },
@@ -489,7 +489,7 @@ export const money = [
       headline: 'Personal Finance Forecasting App',
       accent: 'to See Where Your Money Is Heading',
       blurb: 'A financial forecasting app that projects future account balances from your income, bills and spending. Each projection is an estimate you can change and compare.',
-      image: '/assets/feature-financial-forecasting-phone.webp', width: 743, height: 711,
+      image: '/assets/feature-financial-forecasting-phone.webp', width: 1400, height: 1340,
     },
     cards: [
       { icon: 'sparkles', title: 'What if the numbers changed?', text: 'Estimated outcomes come from the assumptions in the forecasting tool.' },
@@ -499,7 +499,7 @@ export const money = [
       { icon: 'trend-up', title: 'The future isn\'t a fixed number', text: 'Forecasts are possibilities to explore, not promises about what will happen.' },
       { icon: 'link', title: 'Make room for your own judgment', text: 'The tool gives estimates and context; you decide what to do next.' },
     ],
-    intro: { image: { src: '/assets/feature-financial-forecasting-card.webp', width: 900, height: 833 }, title: 'Your Budget Looks Fine Until a Bill Lands Before Payday', text: 'WealthNX is a personal finance forecasting app that projects your balances ahead, using your income, bills and spending patterns. You can change an input, compare scenarios and see the estimate move before you commit to anything. Projections cover the months and years ahead.' },
+    intro: { image: { src: '/assets/feature-financial-forecasting-card.webp', width: 1100, height: 640 }, title: 'Your Budget Looks Fine Until a Bill Lands Before Payday', text: 'WealthNX is a personal finance forecasting app that projects your balances ahead, using your income, bills and spending patterns. You can change an input, compare scenarios and see the estimate move before you commit to anything. Projections cover the months and years ahead.' },
     explore: { title: 'What the', accent: 'WealthNX Forecast Shows' },
     why: {
       title: 'Why You Need a', accent: 'Personal Finance Forecasting App',
@@ -555,7 +555,7 @@ export const money = [
       headline: 'Share Budgets and Goals',
       accent: 'With Family and Friends',
       blurb: 'A shared budget app for couples and a family finance app in one. Each member sees the accounts, budgets and goals the household shares.',
-      image: '/assets/feature-members-phone.webp', width: 743, height: 692,
+      image: '/assets/feature-members-phone.webp', width: 1400, height: 1304,
     },
     cards: [
       { icon: 'layers', title: 'A clearer household view', text: 'Shared accounts appear in one household view.' },
@@ -615,7 +615,7 @@ export const money = [
       headline: 'Spending by Merchant:',
       accent: 'See Which Stores Get Your Money',
       blurb: 'A spending by store app view for the accounts you link. Groceries, coffee, delivery and online orders, each grouped under the business that charged you.',
-      image: '/assets/feature-spending-by-merchant-phone.webp', width: 743, height: 711,
+      image: '/assets/feature-spending-by-merchant-phone.webp', width: 1400, height: 1340,
     },
     cards: [
       { icon: 'layers', title: 'Grouped by business', text: 'Explore purchases grouped by merchant, not scattered across individual transactions.' },
@@ -677,7 +677,7 @@ export const money = [
       headline: 'Business Expense Tracking',
       accent: 'That Keeps Personal Spending Apart',
       blurb: 'Each business gets its own name, color and set of accounts. Transactions from those accounts are sorted into categories automatically, from a side hustle to a full company.',
-      image: '/assets/feature-business-expense-tracking-phone.webp', width: 743, height: 711,
+      image: '/assets/feature-business-expense-tracking-phone.webp', width: 1400, height: 1340,
     },
     cards: [
       { icon: 'layers', title: 'Personal and business, apart', text: 'Accounts assigned to a business stay out of your personal views.' },
@@ -729,6 +729,7 @@ export const money = [
 
   {
     slug: 'subscription-tracker',
+    carouselImage: '/assets/feature-subscription-tracker-landing.webp',
     label: 'Subscriptions',
     menu: { group: 'Money', order: 100, icon: '/assets/menu-icons/subscriptions.webp' },
     metaTitle: 'Subscription Tracker App: Find Repeat Charges | WealthNX',
@@ -737,7 +738,7 @@ export const money = [
       headline: 'Subscription Tracker App',
       accent: 'That Finds Recurring Charges Across Your Cards',
       blurb: 'A recurring charges tracker for the accounts you link through Plaid. Streaming, software, memberships and app charges appear in one list.',
-      image: '/assets/feature-subscription-tracker-phone.webp', width: 743, height: 711,
+      image: '/assets/feature-subscription-tracker-phone.webp', width: 1400, height: 1340,
     },
     cards: [
       { icon: 'link', title: 'Recurring charges, found', text: 'Recurring charges in your transactions are picked out and listed.' },
@@ -747,7 +748,7 @@ export const money = [
       { icon: 'coins', title: 'Spot the small stuff', text: 'A few modest charges can add up to a larger total when viewed together.' },
       { icon: 'sparkles', title: 'Money Leak Detection', text: 'Highlights recurring charges, category overspending and unusual monthly increases based on available transaction data.' },
     ],
-    intro: { image: { src: '/assets/feature-subscription-tracker-card.webp', width: 840, height: 685 }, title: 'Small Recurring Charges Are Easy to Lose Track Of', text: 'WealthNX is a subscription tracker app that finds recurring charges in the available transaction history from your linked cards and accounts. Subscriptions appear in one list, without a statement-by-statement search.' },
+    intro: { image: { src: '/assets/feature-subscription-tracker-card.webp', width: 1100, height: 589 }, title: 'Small Recurring Charges Are Easy to Lose Track Of', text: 'WealthNX is a subscription tracker app that finds recurring charges in the available transaction history from your linked cards and accounts. Subscriptions appear in one list, without a statement-by-statement search.' },
     explore: { title: 'What the', accent: 'WealthNX Subscriptions View Shows' },
     why: {
       title: 'Why You Need a', accent: 'Subscription Tracker App',
@@ -850,7 +851,7 @@ export const money = [
       headline: 'Savings Rate Calculator',
       accent: 'That Updates From Your Recorded Income and Spending',
       blurb: 'Your savings percentage, worked out from the income and spending in your linked accounts. Follow your savings rate trend from one month to the next.',
-      image: '/assets/feature-savings-rate-calculator-phone.webp', width: 743, height: 711,
+      image: '/assets/feature-savings-rate-calculator-phone.webp', width: 1400, height: 1340,
     },
     cards: [
       { icon: 'wallet', title: 'How much are you setting aside?', text: 'Your calculated savings rate shows the share of recorded income remaining after recorded spending.' },
@@ -910,7 +911,7 @@ export const money = [
       headline: 'Financial Health Score',
       accent: 'That Shows What\'s Behind the Number',
       blurb: 'A financial wellness score on a 0 to 100 scale, worked out from your linked accounts. Each part of the score is shown, so the number never stands alone.',
-      image: '/assets/feature-financial-health-score-phone.webp', width: 743, height: 711,
+      image: '/assets/feature-financial-health-score-phone.webp', width: 1400, height: 1340,
     },
     cards: [
       { icon: 'sparkles', title: 'Know what the number means', text: 'The score runs from 0 to 100, with weighted parts forming an informational picture.' },
@@ -970,7 +971,7 @@ export const money = [
       headline: 'Compare Spending Month Over Month',
       accent: 'and See What Changed',
       blurb: 'Spending this month vs last month, side by side, from your linked accounts. Any two periods, with the categories behind the difference.',
-      image: '/assets/feature-compare-spending-phone.webp', width: 743, height: 711,
+      image: '/assets/feature-compare-spending-phone.webp', width: 1400, height: 1340,
     },
     cards: [
       { icon: 'layers', title: 'Any two periods', text: 'This month against last, or two months a year apart.' },

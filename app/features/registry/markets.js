@@ -87,7 +87,7 @@ export const markets = [
       headline: 'Celebrity Portfolio Tracking',
       accent: 'From Public Investor Filings',
       blurb: 'Public investor holdings from the latest quarterly SEC 13F filings of well-known investors, in one view. Filings arrive up to 45 days after quarter end, so they can lag actual trading.',
-      image: '/assets/feature-celebrity-portfolio-tracking-phone.webp', width: 743, height: 711,
+      image: '/assets/feature-celebrity-portfolio-tracking-phone.webp', width: 1400, height: 1340,
     },
     cards: [
       { icon: 'layers', title: 'See what notable investors disclose', text: 'Holdings reported in available public filings. Filing dates and reporting delays affect what they show.' },
@@ -146,7 +146,7 @@ export const markets = [
       headline: 'Stock Watchlist',
       accent: 'for the Stocks and Crypto You\'re Following',
       blurb: 'A crypto watchlist and stock list in one, with market price alerts, Top Movers and news sentiment from Benzinga and Nasdaq.',
-      image: '/assets/feature-stock-watchlist-phone.webp', width: 743, height: 711,
+      image: '/assets/feature-stock-watchlist-phone.webp', width: 1400, height: 1340,
     },
     cards: [
       { icon: 'layers', title: 'Keep the names that matter close', text: 'Securities you save stay in the list, so there\'s no searching for them again.' },
@@ -206,7 +206,7 @@ export const markets = [
       headline: 'Stock News Sentiment Analysis',
       accent: 'for the Stories Behind a Stock',
       blurb: 'Market sentiment analysis for supported stocks, built on financial news from Benzinga and Nasdaq, plus an AI stock news summary from Wealth Genie.',
-      image: '/assets/feature-stock-news-sentiment-phone.webp', width: 743, height: 711,
+      image: '/assets/feature-stock-news-sentiment-phone.webp', width: 1400, height: 1340,
     },
     cards: [
       { icon: 'layers', title: 'Look beyond the headline', text: 'News and available sentiment information for a company or security.' },
@@ -266,7 +266,7 @@ export const markets = [
       headline: 'Insider Trading Data From Company Filings,',
       accent: 'in Plain View',
       blurb: 'An SEC Form 4 tracker for the stocks you own and watch, with reported buys and sales by officers, directors and large shareholders.',
-      image: '/assets/feature-insider-trading-data-phone.webp', width: 743, height: 711,
+      image: '/assets/feature-insider-trading-data-phone.webp', width: 1400, height: 1340,
     },
     cards: [
       { icon: 'layers', title: 'See what insiders disclosed', text: 'Insider purchases and sales reported in available disclosures, with reporting dates and sources where provided.' },
@@ -326,7 +326,7 @@ export const markets = [
       headline: 'Earnings Calendar',
       accent: 'With Estimates and Reported Results Side by Side',
       blurb: 'Upcoming earnings announcement dates for companies in WealthNX\'s market coverage, with earnings per share estimates and reported results where available.',
-      image: '/assets/feature-earnings-calendar-phone.webp', width: 773, height: 711,
+      image: '/assets/feature-earnings-calendar-phone.webp', width: 1400, height: 1288,
     },
     cards: [
       { icon: 'layers', title: 'Know who reports next', text: 'Upcoming earnings announcements for companies in the available coverage.' },

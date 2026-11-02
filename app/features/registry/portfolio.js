@@ -52,7 +52,7 @@ export const portfolio = [
       headline: 'Portfolio Exposure Analysis',
       accent: 'for What Your Funds Hold',
       blurb: 'Sector exposure, asset allocation, geography and company size across your linked brokerage, 401(k) and IRA accounts. Fund Look-Through shows available underlying holdings inside supported ETFs and mutual funds.',
-      image: '/assets/feature-portfolio-exposure-analysis-phone.webp', width: 743, height: 711,
+      image: '/assets/feature-portfolio-exposure-analysis-phone.webp', width: 1400, height: 1340,
     },
     cards: [
       { icon: 'pie', title: 'Know where you\'re invested', text: 'Your portfolio\'s distribution replaces a plain list of tickers.' },
@@ -112,7 +112,7 @@ export const portfolio = [
       headline: 'Dividend Tracker App',
       accent: 'for What You\'ve Earned and What May Come',
       blurb: 'A dividend income tracker for your linked brokerage accounts and the stocks you add by hand. Recorded dividends received, expected dividend payments and a dated list of estimated upcoming payouts.',
-      image: '/assets/feature-dividend-tracker-phone.webp', width: 743, height: 711,
+      image: '/assets/feature-dividend-tracker-phone.webp', width: 1400, height: 1545,
     },
     cards: [
       { icon: 'wallet', title: 'Income already earned', text: 'Dividend payments recorded in your available linked brokerage data.' },
@@ -172,7 +172,7 @@ export const portfolio = [
       headline: 'Compare Portfolio to S&P 500',
       accent: 'and Know How You Did Against the Market',
       blurb: 'A portfolio benchmark tool for your linked investment accounts. Portfolio benchmark comparison against the S&P 500 and a Nasdaq benchmark, for your whole portfolio or a single holding.',
-      image: '/assets/feature-portfolio-benchmark-comparison-phone.webp', width: 743, height: 711,
+      image: '/assets/feature-portfolio-benchmark-comparison-phone.webp', width: 1400, height: 1340,
     },
     cards: [
       { icon: 'trend-up', title: 'A return needs a reference point', text: 'Your performance next to a benchmark over the same displayed period, using the method shown in the app.' },
@@ -292,7 +292,7 @@ export const portfolio = [
       headline: 'Portfolio Performance Tracker',
       accent: 'for Gains and Losses Across Your Accounts',
       blurb: 'An investment gain and loss tracker for your linked brokerage, retirement and crypto accounts. Unrealized gains and losses in dollars for each holding you own, plus a Positions bar showing how many holdings are up, flat or down.',
-      image: '/assets/feature-portfolio-performance-tracker-phone.webp', width: 743, height: 711,
+      image: '/assets/feature-portfolio-performance-tracker-phone.webp', width: 1400, height: 1340,
     },
     cards: [
       { icon: 'layers', title: 'Find the positions behind the move', text: 'Which current holdings have unrealized gains or losses, based on available cost basis and price information.' },
