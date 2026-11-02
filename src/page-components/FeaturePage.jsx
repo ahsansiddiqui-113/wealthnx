@@ -13,6 +13,7 @@ import './HeroCore.css';
 import { heroCoreProps } from './heroCore';
 import './FeatureMobile.css';
 import HomeDownload from './HomeDownload';
+import { INTRO_IMAGE_FIT } from '@/app/features/introImageFit.js';
 import SiteFooter from '@/app/components/SiteFooter';
 import PartnerStrip from '@/app/components/PartnerStrip';
 
@@ -80,7 +81,7 @@ export default function FeaturePage({ content }) {
               {intro.text && <p className="fp-lead">{intro.text}</p>}
             </div>
             {intro.image
-              ? <div className="fp-intro__visual" data-reveal="fade"><img src={intro.image.src} alt="" width={intro.image.width} height={intro.image.height} loading="lazy" /></div>
+              ? <div className="fp-intro__visual" data-reveal="fade" style={{ '--fit-n': (INTRO_IMAGE_FIT[intro.image.src] || [100, 0, 0, 0])[0], '--fit-x': `${(INTRO_IMAGE_FIT[intro.image.src] || [100, 0, 0, 0])[1]}%`, '--fit-h': (INTRO_IMAGE_FIT[intro.image.src] || [100, 0, 0, 0])[2], '--fit-t': (INTRO_IMAGE_FIT[intro.image.src] || [100, 0, 0, 0])[3] }}><img src={intro.image.src} alt="" width={intro.image.width} height={intro.image.height} loading="lazy" /></div>
               : <NetWorthChart />}
           </section>
         )}

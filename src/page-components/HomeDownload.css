@@ -253,3 +253,11 @@
   .home-redesign .hd { padding-bottom: 0; }
   .hd--light .hd-phones { margin-bottom: -70px; }
 }
+
+/* Phones: the whole download band is centred (heading, copy and the three buttons). */
+@media (max-width: 760px) {
+  .home-redesign .hd-copy { text-align: center; }
+  .home-redesign .hd-title, .home-redesign .hd-text { text-align: center; margin-left: auto; margin-right: auto; }
+  .home-redesign .hd-actions { align-items: center; }
+  .home-redesign .hd-actions .hd-btn { margin-left: auto; margin-right: auto; }
+}

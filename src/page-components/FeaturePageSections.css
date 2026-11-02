@@ -210,3 +210,11 @@
   body .feature-page .fp-features__grid, body .feature-page .fp-covers__grid { grid-template-columns: minmax(0, 1fr); width: 100%; box-sizing: border-box; }
   body .feature-page .fp-feature-card, body .feature-page .fp-covers__grid > * { min-width: 0; max-width: 100%; box-sizing: border-box; overflow-wrap: anywhere; }
 }
+
+@media (max-width: 700px) {
+  /* intro picture on phones: the visible card fills the column and is centred; its empty top/bottom margin is trimmed so there is no big blank gap (column = 100vw - 40px) */
+  body .feature-page .fp-intro { gap: 16px; }
+  body .feature-page .fp-intro__visual { --col: calc(100vw - 40px); width: 100%; display: flex; justify-content: center; align-items: flex-start; overflow: visible; clip-path: inset(0 -60vw); height: calc(var(--fit-h, 0) * var(--fit-n, 100) / 100 * var(--col)); }
+  body .feature-page .fp-intro__visual:not([style*="--fit-h: 0"]) img { margin-top: calc(var(--fit-t, 0) * var(--fit-n, 100) / -100 * var(--col)) !important; }
+  body .feature-page .fp-intro__visual img { width: calc(var(--fit-n, 100) * 1%) !important; max-width: none !important; margin: 0; translate: var(--fit-x, 0) 0; flex: none; height: auto; }
+}
