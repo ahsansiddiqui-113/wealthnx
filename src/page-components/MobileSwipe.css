@@ -141,6 +141,6 @@
 /* Phones: "Frequently Asked Questions" headings: one line, as large as fits (30px max), centred. */
 @media (max-width: 700px) {
   body #cp-faq-title, body #wp-faq-title, body #pr-faq-title, body #fp-faq-title {
-    font-size: min(30px, calc((100vw - 40px) / 13.2)) !important; line-height: 1.2; white-space: nowrap; text-align: center; margin-left: auto; margin-right: auto; max-width: none;
+    font-size: min(30px, calc((100vw - 48px) / 13.6)) !important; line-height: 1.2; white-space: nowrap; text-align: center; margin-left: auto; margin-right: auto; max-width: none;
   }
 }

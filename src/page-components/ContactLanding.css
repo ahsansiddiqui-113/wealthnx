@@ -446,3 +446,8 @@
 .ct-faq summary:focus-visible { outline: 3px solid #1bc8bb; outline-offset: -3px; border-radius: 16px; }
 .ct-faq p { margin: 0; padding: 4px 32px 24px; max-width: 760px; font-size: 15px; line-height: 1.55; color: #555; }
 @media (max-width: 560px) { .ct-faq { padding-right: 16px; padding-left: 16px; } .ct-faq summary { padding: 16px 18px; } .ct-faq p { padding: 4px 18px 18px; font-size: 14px; } }
+
+/* Phones: FAQ heading 30px. */
+@media (max-width: 700px) {
+  body .ct-faq h2 { font-size: 30px !important; line-height: 1.2; }
+}
