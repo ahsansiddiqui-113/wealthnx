@@ -133,7 +133,7 @@ export default function HomePortfolio() {
       <div className="hpf-bg" aria-hidden="true" />
       <div className="hpf-inner">
         <div className="hpf-stage">
-          <h3 id="portfolio-title" className="hpf-title" data-reveal>Your<em> Entire<br className="hpf-br-d"/>Portfolio</em><br className="hpf-br-m"/> in One View</h3>
+          <h3 id="portfolio-title" className="hpf-title" data-reveal>Your<em> Entire<br className="hpf-br-d"/> Portfolio</em><br className="hpf-br-m"/> in One View</h3>
 
           <PortfolioList onSelect={setShown} />
 

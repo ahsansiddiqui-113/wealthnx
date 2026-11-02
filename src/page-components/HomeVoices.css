@@ -332,3 +332,16 @@
 .hv-scroll { width: 100cqw; }
 @media (min-width: 561px) { .hv-stage { overflow-x: visible; } }
 @media (min-width: 561px) { .hv-scroll--voices .hv-track { margin-inline: auto; } }
+
+/* Audience cards use the supplied blurred-landscape backgrounds (public/assets/home-aud-card-*.webp). */
+.hv-ac--everyday, .hv-ac--active, .hv-ac--couples, .hv-ac--retire, .hv-ac--crypto, .hv-ac--first, .hv-ac--founders, .hv-ac--solo { background-size: cover; background-position: center; background-repeat: no-repeat; }
+.hv-ac--everyday { background-image: url('/assets/home-aud-card-everyday.webp'); }
+.hv-ac--active { background-image: url('/assets/home-aud-card-active.webp'); }
+.hv-ac--couples { background-image: url('/assets/home-aud-card-couples.webp'); }
+.hv-ac--retire { background-image: url('/assets/home-aud-card-retire.webp'); }
+.hv-ac--crypto { background-image: url('/assets/home-aud-card-crypto.webp'); }
+.hv-ac--first { background-image: url('/assets/home-aud-card-first.webp'); }
+.hv-ac--founders { background-image: url('/assets/home-aud-card-founders.webp'); }
+.hv-ac--solo { background-image: url('/assets/home-aud-card-solo.webp'); }
+.home-redesign .hv-ac--first .hv-ac__title, .home-redesign .hv-ac--first .hv-ac__copy { color: #000; }
+.home-redesign .hv-ac--solo .hv-ac__title, .home-redesign .hv-ac--solo .hv-ac__copy { color: #fff; }

@@ -221,8 +221,8 @@
 .hf-br-d { display: none; }
 
 /* Lead + sub-heading use the same type scale as the "Your Entire Portfolio" section (1u = 100cqw / 934). */
-.home-redesign .hf-section .hf-lead { font-size: calc(25 * 100cqw / 934) !important; line-height: 1.2; font-weight: 500; letter-spacing: -.045em; }
-.home-redesign .hf-section .hf-sub { margin-top: calc(6 * 100cqw / 934); max-width: calc(376 * 100cqw / 934); font-size: calc(15.4 * 100cqw / 934) !important; line-height: 1.25; letter-spacing: 0; }
+.home-redesign .hf-section .hf-lead { font-size: calc(21 * 100cqw / 934) !important; line-height: 1.2; font-weight: 500; letter-spacing: -.045em; }
+.home-redesign .hf-section .hf-sub { margin-top: calc(14 * 100cqw / 934); max-width: calc(480 * 100cqw / 934); font-size: calc(13.2 * 100cqw / 934) !important; line-height: 1.25; letter-spacing: 0; }
 @media (max-width: 900px) {
   .home-redesign .hf-section .hf-lead { font-size: 22px !important; }
   .home-redesign .hf-section .hf-sub { margin-top: 10px; max-width: 360px; font-size: 14px; line-height: 1.3; }
@@ -239,4 +239,19 @@
 /* Desktop: the picture is smaller and stays inside the left column (it was 80cqw wide and bled past the left edge). */
 @media (min-width: 901px) {
   .hf-visual { margin: 2cqw 0 0 -12cqw; width: 58cqw; aspect-ratio: 1200 / 819; }
+}
+
+/* Phones: sub-heading size must beat the desktop !important rule; list cards all the same width; slightly larger type. */
+@media (max-width: 700px) {
+  .home-redesign .hf-section .hf-lead { font-size: 22px !important; }
+  .home-redesign .hf-section .hf-sub { font-size: 16.5px !important; line-height: 1.4; max-width: 340px; }
+  .hf-card { width: 100%; box-sizing: border-box; }
+  .home-redesign .hf-card h3 { font-size: 19px !important; }
+  .home-redesign .hf-card p { font-size: 15.5px; }
+}
+
+/* The pictures end in a visible dark box: fade their bottom into the section's black so there is no edge. */
+.hf-visual img, .hf-pic img {
+  -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 72%, transparent 97%);
+  mask-image: linear-gradient(to bottom, #000 0, #000 72%, transparent 97%);
 }

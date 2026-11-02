@@ -114,8 +114,25 @@
 
 /* The pictures carry a soft glow/shadow that ended in a visible rectangle: feather all four edges so they merge into the panel. */
 .hw2-stage img {
-  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 2%, #000 98%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 9%, #000 88%, transparent 100%);
+  /* The pictures now carry empty padding (6% sides, 8% top/bottom); the fade only runs inside it, so no text is cut. */
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 5%, #000 95%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 6.5%, #000 93.5%, transparent 100%);
   -webkit-mask-composite: source-in;
-  mask-image: linear-gradient(to right, transparent 0, #000 2%, #000 98%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 9%, #000 88%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 5%, #000 95%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 6.5%, #000 93.5%, transparent 100%);
   mask-composite: intersect;
+}
+
+/* Phones get their own portrait pictures (<picture> in HomeWhy.jsx); the wrapper must not disturb the stacked grid. */
+.hw2-stage picture { display: contents; }
+
+/* Phones: the pictures were too small; let them run a little wider than the panel (their empty margin absorbs it). */
+@media (max-width: 700px) {
+  .hw2-stage img { width: 120%; max-width: none; }
+}
+
+/* Phones: bigger heading and tabs, narrower side padding so the pictures can be larger. */
+@media (max-width: 700px) {
+  .hw2-container { padding: 44px 6px 40px; }
+  .home-redesign .hw2-title { font-size: 38px !important; line-height: 1.12; }
+  .hw2-tab { height: 40px; padding: 0 18px; font-size: 14.5px; }
+  .hw2-stage img { width: 116%; }
 }

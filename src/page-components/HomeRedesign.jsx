@@ -79,7 +79,7 @@ const fragCards = [
   { key: 'goals', title: 'Goals', body: 'Set financial goals and track your progress.', img: 'goals', icon: 'goals', size: [1200, 819] },
   { key: 'bills', title: 'Bills', body: 'See upcoming bills and know what\u2019s due.', img: 'bills', icon: 'bills', size: [1200, 819] },
   { key: 'transactions', title: 'Transactions', body: 'Track your spending and see where your money goes.', img: 'transactions', icon: 'transactions', size: [1200, 816] },
-  { key: 'forecasting', title: 'Forecasting', body: 'Explore how your net worth could change over time.', img: 'forecasting', icon: 'forecasting', size: [1200, 797] },
+  { key: 'forecasting', title: 'Forecasting', body: 'Explore how your net worth could change over time.', img: 'forecasting', icon: 'forecasting', size: [1200, 819] },
 ];
 
 

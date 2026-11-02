@@ -216,12 +216,12 @@
 .home-redesign .hd-btn { padding-left: calc(18 * var(--u)); padding-right: calc(10 * var(--u)); }
 @media (max-width: 760px) { .home-redesign .hd-btn { padding-left: 20px; padding-right: 12px; } }
 
-/* New composite (phones + glow, transparent PNG-derived): feather all four edges so the glow has no visible box. */
+/* Composite picture (phones + glow + pills): it carries empty padding, and the soft fade runs only inside it, so the pills at its edges stay sharp. */
 .hd-bottom {
-  left: -6%; top: -9%; width: 112%;
-  -webkit-mask-image: radial-gradient(ellipse 50% 52% at 50% 46%, #000 62%, transparent 100%), linear-gradient(180deg, #000 0, #000 70%, transparent 100%);
+  left: -6%; top: 1%; width: 112%;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 5%, #000 95%, transparent 100%), linear-gradient(180deg, transparent 0, #000 6.5%, #000 70%, transparent 100%);
   -webkit-mask-composite: source-in;
-  mask-image: radial-gradient(ellipse 50% 52% at 50% 46%, #000 62%, transparent 100%), linear-gradient(180deg, #000 0, #000 70%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 5%, #000 95%, transparent 100%), linear-gradient(180deg, transparent 0, #000 6.5%, #000 70%, transparent 100%);
   mask-composite: intersect;
 }
 @media (max-width: 760px) { .hd-bottom { left: -4%; top: -6%; width: 108%; } }
@@ -233,4 +233,10 @@
 @media (max-width: 760px) {
   .home-redesign .hd-btn { gap: 10px; padding-left: 12px; padding-right: 12px; }
   .home-redesign .hd-btn--trial { padding-left: 12px; padding-right: 12px; font-size: 13.5px; }
+}
+
+/* Phones: the single-phone picture is square, so its box is too. */
+@media (max-width: 760px) {
+  .hd--light .hd-phones { aspect-ratio: 1000 / 994; margin-top: 8px; }
+  .hd--light .hd-bottom { left: -3%; top: 0; width: 106%; }
 }

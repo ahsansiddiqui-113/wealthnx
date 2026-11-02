@@ -62,13 +62,13 @@ const voices = [
 
 const audience = [
   { key: 'p1', kind: 'photo', img: 'home-aud-1.webp' },
-  { key: 't1', kind: 'text', tone: 'sky', href: '/features/budgeting/', title: 'Everyday Savers', body: ['Understand your spending, cash','flow and savings goals.'] },
+  { key: 't1', kind: 'text', tone: 'everyday', href: '/features/budgeting/', title: 'Everyday Savers', body: ['Understand your spending, cash','flow and savings goals.'] },
   { key: 'p2', kind: 'photo', img: 'home-aud-2.webp' },
   { key: 't2', kind: 'text', tone: 'active', href: '/features/net-worth/', title: 'Active investors', body: ['See your investments and net','worth together.'] },
   { key: 'p3', kind: 'photo', img: 'home-aud-3.webp' },
   { key: 't3', kind: 'text', tone: 'couples', href: '/features/members/', title: 'Couples and families', body: ['Understand your household','financial picture.'] },
   { key: 'p4', kind: 'photo', img: 'home-aud-4.webp' },
-  { key: 't4', kind: 'text', tone: 'sky', href: '/features/financial-forecasting/', title: 'Retirement Planners', body: ['See where you stand and plan','for your financial future.'] },
+  { key: 't4', kind: 'text', tone: 'retire', href: '/features/financial-forecasting/', title: 'Retirement Planners', body: ['See where you stand and plan','for your financial future.'] },
   { key: 'p5', kind: 'photo', img: 'home-aud-5.webp' },
   { key: 't5', kind: 'text', tone: 'crypto', href: '/features/crypto/', title: 'Crypto Investors', body: ['Track your crypto holdings and','explore market trends.'] },
   { key: 'p6', kind: 'photo', img: 'home-aud-6.webp' },
