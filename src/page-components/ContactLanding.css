@@ -451,3 +451,20 @@
 @media (max-width: 700px) {
   body .ct-faq h2 { font-size: 30px !important; line-height: 1.2; }
 }
+
+/* Phones: tall hero like the design: heading and text at the top, the mountain-and-cloud photo filling the lower part, arrow button on the bottom edge. */
+@media (max-width: 700px) {
+  body .ct-hero { align-items: flex-start; min-height: min(170vw, 760px); padding: 108px 24px 80px; }
+  body .ct-hero__bg { background-size: auto 62%; background-position: 28% 100%; background-color: #0b0b0b; }
+  body .ct-hero__fade { background: linear-gradient(180deg, rgba(11, 11, 11, .55) 0%, rgba(11, 11, 11, 0) 22%, rgba(11, 11, 11, 0) 60%, rgba(7, 7, 7, .85) 100%); }
+  body .ct-hero h1 { font-size: clamp(36px, 11vw, 46px); margin-top: 8px; }
+  body .ct-hero p { font-size: 18px; max-width: 22em; margin-top: 22px; }
+}
+@media (max-width: 700px) {
+  body .ct-hero h1 { font-size: clamp(30px, 9.4vw, 38px); line-height: 1.1; }
+  body .ct-hero p { font-size: 17px; }
+  body .ct-hero__bg { background-size: auto 66%; }
+  /* the top edge of the photo melts into the page black */
+  body .ct-hero__fade { background: linear-gradient(180deg, rgba(11, 11, 11, .55) 0%, rgba(11, 11, 11, 0) 14%, rgba(11, 11, 11, 0) 22%, #0b0b0b 33%, rgba(11, 11, 11, .6) 44%, rgba(11, 11, 11, 0) 58%, rgba(7, 7, 7, .85) 100%); }
+}
+@media (max-width: 700px) { body .ct-hero__bg { filter: brightness(1.7) contrast(1.05); } }

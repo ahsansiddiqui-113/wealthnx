@@ -570,3 +570,7 @@
     .megaBackdrop { display: block; position: fixed; inset: 0; z-index: 0; background: rgba(8, 12, 12, .5); animation: backdropIn .18s ease-out both; }
 }
 @keyframes backdropIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Link to the main Features page at the top of the Features menu. */
+.megaAll { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; justify-self: start; width: fit-content; margin-bottom: 2px; padding: 8px 16px; border-radius: 999px; background: #0b0d0d; color: #fff !important; font-size: 14px; font-weight: 600; text-decoration: none; }
+.megaAll:hover { background: #14a99d; }

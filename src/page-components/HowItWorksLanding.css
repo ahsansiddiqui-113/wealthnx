@@ -172,3 +172,15 @@
   .hw-btn { margin-left: 0; min-width: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .hw-btn, .hw-down { transition: none; } }
+
+/* Phones: the axis starts at the first circle and ends at the last circle (it ran on past step 5), text is larger. */
+@media (max-width: 800px) {
+  body .hw-step:first-child::after { top: 48px; }
+  body .hw-step:last-child::after { top: 0; bottom: auto; height: 48px; }
+  body .hw-step__copy h2 { font-size: 28px !important; }
+  body .hw-step__lead { font-size: 19px; line-height: 1.3; }
+  body .hw-step__body { font-size: 16.5px; line-height: 1.5; font-weight: 400; max-width: none; }
+  body .hw-step__bullets li { font-size: 16px; line-height: 1.35; }
+  body .hw-step__note { font-size: 14px; }
+  body .hw-step__copy { min-width: 0; max-width: 100%; overflow-wrap: break-word; }
+}

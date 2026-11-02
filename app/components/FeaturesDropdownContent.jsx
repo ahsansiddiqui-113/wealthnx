@@ -6,6 +6,7 @@ import { featureMenuGroups as groups } from '@/app/features/featureRegistry';
 
 export default function FeaturesDropdownContent({ onClose }) {
   return <div className={styles.megaMenuContent}>
+    <Link href="/features/" className={styles.megaAll} onClick={onClose}>View all features <span aria-hidden="true">→</span></Link>
     {groups.map((group) => <section className={styles.megaGroup} key={group.title} aria-label={group.title}>
       <div className={styles.megaSectionHeading}><span>{group.title}</span></div>
       <div className={styles.megaItems}>
