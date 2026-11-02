@@ -7,7 +7,7 @@ export const CAROUSEL_COPY = {
   stocks: { name: 'Stock Assistant', description: 'Questions about a stock get plain answers on its price trend, earnings and key ratios.', cta: 'Meet the Stock Assistant' },
   crypto: { name: 'Crypto Assistant', description: 'Answers about the coins you hold or follow, based on CoinGecko market data.', cta: 'Meet the Crypto Assistant' },
   'build-mode': { name: 'Build Mode', description: 'Wealth Genie builds the chart or view you describe, using your own account data.', cta: 'See Build Mode' },
-  'voice-to-voice': { name: 'Voice', description: 'You can ask Wealth Genie out loud and hear the answer back.', cta: 'Speak to Wealth Genie' },
+  'voice-to-voice': { name: 'Voice To Voice', description: 'You can ask Wealth Genie out loud and hear the answer back.', cta: 'Speak to Wealth Genie' },
   // Money
   'net-worth': { name: 'Net Worth', description: 'An estimated net worth from your linked balances and manual entries, tracked over time.', cta: 'Track your net worth' },
   'multi-assets': { name: 'Assets', description: 'Home, car and other assets count toward net worth, with home value estimates from ATTOM.', cta: 'Track your assets' },

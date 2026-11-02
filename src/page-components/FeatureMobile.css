@@ -162,3 +162,25 @@
   .feature-detail-template.fdt-mobile.feature-page .fdt-hero h1[data-hl="lg"] { font-size: clamp(30px, 8.6vw, 36px); }
   .feature-detail-template.fdt-mobile.feature-page .fdt-hero h1[data-hl="xl"] { font-size: clamp(28px, 7.8vw, 33px); }
 }
+
+/* Desktop carousel: more air between the four tabs and the arc, and previous/next arrows beside the arc (phones keep the pager below). */
+.feature-detail-template .fdt-orbit__arrow { display: none; }
+@media (min-width: 701px) {
+  .feature-detail-template.fdt-features .fdt-orbit { margin-top: 96px !important; }
+  .feature-detail-template.fdt-features .fdt-orbit__arrow {
+    position: absolute; z-index: 6; top: 52%; display: grid; place-items: center; width: 52px; height: 52px; padding: 0;
+    border: 1px solid rgba(255, 255, 255, .22); border-radius: 50%; background: rgba(20, 26, 26, .85); color: #fff; cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .35); transition: background .2s ease, border-color .2s ease, transform .15s ease;
+  }
+  .feature-detail-template.fdt-features .fdt-orbit__arrow--prev { left: 3%; }
+  .feature-detail-template.fdt-features .fdt-orbit__arrow--next { right: 3%; }
+  .feature-detail-template.fdt-features .fdt-orbit__arrow:hover { background: #14a99d; border-color: #14a99d; }
+  .feature-detail-template.fdt-features .fdt-orbit__arrow:active { transform: scale(.94); }
+  .feature-detail-template.fdt-features .fdt-orbit__arrow svg { width: 20px; height: 20px; }
+}
+/* Arrows sit below the carousel, either side of the dots, instead of beside the arc. */
+@media (min-width: 701px) {
+  .feature-detail-template.fdt-features .fdt-orbit__arrow { top: auto; bottom: 8px; width: 44px; height: 44px; }
+  .feature-detail-template.fdt-features .fdt-orbit__arrow--prev { left: calc(50% - 150px); }
+  .feature-detail-template.fdt-features .fdt-orbit__arrow--next { right: calc(50% - 150px); left: auto; }
+}

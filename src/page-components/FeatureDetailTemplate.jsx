@@ -134,6 +134,8 @@ export default function FeatureDetailTemplate() {
             <img key={currentFeature.image} src={currentFeature.image} alt={`WealthNX ${currentFeature.name} feature preview`} />
             <Link href={currentFeature.href}>{currentFeature.cta || 'Learn more'}</Link>
             <div className="fdt-orbit__dots" aria-label="Choose a feature">{featureSlides.map((feature, index) => <button key={feature.name} type="button" className={index === activeFeature ? 'is-active' : ''} aria-label={`Show ${feature.name}`} aria-pressed={index === activeFeature} onClick={(event) => activateFeature(event, index)} />)}</div>
+            <button type="button" className="fdt-orbit__arrow fdt-orbit__arrow--prev" aria-label="Previous feature" onClick={(event) => activateFeature(event, activeFeature - 1)}><ChevronIcon dir="left" /></button>
+            <button type="button" className="fdt-orbit__arrow fdt-orbit__arrow--next" aria-label="Next feature" onClick={(event) => activateFeature(event, activeFeature + 1)}><ChevronIcon dir="right" /></button>
             <div className="fdt-orbit__pager"><span aria-live="polite">{pad2(activeFeature + 1)}/{pad2(featureSlides.length)}</span><div><button type="button" aria-label="Previous feature" onClick={(event) => activateFeature(event, activeFeature - 1)}><ChevronIcon dir="left" /></button><button type="button" aria-label="Next feature" onClick={(event) => activateFeature(event, activeFeature + 1)}><ChevronIcon dir="right" /></button></div></div>
           </div>
         </section>
