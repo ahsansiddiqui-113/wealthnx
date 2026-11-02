@@ -190,3 +190,9 @@
 .hr-caret { display: inline-block; width: .06em; height: .86em; margin-left: .05em; vertical-align: -.06em; background: currentColor; animation: hr-caret-blink 1s steps(1) infinite; }
 @keyframes hr-caret-blink { 50% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .hr-caret { display: none; } }
+
+/* Phones: slightly smaller headline, and the rotating audience is sized so even the longest ("Retirement Planners") stays on one line. */
+@media (max-width: 700px) {
+  .home-redesign .fdt-hero h1 { font-size: 44px; }
+  .home-redesign .fdt-hero h1 em.hr-audience { font-size: min(1em, calc((100vw - 52px) / 8.9)); white-space: nowrap; }
+}

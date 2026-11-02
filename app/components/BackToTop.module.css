@@ -1,0 +1,35 @@
+.btn {
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  z-index: 900;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 50%;
+  background: rgba(14, 20, 20, .88);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .3);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease, background .2s ease, border-color .2s ease;
+}
+
+.btn.show { opacity: 1; transform: none; pointer-events: auto; }
+.btn:hover { background: #14a99d; border-color: #14a99d; }
+.btn:focus-visible { outline: 2px solid #14a99d; outline-offset: 3px; }
+.btn svg { width: 20px; height: 20px; }
+
+@media (max-width: 700px) {
+  .btn { width: 44px; height: 44px; right: 14px; bottom: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
+}

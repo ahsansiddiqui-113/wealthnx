@@ -2,6 +2,7 @@ import './fonts.css';
 import './globals.css';
 import './motion.css';
 import MotionRoot from './components/MotionRoot';
+import BackToTop from './components/BackToTop';
 import '@/src/page-components/MobileSwipe.css';
 import Script from 'next/script';
 
@@ -68,6 +69,7 @@ export default function RootLayout({ children }) {
           {children}
         </div>
         <MotionRoot />
+        <BackToTop />
 
         {/* Google Analytics — loaded after the page is interactive so it never blocks first paint */}
         <Script
