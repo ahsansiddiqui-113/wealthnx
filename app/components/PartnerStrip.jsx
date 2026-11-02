@@ -12,7 +12,6 @@ export default function PartnerStrip({ className = '' }) {
       <div className={styles.track}>
         {Array.from({ length: COPIES }, (_, i) => (
           <div className={styles.unit} key={i} aria-hidden={i > 0 ? 'true' : undefined}>
-            <span className={styles.lead}>Market data sourced from</span>
             {SOURCES.map(([key, name, w]) => (
               <React.Fragment key={key}>
                 <img src={`/assets/data-source-${key}.webp`} alt={i === 0 ? name : ''} width={w} height={46} loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />

@@ -184,3 +184,17 @@
 }
 .hp-card__visual { align-items: center; }
 .hp-card__visual img { width: auto; height: auto; max-width: 56%; max-height: 66%; margin: 8% 0 0; }
+
+/* Dome v4 (matches the reference): a flat-bottomed semicircle panel fills the top of the card and the illustration is
+   larger, centred low so it overlaps the dome's bottom edge. */
+.hp-card__visual { display: block; position: relative; aspect-ratio: 1.38 / 1; overflow: visible; margin: 0 -14px; }
+.hp-card__visual::before {
+  left: 50%; top: 4%; bottom: auto; width: 96%; height: 70%; aspect-ratio: auto; transform: translateX(-50%);
+  border: 0; border-radius: 999px 999px 12px 12px;
+  background: linear-gradient(180deg, #e6efec 0%, #edf3f1 100%);
+  -webkit-mask-image: none; mask-image: none;
+}
+.hp-card__visual img {
+  position: absolute; z-index: 1; left: 50%; top: 63%; width: auto; height: 74%; max-width: 70%; max-height: none; margin: 0;
+  transform: translate(-50%, -50%); object-fit: contain;
+}
