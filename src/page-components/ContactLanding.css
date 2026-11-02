@@ -3,8 +3,8 @@
 .feature-detail-template.ct-page {
   --ct-ink: #070707;
   --ct-mint: #1bc8bb;
-  /* Hero background. The old Background.svg was a flat grey texture (read as missing); GenieBg.png is the brand teal aurora. Swap this value for the final photo. */
-  --ct-hero-image: url('/assets/GenieBg.png');
+  /* Hero background: the supplied mountain-and-clouds photo. */
+  --ct-hero-image: url('/assets/contact-hero-bg.webp');
   position: relative;
   overflow: clip;
   background: var(--ct-ink);
