@@ -36,15 +36,8 @@ export default function HomeDownload({ light = false, titleLines = ['Your Financ
               {textLines.map((l, i) => <React.Fragment key={l}>{i > 0 && ' '}<span>{l}</span></React.Fragment>)}
             </p>
             <div className="hd-actions" data-reveal style={{ "--i": 2 }}>
-              {trial && <a className="hd-btn hd-btn--trial" href="https://wealthnx.ai/get" target="_blank" rel="noopener noreferrer"><span>Start Your 7-Day Free Trial</span></a>}
-              <a className="hd-btn hd-btn--ios" href={APPLE_STORE_URL} onClick={openStore}>
-                <AppleStoreIcon />
-                <span>Download for iphone</span>
-              </a>
-              <a className="hd-btn hd-btn--android" href={GOOGLE_PLAY_URL} target="_blank" rel="noopener noreferrer">
-                <AndroidStoreIcon />
-                <span>Get it on Android</span>
-              </a>
+              <a className="hd-btn hd-btn--trial" href="https://wealthnx.ai/get" target="_blank" rel="noopener noreferrer"><span>Start Your 7-Day Free Trial</span></a>
+              
             </div>
           </div>
 

@@ -127,8 +127,7 @@ export default function CompareLanding() {
           <h2 id="download-title">Your Financial<br />clarity <em>starts</em> here</h2>
           <p>Connect accounts, track net worth, analyze stock, crypto and get clear insights with AI, all in one place.</p>
           <div className="fdt-download__actions">
-            <a href={APPLE_STORE_URL} target="_blank" rel="noreferrer"><AppleStoreIcon /> Download for iphone</a>
-            <a href={GOOGLE_PLAY_URL} target="_blank" rel="noreferrer"><AndroidStoreIcon /> Get it on Android</a>
+            <a href="https://wealthnx.ai/get" target="_blank" rel="noreferrer">Start Your 7-Day Free Trial</a>
           </div>
         </div>
         <div className="fdt-download__phones" aria-hidden="true">

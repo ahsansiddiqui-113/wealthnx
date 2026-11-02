@@ -62,7 +62,6 @@ export default function TopBar({ tone = 'light' }) {
         <Link href="/" className={styles.mobileLink} onClick={closeMobile}>Home</Link>
         <div className={styles.mobileFeatureRow}><Link href="/features/" className={styles.mobileLink} onClick={closeMobile}>Features</Link><button type="button" className={styles.mobileFeatureExpand} aria-label="Show feature list" onClick={() => setMobileFeaturesOpen(true)}>›</button></div>
         {desktopLinks.map(({ href, label, external }) => external ? <a key={href} href={href} className={styles.mobileLink} onClick={closeMobile}>{label}</a> : <Link key={href} href={href} className={styles.mobileLink} onClick={closeMobile}>{label}</Link>)}
-        <button type="button" className={styles.mobileFeatureButton} onClick={() => { window.open('https://wealthnx.ai/get', '_blank', 'noopener,noreferrer'); closeMobile(); }}>Download</button>
         <div className={styles.mobileActions}><a className={styles.login} href="https://app.wealthnx.ai/login">Login</a><a className={styles.getStarted} href="https://wealthnx.ai/get">Get Started</a></div>
       </> : <><button type="button" className={styles.backButton} onClick={() => setMobileFeaturesOpen(false)}>‹ Back to menu</button><FeaturesDropdownContent onClose={closeMobile} /></>}
     </nav>}

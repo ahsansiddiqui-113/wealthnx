@@ -66,7 +66,7 @@ export default function FeaturePage({ content }) {
           <div className="fdt-hero__aside">
             <p>{hero.blurb}</p>
             <div className="fdt-hero__actions">
-              <a href="https://wealthnx.ai/get" target="_blank" rel="noreferrer">Download Now</a>
+              <a href="https://wealthnx.ai/get" target="_blank" rel="noreferrer">Start Your 7-Day Free Trial</a>
               <a href={DEMO_VIDEO_URL} target="_blank" rel="noreferrer" className="fp-play" aria-label="Watch the WealthNX introduction"><span className="fdt-play-icon" aria-hidden="true" /></a>
             </div>
           </div>

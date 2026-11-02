@@ -217,3 +217,16 @@
 @media (max-width: 700px) {
   .home-redesign .fdt-hero h1 em.hr-audience { display: block; min-height: 1.3em; }
 }
+@media (max-width: 600px) {
+  /* insights picture smaller: it fits inside the column with its cards fully visible */
+  .home-redesign .hr-insights__visual img { width: 100%; max-width: 100%; margin-left: 0; }
+  .home-redesign .hr-insights__visual { margin-top: 10px; margin-bottom: -40px; }
+}
+@media (max-width: 600px) {
+  .home-redesign .hr-insights__visual img { position: static !important; left: auto !important; top: auto !important; transform: none; display: block; margin: 0 auto; }
+}
+@media (max-width: 600px) {
+  /* the insights picture is mostly empty glow: draw it wider than the column so the cards themselves are a medium size */
+  .home-redesign .hr-insights__visual img { width: 165% !important; max-width: none !important; margin-left: -32.5% !important; margin-right: 0 !important; }
+  .home-redesign .hr-insights__visual { height: auto; margin-top: -105px; margin-bottom: -55px; }
+}
