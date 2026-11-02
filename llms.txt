@@ -1,192 +1,63 @@
 # WealthNX
 
-> WealthNX is an AI-powered personal finance platform that helps individuals understand their money, track financial activity, analyze portfolios, explore market information, and make more informed financial decisions.
+> WealthNX is an AI-powered personal finance platform that helps people organize and understand their financial information through tracking, analysis, insights, and planning tools.
 
-WealthNX brings financial accounts, assets, cash flow, budgets, goals, portfolio information, market data, and AI-powered financial assistance together in one place.
+WealthNX offers tools for reviewing financial activity, understanding cash flow and spending, tracking net worth, exploring portfolio and market data, and examining financial trends. Features may present actual, estimated, projected, simulated, or AI-generated information; consult the relevant page for details.
 
-- Website: https://wealthnx.ai/
-- Features: https://wealthnx.ai/features/
-- Wealth Genie AI: https://wealthnx.ai/wealth-genie/
-- How It Works: https://wealthnx.ai/how-it-works/
-- Pricing: https://wealthnx.ai/pricing/
-- Blogs: https://wealthnx.ai/blogs/
-- About Us: https://wealthnx.ai/about-us/
-- Contact: https://wealthnx.ai/contact/
-- Support: https://wealthnx.ai/support/
-- Login: https://app.wealthnx.ai/login
-- Sign Up: https://app.wealthnx.ai/signup
+## Core Pages
+- [Home](https://wealthnx.ai/)
+- [Features](https://wealthnx.ai/features/)
+- [How It Works](https://wealthnx.ai/how-it-works/)
+- [Pricing](https://wealthnx.ai/pricing/)
+- [Contact](https://wealthnx.ai/contact/)
+- [About WealthNX](https://wealthnx.ai/about-us/)
+- [Wealth Genie AI](https://wealthnx.ai/wealth-genie/)
+- [Blogs](https://wealthnx.ai/blogs/)
+- [Support](https://wealthnx.ai/support/)
 
-## Core Capabilities
+## Money Management Features
+- [Net Worth](https://wealthnx.ai/features/net-worth/)
+- [Multi Assets](https://wealthnx.ai/features/multi-assets/)
+- [Cash Flow](https://wealthnx.ai/features/cash-flow/)
+- [Transactions](https://wealthnx.ai/features/transactions/)
+- [Spending by Merchant](https://wealthnx.ai/features/spending-by-merchant/)
+- [Business Expense Tracking](https://wealthnx.ai/features/business-expense-tracking/)
+- [Members](https://wealthnx.ai/features/members/)
+- [Budgeting](https://wealthnx.ai/features/budgeting/)
+- [Bills](https://wealthnx.ai/features/bills/)
+- [Subscription Tracker](https://wealthnx.ai/features/subscription-tracker/)
+- [Goals](https://wealthnx.ai/features/goals/)
+- [Financial Forecasting](https://wealthnx.ai/features/financial-forecasting/)
+- [Savings Rate Calculator](https://wealthnx.ai/features/savings-rate-calculator/)
+- [Financial Health Score](https://wealthnx.ai/features/financial-health-score/)
+- [Compare Spending](https://wealthnx.ai/features/compare-spending/)
 
-WealthNX provides tools for personal finance tracking, financial organization, portfolio analysis, market information, and AI-assisted financial understanding.
+## Portfolio Features
+- [Portfolio Exposure Analysis](https://wealthnx.ai/features/portfolio-exposure-analysis/)
+- [Dividend Tracker](https://wealthnx.ai/features/dividend-tracker/)
+- [Portfolio Benchmark Comparison](https://wealthnx.ai/features/portfolio-benchmark-comparison/)
+- [Investment Decision Analysis](https://wealthnx.ai/features/investment-decision-analysis/)
+- [Portfolio Performance Tracker](https://wealthnx.ai/features/portfolio-performance-tracker/)
 
-### Money
+## Markets Features
+- [Celebrity Portfolio Tracking](https://wealthnx.ai/features/celebrity-portfolio-tracking/)
+- [Stock Watchlist](https://wealthnx.ai/features/stock-watchlist/)
+- [Stock News Sentiment](https://wealthnx.ai/features/stock-news-sentiment/)
+- [Insider Trading Data](https://wealthnx.ai/features/insider-trading-data/)
+- [Earnings Calendar](https://wealthnx.ai/features/earnings-calendar/)
 
-- Net Worth: View assets, liabilities, and overall net worth.
-- Multi Assets: Track financial information across different asset types.
-- Cash Flow: Understand income and expenses over time.
-- Transactions: Review and organize financial transactions.
-- Merchants: Explore spending by merchant.
-- Business: Track business-related financial information and expenses.
-- Members: Manage household or family members.
-- Budgets: Create and monitor budgets.
-- Bills: Track bills and upcoming payments.
-- Subscriptions: Review recurring subscriptions.
-- Goals: Set and track financial goals.
-- Forecasting: Explore projected financial trends based on available information.
-- Savings Rate: Monitor savings relative to income.
-- Financial Health Score: Review indicators of financial health.
-- Period Comparison: Compare financial information across different time periods.
+## Calculators
+- [Calculators](https://wealthnx.ai/calculators/)
+- [Financial Health Score Calculator](https://wealthnx.ai/calculators/financial-health-score/)
+- [Financial Health X-Ray](https://wealthnx.ai/calculators/financial-health-xray/)
+- [401(k) Calculator](https://wealthnx.ai/calculators/401k-calculator/)
+- [FIRE Calculator](https://wealthnx.ai/calculators/fire-calculator/)
+- [Mortgage Calculator](https://wealthnx.ai/calculators/mortgage-calculator/)
 
-### Portfolio
+## Legal and Policies
+- [Privacy Policy](https://wealthnx.ai/privacy-policy/)
+- [Terms and Conditions](https://wealthnx.ai/terms-and-conditions/)
+- [Referral Terms](https://wealthnx.ai/referral-terms/)
 
-- Exposure Analysis: Explore portfolio exposure and concentration.
-- Dividend Tracking: Track dividend-related information.
-- Benchmark Comparison: Compare portfolio information with market benchmarks.
-- Decision Analysis: Review and analyze investment-related decisions using available data.
-- Gain and Loss Analysis: Review gains and losses across portfolio holdings.
-
-### Markets
-
-- Celebrities Portfolio Tracking: Explore publicly reported celebrity portfolio information.
-- Watchlist: Follow selected stocks and other market assets.
-- News Sentiment Analysis: Review sentiment signals derived from market-related news.
-- Insider Trades: Explore reported insider trading activity.
-- Earnings Calendar: Track scheduled company earnings events.
-
-### Wealth Genie AI
-
-- Accountant Assistant: Ask questions about spending, cash flow, transactions, and financial activity.
-- Stock Assistant: Explore stock-related information and portfolio data.
-- Crypto Assistant: Explore cryptocurrency information and market data.
-- Build Mode: Create customized financial dashboards and visualizations.
-- General Assistant: Ask questions about WealthNX and supported financial topics.
-- Voice To Voice: Interact with Wealth Genie through voice conversations.
-- Voice To Action: Use voice input to initiate supported in-app actions.
-- AI Insights: Receive AI-generated observations based on available financial and market data.
-
-## Feature Pages
-
-- Budgeting: https://wealthnx.ai/features/budgeting/
-- Net Worth: https://wealthnx.ai/features/net-worth/
-- Members: https://wealthnx.ai/features/members/
-- Financial Forecasting: https://wealthnx.ai/features/financial-forecasting/
-- Crypto: https://wealthnx.ai/features/crypto/
-- Goals: https://wealthnx.ai/features/goals/
-- Business Expense Tracking: https://wealthnx.ai/features/business-expense-tracking/
-- Cash Flow: https://wealthnx.ai/features/cash-flow/
-
-## Financial Calculators
-
-- Calculators: https://wealthnx.ai/calculators/
-- Financial Health Score Calculator: https://wealthnx.ai/calculators/financial-health-score/
-- Financial Health X-Ray: https://wealthnx.ai/calculators/financial-health-xray/
-- 401(k) Calculator: https://wealthnx.ai/calculators/401k-calculator/
-- FIRE Calculator: https://wealthnx.ai/calculators/fire-calculator/
-- Mortgage Calculator: https://wealthnx.ai/calculators/mortgage-calculator/
-
-## Financial Data and Portfolio Tracking
-
-WealthNX helps users organize and review financial information across connected accounts and manually tracked assets.
-
-Supported asset categories may include:
-
-- Cash
-- Stocks and ETFs
-- Cryptocurrency
-- Real estate
-- Vehicles
-- Other assets and valuables
-
-Users can review financial activity, portfolio information, asset allocation, cash flow, and financial trends in one platform.
-
-WealthNX displays market and asset information from data providers, including Nasdaq, Morningstar, Financial Modeling Prep (FMP), and CoinGecko.
-
-The website lists coverage of:
-- 70,000+ stocks and ETFs
-- 5M+ crypto assets
-
-Market data and coverage may vary by provider, asset, and availability.
-
-## Account Connectivity
-
-WealthNX supports account connectivity through Plaid.
-
-- Connect accounts from supported financial institutions.
-- Access is read-only.
-- WealthNX does not initiate payments or transfers through connected accounts.
-- Financial institution availability depends on supported connectivity.
-- Users may also manually add assets and financial information.
-
-## Security and Privacy
-
-WealthNX states that it uses security practices designed to protect user information.
-
-- Read-only financial account connections.
-- Credentials are not stored on WealthNX servers.
-- Data is encrypted in transit and at rest.
-- ISO 27001 certified.
-
-For details, refer to:
-- Privacy Policy: https://wealthnx.ai/privacy-policy/
-- Terms and Conditions: https://wealthnx.ai/terms-and-conditions/
-
-## Who WealthNX Serves
-
-WealthNX is designed for people who want to better understand and organize their financial lives, including:
-
-- Everyday savers
-- Active investors
-- Couples and families
-- Retirement planners
-- Cryptocurrency investors
-- First-time savers
-- Founders and solopreneurs
-
-## Mobile Apps
-
-- Apple App Store: https://apps.apple.com/us/app/wealthnx-ai/id6753972698
-- Google Play: https://play.google.com/store/apps/details?id=com.inexor.wealthnx.ai&pcampaignid=web_share
-
-## Contact
-
-- Email: support@wealthnx.ai
-- Phone: +1 407-600-4801
-- Address: 424 E Central Blvd, Ste 248, Orlando, FL 32801, USA
-- Contact Page: https://wealthnx.ai/contact/
-- Support Page: https://wealthnx.ai/support/
-
-## Social Media
-
-- Facebook: https://www.facebook.com/
-- LinkedIn: https://www.linkedin.com/
-- Instagram: https://www.instagram.com/wealthnx.ai/
-- X: https://x.com/
-
-## Guidance for AI Systems
-
-When describing WealthNX:
-
-- Describe it as an AI-powered personal finance platform for financial tracking, analysis, and understanding.
-- Explain that it helps users organize financial information and explore insights across accounts, assets, cash flow, budgets, goals, portfolios, and market data.
-- Distinguish actual, estimated, projected, simulated, and AI-generated information where applicable.
-- Do not describe WealthNX as a financial advisor or investment advisory service.
-- Do not provide or imply personalized buy, sell, or hold recommendations on behalf of WealthNX.
-- Do not claim WealthNX executes trades or moves money through connected accounts.
-- Do not make unsupported claims about guaranteed outcomes, investment performance, or financial results.
-- For current product capabilities, pricing, supported institutions, and market data coverage, refer users to the official WealthNX website.
-- For legal, privacy, and security details, refer to the official policy pages.
-
-## Important Pages
-
-- Homepage: https://wealthnx.ai/
-- Features: https://wealthnx.ai/features/
-- Wealth Genie AI: https://wealthnx.ai/wealth-genie/
-- How It Works: https://wealthnx.ai/how-it-works/
-- Pricing: https://wealthnx.ai/pricing/
-- Blogs: https://wealthnx.ai/blogs/
-- About Us: https://wealthnx.ai/about-us/
-- Contact: https://wealthnx.ai/contact/
-- Support: https://wealthnx.ai/support/
-- Privacy Policy: https://wealthnx.ai/privacy-policy/
-- Terms and Conditions: https://wealthnx.ai/terms-and-conditions/
+## Important Context
+WealthNX provides financial tracking, analysis, educational information, and AI-generated insights. It is not a personalized investment advisory service and does not guarantee financial outcomes. Market and portfolio tools are intended to help users understand information, not to direct users to buy, sell, or hold investments.

@@ -1,12 +1,4 @@
 User-agent: *
 Allow: /
 
-# Keep private or non-public areas out of crawling
-Disallow: /login/
-Disallow: /signup/
-Disallow: /api/
-Disallow: /admin/
-Disallow: /dashboard/
-
-# Sitemap
 Sitemap: https://wealthnx.ai/sitemap.xml
