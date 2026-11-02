@@ -241,6 +241,9 @@ const PrivacyPolicy = () => {
           We may disclose information to authorized service providers that process information on our behalf, including providers supporting artificial intelligence and machine learning functionality, automated analytics, document or receipt processing, voice-enabled functionality, tax or credit-related features, data aggregation, hosting, infrastructure, security, communications, and other functionality made available through the Services. Such information may include prompts, uploaded or imported content, linked financial account information, transaction information, documents and information extracted from them, voice-derived information, and other contextual information where necessary to provide the applicable functionality. We seek to use service providers subject to appropriate contractual, technical, and organizational safeguards consistent with applicable law and the nature of the information and services involved.
         </p>
         <p className="privacy-text" style={P}>
+          WealthNX uses third-party artificial intelligence service providers, including OpenAI, to support AI-powered features such as Wealth Genie and AI Insights. Financial information relevant to these features may be transmitted to OpenAI for processing, including transaction information, account balances, investment holdings, and other financial data necessary to generate AI-powered responses, analyses, and insights. Such processing is subject to applicable contractual, technical, and organizational safeguards.
+        </p>
+        <p className="privacy-text" style={P}>
           We may also disclose PII in an encoded, hashed, aggregated, or de-identified form where appropriate and in accordance with applicable law. Any disclosure to social media, analytics, advertising, or similar providers will be made in accordance with this Policy, applicable law, and the privacy choices available to you.
         </p>
         <p className="privacy-text" style={P}>
@@ -389,6 +392,9 @@ const PrivacyPolicy = () => {
         </p>
         <p className="privacy-text" style={P}>
           Where authorized service providers support artificial intelligence or automated functionality, information may be processed by those providers as necessary to provide the applicable Services, subject to appropriate contractual, technical, and organizational safeguards and applicable law.
+        </p>
+        <p className="privacy-text" style={P}>
+          Where AI-enabled features involve transmitting financial information to OpenAI or another third-party artificial intelligence service provider, WealthNX will identify the relevant provider, explain the categories of information shared and the purposes of processing, and obtain user permission before transmission where required by applicable law or platform requirements. Users who decline the required permission may be unable to access AI-powered features that depend on such processing.
         </p>
         <p className="privacy-text" style={P}>
           Unless expressly disclosed to you and authorized where required, WealthNX does not use user financial information, linked account information, prompts, uploaded content, or other Personal Information submitted through the Services to train proprietary artificial intelligence models for unrelated commercial purposes.
@@ -628,7 +634,7 @@ const PrivacyPolicy = () => {
 
         <h3 className="privacy-h3" style={H3}>5.2.4 Your Right to Opt Out of Targeted Advertising</h3>
         <p className="privacy-text" style={P_LAST}>
-          Where applicable, you may have the right to opt out of processing of Personal Data for targeted advertising as defined by the law applicable in your jurisdiction.
+          Where applicable, you may have the right to opt out of processing Personal Data for targeted advertising as defined by the law applicable in your jurisdiction.
         </p>
 
         <h3 className="privacy-h3" style={H3}>5.2.5 Your Right to Opt Out of Data Sales</h3>

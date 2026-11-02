@@ -456,3 +456,6 @@
   .hpf-list > li:first-child { margin-top: 0; }
   .hpf-card.is-active + .hpf-inline { display: block; width: 112%; max-width: none; height: auto; margin: 4px 0 10px -6%; pointer-events: none; }
 }
+
+/* The new pictures already contain the concentric rings, so the CSS rings behind them made a double line: keep only the dots. */
+.hpf-deco svg circle[fill="none"] { display: none; }
