@@ -90,18 +90,17 @@ const DECO_DOTS = [
 
 /* Right-hand pictures exist for these four cards only; activating any other card keeps the last picture. */
 const PICS = {
-  stocks: ['/assets/home-portfolio-stocks.webp', 940, 996],
-  crypto: ['/assets/home-portfolio-crypto.webp', 940, 996],
-  forecasting: ['/assets/home-portfolio-forecasting.webp', 940, 995],
-  multi: ['/assets/home-portfolio-multi.webp', 940, 959],
+  stocks: ['/assets/home-portfolio-stocks.webp', 1100, 796],
+  crypto: ['/assets/home-portfolio-crypto.webp', 1100, 796],
+  forecasting: ['/assets/home-portfolio-forecasting.webp', 1100, 796],
+  multi: ['/assets/home-portfolio-multi.webp', 1100, 796],
+  realestate: ['/assets/home-portfolio-realestate.webp', 1100, 796],
+  analysis: ['/assets/home-portfolio-analysis.webp', 1100, 796],
 };
-
-/* Cards without their own picture show the closest one, so every card swaps the image on hover. */
-const PIC_FOR = { realestate: 'multi', analysis: 'forecasting' };
 
 function PortfolioList({ onSelect }) {
   const [active, setActive] = useState('stocks');
-  const select = (key) => { setActive(key); onSelect(PIC_FOR[key] || key); };
+  const select = (key) => { setActive(key); onSelect(key); };
   return (
     <ul className="hpf-list">
       {cards.map(({ key, title, body, tx }) => (
@@ -134,7 +133,7 @@ export default function HomePortfolio() {
       <div className="hpf-bg" aria-hidden="true" />
       <div className="hpf-inner">
         <div className="hpf-stage">
-          <h2 id="portfolio-title" className="hpf-title" data-reveal>Your <em>Entire<br className="hpf-br-d" />Portfolio</em> <br className="hpf-br-m" />in One View</h2>
+          <h3 id="portfolio-title" className="hpf-title" data-reveal>Your<em> Entire<br className="hpf-br-d"/>Portfolio</em><br className="hpf-br-m"/> in One View</h3>
 
           <PortfolioList onSelect={setShown} />
 

@@ -73,12 +73,12 @@ const connectChips = [
 ];
 
 const fragCards = [
-  { key: 'networth', title: 'Net Worth', body: 'See the full picture of what you own and owe.', img: 'networth', icon: 'networth', size: [1200, 905] },
-  { key: 'cashflow', title: 'Cash Flow', body: 'See how much money comes in and goes out.', img: 'cashflow', icon: 'cashflow', size: [1200, 869] },
-  { key: 'budget', title: 'Budget', body: 'Plan your spending and stay within your limits.', img: 'budget', icon: 'budget', size: [1200, 847] },
-  { key: 'goals', title: 'Goals', body: 'Set financial goals and track your progress.', img: 'goals', icon: 'goals', size: [1200, 797] },
-  { key: 'bills', title: 'Bills', body: 'See upcoming bills and know what\u2019s due.', img: 'bills', icon: 'bills', size: [1200, 845] },
-  { key: 'transactions', title: 'Transactions', body: 'Track your spending and see where your money goes.', img: 'transactions', icon: 'transactions', size: [1200, 852] },
+  { key: 'networth', title: 'Net Worth', body: 'See the full picture of what you own and owe.', img: 'networth', icon: 'networth', size: [1200, 819] },
+  { key: 'cashflow', title: 'Cash Flow', body: 'See how much money comes in and goes out.', img: 'cashflow', icon: 'cashflow', size: [1200, 819] },
+  { key: 'budget', title: 'Budget', body: 'Plan your spending and stay within your limits.', img: 'budget', icon: 'budget', size: [1200, 819] },
+  { key: 'goals', title: 'Goals', body: 'Set financial goals and track your progress.', img: 'goals', icon: 'goals', size: [1200, 819] },
+  { key: 'bills', title: 'Bills', body: 'See upcoming bills and know what\u2019s due.', img: 'bills', icon: 'bills', size: [1200, 819] },
+  { key: 'transactions', title: 'Transactions', body: 'Track your spending and see where your money goes.', img: 'transactions', icon: 'transactions', size: [1200, 816] },
   { key: 'forecasting', title: 'Forecasting', body: 'Explore how your net worth could change over time.', img: 'forecasting', icon: 'forecasting', size: [1200, 797] },
 ];
 
@@ -235,7 +235,7 @@ export default function HomeRedesign() {
             <p className="hf-sub">Connect your bank, brokerage, and crypto accounts securely. Access <b>12,000+</b> financial institutions through Plaid.</p>
             <div className="hf-visual" aria-hidden="true">
               {fragCards.map(({ key, img, size }, index) => (
-                <img key={key} className={index === fragActive ? 'is-shown' : undefined} src={`/assets/home-frag-${img}.webp?v=2`} alt="" width={size[0]} height={size[1]} loading="lazy" decoding="async" />
+                <img key={key} className={index === fragActive ? 'is-shown' : undefined} src={`/assets/home-frag-${img}.webp?v=3`} alt="" width={size[0]} height={size[1]} loading="lazy" decoding="async" />
               ))}
             </div>
           </div>
@@ -246,7 +246,7 @@ export default function HomeRedesign() {
                 <React.Fragment key={key}>
                   {fragOpen === index && (
                     <li className={`hf-pic${index === 0 ? ' hf-pic--first' : ''}`} aria-hidden="true">
-                      <img src={`/assets/home-frag-${img}.webp?v=2`} alt="" width={size[0]} height={size[1]} loading="lazy" decoding="async" />
+                      <img src={`/assets/home-frag-${img}.webp?v=3`} alt="" width={size[0]} height={size[1]} loading="lazy" decoding="async" />
                     </li>
                   )}
                 <li className={`hf-card${index === 0 ? ' hf-card--first' : ''}${index === fragActive ? ' is-active' : ''}${fragOpen === index ? ' is-open' : ''}`} style={{ "--i": index }} data-reveal tabIndex={0} aria-expanded={fragOpen === index} onMouseEnter={() => setFragActive(index)} onFocus={() => setFragActive(index)} onClick={(event) => { setFragActive(index); if (!event.target.closest('a')) setFragOpen((open) => (open === index ? null : index)); }}>

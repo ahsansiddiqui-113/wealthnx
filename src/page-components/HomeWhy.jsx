@@ -5,11 +5,11 @@ import Link from 'next/link';
 import './HomeWhy.css';
 
 const tabs = [
-  { id: 'proactive', label: 'AI Insights', img: '/assets/home-why-proactive.webp', w: 1500, h: 602, alt: 'Proactive AI: a heads-up on upcoming bills, spending and budgets before you need it' },
-  { id: 'all-in-one', label: 'All-in-one', img: '/assets/home-why-all-in-one.webp', w: 1500, h: 660, alt: 'All-in-one: your bank accounts, budgets, investments and crypto in one app' },
-  { id: 'voice-to-voice', label: 'Voice-to-Voice', img: '/assets/home-why-voice-to-voice.webp', w: 1276, h: 521, alt: 'Voice-to-Voice: ask Wealth Genie out loud and hear the answer' },
-  { id: 'voice-to-action', label: 'Voice-to-Action', img: '/assets/home-why-voice-to-action.webp', w: 1300, h: 506, alt: 'Voice-to-Action: ask Wealth Genie about a savings goal and explore the numbers' },
-  { id: 'multi-assistants', label: 'Multi Assistants', img: '/assets/home-why-multi-assistants.webp', w: 1137, h: 536, alt: 'Multi Assistants: separate assistants for spending, stocks, crypto and custom views' },
+  { id: 'proactive', label: 'AI Insights', img: '/assets/home-why-proactive.webp', w: 1500, h: 742, alt: 'Proactive AI: a heads-up on upcoming bills, spending and budgets before you need it' },
+  { id: 'all-in-one', label: 'All-in-one', img: '/assets/home-why-all-in-one.webp', w: 1500, h: 774, alt: 'All-in-one: your bank accounts, budgets, investments and crypto in one app' },
+  { id: 'voice-to-voice', label: 'Voice-to-Voice', img: '/assets/home-why-voice-to-voice.webp', w: 1500, h: 650, alt: 'Voice-to-Voice: ask Wealth Genie out loud and hear the answer' },
+  { id: 'voice-to-action', label: 'Voice-to-Action', img: '/assets/home-why-voice-to-action.webp', w: 1500, h: 589, alt: 'Voice-to-Action: ask Wealth Genie about a savings goal and explore the numbers' },
+  { id: 'multi-assistants', label: 'Multi Assistants', img: '/assets/home-why-multi-assistants.webp', w: 1400, h: 808, alt: 'Multi Assistants: separate assistants for spending, stocks, crypto and custom views' },
 ];
 
 const AUTO_MS = 6000;

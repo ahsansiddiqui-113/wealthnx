@@ -430,7 +430,7 @@
 
 /* Right-hand pictures: stacked, cross-faded; the exports carry a transparent shadow margin, so they are
    drawn 114% wide and offset to keep the card itself on the 366 x 411 frame. */
-.hpf-pic { position: absolute; left: -7.1%; top: -3.9%; width: 114.2%; height: auto; opacity: 0; transition: opacity .3s ease; pointer-events: none; }
+.hpf-pic { position: absolute; left: -15%; top: 6%; width: 130%; max-width: none; height: auto; opacity: 0; transition: opacity .3s ease; pointer-events: none; }
 .hpf-pic.is-shown { opacity: 1; }
 
 /* Heading: the words were spaced too wide; tighter tracking like the other home headings. */
