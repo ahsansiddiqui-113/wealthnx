@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 
 /* "Your Entire Portfolio. One View" home section (hpf- styles in HomePortfolio.css).
    Client component only for the list: hovering / focusing / clicking a card makes it the active (teal) one. */
@@ -28,7 +28,7 @@ const Icons = {
   stocks: (
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M8.4 2.6c.9.9 2.1 1.1 3.6.4 1.5.7 2.7.5 3.6-.4l-1.7 3.4c1.9 1 6.6 4.8 6.6 10.2 0 3.7-2.7 5.6-8.5 5.6S3.5 19.900 3.500 16.200c0-5.400 4.700-9.200 6.600-10.200Z" fill="currentColor" />
-      <path d="M12 9.2v10.4M14.700 11.700c-.4-.9-1.400-1.300-2.600-1.300-1.500 0-2.500.8-2.500 1.900 0 2.700 5.100 1.200 5.100 3.900 0 1.200-1.200 2-2.800 2-1.300 0-2.400-.5-2.900-1.600" fill="none" stroke="#43b9ab" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M12 9.2v10.4M14.700 11.700c-.4-.9-1.400-1.300-2.600-1.300-1.500 0-2.500.8-2.500 1.900 0 2.700 5.100 1.200 5.100 3.900 0 1.200-1.200 2-2.800 2-1.300 0-2.400-.5-2.900-1.600" className="hpf-cut" fill="none" stroke="#f6f6f6" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   ),
   realestate: (
@@ -100,7 +100,42 @@ const PICS = {
 
 function PortfolioList({ onSelect }) {
   const [active, setActive] = useState('stocks');
+  const anchor = useRef(null); // { el, top }: the tapped card and where it sat before the picture boxes changed
   const select = (key) => { setActive(key); onSelect(key); };
+  /* Phones: the picture of the previously selected card collapses (it can sit above the tapped card) and the new one
+     opens, which would shift the tapped card. Put the tapped card back where it was, in the same frame. */
+  useLayoutEffect(() => {
+    const a = anchor.current;
+    anchor.current = null;
+    if (!a || !a.el.isConnected) return;
+    const d = a.el.getBoundingClientRect().top - a.top;
+    if (Math.abs(d) > 0.5) window.scrollBy({ top: d, behavior: 'instant' });
+  }, [active]);
+  /* Only a real tap/click or keyboard focus selects: touch emulates mouseenter and focus on tap, which used to select
+     (and move the layout) before the click even landed. */
+  const canHover = () => typeof window !== 'undefined' && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const hoverSelect = (key) => { if (canHover()) select(key); };
+  const focusSelect = (e, key) => { if (e.currentTarget.matches(':focus-visible')) select(key); };
+  const clickSelect = (e, key) => {
+    anchor.current = { el: e.currentTarget, top: e.currentTarget.getBoundingClientRect().top };
+    /* browser scroll anchoring (on content below) would add a second correction: switch it off for this update */
+    const root = document.documentElement;
+    root.style.overflowAnchor = 'none';
+    requestAnimationFrame(() => requestAnimationFrame(() => { root.style.overflowAnchor = ''; }));
+    /* the picture boxes may settle a few frames later (image decode): keep pinning for a moment unless the user scrolls */
+    const el = e.currentTarget, top = anchor.current.top, end = performance.now() + 700;
+    let stop = false;
+    const halt = () => { stop = true; };
+    ['wheel', 'touchmove', 'keydown'].forEach((n) => window.addEventListener(n, halt, { once: true, passive: true }));
+    const pin = () => {
+      if (stop || !el.isConnected) return;
+      const d = el.getBoundingClientRect().top - top;
+      if (Math.abs(d) > 0.5) window.scrollBy({ top: d, behavior: 'instant' });
+      if (performance.now() < end) requestAnimationFrame(pin);
+    };
+    requestAnimationFrame(pin);
+    select(key);
+  };
   return (
     <ul className="hpf-list">
       {cards.map(({ key, title, body, tx }) => (
@@ -110,9 +145,9 @@ function PortfolioList({ onSelect }) {
             className={`hpf-card${active === key ? ' is-active' : ''}`}
             aria-pressed={active === key}
             style={{ '--tx': `calc(${tx} * var(--u))` }}
-            onMouseEnter={() => select(key)}
-            onFocus={() => select(key)}
-            onClick={() => select(key)}
+            onMouseEnter={() => hoverSelect(key)}
+            onFocus={(e) => focusSelect(e, key)}
+            onClick={(e) => clickSelect(e, key)}
           >
             <span className="hpf-card__icon">{Icons[key]}</span>
             <span className="hpf-card__text">

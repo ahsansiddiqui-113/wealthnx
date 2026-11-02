@@ -451,11 +451,14 @@
 .hpf-inline { display: none; }
 @media (max-width: 560px) {
   .hpf-visual { display: none; }
-  .hpf-list { display: block; margin-top: 30px; }
+  .hpf-list { display: block; margin-top: 30px; overflow-anchor: none; }
   .hpf-list > li { order: 0; margin-bottom: 5px; }
   .hpf-list > li:first-child { margin-top: 0; }
-  .hpf-card.is-active + .hpf-inline { display: block; width: 112%; max-width: none; height: auto; margin: 4px 0 10px -6%; pointer-events: none; }
+  .hpf-card.is-active + .hpf-inline { display: block; width: 108%; max-width: none; aspect-ratio: 1100 / 796; height: auto; margin: 4px 0 10px -4%; pointer-events: none; }
 }
 
 /* The new pictures already contain the concentric rings, so the CSS rings behind them made a double line: keep only the dots. */
 .hpf-deco svg circle[fill="none"] { display: none; }
+
+/* Stocks icon: the "$" is cut out in the card colour (not green); on the highlighted teal card it takes the teal. */
+.hpf-card.is-active .hpf-cut { stroke: #43b9ab; }

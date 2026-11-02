@@ -136,10 +136,10 @@
 
 /* /features/ arc, desktop: larger feature preview (text on the screens must be readable) - the arc box grows with it */
 @media (min-width: 1000px) {
-  .feature-detail-template.fdt-features .fdt-orbit { height: 590px; }
-  .feature-detail-template.fdt-features .fdt-orbit > img { top: 164px; width: 520px; height: 313px; max-width: 70%; }
-  .feature-detail-template.fdt-features .fdt-orbit > a { top: 489px; bottom: 62px; }
-  .feature-detail-template.fdt-features .fdt-orbit__dots { top: 558px; bottom: 27px; }
+  .feature-detail-template.fdt-features .fdt-orbit { height: 715px; }
+  .feature-detail-template.fdt-features .fdt-orbit > img { top: 170px; width: 680px; height: 429px; max-width: 70%; }
+  .feature-detail-template.fdt-features .fdt-orbit > a { top: 616px; bottom: 60px; }
+  .feature-detail-template.fdt-features .fdt-orbit__dots { top: 685px; bottom: 25px; }
 }
 
 /* Tablet (701-1000): two-column hero (copy + aside stacked, phone beside) instead of a 188px headline column; touch hit areas */
@@ -232,4 +232,20 @@
 @media (max-width: 700px) {
   /* per-picture fit (carouselImageFit.js): the visible content fills the column and is centred, nothing is cut at the sides */
   body .feature-detail-template.fdt-features .fdt-orbit > img { width: var(--fit-w, 100%); max-width: none; translate: var(--fit-x, 0) 0; }
+}
+
+/* Carousel call-to-action pill ("Track your net worth"): green with white text. */
+body .feature-detail-template .fdt-orbit > a { background: #17c3b2 !important; color: #fff !important; border-color: #17c3b2 !important; }
+body .feature-detail-template .fdt-orbit > a:hover { background: #12a99a !important; }
+
+/* Phones: the hero heading is two lines ("Powerful Features for a" / "Brighter Financial you"). */
+@media (max-width: 700px) {
+  body .feature-detail-template.fdt-mobile .fdt-hero h1 { font-size: min(30px, calc((100vw - 48px) / 11.8)) !important; line-height: 1.2; letter-spacing: -.04em; }
+  body .feature-detail-template.fdt-mobile .fdt-hero h1 em { display: block; white-space: nowrap; }
+}
+
+/* Desktop and tablet: the /features/ hero heading is also two lines; it may run wider than its grid column. */
+@media (min-width: 701px) {
+  body .feature-detail-template.fdt-features .fdt-hero h1 { max-width: none; white-space: nowrap; font-size: clamp(38px, 3.9vw, 58px) !important; line-height: 1.12; letter-spacing: -.045em; }
+  body .feature-detail-template.fdt-features .fdt-hero h1 em { display: block; white-space: nowrap; }
 }

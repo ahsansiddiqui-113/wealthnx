@@ -260,3 +260,16 @@
 @media (max-width: 700px) {
   .hf-card--first, .hf-pic--first { margin-top: 30px; }
 }
+
+/* Phones: the picture box opens/closes above the tapped card; scroll anchoring + the click handler keep the page still. */
+@media (max-width: 700px) {
+  .home-redesign .hf-section { overflow-anchor: none; }
+  .hf-pic { width: 100%; box-sizing: border-box; overflow: hidden; }
+}
+
+/* Desktop: the picture sits in the middle of the left column, vertically and horizontally, beside the list. */
+@media (min-width: 901px) {
+  .hf-inner { align-items: stretch; }
+  .hf-left { display: flex; flex-direction: column; }
+  .hf-visual { margin: auto; width: 58cqw; max-width: 100%; }
+}
