@@ -7,7 +7,7 @@ import FeaturesDropdownContent from './FeaturesDropdownContent';
 import { openStore } from './useStoreUrl';
 import styles from './TopBar.module.css';
 
-const logoSvg = '/assets/logo.svg';
+const logoSvg = '/assets/logo-nav.webp';
 const desktopLinks = [
   { href: '/wealth-genie', label: 'Wealth Genie' }, { href: '/blogs', label: 'Blogs' },
   { href: '/pricing', label: 'Pricing' }, { href: '/contact', label: 'Contact' }, { href: '/how-it-works', label: 'How it works?' },
@@ -45,7 +45,7 @@ export default function TopBar({ tone = 'light' }) {
 
   return <header className={`${styles.header} ${tone === 'dark' ? styles.dark : ''}`.trim()} ref={headerRef}>
     <div className={styles.headerInner}>
-      <Link href="/" className={styles.brand} aria-label="WealthNX home" onClick={closeMobile}><img src={logoSvg} alt="WealthNX" width="122" height="35" /></Link>
+      <Link href="/" className={styles.brand} aria-label="WealthNX home" onClick={closeMobile}><img src={logoSvg} alt="WealthNX" width="138" height="51" /></Link>
       <nav className={styles.desktopNav} aria-label="Primary navigation">
         <div className={styles.featuresWrap} onMouseEnter={openFeatures} onMouseLeave={closeFeaturesSoon}>
           <Link ref={triggerRef} href="/features/" className={`${styles.featuresTrigger} ${featuresOpen ? styles.open : ""} ${active("/features") ? styles.active : ""}`} aria-haspopup="true" aria-expanded={featuresOpen} aria-controls={dropdownId} onClick={closeFeatures} onKeyDown={(event) => { if (event.key === "ArrowDown") { event.preventDefault(); openFeatures(); } }}>Features <span className={styles.chevron} aria-hidden="true">⌄</span></Link>
