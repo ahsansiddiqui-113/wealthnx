@@ -66,7 +66,7 @@ export const featureMenuGroups = MENU_GROUPS.map((title) => ({
 
 /** /features carousel tabs, in display order. `group` is the registry MENU_GROUPS title; `color` is the default slide accent. */
 const TABS = [
-  { id: 'ai', label: 'Wealth Genie AI', group: 'Wealth Genie AI', color: '#19cabc' },
+  { id: 'ai', label: 'Wealth Genie AI', group: 'Wealth Genie AI', color: '#ee5fa7' },
   { id: 'money', label: 'Money', group: 'Money', color: '#27c98e' },
   { id: 'portfolio', label: 'Portfolio', group: 'Portfolio', color: '#8155dc' },
   { id: 'market', label: 'Market', group: 'Markets', color: '#3e97ec' },
@@ -83,11 +83,15 @@ const shortText = ({ metaDescription = '', hero }) => {
  * without `carousel` gets image/icon/description from its hero/menu/meta and the tab colour. Carousel-only entries
  * (no `menu`, e.g. the old Portfolio and Markets pages) are appended to the tab of the group their slug belongs to.
  */
+/** Slide badge colours: neighbours on the arc always differ, and each tab starts on its own hue. */
+const SLIDE_COLORS = ['#27c98e', '#ee5fa7', '#f5a524', '#3e97ec', '#8155dc', '#e5484d', '#17c3d6', '#b6cf2e'];
+const SLIDE_COLOR_START = { ai: 1, money: 0, portfolio: 4, market: 3 };
+
 export const featureTabs = TABS.map(({ id, label, group, color }) => {
   const toSlide = ({ slug, label: name, menu, hero, carousel, carouselImage, ...rest }) => ({
     slug, href: featurePageHref(slug),
     ...(carousel
-      ? { name: carousel.name || name, image: carousel.image, icon: menu ? menu.icon : carousel.icon, color: carousel.color, description: carousel.description }
+      ? { name: carousel.name || name, image: carousel.image, icon: menu ? menu.icon : carousel.icon, color, description: carousel.description }
       : { name, image: carouselImage || hero.image, icon: menu.icon, color, description: shortText({ hero, ...rest }) }),
   });
   const inGroup = featureEntries.filter((entry) => entry.menu && entry.menu.group === group).sort((a, b) => byOrder(a.menu, b.menu));
@@ -97,7 +101,8 @@ export const featureTabs = TABS.map(({ id, label, group, color }) => {
   const slides = [...inGroup, ...legacy]
     .filter((entry) => !HIDDEN_SLIDES.includes(entry.slug))
     .map((entry) => ({ ...toSlide(entry), ...(CAROUSEL_COPY[entry.slug] || {}) }))
-    .sort((a, b) => rank(a.slug) - rank(b.slug));
+    .sort((a, b) => rank(a.slug) - rank(b.slug))
+    .map((slide, i) => ({ ...slide, color: SLIDE_COLORS[(i + (SLIDE_COLOR_START[id] || 0)) % SLIDE_COLORS.length] }));
   return { id, label, slides };
 });
 
