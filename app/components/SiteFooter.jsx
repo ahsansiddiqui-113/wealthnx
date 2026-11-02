@@ -81,6 +81,7 @@ export default function SiteFooter() {
           <a href="/blogs/">Blog</a>
           <a href="/privacy-policy/">Privacy Policy</a>
           <a href="/terms-and-conditions/">Terms of Service</a>
+          <a href="/referral-terms/">Referral Terms</a>
           <a href="/support/">FAQ</a>
         </div>
         <div className="sf-footer__contact">
