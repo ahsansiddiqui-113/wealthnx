@@ -31,8 +31,8 @@
     width: 138px;
     height: auto;
     object-fit: contain;
-    /* The supplied brand mark is a white SVG; invert only in this white header. */
-    filter: invert(1);
+    /* The nav logo is a black PNG (logo-nav.webp): shown as is on the white header. */
+    filter: none;
 }
 
 .desktopNav {
@@ -481,8 +481,8 @@
 }
 
 .dark .brand img {
-    /* The logo SVG is natively white: no invert on dark backgrounds. */
-    filter: none;
+    /* Black logo on a dark header: invert to white. */
+    filter: invert(1);
 }
 
 .dark .navLink,

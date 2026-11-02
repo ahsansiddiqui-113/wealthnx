@@ -235,3 +235,8 @@
 /* Tablet/phone: the list starts 2px under the heading text. */
 @media (max-width: 900px) { .hf-cards { margin-top: 2px; } }
 @media (max-width: 700px) { .hf-card--first, .hf-pic--first { margin-top: 2px; } }
+
+/* Desktop: the picture is smaller and stays inside the left column (it was 80cqw wide and bled past the left edge). */
+@media (min-width: 901px) {
+  .hf-visual { margin: 2cqw 0 0 -12cqw; width: 58cqw; aspect-ratio: 1200 / 819; }
+}
