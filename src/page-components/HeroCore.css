@@ -63,3 +63,9 @@
 @media (min-width: 901px) {
   .fdt-hero-phone[src*="feature-multi-assets-phone"] { --vw: 520 !important; --s: 1.36 !important; }
 }
+
+/* Wealth Genie landing: the hero column is narrow and the picture's floating chips made it shrink to fit. Let the chips reach past the
+   box a little so the phone is drawn at the same size as on the feature pages (desktop only). */
+@media (min-width: 901px) {
+  .fdt-hero-phone[src*="feature-wealth-genie-hero"] { --vw: 400 !important; }
+}

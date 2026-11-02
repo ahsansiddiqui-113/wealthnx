@@ -437,3 +437,9 @@
 @media (max-width: 700px) {
   body .gl-page .gl-team__title { font-size: 30px !important; line-height: 1.15; }
 }
+
+/* Desktop: the phone sits exactly in the middle of the page (equal columns either side of it), headline left, blurb right. */
+@media (min-width: 1001px) {
+  .gl-page .fdt-hero { --fk: max(0.6px, min(calc(100vw / 1593), calc((100svh - 340px) / 629), 1.2px)); grid-template-columns: minmax(0, 1fr) calc(480 * var(--fk) + 40px) minmax(0, 1fr); }
+  .gl-page .fdt-hero__aside { padding-left: calc(64 * var(--fk)); }
+}
