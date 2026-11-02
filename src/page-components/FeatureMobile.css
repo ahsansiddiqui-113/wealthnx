@@ -249,3 +249,11 @@ body .feature-detail-template .fdt-orbit > a:hover { background: #12a99a !import
   body .feature-detail-template.fdt-features .fdt-hero h1 { max-width: none; white-space: nowrap; font-size: clamp(38px, 3.9vw, 58px) !important; line-height: 1.12; letter-spacing: -.045em; }
   body .feature-detail-template.fdt-features .fdt-hero h1 em { display: block; white-space: nowrap; }
 }
+
+/* /features/ arc, tablet: larger preview picture, the call-to-action and dots move down with it. */
+@media (min-width: 701px) and (max-width: 999px) {
+  body .feature-detail-template.fdt-features .fdt-orbit { height: 650px; }
+  body .feature-detail-template.fdt-features .fdt-orbit > img { top: 172px; width: 560px; height: 353px; max-width: 76%; }
+  body .feature-detail-template.fdt-features .fdt-orbit > a { top: 556px; }
+  body .feature-detail-template.fdt-features .fdt-orbit__dots { top: 620px; }
+}
