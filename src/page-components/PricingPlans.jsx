@@ -65,7 +65,7 @@ const plusFeatures = [
   },
 ];
 
-const SIGNUP_URL = 'https://app.wealthnx.ai/signup';
+const SIGNUP_URL = 'https://wealthnx.ai/get';
 
 function FeatureAccordionItem({ title, description }) {
   const [open, setOpen] = useState(false);

@@ -1,5 +1,6 @@
 'use client';
 
+export const GET_URL = 'https://wealthnx.ai/get';
 export const APPLE_STORE_URL = 'https://apps.apple.com/us/app/wealthnx-ai/id6753972698';
 export const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.inexor.wealthnx.ai&pcampaignid=web_share';
 

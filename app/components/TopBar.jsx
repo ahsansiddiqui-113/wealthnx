@@ -54,7 +54,7 @@ export default function TopBar({ tone = 'light' }) {
         </div>
         {desktopLinks.map(({ href, label, external }) => external ? <a href={href} key={href} className={styles.navLink}>{label}</a> : <Link href={href} key={href} className={`${styles.navLink} ${active(href) ? styles.active : ''}`}>{label}</Link>)}
       </nav>
-      <div className={styles.actions}><a className={styles.login} href="https://app.wealthnx.ai/login">Login</a><a className={styles.getStarted} href="https://app.wealthnx.ai/signup">Get Started</a></div>
+      <div className={styles.actions}><a className={styles.login} href="https://app.wealthnx.ai/login">Login</a><a className={styles.getStarted} href="https://wealthnx.ai/get">Get Started</a></div>
       <button type="button" className={styles.mobileToggle} aria-expanded={menuOpen} aria-controls={menuId} aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} onClick={() => setMenuOpen((open) => !open)}><span /><span /><span /></button>
     </div>
     {menuOpen && <nav id={menuId} className={styles.mobileMenu} aria-label="Mobile navigation">
@@ -62,8 +62,8 @@ export default function TopBar({ tone = 'light' }) {
         <Link href="/" className={styles.mobileLink} onClick={closeMobile}>Home</Link>
         <div className={styles.mobileFeatureRow}><Link href="/features/" className={styles.mobileLink} onClick={closeMobile}>Features</Link><button type="button" className={styles.mobileFeatureExpand} aria-label="Show feature list" onClick={() => setMobileFeaturesOpen(true)}>›</button></div>
         {desktopLinks.map(({ href, label, external }) => external ? <a key={href} href={href} className={styles.mobileLink} onClick={closeMobile}>{label}</a> : <Link key={href} href={href} className={styles.mobileLink} onClick={closeMobile}>{label}</Link>)}
-        <button type="button" className={styles.mobileFeatureButton} onClick={(event) => { openStore(event); closeMobile(); }}>Download</button>
-        <div className={styles.mobileActions}><a className={styles.login} href="https://app.wealthnx.ai/login">Login</a><a className={styles.getStarted} href="https://app.wealthnx.ai/signup">Get Started</a></div>
+        <button type="button" className={styles.mobileFeatureButton} onClick={() => { window.open('https://wealthnx.ai/get', '_blank', 'noopener,noreferrer'); closeMobile(); }}>Download</button>
+        <div className={styles.mobileActions}><a className={styles.login} href="https://app.wealthnx.ai/login">Login</a><a className={styles.getStarted} href="https://wealthnx.ai/get">Get Started</a></div>
       </> : <><button type="button" className={styles.backButton} onClick={() => setMobileFeaturesOpen(false)}>‹ Back to menu</button><FeaturesDropdownContent onClose={closeMobile} /></>}
     </nav>}
   </header>;

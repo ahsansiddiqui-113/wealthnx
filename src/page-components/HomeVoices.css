@@ -372,3 +372,9 @@
   .hv-scroll--aud .hv-track { padding: 24px calc(50vw - 130px) 12px; }
   .hv-scroll--aud .hv-ac { scroll-snap-align: center; scroll-margin-left: 0; }
 }
+
+/* Phones: more room between the "Who this platform is built for" heading and its cards. */
+@media (max-width: 560px) {
+  .hv-title--aud { margin-bottom: 22px; }
+  .hv-scroll--aud .hv-track { padding-top: 34px; }
+}

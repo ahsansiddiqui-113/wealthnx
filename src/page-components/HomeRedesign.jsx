@@ -109,7 +109,7 @@ export default function HomeRedesign() {
           <div className="fdt-hero__aside">
             <p>WealthNX brings your accounts, stocks, and crypto together, with AI-powered insights that make your financial picture easier to understand.</p>
             <div className="fdt-hero__actions">
-              <a href={APPLE_STORE_URL} onClick={openStore}>Start Your 7-Day Free Trial</a>
+              <a href="https://wealthnx.ai/get" target="_blank" rel="noopener noreferrer">Start Your 7-Day Free Trial</a>
               <a className="hr-hero-play" href="https://www.youtube.com/watch?v=npaG1AtRbNw" target="_blank" rel="noreferrer" aria-label="Watch the WealthNX introduction"><span className="fdt-play-icon" aria-hidden="true" /></a>
             </div>
           </div>

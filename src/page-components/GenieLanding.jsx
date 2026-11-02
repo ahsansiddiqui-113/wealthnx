@@ -34,7 +34,7 @@ export default function GenieLanding({ agent, hero }) {
           <div className="fdt-hero__aside">
             <p>{hero ? hero.blurb : 'Questions about spending, stocks, crypto or net worth, answered from your own accounts by text or voice.'}</p>
             <div className="fdt-hero__actions">
-              <a href={APPLE_STORE_URL} target="_blank" rel="noreferrer">Start Your 7-Day Free Trial</a>
+              <a href="https://wealthnx.ai/get" target="_blank" rel="noreferrer">Start Your 7-Day Free Trial</a>
               <a href={DEMO_VIDEO_URL} target="_blank" rel="noreferrer" className="gl-play" aria-label="Watch the WealthNX introduction"><span className="fdt-play-icon" aria-hidden="true" /></a>
             </div>
           </div>

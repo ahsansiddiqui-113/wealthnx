@@ -1,5 +1,5 @@
 /* Store link used by the page CTAs (same as APPLE_STORE_URL in app/components/useStoreUrl; duplicated here because this page is a server component). */
-export const SIGNUP_URL = 'https://apps.apple.com/us/app/wealthnx-ai/id6753972698';
+export const SIGNUP_URL = 'https://wealthnx.ai/get';
 
 /* Hero copy */
 export const hero = {

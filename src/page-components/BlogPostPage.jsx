@@ -132,7 +132,7 @@ function Side({ post, heads, active }) {
       <div className="bp-trial">
         <p className="bp-trial__t">7-Day Free Trial</p>
         <p className="bp-trial__s">Open WealthNX instantly.<br />No signup. No credit card.</p>
-        <a className="bp-trial__btn" href="https://app.wealthnx.ai/signup">Get Started<i><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg></i></a>
+        <a className="bp-trial__btn" href="https://wealthnx.ai/get">Get Started<i><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" /></svg></i></a>
       </div>
     </aside>
   );
