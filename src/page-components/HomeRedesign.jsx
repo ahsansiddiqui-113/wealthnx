@@ -104,7 +104,7 @@ export default function HomeRedesign() {
           </div>
           <div className="fdt-hero__visual" data-tilt aria-hidden="true">
             <div className="fdt-hero__glow" />
-            <img src="/assets/home-hero-phone.webp" alt="" width={900} height={1031} className="fdt-hero-phone" fetchPriority="high" decoding="async" {...heroCoreProps("/assets/home-hero-phone.webp")} />
+            <img src="/assets/home-hero-phone.webp" alt="" width={1400} height={1248} className="fdt-hero-phone" fetchPriority="high" decoding="async" {...heroCoreProps("/assets/home-hero-phone.webp")} />
           </div>
           <div className="fdt-hero__aside">
             <p>WealthNX brings your accounts, stocks, and crypto together, with AI-powered insights that make your financial picture easier to understand.</p>

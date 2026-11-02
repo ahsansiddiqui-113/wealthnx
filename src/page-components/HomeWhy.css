@@ -111,3 +111,11 @@
   box-shadow: 0 6px 16px rgba(0, 0, 0, .25);
 }
 .home-redesign .hw2-viewall:focus-visible { outline: 2px solid #39b4a6; outline-offset: 3px; }
+
+/* The pictures carry a soft glow/shadow that ended in a visible rectangle: feather all four edges so they merge into the panel. */
+.hw2-stage img {
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 2%, #000 98%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 9%, #000 88%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 0, #000 2%, #000 98%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 9%, #000 88%, transparent 100%);
+  mask-composite: intersect;
+}

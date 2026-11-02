@@ -438,3 +438,11 @@
 
 /* Selected card: the glow goes up and to the sides only, so it no longer spills onto the card below. */
 .home-redesign .hpf-card.is-active { box-shadow: 0 calc(-10 * var(--u)) calc(18 * var(--u)) calc(-4 * var(--u)) rgba(70, 150, 140, .35); }
+
+/* Same soft edge on the portfolio pictures so their glow merges into the section. */
+.hpf-pic {
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 10%, #000 90%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 10%, #000 90%, transparent 100%);
+  mask-composite: intersect;
+}
