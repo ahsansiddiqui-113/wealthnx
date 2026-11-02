@@ -9,7 +9,7 @@ const SOURCES = [['nasdaq', 'Nasdaq', 176], ['morningstar', 'Morningstar', 244],
 export default function PartnerStrip({ className = '' }) {
   return (
     <section className={`${styles.strip} ${className}`.trim()} aria-label="Data sources: Nasdaq, Morningstar, FMP, CoinGecko">
-      <p className={styles.lead}>Market data from <span aria-hidden="true">→</span></p>
+      <p className={styles.lead}>Market data sources <span aria-hidden="true">→</span></p>
       <div className={styles.marquee}>
       <div className={styles.track}>
         {Array.from({ length: COPIES }, (_, i) => (
