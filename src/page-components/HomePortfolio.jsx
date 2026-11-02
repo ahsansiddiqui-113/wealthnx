@@ -135,10 +135,6 @@ export default function HomePortfolio() {
       <div className="hpf-inner">
         <div className="hpf-stage">
           <h2 id="portfolio-title" className="hpf-title" data-reveal>Your <em>Entire<br className="hpf-br-d" />Portfolio</em> <br className="hpf-br-m" />in One View</h2>
-          <div className="hpf-intro" data-reveal style={{ "--i": 1 }}>
-            <h3 className="hpf-lead">See your everyday finances clearly</h3>
-            <p className="hpf-sub">Connect your bank, brokerage and crypto accounts in one secure platform <b data-count>12,000+</b> institutions supported through Plaid.</p>
-          </div>
 
           <PortfolioList onSelect={setShown} />
 

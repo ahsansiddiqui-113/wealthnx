@@ -435,3 +435,6 @@
 
 /* Heading: the words were spaced too wide; tighter tracking like the other home headings. */
 .home-redesign .hpf-title { letter-spacing: -.035em; word-spacing: -.1em; }
+
+/* Selected card: the glow goes up and to the sides only, so it no longer spills onto the card below. */
+.home-redesign .hpf-card.is-active { box-shadow: 0 calc(-10 * var(--u)) calc(18 * var(--u)) calc(-4 * var(--u)) rgba(70, 150, 140, .35); }
