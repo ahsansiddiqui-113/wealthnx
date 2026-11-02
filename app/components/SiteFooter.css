@@ -163,3 +163,9 @@
   .sf-footer__legal a { display: inline-block; padding: 14px 0; }
 }
 @media (max-width: 700px) { .sf-footer__social a { position: relative; } .sf-footer__social a::after { content: ''; position: absolute; inset: -5px; } }
+
+/* Phones: larger footer logo and tagline. */
+@media (max-width: 700px) {
+  .sf-footer__logo { width: 150px; height: 70px; margin-bottom: 18px; }
+  .sf-footer .sf-footer__title { font-size: min(34px, calc((100vw - 52px) / 9.9)) !important; }
+}

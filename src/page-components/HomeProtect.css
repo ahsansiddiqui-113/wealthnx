@@ -203,3 +203,8 @@
 @media (min-width: 701px) {
   .home-redesign .hp-section .hp-lede { max-width: min(980px, 100%); font-size: clamp(12px, 1.3vw, 15px); }
 }
+
+/* Phones: heading 30px. */
+@media (max-width: 600px) {
+  .home-redesign .hp-section .hp-title { font-size: 30px !important; line-height: 1.2; }
+}

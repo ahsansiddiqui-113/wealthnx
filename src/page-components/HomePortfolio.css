@@ -446,3 +446,13 @@
   mask-image: linear-gradient(to right, transparent 0, #000 9%, #000 91%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 10%, #000 90%, transparent 100%);
   mask-composite: intersect;
 }
+
+/* Phones: the picture opens right under the selected card (the desktop picture column is hidden). */
+.hpf-inline { display: none; }
+@media (max-width: 560px) {
+  .hpf-visual { display: none; }
+  .hpf-list { display: block; margin-top: 30px; }
+  .hpf-list > li { order: 0; margin-bottom: 5px; }
+  .hpf-list > li:first-child { margin-top: 0; }
+  .hpf-card.is-active + .hpf-inline { display: block; width: 112%; max-width: none; height: auto; margin: 4px 0 10px -6%; pointer-events: none; }
+}

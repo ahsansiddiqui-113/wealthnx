@@ -199,3 +199,16 @@
 
 /* The data-source strip continues the black "Ask" section below it (no separate band). */
 .home-redesign .hr-strip.hr-strip { background: #000; }
+
+/* Phones: "Get investment insights" heading 30px and a larger picture (it has a wide empty margin, so it may run past the column). */
+@media (max-width: 600px) {
+  .home-redesign .hr-insights__copy h2 { font-size: 30px !important; line-height: 1.15; }
+  .home-redesign .hr-insights__visual { overflow: visible; margin-top: -70px; }
+  .home-redesign .hr-insights__visual img { width: 150%; max-width: none; margin-left: -25%; }
+}
+
+/* Phones: the insights picture has empty space below the cards; close it up so the section joins the next one. */
+@media (max-width: 600px) {
+  .home-redesign .hr-insights { padding-bottom: 0; }
+  .home-redesign .hr-insights__visual { margin-bottom: -170px; }
+}

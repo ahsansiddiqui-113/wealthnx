@@ -50,3 +50,10 @@
     --se: min(calc(var(--sm) * var(--mk)), calc(1.147 * 100cqw / var(--vw)));
   }
 }
+
+/* Phones: the whole picture (floating cards included) must fit inside the column; it was 114.7% of it and got cut at both sides. */
+@media (max-width: 700px) {
+  .fdt-hero-phone[data-core] {
+    --se: min(calc(var(--sm) * var(--mk)), calc(0.98 * 100cqw / var(--vw)));
+  }
+}

@@ -345,3 +345,30 @@
 .hv-ac--solo { background-image: url('/assets/home-aud-card-solo.webp'); }
 .home-redesign .hv-ac--first .hv-ac__title, .home-redesign .hv-ac--first .hv-ac__copy { color: #000; }
 .home-redesign .hv-ac--solo .hv-ac__title, .home-redesign .hv-ac--solo .hv-ac__copy { color: #fff; }
+
+/* Phones: bigger, readable cards. Audience cards scale their inner text with --u; review cards get a wider body and larger type. */
+@media (max-width: 560px) {
+  .hv-scroll--aud { --u: 1.55px; }
+  .hv-ac { width: 260px; height: 289px; }
+  .hv-scroll--aud .hv-track { gap: 12px; padding: 24px 18px 12px; }
+  .hv-vc, .hv-vc--luis, .hv-vc--maurit, .hv-vc--omertar { width: 310px; }
+  .hv-scroll--voices .hv-track { gap: 18px; padding: 28px calc(50vw - 155px) 32px; }
+  .hv-vc__tile { height: 270px; }
+  .hv-vc__stars { height: 15px; gap: 4px; }
+  .hv-vc__stars svg { width: 14px; height: 15px; }
+  .home-redesign .hv-vc__title { margin-top: 8px; font-size: 22px !important; line-height: 24px; }
+  .home-redesign .hv-vc__quote { margin-top: 8px; font-size: 16px; line-height: 21px; }
+  .hv-vc__who { height: 32px; margin-top: 14px; border-radius: 16px; }
+  .hv-vc__avatar { width: 24px; height: 24px; }
+  .hv-vc__name { font-size: 13.5px; }
+}
+@media (max-width: 560px) {
+  .home-redesign .hv-ac__title { font-size: calc(13 * var(--u)) !important; }
+  .home-redesign .hv-ac__copy { font-size: calc(9 * var(--u)); line-height: calc(11.2 * var(--u)); }
+  .home-redesign .hv-ac__more { font-size: calc(8.6 * var(--u)); }
+}
+@media (max-width: 560px) {
+  /* audience cards: each one snaps to the centre of the screen */
+  .hv-scroll--aud .hv-track { padding: 24px calc(50vw - 130px) 12px; }
+  .hv-scroll--aud .hv-ac { scroll-snap-align: center; scroll-margin-left: 0; }
+}

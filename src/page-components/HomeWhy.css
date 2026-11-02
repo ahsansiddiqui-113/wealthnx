@@ -136,3 +136,13 @@
   .hw2-tab { height: 40px; padding: 0 18px; font-size: 14.5px; }
   .hw2-stage img { width: 116%; }
 }
+
+/* Phones: the portrait pictures are trimmed tight, so they fill the panel width with no cropping and only a light edge fade. */
+@media (max-width: 700px) {
+  .hw2-container { padding-left: 4px; padding-right: 4px; }
+  .hw2-stage img {
+    width: 100%; max-width: 100%;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, #000 2%, #000 98%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 3%, #000 97%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, #000 2%, #000 98%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 3%, #000 97%, transparent 100%);
+  }
+}

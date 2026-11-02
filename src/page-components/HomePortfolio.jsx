@@ -120,6 +120,7 @@ function PortfolioList({ onSelect }) {
               <span className="hpf-card__body">{body}</span>
             </span>
           </button>
+          {PICS[key] && <img className="hpf-inline" src={PICS[key][0]} width={PICS[key][1]} height={PICS[key][2]} alt="" aria-hidden="true" loading="lazy" decoding="async" />}
         </li>
       ))}
     </ul>

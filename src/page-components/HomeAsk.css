@@ -202,3 +202,8 @@
 /* Heading: two balanced lines ("One App For Your Money See More. / Understand More. Ask Better Questions.") */
 .home-redesign .ha-title { font-size: clamp(28px, 3vw, 42px); max-width: 20em; margin-inline: auto; text-wrap: balance; }
 @media (max-width: 640px) { .home-redesign .ha-title { max-width: none; } }
+
+/* Phones: heading 30px. */
+@media (max-width: 640px) {
+  .home-redesign .ha-title { font-size: 30px !important; line-height: 1.22; max-width: none; }
+}

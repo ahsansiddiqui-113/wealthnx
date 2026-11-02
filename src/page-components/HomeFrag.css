@@ -255,3 +255,8 @@
   -webkit-mask-image: linear-gradient(to bottom, #000 0, #000 72%, transparent 97%);
   mask-image: linear-gradient(to bottom, #000 0, #000 72%, transparent 97%);
 }
+
+/* Phones: air between the sub-heading and the list (where the picture opens above a tapped card). */
+@media (max-width: 700px) {
+  .hf-card--first, .hf-pic--first { margin-top: 30px; }
+}

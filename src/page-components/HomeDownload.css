@@ -238,5 +238,18 @@
 /* Phones: the single-phone picture is square, so its box is too. */
 @media (max-width: 760px) {
   .hd--light .hd-phones { aspect-ratio: 1000 / 994; margin-top: 8px; }
-  .hd--light .hd-bottom { left: -3%; top: 0; width: 106%; }
+  .hd--light .hd-bottom { left: -9%; top: -8%; width: 118%; max-width: none; -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%), linear-gradient(180deg, transparent 0, #000 6%, #000 58%, transparent 96%); mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%), linear-gradient(180deg, transparent 0, #000 6%, #000 58%, transparent 96%); }
+}
+
+/* One continuous dark area with the section above: same black, and the teal glow + grain only start below the seam. */
+.home-redesign .hd { background: #0a0a0a; }
+.hd::before, .hd::after {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, transparent 8%, #000 34%);
+  mask-image: linear-gradient(to bottom, transparent 0, transparent 8%, #000 34%);
+}
+
+/* Phones: no dead space under the picture; the band runs straight into the footer. */
+@media (max-width: 760px) {
+  .home-redesign .hd { padding-bottom: 0; }
+  .hd--light .hd-phones { margin-bottom: -70px; }
 }
