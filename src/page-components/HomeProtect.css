@@ -174,3 +174,13 @@
 .hp-card__visual { display: flex; align-items: flex-end; justify-content: center; }
 .hp-card__visual::before { width: 78%; height: 92%; aspect-ratio: auto; bottom: 0; }
 .hp-card__visual img { width: 58%; height: auto; max-height: 80%; margin: 0 0 7%; object-fit: contain; }
+
+/* Dome v3: a clean arch that fully contains the illustration and fades out at the bottom (no flat edge, no overflow). */
+.hp-card__visual::before {
+  width: 84%; height: 100%; aspect-ratio: auto; border: 0;
+  background: radial-gradient(ellipse 75% 85% at 50% 60%, rgba(116, 217, 198, .34) 0%, rgba(160, 232, 220, .18) 60%, rgba(255, 255, 255, 0) 100%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0, #000 55%, transparent 100%);
+  mask-image: linear-gradient(180deg, #000 0, #000 55%, transparent 100%);
+}
+.hp-card__visual { align-items: center; }
+.hp-card__visual img { width: auto; height: auto; max-width: 56%; max-height: 66%; margin: 8% 0 0; }
