@@ -82,7 +82,7 @@ export default function HomeWhy() {
           aria-labelledby={`${baseId}-tab-${active.id}`}
           tabIndex={0}
         >
-          {tabs.map((tab) => <img key={tab.id} className={tab.id === active.id ? 'is-shown' : undefined} src={tab.img} alt={tab.alt} width={tab.w} height={tab.h} loading={tab.id === tabs[0].id ? 'eager' : 'lazy'} decoding="async" aria-hidden={tab.id === active.id ? undefined : true} />)}
+          {tabs.map((tab) => <img key={tab.id} className={tab.id === active.id ? 'is-shown' : undefined} src={tab.img} alt={tab.alt} width={tab.w} height={tab.h} loading="lazy" decoding="async" aria-hidden={tab.id === active.id ? undefined : true} />)}
         </div>
         <div className="hw2-dots">
           {tabs.map((tab, index) => <button key={tab.id} type="button" aria-label={`Show ${tab.label}`} aria-current={index === activeIndex} onClick={() => setActiveId(tab.id)} />)}

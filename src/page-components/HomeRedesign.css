@@ -130,7 +130,7 @@
 }
 @media(max-width:1000px){.hr-hero-host .fdt-hero__visual{display:flex;justify-content:center;align-items:center;height:470px}.hr-hero-host .fdt-hero-phone{width:auto;max-width:none;max-height:none;height:570px;flex:none}} /* phones/tablets: the transparent padding around the phone made it look small; flex centres the wider-than-column image on both sides */
 .hr-hero-host .fdt-hero-phone{animation:hr-phone-in 1.6s cubic-bezier(.22,1,.36,1) backwards}
-@keyframes hr-phone-in{from{opacity:0;transform:translateY(60vh) rotateY(0deg)}35%{opacity:1}to{opacity:1;transform:translateY(0) rotateY(360deg)}}
+@keyframes hr-phone-in{from{opacity:.02;transform:translateY(8vh) rotateY(0deg)}25%{opacity:1}to{opacity:1;transform:translateY(0) rotateY(360deg)}}
 @media(prefers-reduced-motion:reduce){.hr-hero-host .fdt-hero-phone{animation:none}}
 
 /* Insights (Figma "Get investment insights"): transparent artwork straight on the #0c0c0c section, text + two stat rows + outlined button. */
@@ -173,3 +173,14 @@
 @media (prefers-reduced-motion: reduce) { .hr-audience--in, .hr-audience--out { animation: none; } }
 @media (max-width: 700px) { .home-redesign .fdt-hero h1 em.hr-audience { display: inline-block; } }
 @media (min-width: 951px) { .home-redesign .hr-insights__visual img { transform: translateY(-6%); } }
+
+/* Below-the-fold sections are skipped until they approach the viewport: their lazy images do not start downloading
+   during the hero's load and the browser does less layout/paint up front (home page only). */
+.home-redesign .ha-section,
+.home-redesign .hp-section,
+.home-redesign .hc-section,
+.home-redesign .hw2-section,
+.home-redesign .hf-section,
+.home-redesign .hpf-section,
+.home-redesign .hr-insights,
+.home-redesign .hq-section { content-visibility: auto; contain-intrinsic-size: auto 1000px; }

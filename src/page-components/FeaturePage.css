@@ -47,8 +47,8 @@
   .feature-page .fdt-hero-phone[src*="-hero.webp"][width="817"], .feature-page .fdt-hero-phone[src*="-hero.webp"][width="856"] { height: 520px; }
 }
 @keyframes fp-phone-in {
-  from { opacity: 0; transform: translateY(60vh) rotateY(0deg); }
-  35% { opacity: 1; }
+  from { opacity: .02; transform: translateY(8vh) rotateY(0deg); }
+  25% { opacity: 1; }
   to { opacity: 1; transform: translateY(0) rotateY(360deg); }
 }
 @media (prefers-reduced-motion: reduce) { .feature-page .fdt-hero-phone { animation: none; } }

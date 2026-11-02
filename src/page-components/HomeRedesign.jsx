@@ -144,7 +144,7 @@ export default function HomeRedesign() {
                   <h3>{title}</h3>
                   <p>{body}</p>
                 </div>
-                <div className="ha-card__visual"><img src={img} alt="" width={952} height={808} loading="lazy" decoding="async" /></div>
+                <div className="ha-card__visual"><img src={img} srcSet={`${img.replace('.webp', '-720.webp')} 720w, ${img} 952w`} sizes="(max-width: 700px) 92vw, 34vw" alt="" width={952} height={808} loading="lazy" decoding="async" /></div>
               </article>
             ))}
           </div>
@@ -234,7 +234,7 @@ export default function HomeRedesign() {
             <p className="hf-sub">Connect your bank, brokerage, and crypto accounts securely. Access <b>12,000+</b> financial institutions through Plaid.</p>
             <div className="hf-visual" aria-hidden="true">
               {fragCards.map(({ key, img, size }, index) => (
-                <img key={key} className={index === fragActive ? 'is-shown' : undefined} src={`/assets/home-frag-${img}.webp?v=2`} alt="" width={size[0]} height={size[1]} loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
+                <img key={key} className={index === fragActive ? 'is-shown' : undefined} src={`/assets/home-frag-${img}.webp?v=2`} alt="" width={size[0]} height={size[1]} loading="lazy" decoding="async" />
               ))}
             </div>
           </div>
@@ -245,7 +245,7 @@ export default function HomeRedesign() {
                 <React.Fragment key={key}>
                   {fragOpen === index && (
                     <li className={`hf-pic${index === 0 ? ' hf-pic--first' : ''}`} aria-hidden="true">
-                      <img src={`/assets/home-frag-${img}.webp?v=2`} alt="" width={size[0]} height={size[1]} decoding="async" />
+                      <img src={`/assets/home-frag-${img}.webp?v=2`} alt="" width={size[0]} height={size[1]} loading="lazy" decoding="async" />
                     </li>
                   )}
                 <li className={`hf-card${index === 0 ? ' hf-card--first' : ''}${index === fragActive ? ' is-active' : ''}${fragOpen === index ? ' is-open' : ''}`} style={{ "--i": index }} data-reveal tabIndex={0} aria-expanded={fragOpen === index} onMouseEnter={() => setFragActive(index)} onFocus={() => setFragActive(index)} onClick={(event) => { setFragActive(index); if (!event.target.closest('a')) setFragOpen((open) => (open === index ? null : index)); }}>

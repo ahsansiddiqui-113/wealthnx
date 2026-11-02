@@ -15,7 +15,7 @@ export default function MotionRoot() {
         ahead.unobserve(target);
         if (target.tagName === 'IMG') target.loading = 'eager';
       });
-    }, { rootMargin: '2200px 0px' });
+    }, { rootMargin: '900px 0px' });
     const videos = new IntersectionObserver((entries) => {
       entries.forEach(({ target, isIntersecting }) => {
         if (isIntersecting) { if (target.preload !== 'auto') target.preload = 'auto'; const p = target.play(); if (p && p.catch) p.catch(() => {}); } else target.pause();

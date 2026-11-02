@@ -116,7 +116,7 @@
   .feature-detail-template.fdt-features .fdt-hero-phone { position: absolute; left: 50%; top: calc(-168 * var(--fk)); margin-left: calc(-421.5 * var(--fk)); width: calc(843 * var(--fk)); max-width: none; height: auto; max-height: none; } /* the 843 x 965 export = the 507.8 x 629 phone group + ~168px of soft shadow all round */ /* the whole phone fits the 560px visual box (the picture is taller than wide) */
 }
 .feature-detail-template.fdt-features .fdt-hero-phone { animation: fdt-phone-in 1.6s cubic-bezier(.22, 1, .36, 1) backwards; }
-@keyframes fdt-phone-in { from { opacity: 0; transform: translateY(60vh) rotateY(0deg); } 35% { opacity: 1; } to { opacity: 1; transform: translateY(0) rotateY(360deg); } }
+@keyframes fdt-phone-in { from { opacity: .02; transform: translateY(8vh) rotateY(0deg); } 25% { opacity: 1; } to { opacity: 1; transform: translateY(0) rotateY(360deg); } }
 @media (prefers-reduced-motion: reduce) { .feature-detail-template.fdt-features .fdt-hero-phone { animation: none; } }
 
 /* Partner strip blends into the dark product section below it */
