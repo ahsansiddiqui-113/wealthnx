@@ -31,6 +31,7 @@ const CMP_BEFORE = [
   'A budget app to track spending',
   'Bill reminders or a calendar',
   'A spreadsheet for your net worth',
+  'Shared spreadsheets or chats to split household money',
   'Separate brokerage and crypto apps to check holdings',
   'Stock news, earnings and filing sites',
   'Online searches to understand your numbers',

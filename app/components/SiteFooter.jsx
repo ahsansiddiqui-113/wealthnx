@@ -53,7 +53,7 @@ const CALCULATOR_LINKS = [
 export default function SiteFooter() {
   return (
     <footer className="sf-footer">
-      <img className="sf-footer__logo" src="/assets/logo.svg" alt="WealthNX" width="120" height="56" />
+      <img className="sf-footer__logo" src="/assets/logo-nav.webp" alt="WealthNX" width="138" height="51" />
       <h2 className="sf-footer__title">Know <em>where</em> you stand</h2>
 
       <div className="sf-footer__columns">

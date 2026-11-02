@@ -179,3 +179,7 @@
   .sf-footer__columns a { padding: 6px 0; line-height: 1.3; }
   .sf-footer__contact span { margin-top: 4px; line-height: 1.4; }
 }
+
+/* Same logo as the top bar (black, no invert). */
+.sf-footer .sf-footer__logo { width: 138px; height: auto; filter: none; margin-bottom: 18px; }
+@media (max-width: 700px) { .sf-footer .sf-footer__logo { width: 150px; height: auto; } }

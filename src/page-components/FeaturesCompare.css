@@ -13,7 +13,7 @@
 .fdt-cmp__col.is-with li { border-bottom-color: rgba(255, 255, 255, .28); position: relative; }
 .fdt-cmp__col li:last-child { border-bottom: 0; }
 /* frosted pills straddling the gap, one per aligned row (rows 1-6; the 7th has no partner) */
-.fdt-cmp__col.is-with li:nth-child(-n+6)::before {
+.fdt-cmp__col.is-with li::before {
   content: ''; position: absolute; z-index: 2; top: 50%; left: -56px; width: 56px; height: 14px; margin-top: -7px; border-radius: 99px;
   background: linear-gradient(90deg, rgba(240, 240, 240, .85), rgba(240, 240, 240, .35));
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, .55), 0 1px 3px rgba(0, 0, 0, .3); pointer-events: none;
@@ -28,7 +28,7 @@
 
 /* Board review: regular weight, left-aligned, softer middle pills. */
 .fdt-cmp__col.is-with li { color: #fff; font-weight: 400; }
-.fdt-cmp__col.is-with li:nth-child(-n+6)::before { opacity: .45; }
+.fdt-cmp__col.is-with li::before { opacity: .45; }
 
 /* Phones: heading 30px. */
 @media (max-width: 700px) {
@@ -36,4 +36,10 @@
 }
 @media (max-width: 700px) {
   body .feature-detail-template.fdt-features .fdt-cmp .fdt-cmp__col h3 { font-size: 30px !important; line-height: 1.15; margin-bottom: 18px; }
+}
+
+/* Desktop: seven equal rows in both columns so every left item lines up with its partner (and its pill). */
+@media (min-width: 701px) {
+  .fdt-cmp__col ul { display: grid; grid-template-rows: repeat(7, minmax(82px, 1fr)); }
+  .fdt-cmp__col li { box-sizing: border-box; }
 }
