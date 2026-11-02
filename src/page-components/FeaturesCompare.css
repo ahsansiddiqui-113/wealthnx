@@ -29,3 +29,11 @@
 /* Board review: regular weight, left-aligned, softer middle pills. */
 .fdt-cmp__col.is-with li { color: #fff; font-weight: 400; }
 .fdt-cmp__col.is-with li:nth-child(-n+6)::before { opacity: .45; }
+
+/* Phones: heading 30px. */
+@media (max-width: 700px) {
+  body .feature-detail-template.fdt-features .fdt-cmp .fdt-cmp__title { font-size: 30px !important; line-height: 1.15; }
+}
+@media (max-width: 700px) {
+  body .feature-detail-template.fdt-features .fdt-cmp .fdt-cmp__col h3 { font-size: 30px !important; line-height: 1.15; margin-bottom: 18px; }
+}

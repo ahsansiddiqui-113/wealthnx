@@ -196,3 +196,40 @@
   body .feature-detail-template.fdt-features .fdt-orbit .fdt-orbit__heading p { font-size: 17px; line-height: 1.5; color: #8fa39f; max-width: 340px; margin-top: 14px; }
   body .feature-detail-template.fdt-features .fdt-orbit > img { max-width: 100%; max-height: none; }
 }
+
+/* /features/ phones: the arc passes behind the icon (icon sits on its crest) and the slide text sits inside it, with a tinted fill and a double line. */
+@media (max-width: 700px) {
+  body .feature-detail-template.fdt-features .fdt-orbit { position: relative; isolation: isolate; border: 0; background: none; }
+  body .feature-detail-template.fdt-features .fdt-orbit__rings { display: none; }
+  body .feature-detail-template.fdt-features .fdt-orbit::before,
+  body .feature-detail-template.fdt-features .fdt-orbit::after { content: ''; position: absolute; z-index: -1; left: 50%; transform: translateX(-50%); aspect-ratio: 1; border-radius: 50%; pointer-events: none; }
+  body .feature-detail-template.fdt-features .fdt-orbit::before {
+    top: 70px; width: 210%; border: 1px solid rgba(194, 231, 224, .38);
+    background: linear-gradient(180deg, rgba(44, 120, 108, .34) 0%, rgba(24, 74, 68, .18) 22%, rgba(10, 30, 28, 0) 46%);
+  }
+  body .feature-detail-template.fdt-features .fdt-orbit::after { top: 80px; width: 205%; border: 1px solid rgba(173, 223, 214, .2); }
+}
+@media (max-width: 700px) {
+  body .feature-detail-template.fdt-features .fdt-orbit::before,
+  body .feature-detail-template.fdt-features .fdt-orbit::after { display: block; right: auto; bottom: auto; height: auto; opacity: 1; filter: none; animation: none; }
+}
+@media (max-width: 700px) {
+  /* the arc is the top of a big circle: cut everything below the slide so its lower half does not show under the pager */
+  body .feature-detail-template.fdt-features .fdt-orbit { clip-path: inset(-20px -60vw 0 -60vw); }
+}
+@media (max-width: 700px) {
+  /* only the upper arch (no lower half): the shape runs down to the bottom of the slide with open sides at the bottom */
+  body .feature-detail-template.fdt-features .fdt-orbit::before,
+  body .feature-detail-template.fdt-features .fdt-orbit::after { aspect-ratio: auto; border-bottom: 0; border-radius: 50% 50% 0 0 / 420px 420px 0 0; }
+  body .feature-detail-template.fdt-features .fdt-orbit::before { height: calc(100% - 70px); }
+  body .feature-detail-template.fdt-features .fdt-orbit::after { height: calc(100% - 80px); }
+}
+@media (max-width: 700px) {
+  /* slide pictures carry a wide empty glow margin: draw them larger than the column so the phone itself is big */
+  body .feature-detail-template.fdt-features .fdt-orbit > img { width: 150%; max-width: none; margin-left: 0; margin-right: 0; align-self: center; margin-top: 10px; }
+}
+
+@media (max-width: 700px) {
+  /* per-picture fit (carouselImageFit.js): the visible content fills the column and is centred, nothing is cut at the sides */
+  body .feature-detail-template.fdt-features .fdt-orbit > img { width: var(--fit-w, 100%); max-width: none; translate: var(--fit-x, 0) 0; }
+}

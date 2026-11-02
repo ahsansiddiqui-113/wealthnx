@@ -23,6 +23,7 @@ import './HeroCore.css';
 import { heroCoreProps } from './heroCore';
 import './FeaturesCompare.css';
 import HomeDownload from './HomeDownload';
+import { CAROUSEL_IMAGE_FIT } from '@/app/features/carouselImageFit.js';
 import PartnerStrip from '@/app/components/PartnerStrip';
 import SiteFooter from '@/app/components/SiteFooter';
 
@@ -131,7 +132,7 @@ export default function FeatureDetailTemplate() {
               return <button key={feature.name} type="button" className={`fdt-orbit__badge fdt-orbit__badge--slot-${railPosition} ${index === activeFeature ? 'is-active' : ''}`} style={{ '--feature-color': feature.color }} aria-label={`Show ${feature.name}`} aria-pressed={index === activeFeature} onClick={(event) => activateFeature(event, index)}><img src={feature.icon} alt="" /></button>;
             })}
             <div className="fdt-orbit__heading" key={currentFeature.name} aria-live="polite"><h2 id="net-worth-title">{currentFeature.name}</h2><p>{currentFeature.description}</p></div>
-            <img key={currentFeature.image} src={currentFeature.image} alt={`WealthNX ${currentFeature.name} feature preview`} />
+            <img key={currentFeature.image} src={currentFeature.image} alt={`WealthNX ${currentFeature.name} feature preview`} style={{ '--fit-w': `${(CAROUSEL_IMAGE_FIT[currentFeature.image] || [100, 0])[0]}%`, '--fit-x': `${(CAROUSEL_IMAGE_FIT[currentFeature.image] || [100, 0])[1]}%` }} />
             <Link href={currentFeature.href}>{currentFeature.cta || 'Learn more'}</Link>
             <div className="fdt-orbit__dots" aria-label="Choose a feature">{featureSlides.map((feature, index) => <button key={feature.name} type="button" className={index === activeFeature ? 'is-active' : ''} aria-label={`Show ${feature.name}`} aria-pressed={index === activeFeature} onClick={(event) => activateFeature(event, index)} />)}</div>
             <button type="button" className="fdt-orbit__arrow fdt-orbit__arrow--prev" aria-label="Previous feature" onClick={(event) => activateFeature(event, activeFeature - 1)}><ChevronIcon dir="left" /></button>

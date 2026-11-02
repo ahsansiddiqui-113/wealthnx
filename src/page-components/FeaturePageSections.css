@@ -192,3 +192,16 @@
   .feature-page .fp-intro__visual img[src*="feature-dividend-tracker-card"],
   .feature-page .fp-intro__visual img[src*="feature-investment-decision-analysis-card"] { width: 88%; margin: 0 auto; }
 }
+
+/* Phones: larger section headings and body text on the feature detail pages. */
+@media (max-width: 700px) {
+  body .feature-page .fp-h2 { font-size: 30px !important; line-height: 1.18; }
+  body .feature-page .fp-lead, body .feature-page .fp-why__lead, body .feature-page .fp-why__note { font-size: 17px; line-height: 1.5; }
+  body .feature-page .fp-compare h3 { font-size: 24px !important; margin-bottom: 16px; }
+  body .feature-page .fp-compare li { font-size: 16.5px; line-height: 1.45; }
+  body .feature-page .fp-feature-card h3 { font-size: 20px !important; }
+  body .feature-page .fp-feature-card p { font-size: 16px !important; line-height: 1.5; }
+  body .feature-page .fp-covers__grid h3 { font-size: 20px !important; }
+  body .feature-page .fp-covers__grid p { font-size: 16px !important; line-height: 1.5; }
+}
+@media (max-width: 700px) { body .feature-page .fp-covers__note { font-size: 15px; line-height: 1.5; } }
