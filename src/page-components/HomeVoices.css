@@ -325,3 +325,10 @@
 .hv-ac--first .hv-ac__title, .hv-ac--first .hv-ac__copy, .hv-ac--first .hv-ac__more { color: #fff; }
 .home-redesign .hv-ac--first .hv-ac__title, .home-redesign .hv-ac--first .hv-ac__copy { color: #fff; }
 .home-redesign .hv-ac--first .hv-ac__more, .home-redesign .hv-ac--solo .hv-ac__more, .home-redesign .hv-ac--founders .hv-ac__more { color: #fff; }
+
+/* Wide screens: the Figma frame stops scaling at ~1.35px per unit so headings, cards and photos do not blow up
+   (it was 2px+ at 1900px). The card rows still run edge to edge and start in line with the centred stage. */
+.hv-inner { --u: clamp(.88px, calc(100cqw / 893), 1.35px); }
+.hv-scroll { width: 100cqw; }
+@media (min-width: 561px) { .hv-stage { overflow-x: visible; } }
+@media (min-width: 561px) { .hv-scroll--voices .hv-track { margin-inline: auto; } }

@@ -16,7 +16,7 @@ export default function HvScroller({ className = '', start = 0, label, nav = fal
     /* phones: the rows are re-laid out as plain swipe rows (HomeVoices.css), so start at the first card */
     if (window.matchMedia('(max-width: 560px)').matches) { el.scrollLeft = 0; return; }
     const u = stage.offsetWidth / 893;
-    el.scrollLeft = start * u + (stage.offsetWidth - el.clientWidth) / 2;
+    el.scrollLeft = start * u + Math.max(0, (stage.offsetWidth - el.clientWidth) / 2);
   }, [start]);
 
   const onPointerDown = (event) => {

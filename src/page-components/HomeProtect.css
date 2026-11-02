@@ -169,3 +169,8 @@
 }
 .hp-card { background: transparent; }
 @media (max-width: 700px) { .home-redesign .hp-lede { max-width: 340px; } }
+
+/* Dome fix: the arch sits behind the WHOLE illustration (illustration centred inside it), not cutting through it. */
+.hp-card__visual { display: flex; align-items: flex-end; justify-content: center; }
+.hp-card__visual::before { width: 78%; height: 92%; aspect-ratio: auto; bottom: 0; }
+.hp-card__visual img { width: 58%; height: auto; max-height: 80%; margin: 0 0 7%; object-fit: contain; }
