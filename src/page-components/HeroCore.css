@@ -57,3 +57,9 @@
     --se: min(calc(var(--sm) * var(--mk)), calc(0.98 * 100cqw / var(--vw)));
   }
 }
+
+/* Multi Assets: its two floating cards make the picture wide, which kept the phone smaller than on the other pages. Let the cards
+   reach a little past the picture box so the phone is drawn at the same size as everywhere else (desktop only). */
+@media (min-width: 901px) {
+  .fdt-hero-phone[src*="feature-multi-assets-phone"] { --vw: 520 !important; --s: 1.36 !important; }
+}

@@ -204,7 +204,7 @@
 
 /* Long headline / blurb (feature pages, home): let the copy wrap inside the left column so it never runs under the phones. */
 @media (min-width: 761px) {
-  .home-redesign .hd--wrap .hd-copy { left: calc(100 * var(--u)); top: calc(46 * var(--u)); width: calc(270 * var(--u)); }
+  .home-redesign .hd--wrap .hd-copy { left: calc(100 * var(--u)); top: calc(218 * var(--u)); transform: translateY(-50%); width: calc(270 * var(--u)); } /* centred on the phones, same on every page */
   .home-redesign .hd--wrap .hd-title { font-size: calc(24 * var(--u)) !important; line-height: 1.15; }
   .hd--wrap .hd-title span, .hd--wrap .hd-text span { display: inline; white-space: normal; }
   .home-redesign .hd--wrap .hd-text { margin-top: calc(16 * var(--u)); font-size: calc(10 * var(--u)); line-height: 1.4; }
@@ -252,6 +252,15 @@
 @media (max-width: 760px) {
   .home-redesign .hd { padding-bottom: 0; }
   .hd--light .hd-phones { margin-bottom: -70px; }
+}
+
+/* Phones: copy and the three buttons are centred as a group; body copy 15px; buttons 48px tall and share one width. */
+@media (max-width: 760px) {
+  .home-redesign .hd-copy { text-align: center; }
+  .home-redesign .hd-title { text-align: center; text-wrap: balance; }
+  .home-redesign .hd-text { font-size: 15px; line-height: 1.45; margin-left: auto; margin-right: auto; max-width: 340px; }
+  .home-redesign .hd-actions { align-items: center; justify-content: center; flex-direction: column; }
+  .home-redesign .hd-btn, .home-redesign .hd-btn--trial { width: min(260px, 100%); height: 48px; font-size: 15px; }
 }
 
 /* Phones: the whole download band is centred (heading, copy and the three buttons). */

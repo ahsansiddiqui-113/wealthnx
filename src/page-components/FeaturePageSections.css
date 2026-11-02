@@ -218,3 +218,22 @@
   body .feature-page .fp-intro__visual:not([style*="--fit-h: 0"]) img { margin-top: calc(var(--fit-t, 0) * var(--fit-n, 100) / -100 * var(--col)) !important; }
   body .feature-page .fp-intro__visual img { width: calc(var(--fit-n, 100) * 1%) !important; max-width: none !important; margin: 0; translate: var(--fit-x, 0) 0; flex: none; height: auto; }
 }
+
+/* Desktop: the Multi Assets "Assets" card is a tall picture, so it is shown smaller and centred in its column. */
+@media (min-width: 901px) {
+  .feature-page .fp-intro__visual img[src*="feature-multi-assets-card"] { width: 76%; margin: 0 auto; }
+}
+
+/* Desktop: centre the visible card (not the transparent canvas) beside the intro text. */
+@media (min-width: 901px) {
+  .feature-page .fp-intro__visual img { translate: 0 var(--fit-c, 0); }
+}
+
+/* Desktop: the Bills card picture was the smallest of the intro pictures; same width as the others now. */
+@media (min-width: 901px) {
+  .feature-page .fp-intro__visual img[src*="feature-bills-card"] { width: 124%; max-width: none; margin: 0 0 0 -6%; }
+}
+
+/* Ask section: the note and the "Try Wealth Genie" button are centred under the phone. */
+.feature-page .fp-ask__visual { text-align: center; }
+.feature-page .fp-ask__note { text-align: center; }

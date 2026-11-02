@@ -39,6 +39,13 @@ function NetWorthChart() {
 }
 
 /** Shared layout for every dropdown feature page; only `content` changes per feature. */
+/* Desktop: how far (as % of the picture's own height) to move it down so the visible card, not the transparent canvas around it, is centred beside the text. */
+function introCentreShift({ src, width, height }) {
+  const [, , h, t] = INTRO_IMAGE_FIT[src] || [100, 0, 0, 0];
+  if (!h || !width || !height) return '0%';
+  return `${((0.5 - (t + h / 2) * (width / height)) * 100).toFixed(1)}%`;
+}
+
 export default function FeaturePage({ content }) {
   const { hero, cards, faqs, explore, cta } = content;
   /* layout "compact" (Voice To Voice, Voice To Action, AI Insights): hero, six cards, FAQ, download. No intro / comparison / covers / ask. */
@@ -81,7 +88,7 @@ export default function FeaturePage({ content }) {
               {intro.text && <p className="fp-lead">{intro.text}</p>}
             </div>
             {intro.image
-              ? <div className="fp-intro__visual" data-reveal="fade" style={{ '--fit-n': (INTRO_IMAGE_FIT[intro.image.src] || [100, 0, 0, 0])[0], '--fit-x': `${(INTRO_IMAGE_FIT[intro.image.src] || [100, 0, 0, 0])[1]}%`, '--fit-h': (INTRO_IMAGE_FIT[intro.image.src] || [100, 0, 0, 0])[2], '--fit-t': (INTRO_IMAGE_FIT[intro.image.src] || [100, 0, 0, 0])[3] }}><img src={intro.image.src} alt="" width={intro.image.width} height={intro.image.height} loading="lazy" /></div>
+              ? <div className="fp-intro__visual" data-reveal="fade" style={{ '--fit-n': (INTRO_IMAGE_FIT[intro.image.src] || [100, 0, 0, 0])[0], '--fit-x': `${(INTRO_IMAGE_FIT[intro.image.src] || [100, 0, 0, 0])[1]}%`, '--fit-h': (INTRO_IMAGE_FIT[intro.image.src] || [100, 0, 0, 0])[2], '--fit-t': (INTRO_IMAGE_FIT[intro.image.src] || [100, 0, 0, 0])[3], '--fit-c': introCentreShift(intro.image) }}><img src={intro.image.src} alt="" width={intro.image.width} height={intro.image.height} loading="lazy" /></div>
               : <NetWorthChart />}
           </section>
         )}
