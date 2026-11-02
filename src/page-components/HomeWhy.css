@@ -44,7 +44,7 @@
 }
 
 /* ---- Tab bar (pill) ---- */
-.hw2-tabs-wrap { margin-top: 28px; }
+.hw2-tabs-wrap { margin-top: 48px; }
 .hw2-tabs {
   display: inline-flex;
   align-items: center;

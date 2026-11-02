@@ -116,13 +116,13 @@ export default function HomeRedesign() {
         </section>
       </div>
 
-      <PartnerStrip />
+      <PartnerStrip className="hr-strip" />
 
       <section className="ha-section" aria-labelledby="ai-title">
         <div className="ha-glow ha-glow--top" aria-hidden="true" />
         <div className="ha-glow ha-glow--corner" aria-hidden="true" />
         <div className="ha-inner">
-          <h2 id="ai-title" className="ha-title" data-reveal>One App For <b>Your Money</b><br />See More. Understand More. <b>Ask Better Questions.</b></h2>
+          <h2 id="ai-title" className="ha-title" data-reveal>One App For <b>Your Money</b> See More. Understand More. <b>Ask Better Questions.</b></h2>
           <div className="ha-bar" data-reveal="fade" aria-hidden="true">
             <img className="ha-bar__genie" src="/assets/Vector.png" alt="" width="24" height="24" />
             <span className="ha-bar__placeholder">Ask anything or tag an Assistant</span>

@@ -196,3 +196,6 @@
   .home-redesign .fdt-hero h1 { font-size: 44px; }
   .home-redesign .fdt-hero h1 em.hr-audience { font-size: min(1em, calc((100vw - 52px) / 8.9)); white-space: nowrap; }
 }
+
+/* The data-source strip continues the black "Ask" section below it (no separate band). */
+.home-redesign .hr-strip.hr-strip { background: #000; }

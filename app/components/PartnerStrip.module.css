@@ -3,7 +3,7 @@
   align-items: center;
   min-height: 80px;
   overflow: hidden;
-  background: var(--partner-strip-bg, #000); /* pages set it to the colour of the section below so the two read as one */
+  background: transparent; /* no band of its own: the page/section colour shows through */
 }
 
 .strip.strip { padding: 22px 0; margin: 0; } /* doubled class beats page-level `section` padding */

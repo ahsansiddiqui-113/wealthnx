@@ -84,7 +84,7 @@
   width: 100%;
   height: 100%;
   object-fit: contain; /* bare illustrations: show whole, don't crop */
-  mix-blend-mode: multiply;
+  mix-blend-mode: normal; /* multiply let the dome show through the illustration */
 }
 
 /* Row beneath the illustration: reserved on every card so titles align. */
@@ -197,4 +197,9 @@
 .hp-card__visual img {
   position: absolute; z-index: 1; left: 50%; top: 63%; width: auto; height: 74%; max-width: 70%; max-height: none; margin: 0;
   transform: translate(-50%, -50%); object-fit: contain;
+}
+
+/* Sub-heading stays on two lines at tablet/laptop widths: the size follows the screen width (15px max). */
+@media (min-width: 701px) {
+  .home-redesign .hp-section .hp-lede { max-width: min(980px, 100%); font-size: clamp(12px, 1.3vw, 15px); }
 }

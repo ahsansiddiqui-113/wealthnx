@@ -34,7 +34,7 @@
   transform: rotate(-12deg);
   background:
     radial-gradient(ellipse 50% 50% at 50% 50%,
-      rgba(236, 98, 54, .72) 0%, rgba(200, 72, 40, .5) 28%, rgba(130, 44, 26, .24) 58%, rgba(60, 20, 12, 0) 100%);
+      rgba(236, 98, 54, .36) 0%, rgba(200, 72, 40, .25) 28%, rgba(130, 44, 26, .12) 58%, rgba(60, 20, 12, 0) 100%);
   filter: blur(12px);
 }
 .hc-glow--blue {
@@ -45,7 +45,7 @@
   transform: rotate(-11deg);
   background:
     radial-gradient(ellipse 50% 50% at 60% 50%,
-      rgba(58, 92, 240, .8) 0%, rgba(42, 70, 206, .56) 32%, rgba(28, 46, 136, .22) 60%, rgba(16, 24, 70, 0) 100%);
+      rgba(58, 92, 240, .4) 0%, rgba(42, 70, 206, .28) 32%, rgba(28, 46, 136, .11) 60%, rgba(16, 24, 70, 0) 100%);
   filter: blur(12px);
 }
 
@@ -104,7 +104,7 @@
 /* ---- Left: Multi Assets ---- */
 .hc-card--assets {
   background:
-    radial-gradient(ellipse 95% 62% at 18% 112%, rgba(44, 82, 222, .9) 0%, rgba(34, 62, 168, .62) 42%, rgba(24, 40, 110, 0) 100%),
+    radial-gradient(ellipse 95% 62% at 18% 112%, rgba(44, 82, 222, .45) 0%, rgba(34, 62, 168, .31) 42%, rgba(24, 40, 110, 0) 100%),
     linear-gradient(180deg, rgba(10, 10, 14, .78) 0%, rgba(14, 22, 52, .62) 62%, rgba(24, 48, 118, .56) 100%);
 }
 .hc-chips {
@@ -192,7 +192,7 @@
 /* ---- Right: Upload ---- */
 .hc-card--upload {
   background:
-    radial-gradient(ellipse 100% 56% at 0% 0%, rgba(176, 70, 46, .78) 0%, rgba(132, 50, 34, .5) 38%, rgba(60, 24, 18, 0) 100%),
+    radial-gradient(ellipse 100% 56% at 0% 0%, rgba(176, 70, 46, .39) 0%, rgba(132, 50, 34, .25) 38%, rgba(60, 24, 18, 0) 100%),
     linear-gradient(180deg, rgba(14, 10, 10, .72) 0%, rgba(9, 9, 10, .86) 60%);
 }
 .hc-drop {
@@ -239,3 +239,6 @@
   .home-redesign .hc-title { font-size: clamp(26px, 7.4vw, 30px) !important; }
   .hc-grid { margin-top: 44px; }
 }
+
+/* Review: no blue line along the top of the Multi Assets card (the corner gradient was repeating under the border); gradients at half strength. */
+.hc-card--assets, .hc-card--upload { background-repeat: no-repeat; background-clip: padding-box; }

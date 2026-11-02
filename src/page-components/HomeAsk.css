@@ -6,7 +6,7 @@
   background: #000;
   color: #fff;
   font-family: var(--font-inter), 'Inter', Arial, sans-serif;
-  padding: clamp(84px, 11vw, 150px) 24px 120px;
+  padding: clamp(44px, 4.6vw, 68px) 24px 120px;
 }
 
 /* Glows: teal behind the heading, faint teal in the bottom-right corner. */
@@ -198,3 +198,7 @@
 .ha-card--full .ha-card__visual { flex: 1 1 auto; overflow: visible; }
 .ha-card--full .ha-card__visual img { object-fit: contain; mix-blend-mode: normal; padding: 0; -webkit-mask-image: none; mask-image: none; }
 @media (max-width: 1000px) { .ha-card.ha-card--full .ha-card__visual { aspect-ratio: auto; } }
+
+/* Heading: two balanced lines ("One App For Your Money See More. / Understand More. Ask Better Questions.") */
+.home-redesign .ha-title { font-size: clamp(28px, 3vw, 42px); max-width: 20em; margin-inline: auto; text-wrap: balance; }
+@media (max-width: 640px) { .home-redesign .ha-title { max-width: none; } }
