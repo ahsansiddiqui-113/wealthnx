@@ -6,7 +6,7 @@
   overflow: clip;
   /* Inset white block: a few px of dark page shows on every edge. The negative top
      margin trims the black section above (it ends with 120px of bottom padding). */
-  margin: -102px clamp(4px, .4vw, 8px) clamp(10px, 1.1vw, 18px);
+  margin: -40px clamp(4px, .4vw, 8px) clamp(10px, 1.1vw, 18px);
   padding: clamp(64px, 8.2vw, 132px) clamp(16px, 2.4vw, 40px) clamp(40px, 3.6vw, 56px);
   border-radius: clamp(28px, 2.9vw, 46px);
   color: #111;
@@ -125,7 +125,7 @@
 }
 
 @media (max-width: 600px) {
-  .home-redesign .hp-section { margin-top: -96px; padding-left: 14px; padding-right: 14px; }
+  .home-redesign .hp-section { margin-top: -44px; padding-left: 14px; padding-right: 14px; }
   .hp-grid { grid-template-columns: minmax(0, 1fr); max-width: 340px; margin-left: auto; margin-right: auto; gap: 18px; }
 }
 
