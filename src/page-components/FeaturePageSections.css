@@ -205,3 +205,8 @@
   body .feature-page .fp-covers__grid p { font-size: 16px !important; line-height: 1.5; }
 }
 @media (max-width: 700px) { body .feature-page .fp-covers__note { font-size: 15px; line-height: 1.5; } }
+@media (max-width: 700px) {
+  /* cards must never be wider than the screen (a single "1fr" column grew to its widest text and ran off the right edge) */
+  body .feature-page .fp-features__grid, body .feature-page .fp-covers__grid { grid-template-columns: minmax(0, 1fr); width: 100%; box-sizing: border-box; }
+  body .feature-page .fp-feature-card, body .feature-page .fp-covers__grid > * { min-width: 0; max-width: 100%; box-sizing: border-box; overflow-wrap: anywhere; }
+}

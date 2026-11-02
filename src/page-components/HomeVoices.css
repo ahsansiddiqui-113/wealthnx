@@ -378,3 +378,10 @@
   .hv-title--aud { margin-bottom: 22px; }
   .hv-scroll--aud .hv-track { padding-top: 34px; }
 }
+
+/* Audience text cards: title, description and "Learn More" flow in a column (they were absolutely positioned, so a two-line title ran into the description). */
+.home-redesign .hv-ac--text { display: flex; flex-direction: column; padding: calc(18.5 * var(--u)) calc(19 * var(--u)) calc(14 * var(--u)); box-sizing: border-box; }
+.home-redesign .hv-ac--text > * { position: static; left: auto; top: auto; bottom: auto; }
+.home-redesign .hv-ac--text .hv-ac__title { margin: 0; }
+.home-redesign .hv-ac--text .hv-ac__copy { margin: calc(6 * var(--u)) 0 0; }
+.home-redesign .hv-ac--text .hv-ac__more { margin-top: auto; padding-top: calc(8 * var(--u)); }

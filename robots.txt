@@ -1,96 +1,12 @@
-
-# ── ALL CRAWLERS ─────────────────────────────────────────────
 User-agent: *
 Allow: /
 
-# Block admin and authentication
-Disallow: /wp-admin/
-Disallow: /wp-login.php
+# Keep private or non-public areas out of crawling
+Disallow: /login/
+Disallow: /signup/
+Disallow: /api/
 Disallow: /admin/
 Disallow: /dashboard/
-Disallow: /login/
-Disallow: /register/
-Disallow: /account/
 
-# Block API and backend endpoints
-Disallow: /api/
-Disallow: /blogs/read/
-Disallow: /graphql/
-Disallow: /webhook/
-
-# Block search result pages (infinite thin/duplicate URLs)
-Disallow: /?s=
-Disallow: /search/
-
-# Block static asset directories (save crawl budget for content pages)
-Disallow: /assets/
-Disallow: /wp-content/uploads/
-Disallow: /wp-includes/
-Disallow: /wp-content/plugins/
-Disallow: /wp-content/themes/
-
-# Block dev, staging and temp paths
-Disallow: /staging/
-Disallow: /dev/
-Disallow: /test/
-Disallow: /tmp/
-
-# ── SITEMAP ───────────────────────────────────────────────────
-Sitemap: https://www.wealthnx.ai/sitemap.xml
-Sitemap: https://www.wealthnx.ai/sitemap-blog.xml
-
-# ── AI CRAWLERS (explicitly allow for AI Overview eligibility) ─
-User-agent: GPTBot
-Allow: /
-Disallow: /wp-admin/
-Disallow: /assets/
-Disallow: /api/
-
-User-agent: Claude-Web
-Allow: /
-Disallow: /wp-admin/
-Disallow: /assets/
-Disallow: /api/
-
-User-agent: PerplexityBot
-Allow: /
-Disallow: /wp-admin/
-Disallow: /assets/
-Disallow: /api/
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: YouBot
-Allow: /
-
-# ── SEARCH ENGINE BOTS ────────────────────────────────────────
-User-agent: Googlebot
-Allow: /
-Disallow: /wp-admin/
-Disallow: /assets/
-Disallow: /api/
-Disallow: /?s=
-
-# Allow Google Images to crawl /assets/ for Google Images indexing
-User-agent: Googlebot-Image
-Allow: /assets/
-Disallow: /wp-admin/
-
-User-agent: Bingbot
-Allow: /
-Disallow: /wp-admin/
-Disallow: /assets/
-Disallow: /api/
-
-User-agent: Slurp
-Allow: /
-Disallow: /wp-admin/
-Disallow: /assets/
-
-# ============================================================
-# END OF robots.txt
-# ============================================================
+# Sitemap
+Sitemap: https://wealthnx.ai/sitemap.xml
