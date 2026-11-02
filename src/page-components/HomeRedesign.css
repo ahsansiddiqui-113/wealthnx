@@ -184,3 +184,9 @@
 .home-redesign .hpf-section,
 .home-redesign .hr-insights,
 .home-redesign .hq-section { content-visibility: auto; contain-intrinsic-size: auto 1000px; }
+
+/* Typewriter caret for the rotating hero audience (HeroAudience.jsx). */
+.hr-audience--type { animation: none !important; transform: none !important; opacity: 1 !important; }
+.hr-caret { display: inline-block; width: .06em; height: .86em; margin-left: .05em; vertical-align: -.06em; background: currentColor; animation: hr-caret-blink 1s steps(1) infinite; }
+@keyframes hr-caret-blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .hr-caret { display: none; } }
