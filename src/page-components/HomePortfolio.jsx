@@ -132,7 +132,7 @@ function PortfolioList({ onSelect }) {
       if (!entries.some((en) => en.isIntersecting)) return;
       io.disconnect();
       const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 200));
-      idle(() => Object.values(PICS).forEach(([src]) => { const im = new Image(); im.decoding = 'async'; im.src = src.replace('.webp', '-m.webp'); }));
+      idle(() => Object.values(PICS).forEach(([src]) => { const im = new Image(); im.decoding = 'async'; im.src = src.replace('.webp', '-m2.webp'); }));
     }, { rootMargin: '1200px 0px' });
     io.observe(listRef.current);
     return () => io.disconnect();
@@ -156,7 +156,7 @@ function PortfolioList({ onSelect }) {
               <span className="hpf-card__body">{body}</span>
             </span>
           </button>
-          {PICS[key] && <picture className="hpf-inline" aria-hidden="true"><source media="(max-width: 700px)" srcSet={PICS[key][0].replace('.webp', '-m.webp')} /><img src={PICS[key][0]} width={PICS[key][1]} height={PICS[key][2]} alt="" loading="lazy" decoding="async" /></picture>}
+          {PICS[key] && <picture className="hpf-inline" aria-hidden="true"><source media="(max-width: 700px)" srcSet={PICS[key][0].replace('.webp', '-m2.webp')} /><img src={PICS[key][0]} width={PICS[key][1]} height={PICS[key][2]} alt="" loading="lazy" decoding="async" /></picture>}
         </li>
       ))}
     </ul>

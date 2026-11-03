@@ -117,7 +117,7 @@ export default function HomeRedesign() {
       if (!entries.some((e) => e.isIntersecting)) return;
       io.disconnect();
       const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 200));
-      idle(() => fragCards.forEach(({ img }) => { const i = new Image(); i.decoding = 'async'; i.src = `/assets/home-frag-${img}-m.webp`; }));
+      idle(() => fragCards.forEach(({ img }) => { const i = new Image(); i.decoding = 'async'; i.src = `/assets/home-frag-${img}-m2.webp`; }));
     }, { rootMargin: '1200px 0px' });
     io.observe(section);
     return () => io.disconnect();
@@ -274,7 +274,7 @@ export default function HomeRedesign() {
                 <React.Fragment key={key}>
                   {fragOpen === index && (
                     <li className={`hf-pic${index === 0 ? ' hf-pic--first' : ''}`} aria-hidden="true">
-                      <picture><source media="(max-width: 700px)" srcSet={`/assets/home-frag-${img}-m.webp`} /><img src={`/assets/home-frag-${img}.webp?v=3`} alt="" width={size[0]} height={size[1]} decoding="async" /></picture>
+                      <picture><source media="(max-width: 700px)" srcSet={`/assets/home-frag-${img}-m2.webp`} /><img src={`/assets/home-frag-${img}.webp?v=3`} alt="" width={size[0]} height={size[1]} decoding="async" /></picture>
                     </li>
                   )}
                 <li className={`hf-card${index === 0 ? ' hf-card--first' : ''}${index === fragActive ? ' is-active' : ''}${fragOpen === index ? ' is-open' : ''}`} style={{ "--i": index }} data-reveal tabIndex={0} aria-expanded={fragOpen === index} onMouseEnter={() => { if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) setFragActive(index); }} onFocus={(event) => { if (event.currentTarget.matches(':focus-visible')) setFragActive(index); }} onClick={(event) => { fragAnchor.current = { el: event.currentTarget, top: event.currentTarget.getBoundingClientRect().top }; setFragActive(index); if (!event.target.closest('a')) setFragOpen((open) => (open === index ? null : index)); }}>
