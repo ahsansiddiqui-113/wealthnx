@@ -294,3 +294,8 @@
 @media (max-width: 700px) {
   body .bl .bl-hero__title { font-size: 30px !important; line-height: 1.2 !important; width: min(340px, 100%) !important; }
 }
+
+/* Phones: larger "Blogs" pill above the heading. */
+@media (max-width: 700px) {
+  body .bl .bl-chip-w { height: 34px !important; padding: 0 18px !important; border-radius: 10px !important; font-size: 16px !important; font-weight: 600 !important; box-shadow: 0 2px 10px rgba(0, 0, 0, .08) !important; }
+}
