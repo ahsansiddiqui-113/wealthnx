@@ -43,7 +43,7 @@ export const portfolio = [
 
   {
     slug: 'portfolio-exposure-analysis',
-    carouselImage: '/assets/feature-portfolio-exposure-analysis-landing.webp',
+    carouselImage: '/assets/feature-portfolio-exposure-analysis-v2-landing.webp',
     label: 'Exposure Analysis',
     menu: { group: 'Portfolio', order: 10, icon: '/assets/menu-icons-v2/exposure-analysis.webp' },
     metaTitle: 'Portfolio Exposure Analysis Across Your Accounts | WealthNX',
@@ -52,7 +52,7 @@ export const portfolio = [
       headline: 'Portfolio Exposure Analysis',
       accent: 'for What Your Funds Hold',
       blurb: 'Sector exposure, asset allocation, geography and company size across your linked brokerage, 401(k) and IRA accounts. Fund Look-Through shows available underlying holdings inside supported ETFs and mutual funds.',
-      image: '/assets/feature-portfolio-exposure-analysis-phone.webp', width: 1400, height: 1340,
+      image: '/assets/feature-portfolio-exposure-analysis-v2-phone.webp', width: 1600, height: 1532,
     },
     cards: [
       { icon: 'pie', title: 'Know where you\'re invested', text: 'Your portfolio\'s distribution replaces a plain list of tickers.' },

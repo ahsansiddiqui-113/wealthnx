@@ -182,4 +182,4 @@
 
 /* Same logo as the top bar (black, no invert). */
 .sf-footer .sf-footer__logo { width: 138px; height: auto; filter: none; margin-bottom: 18px; }
-@media (max-width: 700px) { .sf-footer .sf-footer__logo { width: 150px; height: auto; } }
+@media (max-width: 700px) { .sf-footer .sf-footer__logo { width: 120px; height: auto; margin-bottom: 14px; } }
