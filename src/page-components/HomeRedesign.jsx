@@ -44,7 +44,7 @@ const askCards = [
   { title: 'What you own, in one place', body: 'Bank accounts, cards, stocks, crypto, retirement and property, together in one net worth.', img: '/assets/home-ask-investments.webp', tone: 'crypto' },
   { title: 'Know where your money goes', body: 'See your spending by category and month, and how money flows in and out.', img: '/assets/home-ask-everyday.webp', tone: 'accountant' },
   { title: 'Know what matters, before you ask', body: 'Wealth Genie keeps an eye on your financial life, automatically delivering AI insights that matter to you.', img: '/assets/home-ask-proactive.webp', tone: 'proactive' },
-  { title: 'A Wealth Genie for your money questions', body: 'Ask a specialized AI Genie, with questions about your spending, portfolio or market opportunities.', img: '/assets/home-ask-stock.webp', tone: 'stock' },
+  { title: 'A Wealth Genie for your money questions', body: 'Ask a specialized AI Genie, with questions about your spending, portfolio or market opportunities.', img: '/assets/home-ask-stock-v2.webp', tone: 'stock' },
   { title: 'Just ask. Out loud.', body: 'Have a voice to voice conversation, whenever a money question comes up: in the car, on a walk, between meetings.', img: '/assets/home-ask-voice.webp', tone: 'voice' },
   { title: 'Market intelligence', body: 'Premium market data on investments, explained in plain English. For information only.', img: '/assets/home-ask-markets.webp', tone: 'build' },
 ];
