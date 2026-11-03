@@ -79,8 +79,6 @@ export default function SiteFooter() {
         <div>
           <b>Others</b>
           <a href="/blogs/">Blog</a>
-          <a href="/privacy-policy/">Privacy Policy</a>
-          <a href="/terms-and-conditions/">Terms of Service</a>
           <a href="/referral-terms/">Referral Terms</a>
           <a href="/support/">FAQ</a>
         </div>
@@ -103,7 +101,7 @@ export default function SiteFooter() {
         <span className="sf-footer__legal">
           <a href="/privacy-policy/">Privacy Policy</a>
           <i aria-hidden="true" />
-          <a href="/terms-and-conditions/">Terms of service</a>
+          <a href="/terms-and-conditions/">Terms & Conditions</a>
         </span>
       </div>
     </footer>
