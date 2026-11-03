@@ -13,7 +13,7 @@ const tabs = [
 ];
 
 const AUTO_MS = 6000;
-const IMG_SCALE = 0.93; // phones: the picture is a little narrower than its slide
+const IMG_SCALE = 0.85; // phones: the picture is a little narrower than its slide
 const MOBILE_MQ = '(max-width: 700px)';
 const isMobile = () => typeof window !== 'undefined' && window.matchMedia(MOBILE_MQ).matches;
 const reducedMotion = () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;

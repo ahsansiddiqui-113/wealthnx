@@ -240,3 +240,10 @@
   }
 }
 @media (max-width: 700px) and (prefers-reduced-motion: reduce) { .hw2-stage { transition: none; } }
+
+/* Phones: smaller tab buttons and slightly smaller pictures (width must match IMG_SCALE in HomeWhy.jsx). */
+@media (max-width: 700px) {
+  .hw2-tabs { gap: 6px; }
+  .hw2-tab { height: 34px; padding: 0 14px; font-size: 13px; }
+  .hw2-stage img { width: 85%; }
+}

@@ -183,3 +183,9 @@
 /* Same logo as the top bar (black, no invert). */
 .sf-footer .sf-footer__logo { width: 138px; height: auto; filter: none; margin-bottom: 18px; }
 @media (max-width: 700px) { .sf-footer .sf-footer__logo { width: 120px; height: auto; margin-bottom: 14px; } }
+
+/* Phones: smaller footer heading and logo. */
+@media (max-width: 700px) {
+  .sf-footer .sf-footer__title { font-size: min(26px, calc((100vw - 52px) / 12.5)) !important; }
+  .sf-footer .sf-footer__logo { width: 104px; }
+}
