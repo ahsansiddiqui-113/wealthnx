@@ -64,10 +64,10 @@ export default function HowItWorksLanding() {
                   style={{
                     '--tx': `${left ? 372 - 960 : 1129 - 960}px`,
                     '--top': `${s.top}px`,
-                    '--ax': `${a.x - PAD - 960}px`,
-                    '--ay': `${a.y - PAD}px`,
+                    '--ax': `${a.x - (a.pad ?? PAD) - 960}px`,
+                    '--ay': `${a.y - (a.pad ?? PAD)}px`,
                     '--aw': `${a.w / 2}px`,
-                    '--ar': a.w / 2 / (a.w / 2 - 2 * PAD),
+                    '--ar': a.w / 2 / (a.w / 2 - 2 * (a.pad ?? PAD)),
                   }}
                   data-reveal
                 >

@@ -6,7 +6,7 @@ export const money = [
     menu: { group: 'Money', order: 10, icon: '/assets/menu-icons-v2/net-worth.webp' },
     carousel: {
       order: 10,
-      image: '/assets/feature-net-worth-landing.webp',
+      image: '/assets/feature-net-worth-v2-landing.webp',
       icon: '/assets/icons/ICONS/Vector-16.svg',
       color: '#27c98e',
       description: 'See a clear picture of your net worth, assets, and holdings. Track movement over time and stay informed about your full financial picture.',
@@ -17,7 +17,7 @@ export const money = [
       headline: 'Net Worth:',
       accent: 'See What You Own and What You Owe',
       blurb: 'Your net worth is bigger than a bank balance. Track your net worth by seeing supported accounts, investments, assets and liabilities together, and follow how the difference changes over time.',
-      image: '/assets/feature-net-worth-phone.webp', width: 1400, height: 1340,
+      image: '/assets/feature-net-worth-v2-phone.webp', width: 1600, height: 1532,
     },
     cards: [
       { icon: 'wallet', title: 'The full picture beyond one balance', text: 'Bring supported accounts, investments, assets and liabilities together to see how they add up.' },

@@ -184,3 +184,6 @@
   body .hw-step__note { font-size: 14px; }
   body .hw-step__copy { min-width: 0; max-width: 100%; overflow-wrap: break-word; }
 }
+
+/* "Explore Your Future": the picture has more empty margin above and below the card than the others, so it is pulled in further. */
+@media (max-width: 1399px) { .hw-step--future .hw-step__visual img { margin-block: -19%; } }

@@ -67,7 +67,7 @@ export const steps = [
       'The assumptions behind each estimate, shown with it',
     ],
     note: 'Compare different assumptions and see how they affect your projection.',
-    art: { src: '/assets/hiw2-step4.webp', w: 1370, h: 1040, x: 295, y: 117, alt: 'Projected Net Worth chart comparing higher monthly contribution, current assumptions and lower return scenarios' },
+    art: { src: '/assets/hiw2-step4-v3.webp', w: 1687, h: 1174, x: 314, y: 172, pad: 172, alt: 'Projected Net Worth chart comparing higher monthly contribution, current assumptions and lower return scenarios' },
     top: 116,
   },
   {
