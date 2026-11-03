@@ -129,11 +129,11 @@
 @media (max-width: 700px) {
   body .fdt-hero__actions { display: flex; align-items: center; gap: 14px; }
   body .fdt-hero__actions > a:not(.fp-play):not(.gl-play):not(.hr-hero-play):not(.fdt-play) {
-    display: inline-flex; align-items: center; justify-content: center; height: 54px; padding: 0 28px; border-radius: 16px;
-    background: #0b0d0d; color: #fff; font-size: 17px; font-weight: 600; line-height: 1; white-space: nowrap; text-decoration: none; box-shadow: 0 10px 18px rgba(0, 0, 0, .18);
+    display: inline-flex; align-items: center; justify-content: center; height: 46px; padding: 0 22px; border-radius: 14px;
+    background: #0b0d0d; color: #fff; font-size: 15px; font-weight: 600; line-height: 1; white-space: nowrap; text-decoration: none; box-shadow: 0 10px 18px rgba(0, 0, 0, .18);
   }
   body .fdt-hero .fdt-hero__actions > .fp-play, body .fdt-hero .fdt-hero__actions > .gl-play, body .fdt-hero .fdt-hero__actions > .hr-hero-play, body .fdt-hero .fdt-hero__actions > .fdt-play {
-    display: grid; place-items: center; flex: 0 0 54px !important; width: 54px !important; height: 54px !important; padding: 0; border: 0; border-radius: 16px !important;
+    display: grid; place-items: center; flex: 0 0 46px !important; width: 46px !important; height: 46px !important; padding: 0; border: 0; border-radius: 14px !important;
     background: #fff !important; box-shadow: 0 8px 22px rgba(0, 0, 0, .16) !important;
   }
 }
