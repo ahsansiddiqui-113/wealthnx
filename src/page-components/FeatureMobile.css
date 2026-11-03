@@ -276,3 +276,15 @@ body .feature-detail-template.fdt-features .fdt-hero h1 em { display: inline; }
   body .feature-detail-template.fdt-features.fdt-mobile .fdt-hero h1 { margin-top: 0 !important; font-size: min(40px, calc((100vw - 40px) / 8.6)) !important; font-weight: 500 !important; line-height: 1.22 !important; letter-spacing: -.055em !important; color: #090c0c; }
   body .feature-detail-template.fdt-features .fdt-hero h1 em { font-weight: 700 !important; color: #16c9bb; }
 }
+
+/* /features/ phones: the swipeable tab row clipped the active tab's glow at the top and bottom; give the glow room (negative margin keeps the layout the same). */
+@media (max-width: 700px) {
+  body .feature-detail-template.fdt-features .fdt-tabs { padding: 24px 2px !important; margin: -20px 0 !important; }
+}
+
+/* /features/<slug> phones: hero heading like the home hero (regular weight, bold teal part, wraps instead of being cut) and close to the top bar. */
+@media (max-width: 700px) {
+  body .feature-detail-template.fdt-mobile.feature-page .fdt-hero { padding-top: 31px !important; }
+  body .feature-detail-template.fdt-mobile.feature-page .fdt-hero h1 { margin-top: 0 !important; font-size: min(40px, calc((100vw - 40px) / 8.6)) !important; font-weight: 500 !important; line-height: 1.22 !important; letter-spacing: -.055em !important; color: #090c0c; white-space: normal !important; overflow-wrap: break-word; }
+  body .feature-detail-template.fdt-mobile.feature-page .fdt-hero h1 em { display: inline !important; white-space: normal !important; font-weight: 700 !important; color: #16c9bb; }
+}
