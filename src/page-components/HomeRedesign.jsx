@@ -92,7 +92,7 @@ const audience = [
 ];
 
 export default function HomeRedesign() {
-  const [fragOpen, setFragOpen] = React.useState(null); // phones: card whose picture is open (shown right above that card; none by default)
+  const [fragOpen, setFragOpen] = React.useState(0); // phones: card whose picture is open (shown right above that card; the first one by default)
   const [fragActive, setFragActive] = React.useState(0); // card whose phone picture is shown (hover / focus / tap)
   const fragAnchor = React.useRef(null); // { el, top }: the tapped card and where it sat before the picture boxes changed
   /* Phones: the picture above the tapped card opens / closes and shifts the card; put it back where it was, once,

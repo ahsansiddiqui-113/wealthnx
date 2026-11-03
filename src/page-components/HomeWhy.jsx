@@ -8,7 +8,7 @@ const tabs = [
   { id: 'proactive', label: 'AI Insights', img: '/assets/home-why-proactive.webp', w: 1500, h: 768, mob: '/assets/home-why-mob-proactive-s.webp', mw: 720, mh: 923, alt: 'Proactive AI: a heads-up on upcoming bills, spending and budgets before you need it' },
   { id: 'all-in-one', label: 'All-in-one', img: '/assets/home-why-all-in-one.webp', w: 1500, h: 802, mob: '/assets/home-why-mob-all-in-one-s.webp', mw: 720, mh: 1064, alt: 'All-in-one: your bank accounts, budgets, investments and crypto in one app' },
   { id: 'voice-to-voice', label: 'Voice-to-Voice', img: '/assets/home-why-voice-to-voice.webp', w: 1500, h: 674, mob: '/assets/home-why-mob-voice-to-voice-s.webp', mw: 720, mh: 1327, alt: 'Voice-to-Voice: ask Wealth Genie out loud and hear the answer' },
-  { id: 'voice-to-action', label: 'Voice-to-Action', img: '/assets/home-why-voice-to-action.webp', w: 1500, h: 610, mob: '/assets/home-why-mob-voice-to-action-s.webp', mw: 720, mh: 1177, alt: 'Voice-to-Action: ask Wealth Genie about a savings goal and explore the numbers' },
+  { id: 'voice-to-action', label: 'Voice-to-Action', img: '/assets/home-why-voice-to-action-v2.webp', w: 2000, h: 848, mob: '/assets/home-why-mob-voice-to-action-v3.webp', mw: 900, mh: 1358, alt: 'Voice-to-Action: ask Wealth Genie about a savings goal and explore the numbers' },
   { id: 'multi-assistants', label: 'Multi Assistants', img: '/assets/home-why-multi-assistants.webp', w: 1400, h: 837, mob: '/assets/home-why-mob-multi-assistants-s.webp', mw: 720, mh: 1198, alt: 'Multi Assistants: separate assistants for spending, stocks, crypto and custom views' },
 ];
 
