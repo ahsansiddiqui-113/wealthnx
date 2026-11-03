@@ -57,8 +57,8 @@ const competitors = {
       ],
     },
     download: {
-      titleLines: ['See Your Money and Your Investments', 'Side by Side'],
-      textLines: ['Spending, investments and market research in one place,', 'with clear answers from AI when you need them.'],
+      titleLines: ['See Your Money and', 'Your Investments', 'Side by Side'],
+      textLines: ['Spending, investments and market research', 'in one place, with clear answers from AI', 'when you need them.'],
     },
   },
   'rocket-money': {
@@ -110,8 +110,8 @@ const competitors = {
       ],
     },
     download: {
-      titleLines: ['Your Bills, Budget and', 'Investments in One App'],
-      textLines: ['Connect your accounts, keep an eye on recurring charges', 'and follow your investments, with plain answers from Wealth Genie.'],
+      titleLines: ['Your Bills, Budget', 'and Investments', 'in One App'],
+      textLines: ['Connect your accounts, keep an eye on', 'recurring charges and follow your investments,', 'with plain answers from Wealth Genie.'],
     },
   },
   ynab: {
@@ -163,8 +163,8 @@ const competitors = {
       ],
     },
     download: {
-      titleLines: ['Plan Your Spending and Follow', 'Your Portfolio in One App'],
-      textLines: ['Connect your accounts, see your budget update as transactions sync', 'and follow your investments, with easy to understand answers from Wealth Genie.'],
+      titleLines: ['Plan Your Spending', 'and Follow Your', 'Portfolio in One App'],
+      textLines: ['Connect your accounts, see your budget', 'update as transactions sync and follow', 'your investments, with easy to understand', 'answers from Wealth Genie.'],
     },
   },
   'copilot-money': {
@@ -216,8 +216,8 @@ const competitors = {
       ],
     },
     download: {
-      titleLines: ['One App on Any Phone for', 'Money, Stocks and Plans'],
-      textLines: ['Connect your accounts on iPhone, Android or the web,', 'research the stocks you own and see where your net worth may be headed.'],
+      titleLines: ['One App on Any Phone', 'for Money, Stocks', 'and Plans'],
+      textLines: ['Connect your accounts on iPhone, Android', 'or the web, research the stocks you own', 'and see where your net worth may be headed.'],
     },
   },
 };

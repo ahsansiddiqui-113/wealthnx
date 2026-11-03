@@ -90,6 +90,6 @@ export const faqs = [
 ];
 
 export const download = {
-  title: ['Your Money and Investments,', 'Finally in ', 'One App'],
-  text: 'Connect your accounts, see your net worth, research stocks and crypto, and get simple answers about your money from Wealth Genie.',
+  titleLines: ['Your Money and', 'Investments,', 'Finally in One App'],
+  textLines: ['Connect your accounts, see your net worth,', 'research stocks and crypto, and get simple', 'answers about your money from Wealth Genie.'],
 };

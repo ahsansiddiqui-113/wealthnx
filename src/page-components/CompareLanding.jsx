@@ -5,7 +5,10 @@ import { APPLE_STORE_URL, GOOGLE_PLAY_URL } from '@/app/components/useStoreUrl';
 import { AppleStoreIcon, AndroidStoreIcon } from './StoreIcons';
 import CompareFaq from './CompareFaq';
 import { hero, quick, standUp, compareTopics, faqTitle, faqs, download } from './compareData';
+import HomeDownload from './HomeDownload';
 import './FeatureDetailTemplate.css';
+import './HomeRedesign.css';
+import './HomeDownload.css';
 import './CompareLanding.css';
 
 /** Placeholder brand badge: a monogram in the brand colour. Replace with real logos when supplied. */
@@ -34,7 +37,6 @@ export default function CompareLanding() {
   const [heroA, heroB] = hero.title;
   const [standA, standB, standC] = standUp.title;
   const [topicsA, topicsB] = compareTopics.title;
-  const [dlA, dlB, dlC] = download.title;
 
   return (
     <div className="feature-detail-template cp-page">
@@ -122,20 +124,8 @@ export default function CompareLanding() {
         <CompareFaq items={faqs} />
       </section>
 
-      {/* 7. Download */}
-      <section className="fdt-download" id="download" aria-labelledby="download-title">
-        <div className="fdt-download__copy">
-          <h2 id="download-title">{dlA}<br />{dlB}<em>{dlC}</em></h2>
-          <p>{download.text}</p>
-          <div className="fdt-download__actions">
-            <a href="https://wealthnx.ai/get" target="_blank" rel="noreferrer">Start Your 7-Day Free Trial</a>
-          </div>
-        </div>
-        <div className="fdt-download__phones" aria-hidden="true">
-          <div className="fdt-download__glow" />
-          <img src="/assets/compare-download.webp" alt="" width="1400" height="833" />
-        </div>
-      </section>
+      {/* 7. Closing band (the shared one used on every page) */}
+      <div className="home-redesign fdt-hd"><HomeDownload light titleLines={download.titleLines} textLines={download.textLines} /></div>
 
       {/* 8. Footer */}
       <SiteFooter />
