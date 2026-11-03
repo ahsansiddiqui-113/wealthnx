@@ -409,3 +409,31 @@
   .home-redesign .hv--say-only .hv-stage { height: auto; }
   .home-redesign .hv--say-only .hv-sec { padding: 70px 0 54px; }
 }
+
+/* ---- Audience cards: one picture per card (photo on top, frosted glass panel at the bottom) with the text written in the panel ---- */
+.hv-scroll--aud .hv-ac--img { width: auto; aspect-ratio: 1089 / 1320; background: #1b1f1f; }
+.hv-ac--img .hv-ac__bg { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; }
+.hv-ac--img .hv-ac__glass { position: absolute; left: 6.6%; right: 6.6%; top: 66.5%; bottom: 5.5%; display: flex; flex-direction: column; justify-content: center; gap: calc(4 * var(--u)); color: #fff; overflow: hidden; }
+.home-redesign .hv-ac--img .hv-ac__title { position: static; margin: 0; font-size: calc(11 * var(--u)) !important; line-height: 1.2; font-weight: 600; letter-spacing: -.01em; color: #fff; white-space: normal; }
+.home-redesign .hv-ac--img .hv-ac__copy { position: static; margin: 0; font-size: calc(7.2 * var(--u)); line-height: 1.3; font-weight: 400; color: rgba(255, 255, 255, .92); white-space: normal; }
+@media (max-width: 560px) {
+  .home-redesign .hv-ac--img .hv-ac__title { font-size: 18px !important; }
+  .home-redesign .hv-ac--img .hv-ac__copy { font-size: 14px !important; line-height: 1.3; }
+  .hv-ac--img .hv-ac__glass { gap: 5px; }
+}
+
+/* Wider than a phone: the eight audience cards share the whole row (they grow evenly, up to 300px each) instead of sitting at the left edge. */
+@media (min-width: 561px) {
+  .hv-scroll--aud { height: calc(300 * var(--u)); }
+  .hv-scroll--aud .hv-track { box-sizing: border-box; width: 100%; min-width: max-content; justify-content: center; padding-inline: clamp(16px, 2.2vw, 44px); }
+  .hv-scroll--aud .hv-ac--img { flex: 1 1 0; min-width: calc(160 * var(--u)); max-width: 300px; height: auto; }
+}
+
+/* Audience cards: keep the text away from the frosted panel's edges. */
+.hv-ac--img .hv-ac__glass { left: 11%; right: 10%; top: 68%; bottom: 7%; }
+.hv-ac--img .hv-ac__glass { left: 9.5%; right: 8.5%; top: 67%; bottom: 6%; }
+@media (max-width: 560px) {
+  .home-redesign .hv-ac--img .hv-ac__title { font-size: 17px !important; }
+  .home-redesign .hv-ac--img .hv-ac__copy { font-size: 13px !important; line-height: 1.28; }
+  .hv-ac--img .hv-ac__glass { gap: 4px; }
+}

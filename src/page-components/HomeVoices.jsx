@@ -61,22 +61,14 @@ const voices = [
 ];
 
 const audience = [
-  { key: 'p1', kind: 'photo', img: 'home-aud-1.webp' },
-  { key: 't1', kind: 'text', tone: 'everyday', href: '/features/budgeting/', title: 'Everyday Savers', body: ['Understand your spending, cash','flow and savings goals.'] },
-  { key: 'p2', kind: 'photo', img: 'home-aud-2.webp' },
-  { key: 't2', kind: 'text', tone: 'active', href: '/features/net-worth/', title: 'Active investors', body: ['See your investments and net','worth together.'] },
-  { key: 'p3', kind: 'photo', img: 'home-aud-3.webp' },
-  { key: 't3', kind: 'text', tone: 'couples', href: '/features/members/', title: 'Couples and families', body: ['Understand your household\'s','financial picture.'] },
-  { key: 'p4', kind: 'photo', img: 'home-aud-4.webp' },
-  { key: 't4', kind: 'text', tone: 'retire', href: '/features/financial-forecasting/', title: 'Retirement Planners', body: ['See where you stand and plan','for your financial future.'] },
-  { key: 'p5', kind: 'photo', img: 'home-aud-5.webp' },
-  { key: 't5', kind: 'text', tone: 'crypto', href: '/features/crypto/', title: 'Crypto Investors', body: ['Track your crypto holdings and','explore market trends.'] },
-  { key: 'p6', kind: 'photo', img: 'home-aud-6.webp' },
-  { key: 't6', kind: 'text', tone: 'first', href: '/features/goals/', title: 'First-Time Savers', body: ['Build savings habits and track','your progress.'] },
-  { key: 'p7', kind: 'photo', img: 'home-aud-7.webp' },
-  { key: 't7', kind: 'text', tone: 'founders', href: '/features/business-expense-tracking/', title: 'Founders', body: ['Stay on top of your personal & business','expenses and cash flow.'] },
-  { key: 'p8', kind: 'photo', img: 'home-aud-8.webp' },
-  { key: 't8', kind: 'text', tone: 'solo', href: '/features/cash-flow/', title: 'Solopreneurs', body: ['Track your income, expenses and','financial progress.'] },
+  { key: 'everyday', title: 'Everyday Savers', body: 'Understand your spending, cash flow and savings goals.' },
+  { key: 'active', title: 'Active investors', body: 'See your investments and net worth together.' },
+  { key: 'couples', title: 'Couples and families', body: "Understand your household's financial picture." },
+  { key: 'retire', title: 'Retirement Planners', body: 'See where you stand and plan for your financial future.' },
+  { key: 'crypto', title: 'Crypto Investors', body: 'Track your crypto holdings and explore market trends.' },
+  { key: 'first', title: 'First-Time Savers', body: 'Build savings habits and track your progress.' },
+  { key: 'founders', title: 'Founders', body: 'Stay on top of your personal & business expenses and cash flow.' },
+  { key: 'solo', title: 'Solopreneurs', body: 'Track your income, expenses and financial progress.' },
 ];
 
 const Lines = ({ lines }) => lines.map((l) => <span className="hv-ln" key={l}>{l}</span>);
@@ -115,17 +107,14 @@ export default function HomeVoices({ sayOnly = false }) {
           {!sayOnly && <section className="hv-sec" aria-labelledby="hv-aud-title">
             <h2 id="hv-aud-title" className="hv-title hv-title--aud" data-reveal>Who this platform<br className="hv-br" /> is built for</h2>
             <HvScroller className="hv-scroll--aud" start={57.4} nav label="Who this platform is built for">
-              {audience.map((c, i) => (
-                c.kind === 'photo' ? (
-                  <div key={c.key} className={`hv-ac hv-ac--photo hv-ac--${i + 1}`}>
-                    <img src={`/assets/${c.img}`} alt="" loading="lazy" decoding="async" />
-                  </div>
-                ) : (
-                  <article key={c.key} className={`hv-ac hv-ac--text hv-ac--${c.tone} hv-ac--${i + 1}${c.title.length > 22 ? ' hv-ac--long' : ''}`}>
+              {audience.map((c) => (
+                <article key={c.key} className={`hv-ac hv-ac--img hv-ac--${c.key}`}>
+                  <img className="hv-ac__bg" src={`/assets/home-aud-img-${c.key}.webp`} alt="" width={760} height={921} loading="lazy" decoding="async" />
+                  <div className="hv-ac__glass">
                     <h3 className="hv-ac__title">{c.title}</h3>
-                    <p className="hv-ac__copy"><Lines lines={c.body} /></p>
-                  </article>
-                )
+                    <p className="hv-ac__copy">{c.body}</p>
+                  </div>
+                </article>
               ))}
             </HvScroller>
           </section>}
