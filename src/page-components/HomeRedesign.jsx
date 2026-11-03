@@ -183,7 +183,7 @@ export default function HomeRedesign() {
 
       <section className="hp-section" aria-labelledby="protection-title">
         <div className="hp-inner">
-          <h2 id="protection-title" className="hp-title" data-reveal><b>We Protect</b> What Matters to You</h2>
+          <h2 id="protection-title" className="hp-title" data-reveal><b>We Protect</b> What<br className="hp-br" /> Matters to You</h2>
           <p className="hp-lede" data-reveal>WealthNX protects your financial data with strong security safeguards. Connected accounts are read-only, and WealthNX cannot move or withdraw money or store your login credentials on its servers.</p>
           <div className="hp-grid">
             {protectCards.map(({ key, title, body, img }, i) => (

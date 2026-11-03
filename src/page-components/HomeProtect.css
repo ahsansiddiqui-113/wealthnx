@@ -208,3 +208,15 @@
 @media (max-width: 600px) {
   .home-redesign .hp-section .hp-title { font-size: 30px !important; line-height: 1.2; }
 }
+
+/* Phones: heading breaks after "What" ("We Protect What" / "Matters to You"); the intro paragraph is 16px. */
+.hp-br { display: none; }
+@media (max-width: 700px) {
+  .hp-br { display: inline; }
+  body .home-redesign .hp-lede, body .home-redesign .hp-section .hp-lede { font-size: 16px; line-height: 1.5; }
+}
+
+/* Phones: no drop shadow under the swipe cards. */
+@media (max-width: 600px) {
+  body .home-redesign .hp-grid > *, body .home-redesign .hp-card { box-shadow: none !important; filter: none !important; }
+}
