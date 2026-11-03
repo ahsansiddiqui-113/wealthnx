@@ -9,7 +9,7 @@ import fs from 'fs';
 
 sharp.cache(false);
 const dir = 'public/assets';
-const files = fs.readdirSync(dir).filter((f) => f === 'features-hero.webp' || f === 'home-hero-phone.webp' || /^feature-(?!genie-phone).*-(phone|hero)\.webp$/.test(f));
+const files = fs.readdirSync(dir).filter((f) => f === 'features-hero.webp' || f === 'home-hero-phone-v2.webp' || /^feature-(?!genie-phone).*-(phone|hero)\.webp$/.test(f));
 const out = {};
 for (const f of files.sort()) {
   const { data, info } = await sharp(fs.readFileSync(`${dir}/${f}`)).ensureAlpha().raw().toBuffer({ resolveWithObject: true });

@@ -132,7 +132,7 @@ export default function HomeRedesign() {
           </div>
           <div className="fdt-hero__visual" data-tilt aria-hidden="true">
             <div className="fdt-hero__glow" />
-            <img src="/assets/home-hero-phone.webp" alt="" width={1400} height={1248} className="fdt-hero-phone" fetchPriority="high" decoding="async" {...heroCoreProps("/assets/home-hero-phone.webp")} />
+            <img src="/assets/home-hero-phone-v2.webp" alt="" width={1400} height={1248} className="fdt-hero-phone" fetchPriority="high" decoding="async" {...heroCoreProps("/assets/home-hero-phone-v2.webp")} />
           </div>
           <div className="fdt-hero__aside">
             <p>WealthNX brings your accounts, stocks, and crypto together, with AI-powered insights that make your financial picture easier to understand.</p>
@@ -150,7 +150,7 @@ export default function HomeRedesign() {
         <div className="ha-glow ha-glow--top" aria-hidden="true" />
         <div className="ha-glow ha-glow--corner" aria-hidden="true" />
         <div className="ha-inner">
-          <h2 id="ai-title" className="ha-title" data-reveal><span className="ha-l1">Here’s what you get</span> <span className="ha-l2">in <b>One Place</b></span> <span className="ha-l3">money, portfolio &amp; markets</span></h2>
+          <h2 id="ai-title" className="ha-title" data-reveal><span className="ha-l1">Here’s what you get</span> <span className="ha-l2">in <b>One Place</b> money,</span> <span className="ha-l3">portfolio &amp; markets</span></h2>
           <div className="ha-bar" data-reveal="fade" aria-hidden="true">
             <img className="ha-bar__genie" src="/assets/Vector.png" alt="" width="24" height="24" />
             <span className="ha-bar__placeholder">Ask anything or tag an Assistant</span>
