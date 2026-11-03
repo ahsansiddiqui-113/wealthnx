@@ -288,3 +288,9 @@ body .feature-detail-template.fdt-features .fdt-hero h1 em { display: inline; }
   body .feature-detail-template.fdt-mobile.feature-page .fdt-hero h1 { margin-top: 0 !important; font-size: min(40px, calc((100vw - 40px) / 8.6)) !important; font-weight: 500 !important; line-height: 1.22 !important; letter-spacing: -.055em !important; color: #090c0c; white-space: normal !important; overflow-wrap: break-word; }
   body .feature-detail-template.fdt-mobile.feature-page .fdt-hero h1 em { display: inline !important; white-space: normal !important; font-weight: 700 !important; color: #16c9bb; }
 }
+
+/* /features/<slug> phones: every section heading is 30px and every sub-heading 16px. Extra specificity so stylesheet order cannot change it. */
+@media (max-width: 700px) {
+  body .feature-detail-template.feature-page .fp-h2, body .feature-detail-template.feature-page .hd-title { font-size: 30px !important; line-height: 1.2 !important; }
+  body .feature-detail-template.feature-page .fp-lead, body .feature-detail-template.feature-page .fp-why__lead, body .feature-detail-template.feature-page .hd-text { font-size: 16px !important; line-height: 1.5 !important; }
+}
