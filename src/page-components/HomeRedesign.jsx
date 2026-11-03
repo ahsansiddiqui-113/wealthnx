@@ -150,7 +150,7 @@ export default function HomeRedesign() {
         <div className="ha-glow ha-glow--top" aria-hidden="true" />
         <div className="ha-glow ha-glow--corner" aria-hidden="true" />
         <div className="ha-inner">
-          <h2 id="ai-title" className="ha-title" data-reveal><span className="ha-l1">Here’s what you get</span> <span className="ha-l2">in <b>One Place</b> money,</span> <span className="ha-l3">portfolio &amp; markets</span></h2>
+          <h2 id="ai-title" className="ha-title" data-reveal><span className="ha-l1">Your Money, Connected.</span> <span className="ha-l2">Your Questions,<br className="ha-br" /> Answered.</span></h2>
           <div className="ha-bar" data-reveal="fade" aria-hidden="true">
             <img className="ha-bar__genie" src="/assets/Vector.png" alt="" width="24" height="24" />
             <span className="ha-bar__placeholder">Ask anything or tag an Assistant</span>

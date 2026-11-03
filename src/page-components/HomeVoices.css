@@ -402,3 +402,10 @@
   body .home-redesign .hv-ac__copy .hv-ln::after { content: ' '; }
   body .home-redesign .hv-ac__more { display: none !important; }
 }
+
+/* Testimonials only (compare pages): the stage ends below the review row; the audience section is not rendered. */
+.hv--say-only .hv-stage { height: calc(412 * var(--u)); }
+@media (max-width: 560px) {
+  .home-redesign .hv--say-only .hv-stage { height: auto; }
+  .home-redesign .hv--say-only .hv-sec { padding: 70px 0 54px; }
+}

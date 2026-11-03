@@ -12,7 +12,7 @@ export default function ComparePlaceholder({ name }) {
       <section className="cp-ph" aria-labelledby="cp-ph-title">
         <h1 id="cp-ph-title">WealthNX vs {name}</h1>
         <p>Detailed comparison coming soon.</p>
-        <a className="cp-btn" href="/compare/">Back to all comparisons</a>
+        <a className="cp-btn" href="/comparison/">Back to all comparisons</a>
       </section>
       <SiteFooter />
     </div>

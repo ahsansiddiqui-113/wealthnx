@@ -1,13 +1,13 @@
-import { redirect } from 'next/navigation';
+import CompareLanding from '@/src/page-components/CompareLanding.jsx';
 
 export const metadata = {
-  title: 'WealthNX vs Other Wealth Management Apps - Comparison',
-  description: 'See how WealthNX compares to other wealth management and budgeting apps on AI insights, account aggregation, security, and pricing.',
+  title: 'Personal Finance App Comparison for 2026 | WealthNX',
+  description: 'Which personal finance app fits you? See what YNAB, Monarch, Rocket Money and Copilot focus on, and where WealthNX brings money and investing together.',
   alternates: {
     canonical: 'https://www.wealthnx.ai/comparison/',
   },
 };
 
-export default function ComparisonRedirect() {
-  redirect('/compare/');
+export default function ComparisonPage() {
+  return <main><CompareLanding /></main>;
 }

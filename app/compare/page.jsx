@@ -1,13 +1,12 @@
-import CompareLanding from '@/src/page-components/CompareLanding.jsx';
+import { redirect } from 'next/navigation';
 
 export const metadata = {
-  title: 'Compare WealthNX with Monarch Money, Rocket Money, YNAB & Copilot Money',
-  description: 'Compare WealthNX with Monarch Money, Rocket Money, YNAB and Copilot Money by what you need: budgeting, bills and subscriptions, investments, crypto, market information and AI.',
-  alternates: {
-    canonical: 'https://www.wealthnx.ai/compare/',
-  },
+  title: 'Personal Finance App Comparison for 2026 | WealthNX',
+  alternates: { canonical: 'https://www.wealthnx.ai/comparison/' },
+  robots: { index: false, follow: true },
 };
 
-export default function ComparePage() {
-  return <main><CompareLanding /></main>;
+/** The comparison pages live at /comparison/ now; this old address forwards there. */
+export default function CompareRedirect() {
+  redirect('/comparison/');
 }

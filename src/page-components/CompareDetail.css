@@ -443,3 +443,35 @@
 
 /* tablet (761-1000): same comfortable table scale as phones instead of ~9.5px cells (the wrapper scrolls) */
 @media (min-width: 761px) and (max-width: 1000px) { .mc-compare { --t: .72px; } .mc-panel__in { --u: min(1px, calc((100cqw - 40px) / 445)); } }
+
+/* ── /comparison/wealthnx-vs-<app>/ : the same column table as before, two columns (WealthNX, the other app) with a title and text in each cell ── */
+.mc-vs__lead { max-width: 780px; margin: 22px auto 0; padding: 0 24px; color: #8f8f8f; font-size: 19px; line-height: 1.45; letter-spacing: -.01em; }
+.mc-vs .mc-tablewrap { margin-top: calc(64 * var(--t)); }
+.mc-vs .mc-table { min-width: calc(1100 * var(--t)); }
+.mc-vs__col { width: 50%; }
+.mc-vs__caption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.mc-vs .mc-th--wx { padding-left: calc(60 * var(--t)); }
+.mc-vs .mc-th--monarch { padding-left: calc(60 * var(--t)); }
+.mc-vs .mc-cell { display: block; min-height: 0; padding: 34px 0 36px; }
+.mc-vs .mc-td--wx .mc-cell { margin: 0 calc(47 * var(--t)) 0 calc(60 * var(--t)); font-weight: 400; }
+.mc-vs .mc-td--monarch .mc-cell { margin: 0 calc(47 * var(--t)) 0 calc(60 * var(--t)); white-space: normal; }
+.mc-vs .mc-cell h3 { margin: 0 0 12px; font-size: 22px; line-height: 1.2; font-weight: 700; letter-spacing: -.03em; color: #fff; }
+.mc-vs .mc-cell p { margin: 0; font-size: 16px; line-height: 1.5; letter-spacing: -.01em; }
+.mc-vs .mc-td--wx .mc-cell p { color: rgba(255, 255, 255, .94); }
+.mc-vs .mc-td--monarch .mc-cell p { color: #e9e9e9; }
+.mc-vs .mc-table tbody tr:not(.mc-tail) .mc-td--wx::before { display: none; }
+.mc-vs .mc-table tbody tr:not(.mc-tail) .mc-td--monarch::before { top: 45px; }
+@media (max-width: 760px) {
+  .mc-vs { padding: 72px 0 56px; }
+  .mc-vs .mc-vs__lead { padding: 0 20px; font-size: 16px; }
+  .mc-vs .mc-tablewrap { margin-top: 32px; padding: 0 20px; overflow: visible; }
+  .mc-vs .mc-table, .mc-vs .mc-table tbody, .mc-vs .mc-table tr { display: block; width: 100%; min-width: 0; }
+  .mc-vs .mc-table { border-spacing: 0; }
+  .mc-vs .mc-table thead, .mc-vs .mc-table tr.mc-tail { display: none; }
+  .mc-vs .mc-td { display: block; width: 100%; margin: 0 0 12px; border-radius: 20px; }
+  .mc-vs .mc-td::before { display: none !important; }
+  .mc-vs .mc-cell { display: flex; flex-direction: column; margin: 0 !important; padding: 24px 22px 26px; border-bottom: 0; }
+  .mc-vs .mc-cell::before { content: attr(data-app); order: -1; margin-bottom: 10px; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; opacity: .8; }
+  .mc-vs .mc-cell h3 { font-size: 20px; }
+  .mc-compare.mc-vs h2 { font-size: 30px !important; }
+}

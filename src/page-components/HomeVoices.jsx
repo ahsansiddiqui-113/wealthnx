@@ -81,9 +81,9 @@ const audience = [
 
 const Lines = ({ lines }) => lines.map((l) => <span className="hv-ln" key={l}>{l}</span>);
 
-export default function HomeVoices() {
+export default function HomeVoices({ sayOnly = false }) {
   return (
-    <div className="hv">
+    <div className={`hv${sayOnly ? ' hv--say-only' : ''}`}>
       <div className="hv-bg" aria-hidden="true" />
       <div className="hv-inner">
         <div className="hv-stage">
@@ -112,7 +112,7 @@ export default function HomeVoices() {
             </HvScroller>
           </section>
 
-          <section className="hv-sec" aria-labelledby="hv-aud-title">
+          {!sayOnly && <section className="hv-sec" aria-labelledby="hv-aud-title">
             <h2 id="hv-aud-title" className="hv-title hv-title--aud" data-reveal>Who this platform<br className="hv-br" /> is built for</h2>
             <HvScroller className="hv-scroll--aud" start={57.4} nav label="Who this platform is built for">
               {audience.map((c, i) => (
@@ -128,7 +128,7 @@ export default function HomeVoices() {
                 )
               ))}
             </HvScroller>
-          </section>
+          </section>}
         </div>
       </div>
     </div>

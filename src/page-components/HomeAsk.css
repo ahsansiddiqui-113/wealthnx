@@ -235,3 +235,7 @@
   .ha-bar__mic { margin-left: auto; }
   .ha-bar__send { margin-left: 0; }
 }
+
+/* Headline "Your Money, Connected. / Your Questions, Answered.": two lines on desktop, three on phones. */
+.ha-br { display: none; }
+@media (max-width: 700px) { .ha-br { display: inline; } }

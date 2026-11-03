@@ -151,6 +151,8 @@
     RewriteRule ^features/forecasting/?$ /features/financial-forecasting/ [R=301,L]
     RewriteRule ^features/savings-rate/?$ /features/savings-rate-calculator/ [R=301,L]
     RewriteRule ^features/period-comparison/?$ /features/compare-spending/ [R=301,L]
+    RewriteRule ^compare/?$ /comparison/ [R=301,L]
+    RewriteRule ^compare/([a-z0-9-]+)/?$ /comparison/wealthnx-vs-$1/ [R=301,L]
     RewriteRule ^features/exposure-analysis/?$ /features/portfolio-exposure-analysis/ [R=301,L]
     RewriteRule ^features/dividend-tracking/?$ /features/dividend-tracker/ [R=301,L]
     RewriteRule ^features/benchmark-comparison/?$ /features/portfolio-benchmark-comparison/ [R=301,L]

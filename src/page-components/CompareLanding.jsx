@@ -4,7 +4,7 @@ import SiteFooter from '@/app/components/SiteFooter';
 import { APPLE_STORE_URL, GOOGLE_PLAY_URL } from '@/app/components/useStoreUrl';
 import { AppleStoreIcon, AndroidStoreIcon } from './StoreIcons';
 import CompareFaq from './CompareFaq';
-import { quick, standUp, compareTopics, faqs } from './compareData';
+import { hero, quick, standUp, compareTopics, faqTitle, faqs, download } from './compareData';
 import './FeatureDetailTemplate.css';
 import './CompareLanding.css';
 
@@ -31,8 +31,10 @@ const Arrow = () => (
 );
 
 export default function CompareLanding() {
+  const [heroA, heroB] = hero.title;
   const [standA, standB, standC] = standUp.title;
   const [topicsA, topicsB] = compareTopics.title;
+  const [dlA, dlB, dlC] = download.title;
 
   return (
     <div className="feature-detail-template cp-page">
@@ -42,9 +44,8 @@ export default function CompareLanding() {
       <section className="cp-hero" aria-labelledby="cp-title">
         <div className="cp-hero__glow" aria-hidden="true" />
         <div className="cp-hero__copy">
-          <h1 id="cp-title"><em>Compare finance apps</em> by what you need.</h1>
-          <p>No single finance app fits everyone. WealthNX brings everyday money, investments, crypto, market insights, and AI together in one smarter financial platform.</p>
-          <a className="cp-btn" href="#cp-quick">Compare Your Options</a>
+          <h1 id="cp-title">{heroA}<em>{heroB}</em></h1>
+          <p>{hero.text}</p>
         </div>
         <div className="cp-hero__visual" aria-hidden="true">
           <img src="/assets/compare-hero.webp" alt="" width="1200" height="1002" />
@@ -72,7 +73,7 @@ export default function CompareLanding() {
                   {item.href ? (
                     <a href={item.href}><BrandBadge brand={item.brand} size="xs" /><span>{item.label}</span></a>
                   ) : (
-                    <span className="cp-qcard__wx"><BrandBadge brand={null} size="xs" /><strong>{item.label}</strong><em>{item.badge}</em></span>
+                    <span className="cp-qcard__wx"><BrandBadge brand={null} size="xs" /><strong>{item.label}</strong>{item.badge && <em>{item.badge}</em>}</span>
                   )}
                 </li>
               ))}
@@ -117,15 +118,15 @@ export default function CompareLanding() {
 
       {/* 6. FAQ */}
       <section className="cp-faq" aria-labelledby="cp-faq-title">
-        <h2 id="cp-faq-title" data-reveal>Frequently Asked Questions</h2>
+        <h2 id="cp-faq-title" data-reveal>{faqTitle}</h2>
         <CompareFaq items={faqs} />
       </section>
 
       {/* 7. Download */}
       <section className="fdt-download" id="download" aria-labelledby="download-title">
         <div className="fdt-download__copy">
-          <h2 id="download-title">Your Financial<br />clarity <em>starts</em> here</h2>
-          <p>Connect accounts, track net worth, analyze stock, crypto and get clear insights with AI, all in one place.</p>
+          <h2 id="download-title">{dlA}<br />{dlB}<em>{dlC}</em></h2>
+          <p>{download.text}</p>
           <div className="fdt-download__actions">
             <a href="https://wealthnx.ai/get" target="_blank" rel="noreferrer">Start Your 7-Day Free Trial</a>
           </div>

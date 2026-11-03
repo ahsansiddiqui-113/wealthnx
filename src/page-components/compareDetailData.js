@@ -1,153 +1,228 @@
-// Content for every /compare/<slug>/ page (CompareDetail.jsx). Plain data only: edit text here, not in the layout.
-// See docs/COMPARE_PAGES.md. `shared` = identical on every page; `competitors[slug]` = the per-competitor strings.
-//
-// Conventions
-//  - 'TBD'            -> text not supplied / unreadable; renders as a grey "TBD".
-//  - { tbd: N }       -> a body paragraph of about N lines still to be supplied; renders as N skeleton lines.
-//  - Apparent typos from the design are kept exactly as drawn and marked "(sic)" in comments.
+// Content for the /comparison/wealthnx-vs-<app>/ pages (CompareDetail.jsx). Plain data only: edit text here, not in the layout.
+// A competitor without an entry here has no page content yet and shows the "coming soon" placeholder (ComparePlaceholder.jsx).
 
-const shared = {
-  hero: {
-    offer: 'Get 50% Off - Limited Time Offer',
-    titleTeal: 'Two All-in-One Ideas.',
-    titleBlack: 'Different Areas of Focus.',
-    text: 'No single finance app fits everyone. WealthNX brings everyday money, investments, crypto, market insights, and AI together in one smarter financial platform.',
-    cta: { label: 'Explore WealthNX', href: '/' }, // href is not in the design: neutral default (home)
-    image: '/assets/compare-monarch-hero-new.webp', // stand-in: the same picture on all four pages until per-app art exists
-    imageWidth: 1400,
-    imageHeight: 1012,
-  },
-  fitWealthnx: [
-    'You want everyday finances and investments together.',
-    'Stocks and crypto are an important part of your financial picture.',
-    'You want market information closer to your portfolio.',
-    'You want specialized AI experiences across everyday finances, stocks and crypto within the same financial platform.',
-  ],
-  table: {
-    title: 'What Each App Puts Front And Center',
-    footnote: 'This is not a scorecard. It is a difference in product emphasis.',
-    rows: [
-      { area: 'Financial tracking', wealthnx: 'Major focus' },
-      { area: 'Budgeting', wealthnx: 'Included' },
-      { area: 'Net worth', wealthnx: 'Included' },
-      { area: 'Goals', wealthnx: 'Included' },
-      { area: 'Household collaboration', wealthnx: 'Not a core positioning' },
-      { area: 'Investment tracking', wealthnx: 'Major focus' },
-      { area: 'AI', wealthnx: 'Specialized Wealth Genie experiences' },
-      { area: 'Market information', wealthnx: 'Portfolio + broader stock/crypto market information' },
-    ],
-  },
-  // Card 1 title is generic; its body is per-competitor. Cards 2 and 3 are fully shared.
-  cardShared: { key: 'shared', icon: 'hand', title: ['If Your Financial', 'Life Is Shared'] },
-  cardsAfter: [
-    {
-      key: 'markets',
-      icon: 'candles',
-      title: ['If Your Financial Life', 'Includes Markets'],
-      blocks: [
-        { p: 'WealthNX takes a different path. Your personal finance dashboard can sit closer to your stock holdings, crypto holdings, broader portfolio, market information, net worth and everyday financial information.' },
-        { p: ['That matters if ', { b: '“How much did I spend?”' }, ' is only one of the questions you regularly ask.'] },
-      ],
-    },
-    {
-      key: 'genie',
-      icon: 'sparkle',
-      title: ['Wealth Genie Changes', 'the Experience'],
-      blocks: [
-        { p: 'Traditional financial dashboards make you find the chart first. Wealth Genie adds another way to explore available information.' },
-        { ul: ['Ask supported questions about spending.', 'Ask about cash flow.', 'Ask about your connected portfolio.', 'Explore stock information.', 'Explore crypto information.'] },
-        { p: 'The information available to Wealth Genie depends on your connected accounts, available data and the question you ask. It is designed to help explain information - not make financial decisions for you.' },
-      ],
-    },
-  ],
-  ask: {
-    title: ['Budgeting App Or', 'Broader Financial', 'Information App?'],
-    subtitle: 'This is where the comparison gets simpler',
-    leftCaption: 'If your ideal app starts with',
-    rightCaption: 'If it starts with',
-    leftQuestion: 'How should we organize and plan our household money?',
-    right: {
-      question: 'Can I bring more of my money and investments together and ask questions about what I see?',
-      note: 'WealthNX may be the better product to explore ', // small verdict line under the divider (illegible)
-    },
-  },
-  security: {
-    title: 'What About Security?',
-    text: 'Connecting a financial account should never feel like a vague permission request. WealthNX uses read-only access for supported connected financial information.',
-    caption: 'That access cannot be used to:',
-    items: ['Transfer money', 'Make purchases', 'Execute trades', 'Change your connected accounts'],
-  },
-  faq: {
-    title: 'Frequently Asked Questions',
-    openIndex: 1, // design: the second row is open
-    items: [
-      { q: 'Can one finance app track both money and investments?', a: 'TBD' },
-      {
-        q: 'Does WealthNX replace my bank or brokerage?',
-        a: 'No. WealthNX does not replace the financial institutions where your accounts are held. It organizes available information from supported connections so that more of your financial picture can be viewed together.',
-      },
-      { q: 'Is this comparison finanical advice?', a: 'TBD' }, // "finanical" (sic) as drawn
-      { q: 'Can one finance app track both money and investments?', a: 'TBD' }, // repeated row as drawn
-      { q: 'Is this comparison finanical advice?', a: 'TBD' }, // "finanical" (sic) and repeated as drawn
-    ],
-  },
+const hero = {
+  image: '/assets/compare-monarch-hero-new.webp', // stand-in: the same picture on every page until per-app art exists
+  imageWidth: 1400,
+  imageHeight: 1012,
 };
 
-// Per-competitor strings (the name itself comes from app/compare/comparePages.js).
-//   fit         3 bullets for the "<Name> May Fit Your Needs If" box
-//   col         8 cell values for the competitor column, same order as shared.table.rows
-//   sharedCard  body blocks of the "If Your Financial Life Is Shared" card: { p } | { tbd: lines } | { ul } | { ulTbd }
-//   askNote     small verdict line in the left chat card
-// Anything omitted falls back to dummyEntry (all TBD).
-const dummyEntry = {
-  fit: ['TBD', 'TBD', 'TBD'],
-  col: Array(8).fill('TBD'),
-  sharedCard: [{ tbd: 2 }, { tbd: 3 }, { tbd: 2 }],
-  askNote: 'TBD',
-};
 const competitors = {
   'monarch-money': {
-    fit: ['TBD', 'TBD', 'TBD'], // content of the closed box is not visible in the design
-    col: [
-      'Major focus', 'Major focus', 'Included', 'Major focus', 'Prominent focus',
-      'Stocks, funds, retirement accounts, ETFs, crypto & more',
-      'AI Assistant, AI Insights and recap features',
-      'Investment insights and tracking',
-    ],
-    sharedCard: [
-      { p: 'Monarch has a clear advantage for one particular use case: collaboration.' },
-      { p: 'Its product specifically supports bringing separate and joint finances into a shared household view and working with a partner, advisor or other professional.' },
-      { p: 'If that is the reason you are searching for a money management app, it deserves serious consideration. WealthNX should not pretend otherwise.' },
-    ],
-    askNote: 'Monarch may fit naturally', // illegible in the design
+    metadata: {
+      title: 'WealthNX vs Monarch Money: Features Compared | WealthNX',
+      description: 'Looking at Monarch Money alternatives? See how WealthNX compares on everyday money, investments and AI, with stock research and Wealth Genie built in.',
+    },
+    hero: {
+      ...hero,
+      titleBlack: 'A Monarch Money Alternative',
+      titleTeal: 'With Stock Research and AI',
+      text: 'Both apps bring your money together in one place. The difference comes down to what you need. Monarch focuses on budgeting, net worth tracking, and shared finances, while WealthNX adds stock research and AI assistants to help you understand your investments and explore market information.',
+    },
+    compare: {
+      title: 'How Does WealthNX Compare to Monarch Money?',
+      text: 'Here is how each app handles everyday money, investments and AI, based on what each finance offers today.',
+      columns: { wealthnx: 'WealthNX', other: 'Monarch' },
+      rows: [
+        {
+          wealthnx: {
+            title: 'Everyday Money in One View',
+            text: 'See spending, bills, budgets, goals and net worth in one app. WealthNX identifies recurring charges in your linked accounts, helping you keep track of subscriptions and other regular payments.',
+          },
+          other: {
+            title: 'Budgets Built for Households',
+            text: 'Monarch offers Flex or category budgets with rollovers, a calendar of recurring bills and bill sync for credit cards and loans. Each household member gets their own login at no extra cost.',
+          },
+        },
+        {
+          wealthnx: {
+            title: 'Portfolio Tracking Plus Stock Research',
+            text: 'WealthNX covers 70,000+ stocks and ETFs and 5M+ crypto assets next to your 401(k) and IRA. Market research adds earnings dates, insider trades from SEC filings and news sentiment by ticker.',
+          },
+          other: {
+            title: 'Portfolio Tracking and Analysis',
+            text: 'Monarch pulls in holdings from brokerage, IRA and 401(k) accounts, shows asset allocation and compares your return with the S&P 500. Monarch Plus adds Gains & Losses and Fund Analysis from Morningstar',
+          },
+        },
+        {
+          wealthnx: {
+            title: 'Wealth Genie AI Assistants',
+            text: 'Ask Wealth Genie by text or voice about your money. Its Stock and Crypto Assistants explain what you hold in easy wording, and Build Mode turns a request into a custom chart. On Plus and the free trial.',
+          },
+          other: {
+            title: 'AI Assistant and Weekly Recap',
+            text: 'Monarch’s AI Assistant answers questions about spending, cash flow and net worth from your data. AI Insights explain changes on key screens, and a Weekly Recap summarizes your week’s finances.',
+          },
+        },
+      ],
+    },
+    download: {
+      titleLines: ['See Your Money and Your Investments', 'Side by Side'],
+      textLines: ['Spending, investments and market research in one place,', 'with clear answers from AI when you need them.'],
+    },
   },
-  // DUMMY entries: the owner has not supplied copy yet. Every competitor-specific value is TBD; no claims are made.
-  // Replace the TBDs (see docs/COMPARE_PAGES.md), then delete `dummy: true`.
-  'rocket-money': { dummy: true },
-  ynab: { dummy: true },
-  'copilot-money': { dummy: true },
+  'rocket-money': {
+    metadata: {
+      title: 'WealthNX vs Rocket Money: Bills, Investing and AI',
+      description: 'Compare WealthNX and Rocket Money side by side. See how each handles subscriptions, bills, investments and AI, and which one fits the way you use your money.',
+    },
+    hero: {
+      ...hero,
+      titleBlack: 'A Rocket Money Alternative',
+      titleTeal: 'With Stock Research and AI Built In',
+      text: 'Rocket Money and WealthNX both track your spending, subscriptions and net worth. Rocket Money is built to cut bills and cancel charges for you. WealthNX is built to help you understand your money and investments.',
+    },
+    compare: {
+      title: 'How Does WealthNX Compare to Rocket Money?',
+      text: 'Here is how each app handles subscriptions and bills, investments and AI, based on what each finance app offers.',
+      columns: { wealthnx: 'WealthNX', other: 'Rocket Money' },
+      rows: [
+        {
+          wealthnx: {
+            title: 'Bills and Subscriptions in View',
+            text: 'WealthNX identifies monthly and yearly recurring charges in your linked accounts and helps you keep track of bills and subscriptions in one place. You stay in control of what you keep or cancel.',
+          },
+          other: {
+            title: 'Subscriptions, Bills and Credit',
+            text: 'Rocket Money finds your subscriptions, and its team can cancel them for Premium members. Premium+ adds bill negotiation with no success fee. Free and paid plans include a FICO Score 2.',
+          },
+        },
+        {
+          wealthnx: {
+            title: 'Portfolio Tracking Plus Stock Research',
+            text: 'WealthNX covers 70,000+ stocks and ETFs and 5M+ crypto assets next to your bank and retirement accounts. Market research adds earnings dates, insider trades from SEC filings and news sentiment by ticker.',
+          },
+          other: {
+            title: 'Net Worth and Automatic Savings',
+            text: 'Premium members see net worth across checking, savings, brokerage, retirement and crypto accounts. Financial Goals moves small amounts from checking into savings on its own, based on your cash flow.',
+          },
+        },
+        {
+          wealthnx: {
+            title: 'Wealth Genie AI Assistants',
+            text: 'Ask Wealth Genie in the app by text or voice. Stock and Crypto Assistants explain your holdings in plain English, and Build Mode turns a request into a chart. On Plus and the trial.',
+          },
+          other: {
+            title: 'Rowan, an AI You Text',
+            text: 'Rowan works through text messages on Premium+ ($15/month). It answers spending questions, adjusts budgets and sends weekly recaps. With your approval, it can start cancellations, bill negotiations and refund requests.',
+          },
+        },
+      ],
+    },
+    download: {
+      titleLines: ['Your Bills, Budget and', 'Investments in One App'],
+      textLines: ['Connect your accounts, keep an eye on recurring charges', 'and follow your investments, with plain answers from Wealth Genie.'],
+    },
+  },
+  ynab: {
+    metadata: {
+      title: 'YNAB Alternative With Investment Tracking | WealthNX',
+      description: 'Looking at YNAB alternatives? See how WealthNX compares on budgeting, investments and AI, with stock research and Wealth Genie answers built into the app.',
+    },
+    hero: {
+      ...hero,
+      titleBlack: 'A YNAB Alternative',
+      titleTeal: 'That Also Tracks Your Investments',
+      text: 'If a strict budgeting method is what you want, YNAB is built for that. If you also want to follow your investments and ask questions about your money, WealthNX brings both into one app.',
+    },
+    compare: {
+      title: 'How Does WealthNX Compare to YNAB?',
+      text: 'Three areas show the biggest differences: how you budget, how investments show up and where you get answers.',
+      columns: { wealthnx: 'WealthNX', other: 'YNAB' },
+      rows: [
+        {
+          wealthnx: {
+            title: 'Budgets Linked to Your Accounts',
+            text: 'WealthNX sorts spending into categories and picks up bills and recurring charges from your linked accounts. Fixed and flexible budgets show what is left to spend, and goals track what you save.',
+          },
+          other: {
+            title: 'Give Every Dollar a Job',
+            text: 'YNAB’s method has you assign each dollar you already have to a category. Targets plan for bills and non-monthly costs, and one subscription can be shared with up to six people.',
+          },
+        },
+        {
+          wealthnx: {
+            title: 'Portfolio Tracking Plus Stock Research',
+            text: 'WealthNX shows stocks, ETFs, crypto and your home value next to your budget, with data from FMP, CoinGecko and ATTOM. Market research adds earnings dates, insider trades from SEC filings and news sentiment.',
+          },
+          other: {
+            title: 'Net Worth From Tracking Accounts',
+            text: 'YNAB adds investments, a home or a loan as tracking accounts that stay outside your budget. Their balances feed a net worth report, and YNAB notes manual updates are often more reliable.',
+          },
+        },
+        {
+          wealthnx: {
+            title: 'Wealth Genie AI Assistants',
+            text: 'Ask Wealth Genie about your money by text or voice. It answers from your accounts, explains stocks and crypto you hold, and helps you set up a budget. On Plus and the trial.',
+          },
+          other: {
+            title: 'Workshops, Guides and an API',
+            text: 'YNAB teaches its budgeting method through workshops, guides and educational resources. Auto-Assign helps allocate money to categories, while its API supports integrations with third-party tools.',
+          },
+        },
+      ],
+    },
+    download: {
+      titleLines: ['Plan Your Spending and Follow', 'Your Portfolio in One App'],
+      textLines: ['Connect your accounts, see your budget update as transactions sync', 'and follow your investments, with easy to understand answers from Wealth Genie.'],
+    },
+  },
+  'copilot-money': {
+    metadata: {
+      title: 'WealthNX vs Copilot Money: Features Compared | WealthNX',
+      description: 'Comparing WealthNX and Copilot Money? See where each app runs, how each one handles your investments, and which helps you plan your money further ahead',
+    },
+    hero: {
+      ...hero,
+      titleBlack: 'Looking for a Copilot Money Alternative',
+      titleTeal: 'on Android?',
+      text: 'Copilot Money helps you see this month clearly. WealthNX adds a longer view, with estimated net worth projections years ahead and a way to explore how a big purchase could affect them.',
+    },
+    compare: {
+      title: 'Is WealthNX or Copilot Money the Better Fit for You?',
+      text: 'Both apps cover budgets, spending and net worth. The differences show up in where you can use them, how deep they go on stocks and how far ahead they look.',
+      columns: { wealthnx: 'WealthNX', other: 'Copilot Money' },
+      rows: [
+        {
+          wealthnx: {
+            title: 'On iPhone, Android and the Web',
+            text: 'WealthNX has apps for iPhone and Android plus a web app, so it works on the phone you already own. It connects to 12,000+ institutions through Plaid with read-only access.',
+          },
+          other: {
+            title: 'Built for Apple Devices',
+            text: 'Copilot Money runs on iPhone, iPad, Mac and the web, with direct Apple Card, Apple Cash, Venmo and Amazon connections. It supports US accounts at 16,000+ financial institutions, with a 1-month free trial.',
+          },
+        },
+        {
+          wealthnx: {
+            title: 'Research on the Stocks You Own',
+            text: 'Next to your holdings, WealthNX shows earnings dates, insider trades from SEC Form 4 filings, investor holdings from 13F filings and news sentiment by ticker. For information only, with no buy or sell calls.',
+          },
+          other: {
+            title: 'Portfolio Tracking With Intraday Estimates',
+            text: 'Copilot Money tracks stocks, crypto and retirement accounts and compares returns with market benchmarks. It offers intraday balance estimates and shows average cost when your institution sends it.',
+          },
+        },
+        {
+          wealthnx: {
+            title: 'Net Worth Projections and Before You Buy',
+            text: 'Forecasting uses your financial data and assumptions to estimate how your net worth could change over time, including different savings scenarios. Before You Buy, on Plus, estimates how a major purchase, such as a car or home, could affect your projected net worth.',
+          },
+          other: {
+            title: 'Savings Goals With Suggestions',
+            text: 'Copilot Intelligence suggests savings goals from your cash flow and yearly bills, then estimates how long each goal will take. Goals link to specific accounts, so savings stay separate from spending.',
+          },
+        },
+      ],
+    },
+    download: {
+      titleLines: ['One App on Any Phone for', 'Money, Stocks and Plans'],
+      textLines: ['Connect your accounts on iPhone, Android or the web,', 'research the stocks you own and see where your net worth may be headed.'],
+    },
+  },
 };
 
-/** Full page data for one competitor: shared copy + that competitor's strings, in the shape CompareDetail renders. */
-export function getCompareDetail(slug, name) {
-  const c = { ...dummyEntry, ...competitors[slug] };
-  const s = shared;
-  return {
-    hero: s.hero,
-    fitBoxes: [
-      { id: 'other', title: `${name} May Fit Your Needs If`, open: false, bullets: c.fit },
-      { id: 'wealthnx', title: 'WealthNX May Fit Your Needs If', open: true, bullets: s.fitWealthnx },
-    ],
-    table: {
-      title: s.table.title,
-      footnote: s.table.footnote,
-      columns: { area: 'Area', other: name, wealthnx: 'WealthNX' },
-      rows: s.table.rows.map((r, i) => ({ area: r.area, other: c.col[i], wealthnx: r.wealthnx })),
-    },
-    cards: [{ ...s.cardShared, blocks: c.sharedCard }, ...s.cardsAfter],
-    ask: { ...s.ask, left: { question: s.ask.leftQuestion, note: c.askNote }, right: s.ask.right },
-    security: s.security,
-    faq: s.faq,
-    metadata: { title: `${name} vs WealthNX`, description: s.hero.text },
-  };
+/** Page data for one competitor, or null while its content has not been supplied. */
+export function getCompareDetail(slug) {
+  return competitors[slug] || null;
 }

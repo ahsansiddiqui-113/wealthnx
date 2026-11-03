@@ -65,7 +65,7 @@ export default function SiteFooter() {
           <a href="/contact/">Contact</a>
         </div>
         <div>
-          <a className="sf-footer__heading" href="/compare/">Compare</a>
+          <a className="sf-footer__heading" href="/comparison/">Compare</a>
           {comparePages.map(({ slug, short }) => (
             <a key={slug} href={comparePageHref(slug)}>{short}</a>
           ))}
