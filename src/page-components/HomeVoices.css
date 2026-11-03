@@ -385,3 +385,9 @@
 .home-redesign .hv-ac--text .hv-ac__title { margin: 0; }
 .home-redesign .hv-ac--text .hv-ac__copy { margin: calc(6 * var(--u)) 0 0; }
 .home-redesign .hv-ac--text .hv-ac__more { margin-top: auto; padding-top: calc(8 * var(--u)); }
+
+/* Phones: the section heading is 30px and the intro 16px. Extra specificity so no stylesheet order can bring back the larger sizes. */
+@media (max-width: 700px) {
+  body .home-redesign .hv-title { font-size: 30px !important; line-height: 1.2 !important; }
+  body .home-redesign .hv-lead { font-size: 16px !important; line-height: 1.45 !important; }
+}
