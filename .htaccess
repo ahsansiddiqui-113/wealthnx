@@ -161,7 +161,7 @@
     RewriteRule ^features/news-sentiment-analysis/?$ /features/stock-news-sentiment/ [R=301,L]
     RewriteRule ^features/insider-trades/?$ /features/insider-trading-data/ [R=301,L]
     RewriteRule ^net-worth-tracker/?$ /features/net-worth/ [R=301,L]
-    RewriteCond %{QUERY_STRING} (^|&)feature=Net(%20|+| )Worth(&|$) [NC]
+    RewriteCond %{QUERY_STRING} (^|&)feature=Net(%20|\+|\x20)Worth(&|$) [NC]
     RewriteRule ^features/?$ /features/net-worth/? [R=301,L]
     RewriteRule ^features/budgeting/cash-flow-tracker/?$ /features/cash-flow/ [R=301,L]
     RewriteRule ^features/merchants/?$ /features/spending-by-merchant/ [R=301,L]

@@ -282,3 +282,10 @@
   .bl .bl-dl-wrap .hd-copy { top: calc(62 * var(--u)); }
   .bl .bl-dl-wrap .hd-phones { top: calc(14 * var(--u)); }
 }
+
+/* Desktop: with the real categories (7+) the chips no longer fit one line beside the search box: wrap them, search stays at the right. */
+@media (min-width: 761px) {
+  .bl-art__bar { align-items: flex-start; }
+  .bl-chips { flex: 1 1 0; flex-wrap: wrap; row-gap: calc(4 * var(--u)); }
+  .bl-tools { margin-left: auto; }
+}

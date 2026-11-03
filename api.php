@@ -4,6 +4,29 @@
  * Handles all HTTP requests and routes to appropriate handlers
  */
 
+ob_start(); // buffer everything: blogJson() discards stray output from included files before it prints JSON
+
+/* Some shared hosts ship PHP without the mbstring extension: provide the two functions this file uses. */
+if (!function_exists('mb_strlen')) {
+    function mb_strlen($s, $encoding = null) {
+        $n = @preg_match_all('/./su', (string)$s, $m);
+        return $n === false ? strlen((string)$s) : $n;
+    }
+}
+if (!function_exists('mb_substr')) {
+    function mb_substr($s, $start, $length = null, $encoding = null) {
+        $chars = @preg_split('//u', (string)$s, -1, PREG_SPLIT_NO_EMPTY);
+        if ($chars === false) {
+            return $length === null ? substr((string)$s, $start) : substr((string)$s, $start, $length);
+        }
+        return implode('', array_slice($chars, $start, $length));
+    }
+}
+
+/* Defined here, before the router below runs: a top-level const only exists once execution reaches it, and the
+   blog handlers (called from the router) read it. */
+const BLOG_LAYOUTS = ['style1', 'style2', 'style3', 'style4', 'style5'];
+
 // Load environment configuration if it exists
 $envFile = __DIR__ . '/.env.php';
 if (file_exists($envFile)) {
@@ -844,6 +867,10 @@ function blogBoot($admin = false) {
 }
 
 function blogJson($code, $payload) {
+    /* Drop anything printed before this point (a stray invisible character in .env.php or another included file would break JSON.parse in the browser). */
+    while (ob_get_level() > 0) {
+        ob_end_clean();
+    }
     http_response_code($code);
     echo json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_INVALID_UTF8_SUBSTITUTE);
 }
@@ -952,8 +979,6 @@ function blogValidImageRef($v) {
     }
     return preg_match('#^https://[^\s<>"\'\\\\]+$#i', $v) === 1;
 }
-
-const BLOG_LAYOUTS = ['style1', 'style2', 'style3', 'style4', 'style5'];
 
 function blogValidVideoUrl($u) {
     if ($u === '' || strlen($u) > 255 || !preg_match('#^https?://#i', $u)) {
