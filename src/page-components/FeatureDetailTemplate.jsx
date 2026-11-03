@@ -24,6 +24,7 @@ import { heroCoreProps } from './heroCore';
 import './FeaturesCompare.css';
 import HomeDownload from './HomeDownload';
 import { CAROUSEL_IMAGE_FIT } from '@/app/features/carouselImageFit.js';
+import MENU_ICON_COLORS from '@/app/features/menuIconColors.json';
 import PartnerStrip from '@/app/components/PartnerStrip';
 import SiteFooter from '@/app/components/SiteFooter';
 
@@ -130,7 +131,7 @@ export default function FeatureDetailTemplate() {
               const offset = (index - activeFeature + total) % total;
               /* 7 slots around the arc, active in the middle (3); a short list is centred instead of wrapped */
               const railPosition = total >= 7 ? (offset + 3) % total : 3 + (offset > total / 2 ? offset - total : offset);
-              return <button key={feature.name} type="button" className={`fdt-orbit__badge fdt-orbit__badge--slot-${railPosition} ${index === activeFeature ? 'is-active' : ''}`} style={{ '--feature-color': feature.color }} aria-label={`Show ${feature.name}`} aria-pressed={index === activeFeature} onClick={(event) => activateFeature(event, index)}><img src={feature.icon} alt="" /></button>;
+              return <button key={feature.name} type="button" className={`fdt-orbit__badge fdt-orbit__badge--slot-${railPosition} ${index === activeFeature ? 'is-active' : ''}`} style={{ '--feature-color': feature.color, '--badge-color': MENU_ICON_COLORS[feature.icon] || feature.color }} aria-label={`Show ${feature.name}`} aria-pressed={index === activeFeature} onClick={(event) => activateFeature(event, index)}><img src={feature.icon} alt="" /></button>;
             })}
             <div className="fdt-orbit__heading" key={currentFeature.name} aria-live="polite"><h2 id="net-worth-title">{currentFeature.name}</h2><p>{currentFeature.description}</p></div>
             <img key={currentFeature.image} src={currentFeature.image} alt={`WealthNX ${currentFeature.name} feature preview`} style={{ '--fit-w': `${(CAROUSEL_IMAGE_FIT[currentFeature.image] || [100, 0])[0]}%`, '--fit-x': `${(CAROUSEL_IMAGE_FIT[currentFeature.image] || [100, 0])[1]}%` }} />

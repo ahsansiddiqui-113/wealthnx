@@ -80,7 +80,7 @@ export const ai = [
     menu: { group: 'Wealth Genie AI', order: 20, icon: '/assets/menu-icons-v2/stocks.webp' },
     carousel: {
       order: 220,
-      image: '/assets/feature-stocks.webp',
+      image: '/assets/feature-stocks-v2.webp',
       icon: '/assets/icons/ICONS/Vector-3.svg',
       color: '#3e97ec',
       description: 'Prices, news and earnings explained in plain language. Information, not trading signals.',
@@ -91,7 +91,7 @@ export const ai = [
       headline: 'Understand what moves',
       accent: 'your stocks.',
       blurb: 'Prices, news and earnings explained in plain language. Information, not trading signals.',
-      image: '/assets/feature-stocks.webp', width: 745, height: 392,
+      image: '/assets/feature-stocks-v2.webp', width: 745, height: 392,
     },
     cards: [
       { icon: 'trend-up', title: 'Stock Prices in Context', text: 'Up-to-date prices alongside the news and earnings that may explain them.' },

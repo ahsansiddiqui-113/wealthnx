@@ -264,3 +264,8 @@ body .feature-detail-template.fdt-features .fdt-hero h1 em { display: inline; }
 @media (max-width: 700px) {
   body .feature-detail-template.fdt-features.fdt-mobile .fdt-hero h1 { font-size: min(34px, calc((100vw - 48px) / 9)) !important; }
 }
+
+/* /features/ arc description text (desktop and tablet): larger. */
+@media (min-width: 701px) {
+  body .feature-detail-template.fdt-features .fdt-orbit__heading p { font-size: 15px; line-height: 1.4; max-width: 500px; }
+}
