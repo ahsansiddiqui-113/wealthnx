@@ -45,3 +45,9 @@
   .feature-detail-template .fdt-orbit__badge--slot-5 { top: 160px; right: 5%; }
   .feature-detail-template .fdt-orbit__badge--slot-6 { top: 288px; right: -48px; }
 }
+
+/* The /features/ arc shows the full-colour menu icons on a white tile (ring = the slide's colour) instead of a white silhouette on a coloured tile. */
+.feature-detail-template .fdt-orbit__badge { background: #fff; box-shadow: inset 0 0 0 2px var(--feature-color), 0 7px 18px #0004; padding: 6px; }
+.feature-detail-template .fdt-orbit__badge img { filter: none; }
+.feature-detail-template .fdt-orbit__badge:hover,
+.feature-detail-template .fdt-orbit__badge.is-active { box-shadow: inset 0 0 0 2px var(--feature-color), 0 0 0 3px rgba(255,255,255,.22), 0 10px 22px #0008; }

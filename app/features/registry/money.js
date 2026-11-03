@@ -3,7 +3,7 @@ export const money = [
   {
     slug: 'net-worth',
     label: 'Net Worth',
-    menu: { group: 'Money', order: 10, icon: '/assets/menu-icons/net-worth.webp' },
+    menu: { group: 'Money', order: 10, icon: '/assets/menu-icons-v2/net-worth.webp' },
     carousel: {
       order: 10,
       image: '/assets/feature-net-worth-landing.webp',
@@ -76,7 +76,7 @@ export const money = [
   {
     slug: 'multi-assets',
     label: 'Multi Assets',
-    menu: { group: 'Money', order: 20, icon: '/assets/menu-icons/multi-assets.webp' },
+    menu: { group: 'Money', order: 20, icon: '/assets/menu-icons-v2/multi-assets.webp' },
     carousel: {
       order: 110,
       image: '/assets/feature-multi-assets-landing.webp',
@@ -149,7 +149,7 @@ export const money = [
   {
     slug: 'cash-flow',
     label: 'Cash Flow',
-    menu: { group: 'Money', order: 30, icon: '/assets/menu-icons/cash-flow.webp' },
+    menu: { group: 'Money', order: 30, icon: '/assets/menu-icons-v2/cash-flow.webp' },
     carousel: {
       order: 100,
       image: '/assets/feature-cash-flow-landing.webp',
@@ -223,7 +223,7 @@ export const money = [
   {
     slug: 'budgeting',
     label: 'Budgets',
-    menu: { group: 'Money', order: 80, icon: '/assets/menu-icons/budgets.webp' },
+    menu: { group: 'Money', order: 80, icon: '/assets/menu-icons-v2/budgets.webp' },
     carousel: {
       order: 40,
       image: '/assets/feature-budgeting-landing.webp',
@@ -290,7 +290,7 @@ export const money = [
   {
     slug: 'transactions',
     label: 'Transactions',
-    menu: { group: 'Money', order: 40, icon: '/assets/menu-icons/transactions.webp' },
+    menu: { group: 'Money', order: 40, icon: '/assets/menu-icons-v2/transactions.webp' },
     carousel: {
       order: 50,
       image: '/assets/feature-transactions-landing.webp',
@@ -362,7 +362,7 @@ export const money = [
   {
     slug: 'bills',
     label: 'Bills',
-    menu: { group: 'Money', order: 90, icon: '/assets/menu-icons/bills.webp' },
+    menu: { group: 'Money', order: 90, icon: '/assets/menu-icons-v2/bills.webp' },
     carousel: {
       order: 20,
       image: '/assets/feature-bills-landing.webp',
@@ -431,7 +431,7 @@ export const money = [
   {
     slug: 'goals',
     label: 'Goals',
-    menu: { group: 'Money', order: 110, icon: '/assets/menu-icons/goals.webp' },
+    menu: { group: 'Money', order: 110, icon: '/assets/menu-icons-v2/goals.webp' },
     carousel: {
       order: 60,
       image: '/assets/feature-goals-landing.webp',
@@ -501,7 +501,7 @@ export const money = [
   {
     slug: 'financial-forecasting',
     label: 'Forecasting',
-    menu: { group: 'Money', order: 120, icon: '/assets/menu-icons/forecasting.webp' },
+    menu: { group: 'Money', order: 120, icon: '/assets/menu-icons-v2/forecasting.webp' },
     carousel: {
       order: 70,
       image: '/assets/feature-financial-forecasting-landing.webp',
@@ -569,7 +569,7 @@ export const money = [
   {
     slug: 'members',
     label: 'Members',
-    menu: { group: 'Money', order: 70, icon: '/assets/menu-icons/members.webp' },
+    menu: { group: 'Money', order: 70, icon: '/assets/menu-icons-v2/members.webp' },
     carousel: {
       order: 80,
       image: '/assets/feature-members.webp',
@@ -640,7 +640,7 @@ export const money = [
     slug: 'spending-by-merchant',
     carouselImage: '/assets/feature-spending-by-merchant-landing.webp',
     label: 'Merchants',
-    menu: { group: 'Money', order: 50, icon: '/assets/menu-icons/merchants.webp' },
+    menu: { group: 'Money', order: 50, icon: '/assets/menu-icons-v2/merchants.webp' },
     metaTitle: 'Spending by Merchant: Purchases Grouped by Store | WealthNX',
     metaDescription: 'How much each store, app and service received from you, with repeat visits added up. Spending by merchant across your linked cards, in one view.',
     hero: {
@@ -702,7 +702,7 @@ export const money = [
   {
     slug: 'business-expense-tracking',
     label: 'Business',
-    menu: { group: 'Money', order: 60, icon: '/assets/menu-icons/business.webp' },
+    menu: { group: 'Money', order: 60, icon: '/assets/menu-icons-v2/business.webp' },
     carouselImage: '/assets/feature-business-expense-tracking-landing.webp',
     metaTitle: 'Business Expense Tracking by Account | WealthNX',
     metaDescription: 'Business expense tracking by account. Transactions from the accounts you assign to a business are sorted into categories, apart from your personal spending.',
@@ -767,7 +767,7 @@ export const money = [
     slug: 'subscription-tracker',
     carouselImage: '/assets/feature-subscription-tracker-landing.webp',
     label: 'Subscriptions',
-    menu: { group: 'Money', order: 100, icon: '/assets/menu-icons/subscriptions.webp' },
+    menu: { group: 'Money', order: 100, icon: '/assets/menu-icons-v2/subscriptions.webp' },
     metaTitle: 'Subscription Tracker App: Find Repeat Charges | WealthNX',
     metaDescription: 'WealthNX finds recurring charges across your linked cards, shows available upcoming charge dates and amounts, and opens cancellation pages where supported.',
     hero: {
@@ -883,7 +883,7 @@ export const money = [
     slug: 'savings-rate-calculator',
     carouselImage: '/assets/feature-savings-rate-calculator-landing.webp',
     label: 'Savings Rate',
-    menu: { group: 'Money', order: 130, icon: '/assets/menu-icons/savings-rate.webp' },
+    menu: { group: 'Money', order: 130, icon: '/assets/menu-icons-v2/savings-rate.webp' },
     metaTitle: 'Savings Rate Calculator: Share of Income You Keep | WealthNX',
     metaDescription: 'What share of your income do you save? WealthNX calculates your savings percentage from your linked accounts and shows how it changes month to month',
     hero: {
@@ -944,7 +944,7 @@ export const money = [
     slug: 'financial-health-score',
     carouselImage: '/assets/feature-financial-health-score-landing.webp',
     label: 'Financial Health Score',
-    menu: { group: 'Money', order: 140, icon: '/assets/menu-icons/financial-health-score.webp' },
+    menu: { group: 'Money', order: 140, icon: '/assets/menu-icons-v2/financial-health-score.webp' },
     metaTitle: 'Financial Health Score From 0 to 100 | WealthNX',
     metaDescription: 'WealthNX gives you a financial health score from 0 to 100, built from your linked accounts. Each part is shown, and the score is tracked over time.',
     hero: {
@@ -1009,7 +1009,7 @@ export const money = [
     slug: 'compare-spending',
     carouselImage: '/assets/feature-compare-spending-landing.webp',
     label: 'Period Comparison',
-    menu: { group: 'Money', order: 150, icon: '/assets/menu-icons/period-comparison.webp' },
+    menu: { group: 'Money', order: 150, icon: '/assets/menu-icons-v2/period-comparison.webp' },
     metaTitle: 'Compare Spending Month Over Month, by Category | WealthNX',
     metaDescription: 'See spending this month vs last month side by side. WealthNX compares two selected periods using available transaction data from your linked account.',
     hero: {

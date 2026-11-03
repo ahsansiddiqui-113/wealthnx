@@ -7,7 +7,7 @@ export const portfolio = [
     carousel: {
       order: 30,
       image: '/assets/feature-portfolio-card.webp', // trimmed copy of homeinvestment.webp (carousel only)
-      icon: '/assets/menu-icons/exposure-analysis.webp',
+      icon: '/assets/menu-icons-v2/exposure-analysis.webp',
       color: '#8155dc',
       description: 'Track individual stocks, ETFs, and crypto in one organized portfolio view.',
     },
@@ -45,7 +45,7 @@ export const portfolio = [
     slug: 'portfolio-exposure-analysis',
     carouselImage: '/assets/feature-portfolio-exposure-analysis-landing.webp',
     label: 'Exposure Analysis',
-    menu: { group: 'Portfolio', order: 10, icon: '/assets/menu-icons/exposure-analysis.webp' },
+    menu: { group: 'Portfolio', order: 10, icon: '/assets/menu-icons-v2/exposure-analysis.webp' },
     metaTitle: 'Portfolio Exposure Analysis Across Your Accounts | WealthNX',
     metaDescription: 'See your sector exposure, asset allocation and the stocks inside your funds across linked brokerage and retirement accounts. WealthNX shows it in one view',
     hero: {
@@ -105,7 +105,7 @@ export const portfolio = [
   {
     slug: 'dividend-tracker',
     label: 'Dividend Tracking',
-    menu: { group: 'Portfolio', order: 20, icon: '/assets/menu-icons/dividend-tracking.webp' },
+    menu: { group: 'Portfolio', order: 20, icon: '/assets/menu-icons-v2/dividend-tracking.webp' },
     carouselImage: '/assets/feature-dividend-tracker-landing.webp',
     metaTitle: 'Dividend Tracker App for Income Across Brokerages | WealthNX',
     metaDescription: 'A dividend income tracker for your linked brokerage accounts. Dividends received, expected payments and your income history, with estimates labeled apart.',
@@ -166,7 +166,7 @@ export const portfolio = [
   {
     slug: 'portfolio-benchmark-comparison',
     label: 'Benchmark Comparison',
-    menu: { group: 'Portfolio', order: 30, icon: '/assets/menu-icons/benchmark-comparison.webp' },
+    menu: { group: 'Portfolio', order: 30, icon: '/assets/menu-icons-v2/benchmark-comparison.webp' },
     carouselImage: '/assets/feature-portfolio-benchmark-comparison-landing.webp',
     metaTitle: 'Compare Portfolio to S&P 500 and Nasdaq | WealthNX',
     metaDescription: 'A portfolio benchmark tool that sets your returns next to the S&P 500 or a Nasdaq benchmark over the same period, for your whole portfolio or one holding.',
@@ -228,7 +228,7 @@ export const portfolio = [
   {
     slug: 'investment-decision-analysis',
     label: 'Decision Analysis',
-    menu: { group: 'Portfolio', order: 40, icon: '/assets/menu-icons/decision-analysis.webp' },
+    menu: { group: 'Portfolio', order: 40, icon: '/assets/menu-icons-v2/decision-analysis.webp' },
     carouselImage: '/assets/feature-investment-decision-analysis-landing.webp',
     metaTitle: 'Investment Decision Analysis for Your Holdings | WealthNX',
     metaDescription: 'Investment decision analysis that scores each stock you hold against your entry price and its benchmark, with one overall score for your current holdings.',
@@ -288,7 +288,7 @@ export const portfolio = [
     slug: 'portfolio-performance-tracker',
     carouselImage: '/assets/feature-portfolio-performance-tracker-landing.webp',
     label: 'Gain and Loss Analysis',
-    menu: { group: 'Portfolio', order: 50, icon: '/assets/menu-icons/gain-and-loss-analysis.webp' },
+    menu: { group: 'Portfolio', order: 50, icon: '/assets/menu-icons-v2/gain-and-loss-analysis.webp' },
     metaTitle: 'Portfolio Performance Tracker: Gains and Losses | WealthNX',
     metaDescription: 'A portfolio performance tracker that shows gains and losses for each holding and together, across your linked brokerage, retirement and crypto accounts.',
     hero: {

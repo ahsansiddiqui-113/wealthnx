@@ -462,3 +462,6 @@
 
 /* Stocks icon: the "$" is cut out in the card colour (not green); on the highlighted teal card it takes the teal. */
 .hpf-card.is-active .hpf-cut { stroke: #43b9ab; }
+
+/* Phones: the inline picture is now a <picture> (small file for phones); its <img> fills it. */
+.hpf-inline img { display: block; width: 100%; height: auto; }

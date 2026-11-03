@@ -273,3 +273,12 @@
   .hf-left { display: flex; flex-direction: column; }
   .hf-visual { margin: auto; width: 58cqw; max-width: 100%; }
 }
+
+/* Phones: pictures are <picture> elements (small files); the page position is managed by one pre-paint correction in the component,
+   so the browser's own scroll anchoring is off for the list, and the picture fades in without sliding (less movement while the layout changes). */
+.hf-pic picture { display: block; }
+@media (max-width: 700px) {
+  .hf-cards { overflow-anchor: none; }
+  .hf-pic img { animation-name: hf-pic-fade; }
+}
+@keyframes hf-pic-fade { from { opacity: 0; } to { opacity: 1; } }

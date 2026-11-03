@@ -257,3 +257,10 @@ body .feature-detail-template .fdt-orbit > a:hover { background: #12a99a !import
   body .feature-detail-template.fdt-features .fdt-orbit > a { top: 556px; }
   body .feature-detail-template.fdt-features .fdt-orbit__dots { top: 620px; }
 }
+
+/* The /features/ hero heading is three lines. */
+body .feature-detail-template.fdt-features .fdt-hero h1 .fdt-l { display: block; white-space: nowrap; }
+body .feature-detail-template.fdt-features .fdt-hero h1 em { display: inline; }
+@media (max-width: 700px) {
+  body .feature-detail-template.fdt-features.fdt-mobile .fdt-hero h1 { font-size: min(34px, calc((100vw - 48px) / 9)) !important; }
+}

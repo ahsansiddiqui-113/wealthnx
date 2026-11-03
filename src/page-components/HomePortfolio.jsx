@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef, useLayoutEffect } from 'react';
+import React, { useState, useRef, useLayoutEffect, useEffect } from 'react';
 
 /* "Your Entire Portfolio. One View" home section (hpf- styles in HomePortfolio.css).
    Client component only for the list: hovering / focusing / clicking a card makes it the active (teal) one. */
@@ -100,16 +100,21 @@ const PICS = {
 
 function PortfolioList({ onSelect }) {
   const [active, setActive] = useState('stocks');
+  const listRef = useRef(null);
   const anchor = useRef(null); // { el, top }: the tapped card and where it sat before the picture boxes changed
   const select = (key) => { setActive(key); onSelect(key); };
   /* Phones: the picture of the previously selected card collapses (it can sit above the tapped card) and the new one
-     opens, which would shift the tapped card. Put the tapped card back where it was, in the same frame. */
+     opens, which would shift the tapped card. Put it back where it was, once before paint and once on the next frame. */
   useLayoutEffect(() => {
     const a = anchor.current;
     anchor.current = null;
     if (!a || !a.el.isConnected) return;
-    const d = a.el.getBoundingClientRect().top - a.top;
-    if (Math.abs(d) > 0.5) window.scrollBy({ top: d, behavior: 'instant' });
+    const fix = () => { const d = a.el.getBoundingClientRect().top - a.top; if (Math.abs(d) > 0.5) window.scrollBy({ top: d, behavior: 'instant' }); };
+    fix();
+    let touched = false;
+    const stop = () => { touched = true; };
+    ['wheel', 'touchstart', 'keydown'].forEach((n) => window.addEventListener(n, stop, { once: true, passive: true }));
+    requestAnimationFrame(() => { if (!touched && a.el.isConnected) fix(); });
   }, [active]);
   /* Only a real tap/click or keyboard focus selects: touch emulates mouseenter and focus on tap, which used to select
      (and move the layout) before the click even landed. */
@@ -118,26 +123,22 @@ function PortfolioList({ onSelect }) {
   const focusSelect = (e, key) => { if (e.currentTarget.matches(':focus-visible')) select(key); };
   const clickSelect = (e, key) => {
     anchor.current = { el: e.currentTarget, top: e.currentTarget.getBoundingClientRect().top };
-    /* browser scroll anchoring (on content below) would add a second correction: switch it off for this update */
-    const root = document.documentElement;
-    root.style.overflowAnchor = 'none';
-    requestAnimationFrame(() => requestAnimationFrame(() => { root.style.overflowAnchor = ''; }));
-    /* the picture boxes may settle a few frames later (image decode): keep pinning for a moment unless the user scrolls */
-    const el = e.currentTarget, top = anchor.current.top, end = performance.now() + 700;
-    let stop = false;
-    const halt = () => { stop = true; };
-    ['wheel', 'touchmove', 'keydown'].forEach((n) => window.addEventListener(n, halt, { once: true, passive: true }));
-    const pin = () => {
-      if (stop || !el.isConnected) return;
-      const d = el.getBoundingClientRect().top - top;
-      if (Math.abs(d) > 0.5) window.scrollBy({ top: d, behavior: 'instant' });
-      if (performance.now() < end) requestAnimationFrame(pin);
-    };
-    requestAnimationFrame(pin);
     select(key);
   };
+  /* Phones: fetch the small pictures just before the list scrolls into view, so a tap shows its picture at once. */
+  useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia('(max-width: 700px)').matches || !('IntersectionObserver' in window) || !listRef.current) return undefined;
+    const io = new IntersectionObserver((entries) => {
+      if (!entries.some((en) => en.isIntersecting)) return;
+      io.disconnect();
+      const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 200));
+      idle(() => Object.values(PICS).forEach(([src]) => { const im = new Image(); im.decoding = 'async'; im.src = src.replace('.webp', '-m.webp'); }));
+    }, { rootMargin: '1200px 0px' });
+    io.observe(listRef.current);
+    return () => io.disconnect();
+  }, []);
   return (
-    <ul className="hpf-list">
+    <ul className="hpf-list" ref={listRef}>
       {cards.map(({ key, title, body, tx }) => (
         <li key={key}>
           <button
@@ -155,7 +156,7 @@ function PortfolioList({ onSelect }) {
               <span className="hpf-card__body">{body}</span>
             </span>
           </button>
-          {PICS[key] && <img className="hpf-inline" src={PICS[key][0]} width={PICS[key][1]} height={PICS[key][2]} alt="" aria-hidden="true" loading="lazy" decoding="async" />}
+          {PICS[key] && <picture className="hpf-inline" aria-hidden="true"><source media="(max-width: 700px)" srcSet={PICS[key][0].replace('.webp', '-m.webp')} /><img src={PICS[key][0]} width={PICS[key][1]} height={PICS[key][2]} alt="" loading="lazy" decoding="async" /></picture>}
         </li>
       ))}
     </ul>

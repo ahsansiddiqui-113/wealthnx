@@ -207,3 +207,20 @@
 @media (max-width: 640px) {
   .home-redesign .ha-title { font-size: 30px !important; line-height: 1.22; max-width: none; }
 }
+
+/* Very small phones: keep the ask bar controls on one row (send button was wrapping alone). */
+@media (max-width: 380px) {
+  .ha-bar { gap: 10px 6px; padding: 12px 10px; }
+  .ha-bar__plus, .ha-bar__send { width: 36px; height: 36px; }
+  .ha-bar__chips { gap: 5px; margin-left: 0; }
+  .ha-chip { height: 36px; padding: 0 8px; }
+  .ha-chip svg { width: 18px; height: 18px; }
+  .ha-bar__send { margin-left: auto; }
+}
+
+/* Heading "Here's what you get in One Place / money, portfolio & markets": two lines on desktop, three on phones. */
+.ha-title .ha-l3 { display: block; }
+@media (max-width: 700px) {
+  .ha-title .ha-l1, .ha-title .ha-l2, .ha-title .ha-l3 { display: block; white-space: nowrap; }
+  .home-redesign .ha-title { font-size: min(30px, calc((100vw - 32px) / 13.6)) !important; text-wrap: nowrap; }
+}

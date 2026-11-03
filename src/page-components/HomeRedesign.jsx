@@ -94,6 +94,34 @@ const audience = [
 export default function HomeRedesign() {
   const [fragOpen, setFragOpen] = React.useState(null); // phones: card whose picture is open (shown right above that card; none by default)
   const [fragActive, setFragActive] = React.useState(0); // card whose phone picture is shown (hover / focus / tap)
+  const fragAnchor = React.useRef(null); // { el, top }: the tapped card and where it sat before the picture boxes changed
+  /* Phones: the picture above the tapped card opens / closes and shifts the card; put it back where it was, once,
+     before the browser paints, plus once more on the next frame (skipped if the user has started scrolling). */
+  React.useLayoutEffect(() => {
+    const a = fragAnchor.current;
+    fragAnchor.current = null;
+    if (!a || !a.el.isConnected) return;
+    const fix = () => { const d = a.el.getBoundingClientRect().top - a.top; if (Math.abs(d) > 0.5) window.scrollBy({ top: d, behavior: 'instant' }); };
+    fix();
+    let touched = false;
+    const stop = () => { touched = true; };
+    ['wheel', 'touchstart', 'keydown'].forEach((n) => window.addEventListener(n, stop, { once: true, passive: true }));
+    requestAnimationFrame(() => { if (!touched && a.el.isConnected) fix(); });
+  }, [fragOpen]);
+  /* Phones: fetch the small pictures just before the section scrolls into view, so a tap shows its picture at once. */
+  React.useEffect(() => {
+    if (typeof window === 'undefined' || !window.matchMedia('(max-width: 700px)').matches || !('IntersectionObserver' in window)) return undefined;
+    const section = document.getElementById('fragmented-title')?.closest('section');
+    if (!section) return undefined;
+    const io = new IntersectionObserver((entries) => {
+      if (!entries.some((e) => e.isIntersecting)) return;
+      io.disconnect();
+      const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 200));
+      idle(() => fragCards.forEach(({ img }) => { const i = new Image(); i.decoding = 'async'; i.src = `/assets/home-frag-${img}-m.webp`; }));
+    }, { rootMargin: '1200px 0px' });
+    io.observe(section);
+    return () => io.disconnect();
+  }, []);
   return (
     <div className="home-redesign">
       <div className="feature-detail-template hr-hero-host">
@@ -122,7 +150,7 @@ export default function HomeRedesign() {
         <div className="ha-glow ha-glow--top" aria-hidden="true" />
         <div className="ha-glow ha-glow--corner" aria-hidden="true" />
         <div className="ha-inner">
-          <h2 id="ai-title" className="ha-title" data-reveal>One App For <b>Your Money</b> See More. Understand More. <b>Ask Better Questions.</b></h2>
+          <h2 id="ai-title" className="ha-title" data-reveal><span className="ha-l1">Here’s what you get</span> <span className="ha-l2">in <b>One Place</b></span> <span className="ha-l3">money, portfolio &amp; markets</span></h2>
           <div className="ha-bar" data-reveal="fade" aria-hidden="true">
             <img className="ha-bar__genie" src="/assets/Vector.png" alt="" width="24" height="24" />
             <span className="ha-bar__placeholder">Ask anything or tag an Assistant</span>
@@ -246,10 +274,10 @@ export default function HomeRedesign() {
                 <React.Fragment key={key}>
                   {fragOpen === index && (
                     <li className={`hf-pic${index === 0 ? ' hf-pic--first' : ''}`} aria-hidden="true">
-                      <img src={`/assets/home-frag-${img}.webp?v=3`} alt="" width={size[0]} height={size[1]} loading="lazy" decoding="async" />
+                      <picture><source media="(max-width: 700px)" srcSet={`/assets/home-frag-${img}-m.webp`} /><img src={`/assets/home-frag-${img}.webp?v=3`} alt="" width={size[0]} height={size[1]} decoding="async" /></picture>
                     </li>
                   )}
-                <li className={`hf-card${index === 0 ? ' hf-card--first' : ''}${index === fragActive ? ' is-active' : ''}${fragOpen === index ? ' is-open' : ''}`} style={{ "--i": index }} data-reveal tabIndex={0} aria-expanded={fragOpen === index} onMouseEnter={() => setFragActive(index)} onFocus={() => setFragActive(index)} onClick={(event) => { setFragActive(index); if (!event.target.closest('a')) setFragOpen((open) => (open === index ? null : index)); }}>
+                <li className={`hf-card${index === 0 ? ' hf-card--first' : ''}${index === fragActive ? ' is-active' : ''}${fragOpen === index ? ' is-open' : ''}`} style={{ "--i": index }} data-reveal tabIndex={0} aria-expanded={fragOpen === index} onMouseEnter={() => { if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) setFragActive(index); }} onFocus={(event) => { if (event.currentTarget.matches(':focus-visible')) setFragActive(index); }} onClick={(event) => { fragAnchor.current = { el: event.currentTarget, top: event.currentTarget.getBoundingClientRect().top }; setFragActive(index); if (!event.target.closest('a')) setFragOpen((open) => (open === index ? null : index)); }}>
                   <span className="hf-card__icon" aria-hidden="true">
                     {icon === 'forecasting'
                       ? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10.2" /><path d="M16.6 7.4 13.4 16.6l-1.9-4.1-4.1-1.9Z" fill="currentColor" /></svg>

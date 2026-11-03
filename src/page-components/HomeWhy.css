@@ -225,3 +225,18 @@
   .hw2-dots { margin-top: 18px; }
   .home-redesign .hw2-viewall { margin-top: 26px; }
 }
+
+/* Phones, swipe smoothness: the slides' edge feather is now baked into the (smaller) pictures instead of a double CSS mask that was
+   re-rasterised on every scroll frame; the stage height changes once per slide with a transition; the picture is a little narrower. */
+@media (max-width: 700px) {
+  .hw2-stage { transition: height .3s ease; }
+  .hw2-stage img {
+    width: 93%;
+    margin-inline: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+    -webkit-mask-composite: initial;
+    mask-composite: initial;
+  }
+}
+@media (max-width: 700px) and (prefers-reduced-motion: reduce) { .hw2-stage { transition: none; } }

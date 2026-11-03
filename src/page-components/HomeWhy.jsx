@@ -5,14 +5,15 @@ import Link from 'next/link';
 import './HomeWhy.css';
 
 const tabs = [
-  { id: 'proactive', label: 'AI Insights', img: '/assets/home-why-proactive.webp', w: 1500, h: 768, mob: '/assets/home-why-mob-proactive.webp', mw: 900, mh: 1154, alt: 'Proactive AI: a heads-up on upcoming bills, spending and budgets before you need it' },
-  { id: 'all-in-one', label: 'All-in-one', img: '/assets/home-why-all-in-one.webp', w: 1500, h: 802, mob: '/assets/home-why-mob-all-in-one.webp', mw: 900, mh: 1330, alt: 'All-in-one: your bank accounts, budgets, investments and crypto in one app' },
-  { id: 'voice-to-voice', label: 'Voice-to-Voice', img: '/assets/home-why-voice-to-voice.webp', w: 1500, h: 674, mob: '/assets/home-why-mob-voice-to-voice.webp', mw: 900, mh: 1659, alt: 'Voice-to-Voice: ask Wealth Genie out loud and hear the answer' },
-  { id: 'voice-to-action', label: 'Voice-to-Action', img: '/assets/home-why-voice-to-action.webp', w: 1500, h: 610, mob: '/assets/home-why-mob-voice-to-action.webp', mw: 900, mh: 1471, alt: 'Voice-to-Action: ask Wealth Genie about a savings goal and explore the numbers' },
-  { id: 'multi-assistants', label: 'Multi Assistants', img: '/assets/home-why-multi-assistants.webp', w: 1400, h: 837, mob: '/assets/home-why-mob-multi-assistants.webp', mw: 900, mh: 1498, alt: 'Multi Assistants: separate assistants for spending, stocks, crypto and custom views' },
+  { id: 'proactive', label: 'AI Insights', img: '/assets/home-why-proactive.webp', w: 1500, h: 768, mob: '/assets/home-why-mob-proactive-s.webp', mw: 720, mh: 923, alt: 'Proactive AI: a heads-up on upcoming bills, spending and budgets before you need it' },
+  { id: 'all-in-one', label: 'All-in-one', img: '/assets/home-why-all-in-one.webp', w: 1500, h: 802, mob: '/assets/home-why-mob-all-in-one-s.webp', mw: 720, mh: 1064, alt: 'All-in-one: your bank accounts, budgets, investments and crypto in one app' },
+  { id: 'voice-to-voice', label: 'Voice-to-Voice', img: '/assets/home-why-voice-to-voice.webp', w: 1500, h: 674, mob: '/assets/home-why-mob-voice-to-voice-s.webp', mw: 720, mh: 1327, alt: 'Voice-to-Voice: ask Wealth Genie out loud and hear the answer' },
+  { id: 'voice-to-action', label: 'Voice-to-Action', img: '/assets/home-why-voice-to-action.webp', w: 1500, h: 610, mob: '/assets/home-why-mob-voice-to-action-s.webp', mw: 720, mh: 1177, alt: 'Voice-to-Action: ask Wealth Genie about a savings goal and explore the numbers' },
+  { id: 'multi-assistants', label: 'Multi Assistants', img: '/assets/home-why-multi-assistants.webp', w: 1400, h: 837, mob: '/assets/home-why-mob-multi-assistants-s.webp', mw: 720, mh: 1198, alt: 'Multi Assistants: separate assistants for spending, stocks, crypto and custom views' },
 ];
 
 const AUTO_MS = 6000;
+const IMG_SCALE = 0.93; // phones: the picture is a little narrower than its slide
 const MOBILE_MQ = '(max-width: 700px)';
 const isMobile = () => typeof window !== 'undefined' && window.matchMedia(MOBILE_MQ).matches;
 const reducedMotion = () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -34,6 +35,20 @@ export default function HomeWhy() {
 
   useEffect(() => {
     const io = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), { threshold: 0.3 });
+    io.observe(sectionRef.current);
+    return () => io.disconnect();
+  }, []);
+
+  // Phones: fetch and decode the five small pictures before the section scrolls into view (they sit off-screen in the carousel, so
+  // lazy loading would otherwise only start them mid-swipe).
+  useEffect(() => {
+    if (!isMobile() || !('IntersectionObserver' in window) || !sectionRef.current) return undefined;
+    const io = new IntersectionObserver((entries) => {
+      if (!entries.some((en) => en.isIntersecting)) return;
+      io.disconnect();
+      const idle = window.requestIdleCallback || ((fn) => setTimeout(fn, 200));
+      idle(() => tabs.forEach((tab) => { const im = new Image(); im.decoding = 'async'; im.src = tab.mob; if (im.decode) im.decode().catch(() => {}); }));
+    }, { rootMargin: '1200px 0px' });
     io.observe(sectionRef.current);
     return () => io.disconnect();
   }, []);
@@ -78,8 +93,8 @@ export default function HomeWhy() {
   }, []);
 
   // Phones: the stage is a swipeable scroll-snap carousel (one picture per slide, all at the stage width).
-  // Its height follows the visible picture's natural height, interpolated while sliding so it never jumps.
-  // Changing height only moves content below the stage, so window.scrollY and the section top never change.
+  // Its height follows the visible picture's natural height; it is set once when a slide settles (CSS transition), not on every
+  // scroll frame, so swiping never triggers a layout. Changing height only moves content below the stage.
   useEffect(() => {
     const stage = stageRef.current;
     if (!stage) return undefined;
@@ -88,12 +103,8 @@ export default function HomeWhy() {
       if (!isMobile()) { stage.style.height = ''; return; }
       const w = stage.clientWidth;
       if (!w) return;
-      const pos = Math.min(tabs.length - 1, Math.max(0, stage.scrollLeft / w));
-      const i = Math.floor(pos);
-      const j = Math.min(tabs.length - 1, i + 1);
-      const t = pos - i;
-      const h = (tabs[i].mh / tabs[i].mw) * (1 - t) + (tabs[j].mh / tabs[j].mw) * t;
-      stage.style.height = `${Math.round(w * h)}px`;
+      const tab = tabs[activeIndexRef.current] || tabs[0];
+      stage.style.height = `${Math.round(w * IMG_SCALE * (tab.mh / tab.mw))}px`;
     };
     const settle = () => {
       if (!isMobile()) return;
@@ -103,9 +114,8 @@ export default function HomeWhy() {
       if (tabs[index]) setActiveId(tabs[index].id);
     };
     const onScroll = () => {
-      sizeTo();
       clearTimeout(settleTimer);
-      settleTimer = setTimeout(settle, 140);
+      settleTimer = setTimeout(settle, 120);
     };
     sizeTo();
     sizeToRef.current = sizeTo;
@@ -124,6 +134,7 @@ export default function HomeWhy() {
     activeIndexRef.current = activeIndex;
     const stage = stageRef.current;
     if (!stage || !isMobile()) return undefined;
+    sizeToRef.current?.();
     const w = stage.clientWidth;
     if (w && Math.round(stage.scrollLeft / w) !== activeIndex) {
       stage.scrollTo({ left: activeIndex * w, behavior: reducedMotion() ? 'auto' : 'smooth' });

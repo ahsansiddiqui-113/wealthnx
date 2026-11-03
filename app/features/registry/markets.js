@@ -7,7 +7,7 @@ export const markets = [
     carousel: {
       order: 90,
       image: '/assets/stocksfeature.png',
-      icon: '/assets/menu-icons/watchlist.webp',
+      icon: '/assets/menu-icons-v2/watchlist.webp',
       color: '#3e97ec',
       description: 'Follow market information and your investments in the same place.',
     },
@@ -79,7 +79,7 @@ export const markets = [
   {
     slug: 'celebrity-portfolio-tracking',
     label: 'Celebrities Portfolio Tracking',
-    menu: { group: 'Markets', order: 10, icon: '/assets/menu-icons/celebrities-portfolio-tracking.webp' },
+    menu: { group: 'Markets', order: 10, icon: '/assets/menu-icons-v2/celebrities-portfolio-tracking.webp' },
     carouselImage: '/assets/feature-celebrity-portfolio-tracking-landing.webp',
     metaTitle: 'Celebrity Portfolio Tracking From Public Filings | WealthNX',
     metaDescription: 'Holdings and recent purchases that well-known investors report in their quarterly SEC 13F filings, in one view, with each filing\'s date and delay in sight.',
@@ -142,7 +142,7 @@ export const markets = [
     slug: 'stock-watchlist',
     carouselImage: '/assets/feature-stock-watchlist-landing.webp',
     label: 'Watchlist',
-    menu: { group: 'Markets', order: 20, icon: '/assets/menu-icons/watchlist.webp' },
+    menu: { group: 'Markets', order: 20, icon: '/assets/menu-icons-v2/watchlist.webp' },
     metaTitle: 'Stock Watchlist With Price Alerts and Research | WealthNX',
     metaDescription: 'A stock watchlist for the stocks and crypto you follow, with market price alerts, Top Movers, news sentiment and company data in one app. No trades are placed.',
     hero: {
@@ -204,7 +204,7 @@ export const markets = [
     slug: 'stock-news-sentiment',
     carouselImage: '/assets/feature-stock-news-sentiment-landing.webp',
     label: 'News Sentiment Analysis',
-    menu: { group: 'Markets', order: 30, icon: '/assets/menu-icons/news-sentiment-analysis.webp' },
+    menu: { group: 'Markets', order: 30, icon: '/assets/menu-icons-v2/news-sentiment-analysis.webp' },
     metaTitle: 'Stock News Sentiment Analysis for Your Stocks | WealthNX',
     metaDescription: 'Stock news sentiment analysis from Benzinga and Nasdaq coverage: whether news about a stock reads positive, negative or neutral, plus AI news summaries',
     hero: {
@@ -264,7 +264,7 @@ export const markets = [
     slug: 'insider-trading-data',
     carouselImage: '/assets/feature-insider-trading-data-landing.webp',
     label: 'Insider trades',
-    menu: { group: 'Markets', order: 40, icon: '/assets/menu-icons/insider-trades.webp' },
+    menu: { group: 'Markets', order: 40, icon: '/assets/menu-icons-v2/insider-trades.webp' },
     metaTitle: 'Insider Trading Data From SEC Form 4 Filings | WealthNX',
     metaDescription: 'Insider trading data from SEC Form 4 filings: reported buys and sales by officers, directors and large shareholders of the stocks you follow, with dates',
     hero: {
@@ -323,7 +323,7 @@ export const markets = [
   {
     slug: 'earnings-calendar',
     label: 'Earnings Calendar',
-    menu: { group: 'Markets', order: 50, icon: '/assets/menu-icons/earnings-calendar.webp' },
+    menu: { group: 'Markets', order: 50, icon: '/assets/menu-icons-v2/earnings-calendar.webp' },
     carouselImage: '/assets/feature-earnings-calendar-landing.webp',
     metaTitle: 'Earnings Calendar With EPS Estimates | WealthNX',
     metaDescription: 'An earnings calendar of upcoming earnings announcement dates, with earnings per share estimates and reported results labeled apart, on the latest schedule.',

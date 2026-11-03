@@ -4,7 +4,7 @@ export const ai = [
   {
     slug: 'accountant',
     label: 'Accountant Assistant',
-    menu: { group: 'Wealth Genie AI', order: 10, icon: '/assets/menu-icons/accountant.webp' },
+    menu: { group: 'Wealth Genie AI', order: 10, icon: '/assets/menu-icons-v2/accountant.webp' },
     carousel: {
       order: 210,
       image: '/assets/feature-accountant.webp',
@@ -77,7 +77,7 @@ export const ai = [
   {
     slug: 'stocks',
     label: 'Stock Assistant',
-    menu: { group: 'Wealth Genie AI', order: 20, icon: '/assets/menu-icons/stocks.webp' },
+    menu: { group: 'Wealth Genie AI', order: 20, icon: '/assets/menu-icons-v2/stocks.webp' },
     carousel: {
       order: 220,
       image: '/assets/feature-stocks.webp',
@@ -157,7 +157,7 @@ export const ai = [
   {
     slug: 'crypto',
     label: 'Crypto Assistant',
-    menu: { group: 'Wealth Genie AI', order: 30, icon: '/assets/menu-icons/crypto.webp' },
+    menu: { group: 'Wealth Genie AI', order: 30, icon: '/assets/menu-icons-v2/crypto.webp' },
     carousel: {
       order: 230,
       image: '/assets/feature-crypto.webp',
@@ -234,7 +234,7 @@ export const ai = [
   {
     slug: 'build-mode',
     label: 'Build Mode',
-    menu: { group: 'Wealth Genie AI', order: 40, icon: '/assets/menu-icons/build-mode.webp' },
+    menu: { group: 'Wealth Genie AI', order: 40, icon: '/assets/menu-icons-v2/build-mode.webp' },
     carousel: {
       order: 240,
       image: '/assets/feature-build-mode.webp',
@@ -313,7 +313,7 @@ export const ai = [
     slug: 'voice-to-action',
     path: '/wealth-genie/voice-to-action/', // lives under /wealth-genie/, not /features/ (see app/wealth-genie/voice-to-action)
     label: 'Voice To Action',
-    menu: { group: 'Wealth Genie AI', order: 70, icon: '/assets/menu-icons/voice-and-action.webp' },
+    menu: { group: 'Wealth Genie AI', order: 70, icon: '/assets/menu-icons-v2/voice-and-action.webp' },
     carousel: {
       order: 250,
       image: '/assets/feature-voice-and-action.webp',
@@ -400,7 +400,7 @@ export const ai = [
   {
     slug: 'general-assistant',
     label: 'General Assistant',
-    menu: { group: 'Wealth Genie AI', order: 50, icon: '/assets/menu-icons/general-assistant.webp' },
+    menu: { group: 'Wealth Genie AI', order: 50, icon: '/assets/menu-icons-v2/general-assistant.webp' },
     carousel: {
       order: 260,
       image: '/assets/feature-general-assistant.webp',
@@ -476,7 +476,7 @@ export const ai = [
     slug: 'voice-to-voice',
     path: '/wealth-genie/voice-to-voice/', // lives under /wealth-genie/, not /features/ (see app/wealth-genie/voice-to-voice)
     label: 'Voice To Voice',
-    menu: { group: 'Wealth Genie AI', order: 60, icon: '/assets/menu-icons/voice-to-voice.webp' },
+    menu: { group: 'Wealth Genie AI', order: 60, icon: '/assets/menu-icons-v2/voice-to-voice.webp' },
     metaTitle: 'Voice Finance Assistant: Ask Wealth Genie Out Loud | WealthNX',
     metaDescription: 'Wealth Genie is a voice AI financial assistant. Ask a money question out loud and hear the answer, drawn from your linked accounts and market data.',
     carouselImage: '/assets/feature-voice-to-voice.webp', // /features slide keeps the plain image; hero.image is the page-top one
@@ -559,7 +559,7 @@ export const ai = [
     slug: 'ai-insights',
     path: '/wealth-genie/ai-insights/', // lives under /wealth-genie/, not /features/ (see app/wealth-genie/ai-insights)
     label: 'AI Insights',
-    menu: { group: 'Wealth Genie AI', order: 80, icon: '/assets/menu-icons/proactive-ai.webp' },
+    menu: { group: 'Wealth Genie AI', order: 80, icon: '/assets/menu-icons-v2/proactive-ai.webp' },
     carouselImage: '/assets/feature-proactive-ai.webp', // /features slide keeps the plain image; hero.image is the page-top one
     metaTitle: 'AI Financial Insights That Explain What Changed | WealthNX',
     metaDescription: 'AI financial insights that explain changes in your spending, savings and net worth, with a Financial Recap of each period and the figures behind each insight.',
