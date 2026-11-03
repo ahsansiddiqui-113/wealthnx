@@ -269,3 +269,10 @@ body .feature-detail-template.fdt-features .fdt-hero h1 em { display: inline; }
 @media (min-width: 701px) {
   body .feature-detail-template.fdt-features .fdt-orbit__heading p { font-size: 15px; line-height: 1.4; max-width: 500px; }
 }
+
+/* /features/ phones: hero heading styled like the home hero (regular weight, bold teal part) and sitting close to the top bar. */
+@media (max-width: 700px) {
+  body .feature-detail-template.fdt-features .fdt-hero { padding-top: 31px !important; }
+  body .feature-detail-template.fdt-features.fdt-mobile .fdt-hero h1 { margin-top: 0 !important; font-size: min(40px, calc((100vw - 40px) / 8.6)) !important; font-weight: 500 !important; line-height: 1.22 !important; letter-spacing: -.055em !important; color: #090c0c; }
+  body .feature-detail-template.fdt-features .fdt-hero h1 em { font-weight: 700 !important; color: #16c9bb; }
+}
