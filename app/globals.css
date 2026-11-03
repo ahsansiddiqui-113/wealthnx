@@ -10721,3 +10721,9 @@ body {
 .seo-route-intro { padding-bottom: 26px; }
 .seo-trust { margin-top: 26px !important; color: #56fdb6 !important; font-size: .9rem !important; }
 @media (max-width: 700px) { .seo-landing-grid, .seo-download-grid { grid-template-columns: 1fr; } .seo-landing-hero { padding-top: 48px; } }
+
+/* Site-wide pointer: a white arrow with a black outline (replaces the system arrow and hand). Text fields keep the text cursor. */
+html,
+html *:not(input):not(textarea):not([contenteditable="true"]) {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath d='M5.2 3.4 22.6 11.3c1.3.6 1.2 2.5-.2 2.9l-7 2.1-2.4 7.1c-.5 1.4-2.4 1.5-3 .2L3.6 5.2c-.5-1.2.5-2.3 1.6-1.8z' fill='%23fff' stroke='%23111' stroke-width='1.8' stroke-linejoin='round'/%3E%3C/svg%3E") 4 3, auto !important;
+}

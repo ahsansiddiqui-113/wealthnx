@@ -52,10 +52,10 @@ const voices = [
     quote: [
       'I have been using Wealthnx for some time',
       'now. It connects all my data and provides',
-      'me the analytics and intelligence to take',
-      'smarter financial understanding across my',
-      'financial life. I no longer feel financial',
-      'stressed.',
+      'me with the analytics and intelligence to',
+      'make smarter financial decisions',
+      'throughout my financial life. I no longer',
+      'feel financially stressed.',
     ],
   },
 ];
