@@ -64,12 +64,12 @@ export default function SiteFooter() {
           <a href="/pricing/">Pricing</a>
           <a href="/contact/">Contact</a>
         </div>
-        {/* <div>
+        <div>
           <a className="sf-footer__heading" href="/compare/">Compare</a>
           {comparePages.map(({ slug, short }) => (
             <a key={slug} href={comparePageHref(slug)}>{short}</a>
           ))}
-        </div> */}
+        </div>
         <div>
           <a className="sf-footer__heading" href="/calculators/">Calculators</a>
           {CALCULATOR_LINKS.map(({ href, label }) => (

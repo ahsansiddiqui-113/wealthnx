@@ -118,7 +118,7 @@ export default function FeatureDetailTemplate() {
       <main>
         <section className="fdt-hero" aria-labelledby="feature-page-title">
           <div className="fdt-hero__copy"><h1 id="feature-page-title"><span className="fdt-l">Powerful Features</span><span className="fdt-l">for a <em>Brighter</em></span><span className="fdt-l"><em>Financial you</em></span></h1></div>
-          <div className="fdt-hero__visual" data-tilt aria-hidden="true"><div className="fdt-hero__glow" /><img src="/assets/home-hero-phone-v2.webp" alt="" width={1400} height={1248} decoding="async" fetchPriority="high" className="fdt-hero-phone" {...heroCoreProps("/assets/home-hero-phone-v2.webp")} /></div>
+          <div className="fdt-hero__visual" data-tilt aria-hidden="true"><div className="fdt-hero__glow" /><img src="/assets/home-hero-phone-v2.webp" srcSet="/assets/home-hero-phone-v2-800.webp 800w, /assets/home-hero-phone-v2-1100.webp 1100w, /assets/home-hero-phone-v2.webp 1400w" sizes="(max-width: 700px) 440px, 860px" alt="" width={1400} height={1248} decoding="async" fetchPriority="high" className="fdt-hero-phone" {...heroCoreProps("/assets/home-hero-phone-v2.webp")} /></div>
           <div className="fdt-hero__aside"><p>Everything you need to understand, manage and improve your financial life all in one place.</p><div className="fdt-hero__actions"><a href="https://wealthnx.ai/get" target="_blank" rel="noreferrer">Start Your 7-Day Free Trial</a><a className="fdt-play" href="https://www.youtube.com/watch?v=npaG1AtRbNw" target="_blank" rel="noreferrer" aria-label="Watch the WealthNX introduction"><PlayIcon /></a></div></div>
         </section>
         <PartnerStrip />

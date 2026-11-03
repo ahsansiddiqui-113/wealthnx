@@ -45,7 +45,7 @@
 
 .sf-footer__columns {
   display: grid;
-  grid-template-columns: repeat(4, max-content);
+  grid-template-columns: repeat(5, max-content);
   justify-content: center;
   gap: 48px clamp(28px, 4vw, 64px);
   margin: 56px auto 34px;
@@ -188,4 +188,9 @@
 @media (max-width: 700px) {
   .sf-footer .sf-footer__title { font-size: min(26px, calc((100vw - 52px) / 12.5)) !important; }
   .sf-footer .sf-footer__logo { width: 104px; }
+}
+
+/* Five columns (Explore, Compare, Calculators, Others, Contact): wrap onto two rows on tablets. */
+@media (min-width: 701px) and (max-width: 1100px) {
+  .sf-footer__columns { grid-template-columns: repeat(3, max-content); gap: 36px 40px; }
 }

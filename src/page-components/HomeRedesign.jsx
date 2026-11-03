@@ -132,7 +132,7 @@ export default function HomeRedesign() {
           </div>
           <div className="fdt-hero__visual" data-tilt aria-hidden="true">
             <div className="fdt-hero__glow" />
-            <img src="/assets/home-hero-phone-v2.webp" alt="" width={1400} height={1248} className="fdt-hero-phone" fetchPriority="high" decoding="async" {...heroCoreProps("/assets/home-hero-phone-v2.webp")} />
+            <img src="/assets/home-hero-phone-v2.webp" srcSet="/assets/home-hero-phone-v2-800.webp 800w, /assets/home-hero-phone-v2-1100.webp 1100w, /assets/home-hero-phone-v2.webp 1400w" sizes="(max-width: 700px) 440px, 860px" alt="" width={1400} height={1248} className="fdt-hero-phone" fetchPriority="high" decoding="async" {...heroCoreProps("/assets/home-hero-phone-v2.webp")} />
           </div>
           <div className="fdt-hero__aside">
             <p>WealthNX brings your accounts, stocks, and crypto together, with AI-powered insights that make your financial picture easier to understand.</p>
@@ -274,7 +274,7 @@ export default function HomeRedesign() {
                 <React.Fragment key={key}>
                   {fragOpen === index && (
                     <li className={`hf-pic${index === 0 ? ' hf-pic--first' : ''}`} aria-hidden="true">
-                      <picture><source media="(max-width: 700px)" srcSet={`/assets/home-frag-${img}-m2.webp`} /><img src={`/assets/home-frag-${img}.webp?v=3`} alt="" width={size[0]} height={size[1]} decoding="async" /></picture>
+                      <picture><source media="(max-width: 700px)" srcSet={`/assets/home-frag-${img}-m2.webp`} /><img src={`/assets/home-frag-${img}.webp?v=3`} alt="" width={size[0]} height={size[1]} loading="lazy" decoding="async" /></picture>
                     </li>
                   )}
                 <li className={`hf-card${index === 0 ? ' hf-card--first' : ''}${index === fragActive ? ' is-active' : ''}${fragOpen === index ? ' is-open' : ''}`} style={{ "--i": index }} data-reveal tabIndex={0} aria-expanded={fragOpen === index} onMouseEnter={() => { if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) setFragActive(index); }} onFocus={(event) => { if (event.currentTarget.matches(':focus-visible')) setFragActive(index); }} onClick={(event) => { fragAnchor.current = { el: event.currentTarget, top: event.currentTarget.getBoundingClientRect().top }; setFragActive(index); if (!event.target.closest('a')) setFragOpen((open) => (open === index ? null : index)); }}>
