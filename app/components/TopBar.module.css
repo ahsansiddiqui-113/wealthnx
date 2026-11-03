@@ -575,3 +575,14 @@
 /* Link to the main Features page at the top of the Features menu. */
 .megaAll { display: inline-flex; align-items: center; gap: 8px; align-self: flex-end; justify-self: end; width: fit-content; margin-top: 2px; padding: 8px 16px; border-radius: 999px; background: #0b0d0d; color: #fff !important; font-size: 14px; font-weight: 600; text-decoration: none; }
 .megaAll:hover { background: #14a99d; }
+
+/* Menu open: the three lines turn into an X. */
+@media (max-width: 1280px) {
+    .mobileToggle span { transition: transform .2s ease, opacity .15s ease; }
+    .mobileToggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .mobileToggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .mobileToggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .mobileToggle span { transition: none; }
+}
