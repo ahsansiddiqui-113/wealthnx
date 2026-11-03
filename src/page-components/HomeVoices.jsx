@@ -97,7 +97,7 @@ export default function HomeVoices() {
                     <video data-lazy-video loop muted playsInline preload="none" disablePictureInPicture aria-hidden="true" poster={`/assets/${v.portrait}`}><source src={`/assets/${v.video}`} type="video/webm" /></video>
                   </div>
                   <div className="hv-vc__body">
-                    <div className="hv-vc__stars" aria-label="5 out of 5 stars">
+                    <div className="hv-vc__stars" role="img" aria-label="5 out of 5 stars">
                       <Star /><Star /><Star /><Star /><Star />
                     </div>
                     <h3 className="hv-vc__title"><Lines lines={v.title} /></h3>

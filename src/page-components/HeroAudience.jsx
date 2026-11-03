@@ -20,6 +20,8 @@ const TYPE_MS = 75;
 const DELETE_MS = 40;
 const HOLD_MS = 1700;
 const GAP_MS = 350;
+/* Screen readers get the current audience as plain text (an aria-label is not allowed on a bare <em>); the typed letters are hidden from them. */
+const SR_ONLY = { position: 'absolute', width: 1, height: 1, margin: -1, padding: 0, overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap', border: 0 };
 
 export default function HeroAudience() {
   const [index, setIndex] = useState(0);
@@ -58,7 +60,8 @@ export default function HeroAudience() {
   }, []);
 
   return (
-    <em className="hr-audience hr-audience--type" aria-label={HERO_AUDIENCES[index]}>
+    <em className="hr-audience hr-audience--type">
+      <span style={SR_ONLY}>{HERO_AUDIENCES[index]}</span>
       <span aria-hidden="true">{text || '​'}</span>
       <span className="hr-caret" aria-hidden="true" />
     </em>
