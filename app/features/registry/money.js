@@ -79,7 +79,7 @@ export const money = [
     menu: { group: 'Money', order: 20, icon: '/assets/menu-icons-v2/multi-assets.webp' },
     carousel: {
       order: 110,
-      image: '/assets/feature-multi-assets-landing.webp',
+      image: '/assets/feature-multi-assets-v2-landing.webp',
       icon: '/assets/budget.png',
       color: '#f3a237',
       description: 'Bring every account and asset together in one organized view.',
@@ -90,7 +90,7 @@ export const money = [
       headline: 'Track Your Assets and Valuable',
       accent: 'in One Place',
       blurb: 'Track real estate, vehicles and crypto in one place, next to the bank and brokerage accounts you link. WealthNX is a multi-asset wealth tracker on the web, iPhone and Android.',
-      image: '/assets/feature-multi-assets-phone.webp', width: 743, height: 711,
+      image: '/assets/feature-multi-assets-v2-phone.webp', width: 1600, height: 1532,
     },
     cards: [
       { icon: 'layers', title: 'Give each asset its place', text: 'Keep manually entered assets alongside information from supported financial connections.' },

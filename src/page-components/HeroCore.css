@@ -58,12 +58,6 @@
   }
 }
 
-/* Multi Assets: its two floating cards make the picture wide, which kept the phone smaller than on the other pages. Let the cards
-   reach a little past the picture box so the phone is drawn at the same size as everywhere else (desktop only). */
-@media (min-width: 901px) {
-  .fdt-hero-phone[src*="feature-multi-assets-phone"] { --vw: 520 !important; --s: 1.36 !important; }
-}
-
 /* Wealth Genie landing: the hero column is narrow and the picture's floating chips made it shrink to fit. Let the chips reach past the
    box a little so the phone is drawn at the same size as on the feature pages (desktop only). */
 @media (min-width: 901px) {
