@@ -113,7 +113,7 @@ export default function HomeVoices() {
           </section>
 
           <section className="hv-sec" aria-labelledby="hv-aud-title">
-            <h2 id="hv-aud-title" className="hv-title hv-title--aud" data-reveal>Who this platform is built for</h2>
+            <h2 id="hv-aud-title" className="hv-title hv-title--aud" data-reveal>Who this platform<br className="hv-br" /> is built for</h2>
             <HvScroller className="hv-scroll--aud" start={57.4} nav label="Who this platform is built for">
               {audience.map((c, i) => (
                 c.kind === 'photo' ? (
@@ -124,7 +124,6 @@ export default function HomeVoices() {
                   <article key={c.key} className={`hv-ac hv-ac--text hv-ac--${c.tone} hv-ac--${i + 1}${c.title.length > 22 ? ' hv-ac--long' : ''}`}>
                     <h3 className="hv-ac__title">{c.title}</h3>
                     <p className="hv-ac__copy"><Lines lines={c.body} /></p>
-                    <a className="hv-ac__more" href={c.href}>Learn More →</a>
                   </article>
                 )
               ))}

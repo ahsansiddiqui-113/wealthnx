@@ -391,3 +391,14 @@
   body .home-redesign .hv-title { font-size: 30px !important; line-height: 1.2 !important; }
   body .home-redesign .hv-lead { font-size: 16px !important; line-height: 1.45 !important; }
 }
+
+/* Phones: "Who this platform" / "is built for". */
+.hv-br { display: none; }
+@media (max-width: 700px) { .hv-br { display: inline; } }
+
+/* Phones: audience card text wraps inside the card (the hand-broken lines were wider than the card and got cut), no "Learn More" line. */
+@media (max-width: 560px) {
+  body .home-redesign .hv-ac__copy .hv-ln { display: inline; white-space: normal; }
+  body .home-redesign .hv-ac__copy .hv-ln::after { content: ' '; }
+  body .home-redesign .hv-ac__more { display: none !important; }
+}
