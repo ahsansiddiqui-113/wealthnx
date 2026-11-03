@@ -437,3 +437,19 @@
   .home-redesign .hv-ac--img .hv-ac__copy { font-size: 13px !important; line-height: 1.28; }
   .hv-ac--img .hv-ac__glass { gap: 4px; }
 }
+
+/* Audience cards on wider screens: larger cards with more space between them, so the row is longer than the screen and scrolls sideways. */
+@media (min-width: 561px) {
+  .hv-inner { --aud-w: clamp(240px, 15vw, 300px); --aud-h: calc(var(--aud-w) / .825 + 80 * var(--u)); }
+  .hv:not(.hv--say-only) .hv-stage { height: calc(481 * var(--u) + var(--aud-h) + 43 * var(--u)); }
+  .hv-scroll--aud { height: var(--aud-h); }
+  .hv-scroll--aud .hv-track { justify-content: flex-start; gap: clamp(18px, 1.6vw, 32px); padding-inline: clamp(16px, 2.2vw, 44px); }
+  .hv-scroll--aud .hv-ac--img { flex: none; width: var(--aud-w); min-width: 0; max-width: none; height: auto; }
+}
+
+/* Audience cards on wider screens: the text grows with the card. */
+@media (min-width: 561px) {
+  .home-redesign .hv-ac--img .hv-ac__title { font-size: calc(var(--aud-w) * .068) !important; }
+  .home-redesign .hv-ac--img .hv-ac__copy { font-size: calc(var(--aud-w) * .047); line-height: 1.3; }
+  .hv-ac--img .hv-ac__glass { gap: calc(var(--aud-w) * .018); }
+}

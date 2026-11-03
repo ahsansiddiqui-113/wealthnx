@@ -106,7 +106,7 @@ export default function HomeVoices({ sayOnly = false }) {
 
           {!sayOnly && <section className="hv-sec" aria-labelledby="hv-aud-title">
             <h2 id="hv-aud-title" className="hv-title hv-title--aud" data-reveal>Who this platform<br className="hv-br" /> is built for</h2>
-            <HvScroller className="hv-scroll--aud" start={57.4} nav label="Who this platform is built for">
+            <HvScroller className="hv-scroll--aud" start={0} nav label="Who this platform is built for">
               {audience.map((c) => (
                 <article key={c.key} className={`hv-ac hv-ac--img hv-ac--${c.key}`}>
                   <img className="hv-ac__bg" src={`/assets/home-aud-img-${c.key}.webp`} alt="" width={760} height={921} loading="lazy" decoding="async" />
